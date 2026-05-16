@@ -6,7 +6,7 @@ namespace TournayreLabs\Common\Exception;
 
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
-class UnexpectedValueException extends \UnexpectedValueException implements ThrowableInterface
+final class UnexpectedValueException extends \UnexpectedValueException implements ThrowableInterface
 {
     use ThrowableTrait;
 }
