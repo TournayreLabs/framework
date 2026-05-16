@@ -41,6 +41,11 @@ services:
 
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\NeverUseGettersAndSettersRule
+      arguments:
+        allowedInterfaces:
+          - 'TournayreLabs\Contracts\Security\UserInterface'
+          - 'TournayreLabs\Contracts\DateTime\DateTimeInterface'
+          - 'Symfony\Component\EventDispatcher\EventSubscriberInterface'
       tags:
         - phpstan.rules.rule
 
