@@ -12,3 +12,6 @@ parameters:
         -
             message: '#Public method "TournayreLabs\\[^"]+" is never used#'
             path: src/*
+        -
+            message: '#appears to be a getter#'
+            path: src/Contracts/DateTime/DateTimeInterface.php

@@ -26,7 +26,7 @@ abstract class AbstractLogger implements LoggerInterface
     /**
      * @api
      */
-    protected function getLoggerIdentifier(): string
+    protected function loggerIdentifier(): string
     {
         return $this->logIdentifier ?? static::class;
     }
