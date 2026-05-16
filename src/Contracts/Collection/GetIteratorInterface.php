@@ -1,0 +1,23 @@
+<?php
+
+declare(strict_types=1);
+
+namespace TournayreLabs\Contracts\Collection;
+
+use TournayreLabs\Contracts\Exception\ThrowableInterface;
+
+/**
+ * Interface GetIteratorInterface.
+ */
+interface GetIteratorInterface
+{
+    /**
+     * Returns an iterator for the elements.
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    // @phpstan-ignore-next-line Remove this line when the method is implemented
+    public function getIterator();
+}

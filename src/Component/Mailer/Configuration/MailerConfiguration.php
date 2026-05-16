@@ -1,0 +1,106 @@
+<?php
+
+declare(strict_types=1);
+
+namespace TournayreLabs\Component\Mailer\Configuration;
+
+use TournayreLabs\Component\Mailer\Collection\EmailContactCollection;
+use TournayreLabs\Component\Mailer\Types\AttachmentMaxSize;
+use TournayreLabs\Component\Mailer\VO\EmailContact;
+use TournayreLabs\Contracts\Exception\ThrowableInterface;
+
+final class MailerConfiguration
+{
+    private EmailContact $from;
+
+    private AttachmentMaxSize $attachmentsMaxSize;
+
+    private function __construct(
+        private EmailContactCollection $replyTos,
+    ) {
+    }
+
+    /**
+     * @api
+     *
+     * @throws ThrowableInterface
+     */
+    public static function create(): self
+    {
+        return new self(
+            replyTos: EmailContactCollection::asList([]),
+        );
+    }
+
+    /**
+     * @api
+     */
+    public function withFrom(EmailContact $from): self
+    {
+        $clone = clone $this;
+        $clone->from = $from;
+
+        return $clone;
+    }
+
+    /**
+     * @api
+     */
+    public function from(): EmailContact
+    {
+        return $this->from;
+    }
+
+    /**
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function withReplyTo(EmailContact $replyToAddress): self
+    {
+        $clone = clone $this;
+        $clone->replyTos = $this->replyTos
+            ->add($replyToAddress)
+        ;
+
+        return $clone;
+    }
+
+    /**
+     * @api
+     */
+    public function withReplyTos(EmailContactCollection $replyToCollection): self
+    {
+        $clone = clone $this;
+        $clone->replyTos = $replyToCollection;
+
+        return $clone;
+    }
+
+    /**
+     * @api
+     */
+    public function replyTos(): EmailContactCollection
+    {
+        return $this->replyTos;
+    }
+
+    /**
+     * @api
+     */
+    public function withAttachmentsMaxSize(AttachmentMaxSize $attachmentsMaxSize): self
+    {
+        $clone = clone $this;
+        $clone->attachmentsMaxSize = $attachmentsMaxSize;
+
+        return $clone;
+    }
+
+    /**
+     * @api
+     */
+    public function attachmentsMaxSize(): AttachmentMaxSize
+    {
+        return $this->attachmentsMaxSize;
+    }
+}

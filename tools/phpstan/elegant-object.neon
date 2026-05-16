@@ -1,0 +1,88 @@
+services:
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\AllPropertiesMustBePrivateRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\AlwaysUseInterfaceRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\BeEitherFinalOrAbstractRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\BeImmutableRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\DontUseStaticMethodsRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\KeepConstructorsCodeFreeRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\NeverReturnNullRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\NeverUseErNamesRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\NeverUseGettersAndSettersRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\NeverUsePublicConstantsRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\KeepInterfacesShortRule
+      arguments:
+        maxMethods: 5
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\ExposeFewPublicMethodsRule
+      arguments:
+        maxPublicMethods: 5
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\NeverAcceptNullArgumentsRule
+      tags:
+        - phpstan.rules.rule
+
+    -
+      class: Atournayre\PHPStan\ElegantObject\Rules\NoNewOutsideSecondaryConstructorsRule
+      arguments:
+        secondaryConstructorPrefixes:
+          - 'asList'
+          - 'asMap'
+          - 'new'
+          - 'from'
+          - 'car'
+          - 'creer'
+          - 'create'
+          - 'of'
+          - 'with'
+          - 'avec'
+          - 'depuis'
+          - 'asNull'
+      tags:
+        - phpstan.rules.rule

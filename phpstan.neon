@@ -1,0 +1,14 @@
+includes:
+    - tools/phpstan/elegant-object.neon
+
+parameters:
+    level: 5
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        -
+            message: '#has typehint with deprecated class TournayreLabs\\#'
+            path: src/*
+        -
+            message: '#Public method "TournayreLabs\\[^"]+" is never used#'
+            path: src/*

@@ -1,0 +1,35 @@
+<?php
+
+declare(strict_types=1);
+
+namespace TournayreLabs\Primitives\Traits\Collection;
+
+use TournayreLabs\Contracts\Collection\MaxInterface;
+use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Primitives\Numeric;
+
+/**
+ * Trait Max.
+ *
+ * @see MaxInterface
+ */
+trait Max
+{
+    /**
+     * Returns the maximum value of all elements.
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function max(?string $key = null): Numeric
+    {
+        if ($this->isEmpty()->isTrue()) {
+            return Numeric::of(0);
+        }
+
+        $max = $this->collection->max($key);
+
+        return Numeric::fromFloat($max ?? 0);
+    }
+}
