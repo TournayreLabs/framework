@@ -30,3 +30,6 @@ parameters:
         -
             message: '#is static#'
             path: src/Symfony/Mailer/Adapter/EmailAdapter.php
+        -
+            message: '#has a public constant#'
+            path: src/Primitives/StringType.php

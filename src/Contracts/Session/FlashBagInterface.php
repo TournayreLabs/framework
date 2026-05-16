@@ -6,18 +6,6 @@ namespace TournayreLabs\Contracts\Session;
 
 interface FlashBagInterface
 {
-    /** @api */
-    public const SUCCESS = 'success';
-
-    /** @api */
-    public const WARNING = 'warning';
-
-    /** @api */
-    public const ERROR = 'danger';
-
-    /** @api */
-    public const INFO = 'info';
-
     /**
      * @param string|array<string> $message
      */

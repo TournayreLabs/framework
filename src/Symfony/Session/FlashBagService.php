@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Symfony\Session;
 
 use TournayreLabs\Contracts\Session\FlashBagInterface;
+use TournayreLabs\Primitives\FlashType;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface as SymfonyFlashBagInterface;
 
 /**
@@ -26,7 +27,7 @@ final readonly class FlashBagService implements FlashBagInterface
      */
     public function success($message): void
     {
-        $this->displayMessages(FlashBagInterface::SUCCESS, $message);
+        $this->displayMessages(FlashType::SUCCESS, $message);
     }
 
     /**
@@ -34,7 +35,7 @@ final readonly class FlashBagService implements FlashBagInterface
      */
     public function warning($message): void
     {
-        $this->displayMessages(FlashBagInterface::WARNING, $message);
+        $this->displayMessages(FlashType::WARNING, $message);
     }
 
     /**
@@ -42,7 +43,7 @@ final readonly class FlashBagService implements FlashBagInterface
      */
     public function error($message): void
     {
-        $this->displayMessages(FlashBagInterface::ERROR, $message);
+        $this->displayMessages(FlashType::ERROR, $message);
     }
 
     /**
@@ -50,7 +51,7 @@ final readonly class FlashBagService implements FlashBagInterface
      */
     public function info($message): void
     {
-        $this->displayMessages(FlashBagInterface::INFO, $message);
+        $this->displayMessages(FlashType::INFO, $message);
     }
 
     public function fromException(\Exception $exception): void
@@ -61,12 +62,12 @@ final readonly class FlashBagService implements FlashBagInterface
     /**
      * @param string|array<string> $message
      */
-    private function displayMessages(string $type, $message): void
+    private function displayMessages(FlashType $type, $message): void
     {
         $messages = is_string($message) ? [$message] : $message;
 
         foreach ($messages as $flashBagMessage) {
-            $this->symfonyFlashBag->add($type, $flashBagMessage);
+            $this->symfonyFlashBag->add($type->value, $flashBagMessage);
         }
     }
 }
