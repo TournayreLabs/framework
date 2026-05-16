@@ -27,7 +27,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
      */
     public function error($message, array $context = []): void
     {
-        $this->logger->error($this->prefixMessage($this->getLoggerIdentifier(), $message), $context);
+        $this->logger->error($this->prefixMessage($this->loggerIdentifier(), $message), $context);
     }
 
     /**
@@ -37,7 +37,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
      */
     public function emergency($message, array $context = []): void
     {
-        $this->logger->emergency($this->prefixMessage($this->getLoggerIdentifier(), $message), $context);
+        $this->logger->emergency($this->prefixMessage($this->loggerIdentifier(), $message), $context);
     }
 
     /**
@@ -47,7 +47,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
      */
     public function alert($message, array $context = []): void
     {
-        $this->logger->alert($this->prefixMessage($this->getLoggerIdentifier(), $message), $context);
+        $this->logger->alert($this->prefixMessage($this->loggerIdentifier(), $message), $context);
     }
 
     /**
@@ -57,7 +57,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
      */
     public function critical($message, array $context = []): void
     {
-        $this->logger->critical($this->prefixMessage($this->getLoggerIdentifier(), $message), $context);
+        $this->logger->critical($this->prefixMessage($this->loggerIdentifier(), $message), $context);
     }
 
     /**
@@ -67,7 +67,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
      */
     public function warning($message, array $context = []): void
     {
-        $this->logger->warning($this->prefixMessage($this->getLoggerIdentifier(), $message), $context);
+        $this->logger->warning($this->prefixMessage($this->loggerIdentifier(), $message), $context);
     }
 
     /**
@@ -77,7 +77,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
      */
     public function notice($message, array $context = []): void
     {
-        $this->logger->notice($this->prefixMessage($this->getLoggerIdentifier(), $message), $context);
+        $this->logger->notice($this->prefixMessage($this->loggerIdentifier(), $message), $context);
     }
 
     /**
@@ -87,7 +87,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
      */
     public function info($message, array $context = []): void
     {
-        $this->logger->info($this->prefixMessage($this->getLoggerIdentifier(), $message), $context);
+        $this->logger->info($this->prefixMessage($this->loggerIdentifier(), $message), $context);
     }
 
     /**
@@ -97,7 +97,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
      */
     public function debug($message, array $context = []): void
     {
-        $this->logger->debug($this->prefixMessage($this->getLoggerIdentifier(), $message), $context);
+        $this->logger->debug($this->prefixMessage($this->loggerIdentifier(), $message), $context);
     }
 
     /**
@@ -107,7 +107,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
      */
     public function log($level, $message, array $context = []): void
     {
-        $this->logger->log($level, $this->prefixMessage($this->getLoggerIdentifier(), $message), $context);
+        $this->logger->log($level, $this->prefixMessage($this->loggerIdentifier(), $message), $context);
     }
 
     /**
@@ -116,7 +116,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
     // @phpstan-ignore-next-line
     public function start(array $context = []): void
     {
-        $this->logger->info($this->prefixMessage($this->getLoggerIdentifier(), 'start'), $context);
+        $this->logger->info($this->prefixMessage($this->loggerIdentifier(), 'start'), $context);
     }
 
     /**
@@ -125,7 +125,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
     // @phpstan-ignore-next-line
     public function end(array $context = []): void
     {
-        $this->logger->info($this->prefixMessage($this->getLoggerIdentifier(), 'end'), $context);
+        $this->logger->info($this->prefixMessage($this->loggerIdentifier(), 'end'), $context);
     }
 
     /**
@@ -134,7 +134,7 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
     // @phpstan-ignore-next-line
     public function success(array $context = []): void
     {
-        $this->logger->info($this->prefixMessage($this->getLoggerIdentifier(), 'success'), $context);
+        $this->logger->info($this->prefixMessage($this->loggerIdentifier(), 'success'), $context);
     }
 
     /**
@@ -143,6 +143,6 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
     // @phpstan-ignore-next-line
     public function failFast(array $context = []): void
     {
-        $this->logger->info($this->prefixMessage($this->getLoggerIdentifier(), 'fail fast'), $context);
+        $this->logger->info($this->prefixMessage($this->loggerIdentifier(), 'fail fast'), $context);
     }
 }
