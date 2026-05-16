@@ -21,6 +21,25 @@ services:
 
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\DontUseStaticMethodsRule
+      arguments:
+        allowedMethodNames:
+          - 'asList'
+          - 'asMap'
+          - 'asNull'
+          - 'new'
+          - 'from'
+          - 'fromMessage'
+          - 'car'
+          - 'creer'
+          - 'create'
+          - 'of'
+          - 'with'
+          - 'avec'
+          - 'depuis'
+          - 'types'
+          - 'validateElement'
+        allowedInterfaces:
+          - 'Symfony\Component\EventDispatcher\EventSubscriberInterface'
       tags:
         - phpstan.rules.rule
 
