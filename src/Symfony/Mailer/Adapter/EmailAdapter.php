@@ -11,7 +11,7 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email as SymfonyEmail;
 
-final class EmailAdapter
+abstract class EmailAdapter
 {
     /**
      * @api
