@@ -6,7 +6,7 @@ namespace TournayreLabs\Common\Exception;
 
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
-class InvalidArgumentException extends \InvalidArgumentException implements ThrowableInterface
+final class InvalidArgumentException extends \InvalidArgumentException implements ThrowableInterface
 {
     use ThrowableTrait;
 }

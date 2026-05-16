@@ -6,7 +6,7 @@ namespace TournayreLabs\Common\Exception;
 
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
-class NullException extends \Exception implements ThrowableInterface
+final class NullException extends \Exception implements ThrowableInterface
 {
     use ThrowableTrait;
 

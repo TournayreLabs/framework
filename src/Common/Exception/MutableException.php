@@ -6,7 +6,7 @@ namespace TournayreLabs\Common\Exception;
 
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
-class MutableException extends \RuntimeException implements ThrowableInterface
+final class MutableException extends \RuntimeException implements ThrowableInterface
 {
     use ThrowableTrait;
 
