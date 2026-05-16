@@ -178,60 +178,49 @@ interface DateTimeInterface extends NullableInterface
 
     public function isSaturday(): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameYear($date = null): BoolEnum;
+    public function isSameYear(\DateTimeInterface $date): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameWeek($date = null): BoolEnum;
+    public function isSameCurrentYear(): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameDay($date = null): BoolEnum;
+    public function isSameWeek(\DateTimeInterface $date): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameHour($date = null): BoolEnum;
+    public function isSameCurrentWeek(): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameMinute($date = null): BoolEnum;
+    public function isSameDay(\DateTimeInterface $date): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameSecond($date = null): BoolEnum;
+    public function isSameCurrentDay(): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameMicro($date = null): BoolEnum;
+    public function isSameHour(\DateTimeInterface $date): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameMicrosecond($date = null): BoolEnum;
+    public function isSameCurrentHour(): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameDecade($date = null): BoolEnum;
+    public function isSameMinute(\DateTimeInterface $date): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameCentury($date = null): BoolEnum;
+    public function isSameCurrentMinute(): BoolEnum;
 
-    /**
-     * @param DateTimeInterface|string|null $date
-     */
-    public function isSameMillennium($date = null): BoolEnum;
+    public function isSameSecond(\DateTimeInterface $date): BoolEnum;
+
+    public function isSameCurrentSecond(): BoolEnum;
+
+    public function isSameMicro(\DateTimeInterface $date): BoolEnum;
+
+    public function isSameCurrentMicro(): BoolEnum;
+
+    public function isSameMicrosecond(\DateTimeInterface $date): BoolEnum;
+
+    public function isSameCurrentMicrosecond(): BoolEnum;
+
+    public function isSameDecade(\DateTimeInterface $date): BoolEnum;
+
+    public function isSameCurrentDecade(): BoolEnum;
+
+    public function isSameCentury(\DateTimeInterface $date): BoolEnum;
+
+    public function isSameCurrentCentury(): BoolEnum;
+
+    public function isSameMillennium(\DateTimeInterface $date): BoolEnum;
+
+    public function isSameCurrentMillennium(): BoolEnum;
 
     public function years(int $value): DateTimeInterface;
 
@@ -1089,45 +1078,29 @@ interface DateTimeInterface extends NullableInterface
      */
     public function ceilMicroseconds($precision = 1): DateTimeInterface;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $other
-     */
-    public function shortAbsoluteDiffForHumans($other = null, int $parts = 1): string;
+    public function shortAbsoluteDiffForHumans(\DateTimeInterface $other, int $parts = 1): string;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $other
-     */
-    public function longAbsoluteDiffForHumans($other = null, int $parts = 1): string;
+    public function shortAbsoluteDiffFromNowForHumans(int $parts = 1): string;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $other
-     */
-    public function shortRelativeDiffForHumans($other = null, int $parts = 1): string;
+    public function longAbsoluteDiffForHumans(\DateTimeInterface $other, int $parts = 1): string;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $other
-     */
-    public function longRelativeDiffForHumans($other = null, int $parts = 1): string;
+    public function longAbsoluteDiffFromNowForHumans(int $parts = 1): string;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $other
-     */
-    public function shortRelativeToNowDiffForHumans($other = null, int $parts = 1): string;
+    public function shortRelativeDiffForHumans(\DateTimeInterface $other, int $parts = 1): string;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $other
-     */
-    public function longRelativeToNowDiffForHumans($other = null, int $parts = 1): string;
+    public function shortRelativeDiffFromNowForHumans(int $parts = 1): string;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $other
-     */
-    public function shortRelativeToOtherDiffForHumans($other = null, int $parts = 1): string;
+    public function longRelativeDiffForHumans(\DateTimeInterface $other, int $parts = 1): string;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $other
-     */
-    public function longRelativeToOtherDiffForHumans($other = null, int $parts = 1): string;
+    public function longRelativeDiffFromNowForHumans(int $parts = 1): string;
+
+    public function shortRelativeToNowDiffForHumans(int $parts = 1): string;
+
+    public function longRelativeToNowDiffForHumans(int $parts = 1): string;
+
+    public function shortRelativeToOtherDiffForHumans(\DateTimeInterface $other, int $parts = 1): string;
+
+    public function longRelativeToOtherDiffForHumans(\DateTimeInterface $other, int $parts = 1): string;
 
     public function copy(): DateTimeInterface;
 
@@ -1146,52 +1119,31 @@ interface DateTimeInterface extends NullableInterface
      */
     public function set($name, $value = null): DateTimeInterface;
 
-    /**
-     * @param string|null $context
-     * @param string|null $defaultValue
-     */
-    public function getTranslatedDayName($context = null, string $keySuffix = '', $defaultValue = null): string;
+    public function getTranslatedDayName(string $context = '', string $keySuffix = '', string $defaultValue = ''): string;
 
-    /**
-     * @param string|null $context
-     */
-    public function getTranslatedShortDayName($context = null): string;
+    public function getTranslatedShortDayName(string $context = ''): string;
 
-    /**
-     * @param string|null $context
-     */
-    public function getTranslatedMinDayName($context = null): string;
+    public function getTranslatedMinDayName(string $context = ''): string;
 
-    /**
-     * @param string|null $context
-     * @param string|null $defaultValue
-     */
-    public function getTranslatedMonthName($context = null, string $keySuffix = '', $defaultValue = null): string;
+    public function getTranslatedMonthName(string $context = '', string $keySuffix = '', string $defaultValue = ''): string;
 
-    /**
-     * @param string|null $context
-     */
-    public function getTranslatedShortMonthName($context = null): string;
+    public function getTranslatedShortMonthName(string $context = ''): string;
 
-    /**
-     * @param int|null $value
-     */
-    public function weekday($value = null): int;
+    public function weekday(): int;
 
-    /**
-     * @param int|null $value
-     */
-    public function isoWeekday($value = null): int;
+    public function setWeekday(int $value): DateTimeInterface;
 
-    /**
-     * @param int|null $weekStartsAt
-     */
-    public function getDaysFromStartOfWeek($weekStartsAt = null): int;
+    public function isoWeekday(): int;
 
-    /**
-     * @param int|null $weekStartsAt
-     */
-    public function setDaysFromStartOfWeek(int $numberOfDays, $weekStartsAt = null): DateTimeInterface;
+    public function setIsoWeekday(int $value): DateTimeInterface;
+
+    public function getDaysFromStartOfWeek(int $weekStartsAt): int;
+
+    public function getDaysFromStartOfCurrentLocaleWeek(): int;
+
+    public function setDaysFromStartOfWeek(int $numberOfDays, int $weekStartsAt): DateTimeInterface;
+
+    public function setDaysFromStartOfCurrentLocaleWeek(int $numberOfDays): DateTimeInterface;
 
     public function setUnitNoOverflow(string $valueUnit, int $value, string $overflowUnit): DateTimeInterface;
 
@@ -1199,10 +1151,7 @@ interface DateTimeInterface extends NullableInterface
 
     public function subUnitNoOverflow(string $valueUnit, int $value, string $overflowUnit): DateTimeInterface;
 
-    /**
-     * @param int|null $minuteOffset
-     */
-    public function utcOffset($minuteOffset = null): DateTimeInterface;
+    public function setUtcOffset(int $minuteOffset): DateTimeInterface;
 
     public function setDate(int $year, int $month, int $day): DateTimeInterface;
 
@@ -1219,30 +1168,21 @@ interface DateTimeInterface extends NullableInterface
 
     public function setTimeFromTimeString(string $time): DateTimeInterface;
 
-    /**
-     * @param \DateTimeZone|string $value
-     */
-    public function setTimezone($value): DateTimeInterface;
+    public function setTimezone(\DateTimeZone|string $value): DateTimeInterface;
 
-    /**
-     * @param \DateTimeZone|string $value
-     */
-    public function shiftTimezone($value): DateTimeInterface;
+    public function shiftTimezone(\DateTimeZone|string $value): DateTimeInterface;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $date
-     */
-    public function setDateFrom($date = null): DateTimeInterface;
+    public function setDateFrom(\DateTimeInterface $date): DateTimeInterface;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $date
-     */
-    public function setTimeFrom($date = null): DateTimeInterface;
+    public function setDateFromNow(): DateTimeInterface;
 
-    /**
-     * @param DateTimeInterface|\DateTimeInterface|null $date
-     */
-    public function setDateTimeFrom($date = null): DateTimeInterface;
+    public function setTimeFrom(\DateTimeInterface $date): DateTimeInterface;
+
+    public function setTimeFromNow(): DateTimeInterface;
+
+    public function setDateTimeFrom(\DateTimeInterface $date): DateTimeInterface;
+
+    public function setDateTimeFromNow(): DateTimeInterface;
 
     /**
      * @return array<int, string>
@@ -1261,18 +1201,24 @@ interface DateTimeInterface extends NullableInterface
     public function hasRelativeKeywords(string $time): BoolEnum;
 
     /**
-     * @param string|null $locale
-     *
      * @return array<string, string>
      */
-    public function getIsoFormats($locale = null): array;
+    public function getIsoFormats(string $locale): array;
 
     /**
-     * @param string|null $locale
-     *
+     * @return array<string, string>
+     */
+    public function getIsoFormatsForCurrentLocale(): array;
+
+    /**
      * @return array<string, string|array<array<string|int>>>
      */
-    public function getCalendarFormats($locale = null): array;
+    public function getCalendarFormats(string $locale): array;
+
+    /**
+     * @return array<string, string|array<array<string|int>>>
+     */
+    public function getCalendarFormatsForCurrentLocale(): array;
 
     /**
      * @return array<string, string|array<array<string|int>>>|null
@@ -1281,17 +1227,15 @@ interface DateTimeInterface extends NullableInterface
 
     public function getPaddedUnit(string $unit, int $length = 2, string $padString = '0', int $padType = STR_PAD_LEFT): string;
 
-    /**
-     * @param string|null $period
-     */
-    public function ordinal(string $key, $period = null): string;
+    public function ordinal(string $key): string;
+
+    public function ordinalWithPeriod(string $key, string $period): string;
 
     public function getAltNumber(string $key): string;
 
-    /**
-     * @param string|null $originalFormat
-     */
-    public function isoFormat(string $format, $originalFormat = null): string;
+    public function isoFormat(string $format): string;
+
+    public function isoFormatFrom(string $format, string $originalFormat): string;
 
     /**
      * @return array<string, bool|string>|null

@@ -33,3 +33,9 @@ parameters:
         -
             message: '#has a public constant#'
             path: src/Primitives/StringType.php
+        -
+            message: '#DateTimeInterface::set\(\) has default value null#'
+            path: src/Contracts/DateTime/DateTimeInterface.php
+        -
+            message: '#DateTimeInterface::setUnit\(\) has default value null#'
+            path: src/Contracts/DateTime/DateTimeInterface.php

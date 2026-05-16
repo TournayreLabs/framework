@@ -281,12 +281,9 @@ trait DateTimeTrait
         return $this->datetime->toDateTime();
     }
 
-    /**
-     * @param \DateTimeZone|string|null $timezone
-     */
-    public function setTimezone($timezone = null): DateTimeInterface
+    public function setTimezone(\DateTimeZone|string $value): DateTimeInterface
     {
-        $this->datetime->setTimezone($timezone);
+        $this->datetime->setTimezone($value);
 
         return $this;
     }
@@ -782,103 +779,114 @@ trait DateTimeTrait
         return BoolEnum::fromBool($isSaturday);
     }
 
-    public function isSameYear($date = null): BoolEnum
+    public function isSameYear(\DateTimeInterface $date): BoolEnum
     {
-        $isSameYear = $this->datetime
-            ->isSameYear($date)
-        ;
-
-        return BoolEnum::fromBool($isSameYear);
+        return BoolEnum::fromBool($this->datetime->isSameYear($date));
     }
 
-    public function isSameWeek($date = null): BoolEnum
+    public function isSameCurrentYear(): BoolEnum
     {
-        $isSameWeek = $this->datetime
-            ->isSameWeek($date)
-        ;
-
-        return BoolEnum::fromBool($isSameWeek);
+        return BoolEnum::fromBool($this->datetime->isSameYear());
     }
 
-    public function isSameDay($date = null): BoolEnum
+    public function isSameWeek(\DateTimeInterface $date): BoolEnum
     {
-        $isSameDay = $this->datetime
-            ->isSameDay($date)
-        ;
-
-        return BoolEnum::fromBool($isSameDay);
+        return BoolEnum::fromBool($this->datetime->isSameWeek($date));
     }
 
-    public function isSameHour($date = null): BoolEnum
+    public function isSameCurrentWeek(): BoolEnum
     {
-        $isSameHour = $this->datetime
-            ->isSameHour($date)
-        ;
-
-        return BoolEnum::fromBool($isSameHour);
+        return BoolEnum::fromBool($this->datetime->isSameWeek());
     }
 
-    public function isSameMinute($date = null): BoolEnum
+    public function isSameDay(\DateTimeInterface $date): BoolEnum
     {
-        $isSameMinute = $this->datetime
-            ->isSameMinute($date)
-        ;
-
-        return BoolEnum::fromBool($isSameMinute);
+        return BoolEnum::fromBool($this->datetime->isSameDay($date));
     }
 
-    public function isSameSecond($date = null): BoolEnum
+    public function isSameCurrentDay(): BoolEnum
     {
-        $isSameSecond = $this->datetime
-            ->isSameSecond($date)
-        ;
-
-        return BoolEnum::fromBool($isSameSecond);
+        return BoolEnum::fromBool($this->datetime->isSameDay());
     }
 
-    public function isSameMicro($date = null): BoolEnum
+    public function isSameHour(\DateTimeInterface $date): BoolEnum
     {
-        $isSameMicro = $this->datetime
-            ->isSameMicro($date)
-        ;
-
-        return BoolEnum::fromBool($isSameMicro);
+        return BoolEnum::fromBool($this->datetime->isSameHour($date));
     }
 
-    public function isSameMicrosecond($date = null): BoolEnum
+    public function isSameCurrentHour(): BoolEnum
     {
-        $isSameMicrosecond = $this->datetime
-            ->isSameMicrosecond($date)
-        ;
-
-        return BoolEnum::fromBool($isSameMicrosecond);
+        return BoolEnum::fromBool($this->datetime->isSameHour());
     }
 
-    public function isSameDecade($date = null): BoolEnum
+    public function isSameMinute(\DateTimeInterface $date): BoolEnum
     {
-        $isSameDecade = $this->datetime
-            ->isSameDecade($date)
-        ;
-
-        return BoolEnum::fromBool($isSameDecade);
+        return BoolEnum::fromBool($this->datetime->isSameMinute($date));
     }
 
-    public function isSameCentury($date = null): BoolEnum
+    public function isSameCurrentMinute(): BoolEnum
     {
-        $isSameCentury = $this->datetime
-            ->isSameCentury($date)
-        ;
-
-        return BoolEnum::fromBool($isSameCentury);
+        return BoolEnum::fromBool($this->datetime->isSameMinute());
     }
 
-    public function isSameMillennium($date = null): BoolEnum
+    public function isSameSecond(\DateTimeInterface $date): BoolEnum
     {
-        $isSameMillennium = $this->datetime
-            ->isSameMillennium($date)
-        ;
+        return BoolEnum::fromBool($this->datetime->isSameSecond($date));
+    }
 
-        return BoolEnum::fromBool($isSameMillennium);
+    public function isSameCurrentSecond(): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameSecond());
+    }
+
+    public function isSameMicro(\DateTimeInterface $date): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameMicro($date));
+    }
+
+    public function isSameCurrentMicro(): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameMicro());
+    }
+
+    public function isSameMicrosecond(\DateTimeInterface $date): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameMicrosecond($date));
+    }
+
+    public function isSameCurrentMicrosecond(): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameMicrosecond());
+    }
+
+    public function isSameDecade(\DateTimeInterface $date): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameDecade($date));
+    }
+
+    public function isSameCurrentDecade(): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameDecade());
+    }
+
+    public function isSameCentury(\DateTimeInterface $date): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameCentury($date));
+    }
+
+    public function isSameCurrentCentury(): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameCentury());
+    }
+
+    public function isSameMillennium(\DateTimeInterface $date): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameMillennium($date));
+    }
+
+    public function isSameCurrentMillennium(): BoolEnum
+    {
+        return BoolEnum::fromBool($this->datetime->isSameMillennium());
     }
 
     public function years(int $value): DateTimeInterface
@@ -3121,60 +3129,64 @@ trait DateTimeTrait
         return $this;
     }
 
-    public function shortAbsoluteDiffForHumans($other = null, int $parts = 1): string
+    public function shortAbsoluteDiffForHumans(\DateTimeInterface $other, int $parts = 1): string
     {
-        return $this->datetime
-            ->shortAbsoluteDiffForHumans($other, $parts)
-        ;
+        return $this->datetime->shortAbsoluteDiffForHumans($other, $parts);
     }
 
-    public function longAbsoluteDiffForHumans($other = null, int $parts = 1): string
+    public function shortAbsoluteDiffFromNowForHumans(int $parts = 1): string
     {
-        return $this->datetime
-            ->longAbsoluteDiffForHumans($other, $parts)
-        ;
+        return $this->datetime->shortAbsoluteDiffForHumans(null, $parts);
     }
 
-    public function shortRelativeDiffForHumans($other = null, int $parts = 1): string
+    public function longAbsoluteDiffForHumans(\DateTimeInterface $other, int $parts = 1): string
     {
-        return $this->datetime
-            ->shortRelativeDiffForHumans($other, $parts)
-        ;
+        return $this->datetime->longAbsoluteDiffForHumans($other, $parts);
     }
 
-    public function longRelativeDiffForHumans($other = null, int $parts = 1): string
+    public function longAbsoluteDiffFromNowForHumans(int $parts = 1): string
     {
-        return $this->datetime
-            ->longRelativeDiffForHumans($other, $parts)
-        ;
+        return $this->datetime->longAbsoluteDiffForHumans(null, $parts);
     }
 
-    public function shortRelativeToNowDiffForHumans($other = null, int $parts = 1): string
+    public function shortRelativeDiffForHumans(\DateTimeInterface $other, int $parts = 1): string
     {
-        return $this->datetime
-            ->shortRelativeToNowDiffForHumans($other, $parts)
-        ;
+        return $this->datetime->shortRelativeDiffForHumans($other, $parts);
     }
 
-    public function longRelativeToNowDiffForHumans($other = null, int $parts = 1): string
+    public function shortRelativeDiffFromNowForHumans(int $parts = 1): string
     {
-        return $this->datetime
-            ->longRelativeToNowDiffForHumans($other, $parts)
-        ;
+        return $this->datetime->shortRelativeDiffForHumans(null, $parts);
     }
 
-    public function shortRelativeToOtherDiffForHumans($other = null, int $parts = 1): string
+    public function longRelativeDiffForHumans(\DateTimeInterface $other, int $parts = 1): string
     {
-        return $this->datetime
-            ->shortRelativeToOtherDiffForHumans($other, $parts)
-        ;
+        return $this->datetime->longRelativeDiffForHumans($other, $parts);
     }
 
-    public function longRelativeToOtherDiffForHumans($other = null, int $parts = 1): string
+    public function longRelativeDiffFromNowForHumans(int $parts = 1): string
     {
-        return $this->datetime
-            ->longRelativeToOtherDiffForHumans($other, $parts)
-        ;
+        return $this->datetime->longRelativeDiffForHumans(null, $parts);
+    }
+
+    public function shortRelativeToNowDiffForHumans(int $parts = 1): string
+    {
+        return $this->datetime->shortRelativeToNowDiffForHumans(null, $parts);
+    }
+
+    public function longRelativeToNowDiffForHumans(int $parts = 1): string
+    {
+        return $this->datetime->longRelativeToNowDiffForHumans(null, $parts);
+    }
+
+    public function shortRelativeToOtherDiffForHumans(\DateTimeInterface $other, int $parts = 1): string
+    {
+        return $this->datetime->shortRelativeToOtherDiffForHumans($other, $parts);
+    }
+
+    public function longRelativeToOtherDiffForHumans(\DateTimeInterface $other, int $parts = 1): string
+    {
+        return $this->datetime->longRelativeToOtherDiffForHumans($other, $parts);
     }
 
     /**
@@ -3216,65 +3228,83 @@ trait DateTimeTrait
         return $this;
     }
 
-    public function getTranslatedDayName($context = null, string $keySuffix = '', $defaultValue = null): string
+    public function getTranslatedDayName(string $context = '', string $keySuffix = '', string $defaultValue = ''): string
     {
-        return $this->datetime
-            ->getTranslatedDayName($context, $keySuffix, $defaultValue)
-        ;
+        return $this->datetime->getTranslatedDayName(
+            $context !== '' ? $context : null,
+            $keySuffix,
+            $defaultValue !== '' ? $defaultValue : null
+        );
     }
 
-    public function getTranslatedShortDayName($context = null): string
+    public function getTranslatedShortDayName(string $context = ''): string
     {
-        return $this->datetime
-            ->getTranslatedShortDayName($context)
-        ;
+        return $this->datetime->getTranslatedShortDayName($context !== '' ? $context : null);
     }
 
-    public function getTranslatedMinDayName($context = null): string
+    public function getTranslatedMinDayName(string $context = ''): string
     {
-        return $this->datetime
-            ->getTranslatedMinDayName($context)
-        ;
+        return $this->datetime->getTranslatedMinDayName($context !== '' ? $context : null);
     }
 
-    public function getTranslatedMonthName($context = null, string $keySuffix = '', $defaultValue = null): string
+    public function getTranslatedMonthName(string $context = '', string $keySuffix = '', string $defaultValue = ''): string
     {
-        return $this->datetime
-            ->getTranslatedMonthName($context, $keySuffix, $defaultValue)
-        ;
+        return $this->datetime->getTranslatedMonthName(
+            $context !== '' ? $context : null,
+            $keySuffix,
+            $defaultValue !== '' ? $defaultValue : null
+        );
     }
 
-    public function getTranslatedShortMonthName($context = null): string
+    public function getTranslatedShortMonthName(string $context = ''): string
     {
-        return $this->datetime
-            ->getTranslatedShortMonthName($context)
-        ;
+        return $this->datetime->getTranslatedShortMonthName($context !== '' ? $context : null);
     }
 
-    public function weekday($value = null): int
+    public function weekday(): int
     {
-        return $this->datetime
-            ->weekday($value)
-        ;
+        return $this->datetime->weekday();
     }
 
-    public function isoWeekday($value = null): int
+    public function setWeekday(int $value): DateTimeInterface
     {
-        return $this->datetime
-            ->isoWeekday($value)
-        ;
+        $this->datetime->weekday($value);
+
+        return $this;
     }
 
-    public function getDaysFromStartOfWeek($weekStartsAt = null): int
+    public function isoWeekday(): int
     {
-        return $this->datetime
-            ->getDaysFromStartOfWeek($weekStartsAt)
-        ;
+        return $this->datetime->isoWeekday();
     }
 
-    public function setDaysFromStartOfWeek(int $numberOfDays, $weekStartsAt = null): DateTimeInterface
+    public function setIsoWeekday(int $value): DateTimeInterface
+    {
+        $this->datetime->isoWeekday($value);
+
+        return $this;
+    }
+
+    public function getDaysFromStartOfWeek(int $weekStartsAt): int
+    {
+        return $this->datetime->getDaysFromStartOfWeek($weekStartsAt);
+    }
+
+    public function getDaysFromStartOfCurrentLocaleWeek(): int
+    {
+        return $this->datetime->getDaysFromStartOfWeek();
+    }
+
+    public function setDaysFromStartOfWeek(int $numberOfDays, int $weekStartsAt): DateTimeInterface
     {
         $this->datetime->setDaysFromStartOfWeek($numberOfDays, $weekStartsAt);
+
+        return $this;
+    }
+
+    public function setDaysFromStartOfCurrentLocaleWeek(int $numberOfDays): DateTimeInterface
+    {
+        $this->datetime->setDaysFromStartOfWeek($numberOfDays);
 
         return $this;
     }
@@ -3300,7 +3330,7 @@ trait DateTimeTrait
         return $this;
     }
 
-    public function utcOffset($minuteOffset = null): DateTimeInterface
+    public function setUtcOffset(int $minuteOffset): DateTimeInterface
     {
         $this->datetime->utcOffset($minuteOffset);
 
@@ -3356,23 +3386,44 @@ trait DateTimeTrait
         return $this;
     }
 
-    public function setDateFrom($date = null): DateTimeInterface
+    public function setDateFrom(\DateTimeInterface $date): DateTimeInterface
     {
         $this->datetime->setDateFrom($date);
 
         return $this;
     }
 
-    public function setTimeFrom($date = null): DateTimeInterface
+    public function setDateFromNow(): DateTimeInterface
+    {
+        $this->datetime->setDateFrom(null);
+
+        return $this;
+    }
+
+    public function setTimeFrom(\DateTimeInterface $date): DateTimeInterface
     {
         $this->datetime->setTimeFrom($date);
 
         return $this;
     }
 
-    public function setDateTimeFrom($date = null): DateTimeInterface
+    public function setTimeFromNow(): DateTimeInterface
+    {
+        $this->datetime->setTimeFrom(null);
+
+        return $this;
+    }
+
+    public function setDateTimeFrom(\DateTimeInterface $date): DateTimeInterface
     {
         $this->datetime->setDateTimeFrom($date);
+
+        return $this;
+    }
+
+    public function setDateTimeFromNow(): DateTimeInterface
+    {
+        $this->datetime->setDateTimeFrom(null);
 
         return $this;
     }
@@ -3404,18 +3455,24 @@ trait DateTimeTrait
         return BoolEnum::fromBool($hasRelativeKeywords);
     }
 
-    public function getIsoFormats($locale = null): array
+    public function getIsoFormats(string $locale): array
     {
-        return $this->datetime
-            ->getIsoFormats($locale)
-        ;
+        return $this->datetime->getIsoFormats($locale);
     }
 
-    public function getCalendarFormats($locale = null): array
+    public function getIsoFormatsForCurrentLocale(): array
     {
-        return $this->datetime
-            ->getCalendarFormats($locale)
-        ;
+        return $this->datetime->getIsoFormats();
+    }
+
+    public function getCalendarFormats(string $locale): array
+    {
+        return $this->datetime->getCalendarFormats($locale);
+    }
+
+    public function getCalendarFormatsForCurrentLocale(): array
+    {
+        return $this->datetime->getCalendarFormats();
     }
 
     /**
@@ -3433,11 +3490,14 @@ trait DateTimeTrait
         ;
     }
 
-    public function ordinal(string $key, $period = null): string
+    public function ordinal(string $key): string
     {
-        return $this->datetime
-            ->ordinal($key, $period)
-        ;
+        return $this->datetime->ordinal($key);
+    }
+
+    public function ordinalWithPeriod(string $key, string $period): string
+    {
+        return $this->datetime->ordinal($key, $period);
     }
 
     public function getAltNumber(string $key): string
@@ -3447,11 +3507,14 @@ trait DateTimeTrait
         ;
     }
 
-    public function isoFormat(string $format, $originalFormat = null): string
+    public function isoFormat(string $format): string
     {
-        return $this->datetime
-            ->isoFormat($format, $originalFormat)
-        ;
+        return $this->datetime->isoFormat($format);
+    }
+
+    public function isoFormatFrom(string $format, string $originalFormat): string
+    {
+        return $this->datetime->isoFormat($format, $originalFormat);
     }
 
     /**
