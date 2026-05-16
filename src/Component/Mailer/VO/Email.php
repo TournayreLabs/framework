@@ -16,7 +16,7 @@ use TournayreLabs\Contracts\Types\TypeValidationInterface;
 use TournayreLabs\Primitives\BoolEnum;
 use TournayreLabs\Primitives\Collection\FileCollection;
 
-final class Email implements LoggableInterface, TypeValidationInterface
+abstract class Email implements LoggableInterface, TypeValidationInterface
 {
     protected function __construct(
         private readonly EmailSubject $subject,
