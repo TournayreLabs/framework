@@ -21,3 +21,12 @@ parameters:
         -
             message: '#appears to be a setter#'
             path: src/Contracts/DependencyInjection/DependencyInjectionAwareInterface.php
+        -
+            message: '#is static#'
+            path: src/Common/Assert/Assert.php
+        -
+            message: '#is static#'
+            path: src/Contracts/Common/Assert/*
+        -
+            message: '#is static#'
+            path: src/Symfony/Mailer/Adapter/EmailAdapter.php
