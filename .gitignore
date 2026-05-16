@@ -1,0 +1,21 @@
+composer.lock
+
+.env
+.env.local
+.php-cs-fixer.cache
+.phpunit.result.cache
+
+.idea/
+.vscode/
+
+.venv/
+var/
+vendor/
+logs/
+
+.claude/data
+.claude/logs
+
+# Temporary
+PLAN_REFONTE_NEO.md
+
