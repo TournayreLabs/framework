@@ -8,7 +8,7 @@ use TournayreLabs\Common\Assert\Assert;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Null\NullableInterface;
 use TournayreLabs\Null\NullTrait;
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Traits\StringTypeTrait;
 
 final class EmailHtml implements NullableInterface
@@ -23,12 +23,12 @@ final class EmailHtml implements NullableInterface
     {
         Assert::stringNotEmpty($value, 'Email HTML cannot be empty.');
 
-        return new self(StringType::of($value));
+        return new self(String_::fromString($value));
     }
 
     public static function asNull(): self
     {
-        return (new self(StringType::of('')))
+        return (new self(String_::fromString('')))
             ->toNullable()
         ;
     }

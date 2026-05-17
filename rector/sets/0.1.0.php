@@ -3,20 +3,31 @@
 declare(strict_types=1);
 
 require_once __DIR__.'/../Rector/BoolEnumFromBoolToNamedConstructorRector.php';
+require_once __DIR__.'/../Rector/StringNormalizeConstFetchToMethodCallRector.php';
 
 use Rector\Config\RectorConfig;
 use Rector\Renaming\Rector\ClassConstFetch\RenameClassConstFetchRector;
 use Rector\Renaming\Rector\MethodCall\RenameMethodRector;
 use Rector\Renaming\Rector\Name\RenameClassRector;
+use Rector\Renaming\Rector\StaticCall\RenameStaticMethodRector;
 use Rector\Renaming\ValueObject\MethodCallRename;
 use Rector\Renaming\ValueObject\RenameClassAndConstFetch;
+use Rector\Renaming\ValueObject\RenameStaticMethod;
 use TournayreLabs\Rector\BoolEnumFromBoolToNamedConstructorRector;
+use TournayreLabs\Rector\StringNormalizeConstFetchToMethodCallRector;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->rule(BoolEnumFromBoolToNamedConstructorRector::class);
+    $rectorConfig->rule(StringNormalizeConstFetchToMethodCallRector::class);
 
     $rectorConfig->ruleWithConfiguration(RenameClassRector::class, [
         'TournayreLabs\Primitives\BoolEnum' => 'TournayreLabs\Primitives\Bool_',
+        'TournayreLabs\Primitives\StringType' => 'TournayreLabs\Primitives\String_',
+    ]);
+
+    $rectorConfig->ruleWithConfiguration(RenameStaticMethodRector::class, [
+        new RenameStaticMethod('TournayreLabs\Primitives\StringType', 'of', 'TournayreLabs\Primitives\String_', 'fromString'),
+        new RenameStaticMethod('TournayreLabs\Primitives\String_', 'of', 'TournayreLabs\Primitives\String_', 'fromString'),
     ]);
 
     $rectorConfig->ruleWithConfiguration(RenameMethodRector::class, [
@@ -35,10 +46,10 @@ return static function (RectorConfig $rectorConfig): void {
         // - ->identifiedAs(null) → ->resetIdentifier() [LoggerInterface]
         // - Ulid::of($string) → Ulid::fromString($string)
         // - DateTime::of($dt, $tz) → DateTime::ofWithTimezone($dt, $tz)
-        // - ->slice($start, $length) → ->sliceWithLength($start, $length) [StringType]
-        // - ->splice($repl, $start, $length) → ->spliceWithLength($repl, $start, $length) [StringType]
-        // - ->split($delim, $limit, $flags) → ->splitWithLimit($delim, $limit, $flags) [StringType]
-        // - ->join($strings, $lastGlue) → ->joinWithLastGlue($strings, $lastGlue) [StringType] (2-arg form only)
+        // - ->slice($start, $length) → ->sliceWithLength($start, $length) [String_]
+        // - ->splice($repl, $start, $length) → ->spliceWithLength($repl, $start, $length) [String_]
+        // - ->split($delim, $limit, $flags) → ->splitWithLimit($delim, $limit, $flags) [String_]
+        // - ->join($strings, $lastGlue) → ->joinWithLastGlue($strings, $lastGlue) [String_] (2-arg form only)
         // - EventCollection::contains($key, $op, $value) → contains(Event $event) [EventCollection]
         // - EmailContactCollection::contains($key, $op, $value) → contains(EmailContact $emailContact)
     ]);

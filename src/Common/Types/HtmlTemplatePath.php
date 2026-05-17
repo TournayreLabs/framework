@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Common\Types;
 
 use TournayreLabs\Primitives\Bool_;
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Traits\StringTypeTrait;
 
 /**
@@ -17,7 +17,7 @@ final class HtmlTemplatePath
 
     public static function empty(): self
     {
-        return new self(StringType::of(''));
+        return new self(String_::fromString(''));
     }
 
     public function isEmpty(): Bool_

@@ -8,7 +8,7 @@ use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\DateTime\DateTimeInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Bool_;
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Ulid;
 
 trait UlidTrait
@@ -35,7 +35,7 @@ trait UlidTrait
         return $this->ulid->equalsTo($ulid->ulid);
     }
 
-    public function toRfc4122(): StringType
+    public function toRfc4122(): String_
     {
         return $this->ulid->toRfc4122();
     }

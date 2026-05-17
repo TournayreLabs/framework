@@ -16,7 +16,7 @@ use TournayreLabs\Contracts\Common\Assert\AssertStringInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Primitive;
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 
 /**
  * @template T
@@ -108,7 +108,7 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
      */
     public static function __callStatic(mixed $name, array $arguments): void
     {
-        $method = StringType::of($name)
+        $method = String_::fromString($name)
             ->prepend(\Webmozart\Assert\Assert::class, '::')
             ->toString()
         ;

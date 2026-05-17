@@ -52,11 +52,11 @@ final readonly class Ulid
     /**
      * @api
      */
-    public function toRfc4122(): StringType
+    public function toRfc4122(): String_
     {
         $rfc4122 = $this->ulid->toRfc4122();
 
-        return StringType::of($rfc4122);
+        return String_::fromString($rfc4122);
     }
 
     /**

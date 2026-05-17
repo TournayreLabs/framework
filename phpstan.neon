@@ -245,4 +245,4 @@ parameters:
         # Constantes publiques conservées
         -
             message: '#has a public constant#'
-            path: src/Primitives/StringType.php
+            path: src/Primitives/String_.php

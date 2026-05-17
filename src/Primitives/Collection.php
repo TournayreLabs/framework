@@ -293,7 +293,7 @@ use TournayreLabs\Primitives\Traits\Collection\StrContains;
 use TournayreLabs\Primitives\Traits\Collection\StrContainsAll;
 use TournayreLabs\Primitives\Traits\Collection\StrEnds;
 use TournayreLabs\Primitives\Traits\Collection\StrEndsAll;
-use TournayreLabs\Primitives\Traits\Collection\String_;
+use TournayreLabs\Primitives\Traits\Collection\String_ as StringTrait;
 use TournayreLabs\Primitives\Traits\Collection\StrLower;
 use TournayreLabs\Primitives\Traits\Collection\StrReplace;
 use TournayreLabs\Primitives\Traits\Collection\StrStarts;
@@ -454,7 +454,7 @@ final readonly class Collection implements AddInterface, AllInterface, AtInterfa
     use StrContainsAll;
     use StrEnds;
     use StrEndsAll;
-    use String_;
+    use StringTrait;
     use StrLower;
     use StrReplace;
     use StrStarts;

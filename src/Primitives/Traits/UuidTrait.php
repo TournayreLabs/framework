@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits;
 
 use TournayreLabs\Primitives\Bool_;
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Uuid;
 
 trait UuidTrait
@@ -40,7 +40,7 @@ trait UuidTrait
         return $this->uuid->equalsTo($uuid->uuid);
     }
 
-    public function toRfc4122(): StringType
+    public function toRfc4122(): String_
     {
         return $this->uuid->toRfc4122();
     }

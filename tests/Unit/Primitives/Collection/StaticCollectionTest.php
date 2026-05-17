@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Primitives\Collection;
 
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 use TournayreLabs\Tests\Fixtures\Collection\CodeCollection;
 use PHPUnit\Framework\TestCase;
 
@@ -13,7 +13,7 @@ final class StaticCollectionTest extends TestCase
     public function testCreateMapWithoutParameters(): void
     {
         $staticCollection = CodeCollection::asMap()
-            ->map(fn (StringType $value) => $value->toString())
+            ->map(fn (String_ $value) => $value->toString())
             ->toArray()
         ;
         self::assertSame(['key1' => 'value1', 'key2' => 'value2'], $staticCollection);
@@ -22,7 +22,7 @@ final class StaticCollectionTest extends TestCase
     public function testCreateListWithoutParameters(): void
     {
         $staticCollection = CodeCollection::asList()
-            ->map(fn (StringType $value) => $value->toString())
+            ->map(fn (String_ $value) => $value->toString())
             ->toArray()
         ;
         self::assertSame(['value1', 'value2'], $staticCollection);

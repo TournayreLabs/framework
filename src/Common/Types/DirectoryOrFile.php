@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Common\Types;
 
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Traits\StringTypeTrait;
 use Webmozart\Assert\Assert;
 
@@ -16,7 +16,7 @@ final class DirectoryOrFile
     {
         Assert::startsWith($value, '/', 'The path must start with a slash');
 
-        return new self(StringType::of($value));
+        return new self(String_::fromString($value));
     }
 
     /**
@@ -24,7 +24,7 @@ final class DirectoryOrFile
      */
     public function suffixWith(string $suffix): self
     {
-        $suffixString = StringType::of($suffix)
+        $suffixString = String_::fromString($suffix)
             ->trimEnd('/')
             ->ensureStart('/')
             ->toString()
@@ -44,7 +44,7 @@ final class DirectoryOrFile
      */
     public function prefixWith(string $prefix): self
     {
-        $prefixString = StringType::of($prefix)
+        $prefixString = String_::fromString($prefix)
             ->trimEnd('/')
             ->ensureStart('/')
             ->toString()

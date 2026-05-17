@@ -43978,7 +43978,7 @@
             }
         ]
     },
-    "TournayreLabs\\Primitives\\StringType": {
+    "TournayreLabs\\Primitives\\String_": {
         "kind": "class",
         "abstract": false,
         "final": true,
@@ -44343,6 +44343,27 @@
                 ]
             },
             {
+                "name": "fromString",
+                "visibility": "public",
+                "static": true,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
                 "name": "indexOf",
                 "visibility": "public",
                 "static": false,
@@ -44563,47 +44584,44 @@
                 ]
             },
             {
-                "name": "normalize",
+                "name": "normalizeNfc",
                 "visibility": "public",
                 "static": false,
                 "abstract": false,
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "form",
-                        "type": "int",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "constant": "self::NFC"
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
-                "name": "of",
+                "name": "normalizeNfd",
                 "visibility": "public",
-                "static": true,
+                "static": false,
                 "abstract": false,
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "value",
-                        "type": "string",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
+            },
+            {
+                "name": "normalizeNfkc",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "normalizeNfkd",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "padBoth",
@@ -45102,7 +45120,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f ﻿"
+                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45124,7 +45142,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f ﻿"
+                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45167,7 +45185,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f ﻿"
+                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -48189,7 +48207,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\StringType",
+                "returnType": "TournayreLabs\\Primitives\\String_",
                 "returnsReference": false,
                 "parameters": []
             },

@@ -12,7 +12,7 @@ use TournayreLabs\Common\Types\File\Path;
 use TournayreLabs\Common\VO\Memory;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggableInterface;
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 use Symfony\Component\Finder\SplFileInfo as SymfonySplFileInfo;
 
 final readonly class SplFileInfo implements LoggableInterface
@@ -68,11 +68,11 @@ final readonly class SplFileInfo implements LoggableInterface
     /**
      * @api
      */
-    public function filenameWithoutExtension(): StringType
+    public function filenameWithoutExtension(): String_
     {
         $filename = $this->splFileInfo->getFilenameWithoutExtension();
 
-        return StringType::of($filename);
+        return String_::fromString($filename);
     }
 
     /**

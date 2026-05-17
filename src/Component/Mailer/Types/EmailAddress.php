@@ -8,7 +8,7 @@ use TournayreLabs\Common\Assert\Assert;
 use TournayreLabs\Common\Types\Domain;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Bool_;
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Traits\StringTypeTrait;
 
 /**
@@ -27,7 +27,7 @@ final class EmailAddress
     {
         Assert::email($value, 'Expected a value to be a valid e-mail address. Got: %s');
 
-        return new self(StringType::of($value));
+        return new self(String_::fromString($value));
     }
 
     /**

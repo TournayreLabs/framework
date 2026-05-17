@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits;
 
 use TournayreLabs\Primitives\Bool_;
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 
 trait StringTypeTrait
 {
     private function __construct(
-        protected StringType $value,
+        protected String_ $value,
     ) {
     }
 
     public static function of(string $value): self
     {
-        return new self(StringType::of($value));
+        return new self(String_::fromString($value));
     }
 
     public function toString(): string

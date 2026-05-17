@@ -21,7 +21,7 @@ final readonly class Numeric
      */
     public static function fromFloat(float $float): self
     {
-        $precision = StringType::of((string) $float)
+        $precision = String_::fromString((string) $float)
             ->afterLast('.')
             ->length()
             ->intValue()

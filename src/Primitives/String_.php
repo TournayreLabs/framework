@@ -10,20 +10,8 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
 use function Symfony\Component\String\u;
 
-final readonly class StringType implements \Stringable
+final readonly class String_ implements \Stringable
 {
-    /** @api */
-    public const NFC = \Normalizer::NFC;
-
-    /** @api */
-    public const NFD = \Normalizer::NFD;
-
-    /** @api */
-    public const NFKC = \Normalizer::NFKC;
-
-    /** @api */
-    public const NFKD = \Normalizer::NFKD;
-
     private function __construct(
         private string $value,
     ) {
@@ -39,10 +27,10 @@ final readonly class StringType implements \Stringable
         Assert::allString([...$arg], 'The arguments must be strings');
         $string = sprintf($string, ...$arg);
 
-        return self::of($string);
+        return self::fromString($string);
     }
 
-    public static function of(string $value): self
+    public static function fromString(string $value): self
     {
         return new self($value);
     }
@@ -54,7 +42,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->append(...$suffix);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -70,7 +58,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->ascii($rules);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -80,7 +68,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->camel();
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -92,7 +80,7 @@ final readonly class StringType implements \Stringable
     {
         $chunks = u($this->value)->chunk($length);
 
-        return array_map(static fn ($chunk) => StringType::of($chunk->toString()), $chunks);
+        return array_map(static fn ($chunk) => String_::fromString($chunk->toString()), $chunks);
     }
 
     /**
@@ -156,7 +144,7 @@ final readonly class StringType implements \Stringable
             };
         }
 
-        return self::of($filterVar);
+        return self::fromString($filterVar);
     }
 
     /**
@@ -174,7 +162,7 @@ final readonly class StringType implements \Stringable
             };
         }
 
-        return self::of($filterVar);
+        return self::fromString($filterVar);
     }
 
     /**
@@ -184,7 +172,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->folded($compat);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -228,7 +216,7 @@ final readonly class StringType implements \Stringable
      */
     public function join(array $strings): self
     {
-        return self::of(u($this->value)->join($strings)->toString());
+        return self::fromString(u($this->value)->join($strings)->toString());
     }
 
     /**
@@ -236,7 +224,7 @@ final readonly class StringType implements \Stringable
      */
     public function joinWithLastGlue(array $strings, string $lastGlue): self
     {
-        return self::of(u($this->value)->join($strings, $lastGlue)->toString());
+        return self::fromString(u($this->value)->join($strings, $lastGlue)->toString());
     }
 
     /**
@@ -246,7 +234,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->snake()->replace('_', '-');
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -266,7 +254,7 @@ final readonly class StringType implements \Stringable
      */
     public function lengthIsBetween(int $start, int $end): Bool_
     {
-        return self::of($this->value)
+        return self::fromString($this->value)
             ->length()
             ->betweenOrEqual($start, $end)
         ;
@@ -279,7 +267,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->lower();
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -294,11 +282,40 @@ final readonly class StringType implements \Stringable
     /**
      * @api
      */
-    public function normalize(int $form = self::NFC): self
+    public function normalizeNfc(): self
+    {
+        return $this->normalize(\Normalizer::NFC);
+    }
+
+    /**
+     * @api
+     */
+    public function normalizeNfd(): self
+    {
+        return $this->normalize(\Normalizer::NFD);
+    }
+
+    /**
+     * @api
+     */
+    public function normalizeNfkc(): self
+    {
+        return $this->normalize(\Normalizer::NFKC);
+    }
+
+    /**
+     * @api
+     */
+    public function normalizeNfkd(): self
+    {
+        return $this->normalize(\Normalizer::NFKD);
+    }
+
+    private function normalize(int $form): self
     {
         $u = u($this->value)->normalize($form);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -308,7 +325,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->padBoth($length, $padStr);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -318,7 +335,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->padEnd($length, $padStr);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -328,7 +345,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->padStart($length, $padStr);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -338,7 +355,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->prepend(...$prefix);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -348,7 +365,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->repeat($multiplier);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -358,7 +375,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->replace($from, $to);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -370,7 +387,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->replaceMatches($fromRegexp, $to);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -380,7 +397,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->reverse();
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -388,7 +405,7 @@ final readonly class StringType implements \Stringable
      */
     public function screamingKebab(): self
     {
-        return self::of($this->value)->kebab()->upper();
+        return self::fromString($this->value)->kebab()->upper();
     }
 
     /**
@@ -396,7 +413,7 @@ final readonly class StringType implements \Stringable
      */
     public function screamingSnake(): self
     {
-        return self::of($this->value)->snake()->upper();
+        return self::fromString($this->value)->snake()->upper();
     }
 
     /**
@@ -406,7 +423,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->slice($start);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -416,7 +433,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->slice($start, $length);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -426,7 +443,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->snake();
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -436,7 +453,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->splice($replacement, $start);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -446,7 +463,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->splice($replacement, $start, $length);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -458,7 +475,7 @@ final readonly class StringType implements \Stringable
     {
         $splits = u($this->value)->split($delimiter);
 
-        return array_map(static fn ($chunk) => StringType::of($chunk->toString()), $splits);
+        return array_map(static fn ($chunk) => String_::fromString($chunk->toString()), $splits);
     }
 
     /**
@@ -470,7 +487,7 @@ final readonly class StringType implements \Stringable
     {
         $splits = u($this->value)->split($delimiter, $limit, $flags);
 
-        return array_map(static fn ($chunk) => StringType::of($chunk->toString()), $splits);
+        return array_map(static fn ($chunk) => String_::fromString($chunk->toString()), $splits);
     }
 
     /**
@@ -492,7 +509,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->title($allWords);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -502,7 +519,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->trim($chars);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -512,7 +529,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->trimEnd($chars);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -524,7 +541,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->trimPrefix($prefix);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -534,7 +551,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->trimStart($chars);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -546,7 +563,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->trimSuffix($suffix);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -556,7 +573,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->upper();
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -589,7 +606,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->ensureEnd($string);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -599,7 +616,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->ensureStart($string);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -609,7 +626,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->beforeLast($string);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -619,7 +636,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->afterLast($string);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**
@@ -629,7 +646,7 @@ final readonly class StringType implements \Stringable
     {
         $u = u($this->value)->truncate($int);
 
-        return self::of($u->toString());
+        return self::fromString($u->toString());
     }
 
     /**

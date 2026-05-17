@@ -30,10 +30,10 @@ parameters:
                 - 'ucfirst()'
                 - 'ucwords()'
                 - 'preg_match()'
-            message: 'use TournayreLabs\Primitives\StringType instead, because it is more secure and toString() performs assertion'
+            message: 'use TournayreLabs\Primitives\String_ instead, because it is more secure and toString() performs assertion'
             allowIn:
                 - '*/PHPStan/*'
-                - src/Primitives/StringType.php
+                - src/Primitives/String_.php
                 - tests/*
         -
             function:
@@ -112,7 +112,7 @@ parameters:
             message: 'use TournayreLabs\Primitives\Collection instead'
             allowIn:
                 - '*/PHPStan/*'
-                - src/Primitives/StringType.php
+                - src/Primitives/String_.php
                 - tests/*
         -
             function:

@@ -10,7 +10,7 @@ use TournayreLabs\Contracts\Collection\MapInterface;
 use TournayreLabs\Contracts\Collection\MergeInterface;
 use TournayreLabs\Contracts\Collection\SetInterface;
 use TournayreLabs\Contracts\Collection\ToArrayInterface;
-use TournayreLabs\Primitives\StringType;
+use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Traits\Collection;
 use TournayreLabs\Primitives\Traits\Collection\Join;
 use TournayreLabs\Primitives\Traits\Collection\Map;
@@ -33,8 +33,8 @@ final class CodeCollection implements AsMapInterface, AsListInterface, MergeInte
     public static function asMap(array $collection = []): self
     {
         $collection = [
-            'key1' => StringType::of('value1'),
-            'key2' => StringType::of('value2'),
+            'key1' => String_::fromString('value1'),
+            'key2' => String_::fromString('value2'),
         ];
 
         return self::of($collection);
@@ -46,8 +46,8 @@ final class CodeCollection implements AsMapInterface, AsListInterface, MergeInte
     public static function asList(array $collection = []): self
     {
         $collection = [
-            StringType::of('value1'),
-            StringType::of('value2'),
+            String_::fromString('value1'),
+            String_::fromString('value2'),
         ];
 
         return self::of($collection);
