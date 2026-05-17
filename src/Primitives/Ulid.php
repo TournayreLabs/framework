@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Primitives;
 
+use Symfony\Component\Uid\Ulid as SymfonyUlid;
 use TournayreLabs\Contracts\DateTime\DateTimeInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use Symfony\Component\Uid\Ulid as SymfonyUlid;
 
 final readonly class Ulid
 {

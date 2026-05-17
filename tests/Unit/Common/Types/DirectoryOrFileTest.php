@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Common\Types;
 
-use TournayreLabs\Common\Types\DirectoryOrFile;
 use PHPUnit\Framework\TestCase;
+use TournayreLabs\Common\Types\DirectoryOrFile;
 
 final class DirectoryOrFileTest extends TestCase
 {

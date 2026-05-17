@@ -6,6 +6,11 @@ namespace TournayreLabs\Common\Traits;
 
 use TournayreLabs\Primitives\Bool_;
 
+/**
+ * Provides identity comparison helpers for value objects.
+ *
+ * Methods return Bool_ wrappers for consistent primitive usage.
+ */
 trait IsTrait
 {
     public function is(self $object): Bool_

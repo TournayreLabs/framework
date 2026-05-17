@@ -16,9 +16,9 @@ interface GetInterface
      *
      * @param int|string $key
      *
-     * @return mixed Value from map
-     *
      * @throws ThrowableInterface
+     *
+     * @return mixed Value from map
      *
      * @api
      */
@@ -28,7 +28,6 @@ interface GetInterface
      * Returns an element by key or returns the default value if key is absent.
      *
      * @param int|string $key
-     * @param mixed      $default
      *
      * @return mixed Value from map or default value
      *

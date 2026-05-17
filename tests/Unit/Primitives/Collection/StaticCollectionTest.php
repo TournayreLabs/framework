@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Primitives\Collection;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Primitives\String_;
 use TournayreLabs\Tests\Fixtures\Collection\CodeCollection;
-use PHPUnit\Framework\TestCase;
 
 final class StaticCollectionTest extends TestCase
 {

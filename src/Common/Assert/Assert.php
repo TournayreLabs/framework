@@ -115,7 +115,6 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
                 throw InvalidArgumentException::new(sprintf('Unknown assert method "%s::%s".', \Webmozart\Assert\Assert::class, $methodName));
             }
 
-            // @phpstan-ignore-next-line
             \Webmozart\Assert\Assert::{$methodName}(...$arguments);
         } catch (\Throwable $throwable) {
             throw InvalidArgumentException::fromThrowable($throwable);

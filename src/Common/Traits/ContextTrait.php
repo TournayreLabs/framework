@@ -6,6 +6,11 @@ namespace TournayreLabs\Common\Traits;
 
 use TournayreLabs\Contracts\Context\ContextInterface;
 
+/**
+ * Adds contextual information support to objects that carry a ContextInterface.
+ *
+ * withContext() returns a cloned instance with updated context.
+ */
 trait ContextTrait
 {
     private ContextInterface $context;

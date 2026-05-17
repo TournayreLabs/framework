@@ -8,6 +8,9 @@ use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Uuid;
 
+/**
+ * Adds UUID behaviors to wrapper objects built around the Uuid primitive.
+ */
 trait UuidTrait
 {
     protected Uuid $uuid;

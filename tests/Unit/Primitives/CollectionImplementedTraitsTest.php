@@ -99,10 +99,10 @@ final class CollectionImplementedTraitsTest extends TestCase
     }
 }
 
-final class CollectionCallableFixture
+final readonly class CollectionCallableFixture
 {
     public function __construct(
-        private readonly string $value,
+        private string $value,
     ) {
     }
 

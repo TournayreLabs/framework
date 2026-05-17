@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Symfony\CommandBus;
 
-use TournayreLabs\Common\Exception\RuntimeException;
-use TournayreLabs\Contracts\CommandBus\QueryBusInterface;
-use TournayreLabs\Contracts\CommandBus\QueryInterface;
 use Symfony\Component\Messenger\Exception\ExceptionInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\HandledStamp;
+use TournayreLabs\Common\Exception\RuntimeException;
+use TournayreLabs\Contracts\CommandBus\QueryBusInterface;
+use TournayreLabs\Contracts\CommandBus\QueryInterface;
 
 /**
  * Adapter that bridges Symfony's MessageBus to QueryBusInterface.

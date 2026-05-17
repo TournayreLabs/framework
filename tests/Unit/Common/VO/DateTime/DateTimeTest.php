@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Common\VO\DateTime;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\DateTime;
-use PHPUnit\Framework\TestCase;
 
 final class DateTimeTest extends TestCase
 {

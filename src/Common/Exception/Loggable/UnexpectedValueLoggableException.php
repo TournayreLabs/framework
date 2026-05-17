@@ -7,6 +7,9 @@ namespace TournayreLabs\Common\Exception\Loggable;
 use TournayreLabs\Contracts\Exception\LoggableThrowableFactoryInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
+/**
+ * Loggable unexpected value exception with logger-aware factory helpers.
+ */
 final class UnexpectedValueLoggableException extends \UnexpectedValueException implements ThrowableInterface, LoggableThrowableFactoryInterface
 {
     use LoggableThrowableTrait;

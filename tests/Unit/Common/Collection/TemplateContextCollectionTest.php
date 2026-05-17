@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Common\Collection;
 
-use TournayreLabs\Common\Collection\TemplateContextCollection;
 use PHPUnit\Framework\TestCase;
+use TournayreLabs\Common\Collection\TemplateContextCollection;
 
 final class TemplateContextCollectionTest extends TestCase
 {

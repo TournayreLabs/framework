@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Component\Mailer\Configuration;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Component\Mailer\Collection\EmailContactCollection;
 use TournayreLabs\Component\Mailer\Configuration\MailerConfiguration;
 use TournayreLabs\Component\Mailer\Types\AttachmentMaxSize;
 use TournayreLabs\Component\Mailer\Types\EmailAddress;
 use TournayreLabs\Component\Mailer\Types\EmailName;
 use TournayreLabs\Component\Mailer\VO\EmailContact;
-use PHPUnit\Framework\TestCase;
 
 final class MailerConfigurationTest extends TestCase
 {

@@ -4,15 +4,20 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Component\Mailer\Service;
 
+use Symfony\Component\Mailer\Envelope;
 use TournayreLabs\Component\Mailer\Configuration\MailerConfiguration;
+use TournayreLabs\Component\Mailer\VO\Email;
+use TournayreLabs\Component\Mailer\VO\TemplatedEmail;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggableInterface;
 use TournayreLabs\Contracts\Log\LoggerInterface;
 use TournayreLabs\Contracts\Mailer\SendMailInterface;
-use Symfony\Component\Mailer\Envelope;
-use TournayreLabs\Component\Mailer\VO\Email;
-use TournayreLabs\Component\Mailer\VO\TemplatedEmail;
 
+/**
+ * Application service that sends e-mails and logs send operations.
+ *
+ * It delegates transport concerns to SendMailInterface and exposes current configuration.
+ */
 final readonly class MailService
 {
     public function __construct(
@@ -44,7 +49,6 @@ final readonly class MailService
         $this->sendMail->sendWithEnvelope($message, $envelope);
     }
 
-    // @phpstan-ignore-next-line
     private function logSendingEmail($message): void
     {
         $logContext = $message instanceof LoggableInterface ? $message->toLog() : [];

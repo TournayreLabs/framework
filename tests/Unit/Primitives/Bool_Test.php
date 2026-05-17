@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Primitives;
 
-use TournayreLabs\Primitives\Bool_;
 use PHPUnit\Framework\TestCase;
+use TournayreLabs\Primitives\Bool_;
 
 final class Bool_Test extends TestCase
 {

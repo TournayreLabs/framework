@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace TournayreLabs\TryCatch;
 
+use Psr\Log\LoggerInterface;
 use TournayreLabs\Common\Exception\InvalidArgumentException;
 use TournayreLabs\Contracts\Exception\ThrowableFactoryInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\TryCatch\ExecutableTryCatchInterface;
 use TournayreLabs\Contracts\TryCatch\ThrowableHandlerCollectionInterface;
-use Psr\Log\LoggerInterface;
 
 /**
  * Class TryCatch.
@@ -61,9 +61,9 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
      *
      * @param \Closure(): TReturn $tryBlock The try block
      *
-     * @return self<TReturn>
-     *
      * @throws ThrowableInterface
+     *
+     * @return self<TReturn>
      */
     public static function with(
         \Closure $tryBlock,
@@ -82,20 +82,18 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
      * @param string   $throwableClass The throwable class to catch
      * @param \Closure $handler        The handler function
      *
-     * @return self<T>
-     *
      * @throws ThrowableInterface
+     *
+     * @return self<T>
      */
     public function catch(string $throwableClass, \Closure $handler): self
     {
         $newHandlers = clone $this->handlers;
         $newHandlers->add(ThrowableHandler::new($throwableClass, $handler));
-
-        // We need to use the same try block to preserve the template type T
         /** @var \Closure():T $tryBlock */
         $tryBlock = $this->tryBlock;
 
-        /* @var self<T> */
+        /** @var self<T> */
         return self::createInstance(
             tryBlock: $tryBlock,
             handlers: $newHandlers,
@@ -115,11 +113,10 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
      */
     public function finally(\Closure $finallyBlock): self
     {
-        // We need to use the same try block to preserve the template type T
         /** @var \Closure():T $tryBlock */
         $tryBlock = $this->tryBlock;
 
-        /* @var self<T> */
+        /** @var self<T> */
         return self::createInstance(
             tryBlock: $tryBlock,
             handlers: $this->handlers,
@@ -150,15 +147,14 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
      * @param string $message        The message for the new exception (defaults to the original exception's message if empty)
      * @param int    $code           The code for the new exception (defaults to the original exception's code if 0)
      *
-     * @return self<T>
-     *
      * @throws ThrowableInterface If the throwable class doesn't implement ThrowableFactoryInterface
+     *
+     * @return self<T>
      *
      * @api
      */
     public function reThrow(string $throwableClass, string $message = '', int $code = 0): self
     {
-        // We need to use the same try block to preserve the template type T
         /** @var \Closure():T $tryBlock */
         $tryBlock = $this->tryBlock;
 
@@ -177,7 +173,7 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
             throw $throwableClass::new(message: '' !== $message ? $message : $throwable->getMessage(), code: $throwableCode)->withPrevious($throwable);
         }));
 
-        /* @var self<T> */
+        /** @var self<T> */
         return self::createInstance(
             tryBlock: $tryBlock,
             handlers: $newHandlers,
@@ -190,9 +186,9 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
      * Executes the try-catch block and returns the result.
      * Alias for execute().
      *
-     * @return mixed The result of the try block execution
-     *
      * @throws \Throwable If an exception is thrown and not handled
+     *
+     * @return mixed The result of the try block execution
      */
     public function execute(): mixed
     {
@@ -208,7 +204,6 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
             $handler = $this->handlers->findHandlerFor($throwable);
 
             if ($handler instanceof NullThrowableHandler) {
-                // If no handler is found, rethrow the exception
                 throw $throwable;
             }
 

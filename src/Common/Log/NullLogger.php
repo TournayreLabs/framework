@@ -6,15 +6,20 @@ namespace TournayreLabs\Common\Log;
 
 use TournayreLabs\Contracts\Log\LoggerInterface;
 
+/**
+ * No-op logger implementation used when logging must be disabled.
+ *
+ * All methods accept the standard logger inputs and intentionally perform no side effects.
+ */
 final class NullLogger extends AbstractLogger implements LoggerInterface
 {
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function exception(\Throwable $exception, array $context = []): void
     {
-        // Do nothing
     }
 
     /**
@@ -24,7 +29,6 @@ final class NullLogger extends AbstractLogger implements LoggerInterface
      */
     public function error($message, array $context = []): void
     {
-        // Do nothing
     }
 
     /**
@@ -34,7 +38,6 @@ final class NullLogger extends AbstractLogger implements LoggerInterface
      */
     public function emergency($message, array $context = []): void
     {
-        // Do nothing
     }
 
     /**
@@ -44,7 +47,6 @@ final class NullLogger extends AbstractLogger implements LoggerInterface
      */
     public function alert($message, array $context = []): void
     {
-        // Do nothing
     }
 
     /**
@@ -54,7 +56,6 @@ final class NullLogger extends AbstractLogger implements LoggerInterface
      */
     public function critical($message, array $context = []): void
     {
-        // Do nothing
     }
 
     /**
@@ -64,7 +65,6 @@ final class NullLogger extends AbstractLogger implements LoggerInterface
      */
     public function warning($message, array $context = []): void
     {
-        // Do nothing
     }
 
     /**
@@ -74,7 +74,6 @@ final class NullLogger extends AbstractLogger implements LoggerInterface
      */
     public function notice($message, array $context = []): void
     {
-        // Do nothing
     }
 
     /**
@@ -84,7 +83,6 @@ final class NullLogger extends AbstractLogger implements LoggerInterface
      */
     public function info($message, array $context = []): void
     {
-        // Do nothing
     }
 
     /**
@@ -94,7 +92,6 @@ final class NullLogger extends AbstractLogger implements LoggerInterface
      */
     public function debug($message, array $context = []): void
     {
-        // Do nothing
     }
 
     /**
@@ -104,42 +101,41 @@ final class NullLogger extends AbstractLogger implements LoggerInterface
      */
     public function log($level, $message, array $context = []): void
     {
-        // Do nothing
     }
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function start(array $context = []): void
     {
-        // Do nothing
     }
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function end(array $context = []): void
     {
-        // Do nothing
     }
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function success(array $context = []): void
     {
-        // Do nothing
     }
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function failFast(array $context = []): void
     {
-        // Do nothing
     }
 }

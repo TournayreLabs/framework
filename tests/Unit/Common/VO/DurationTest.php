@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Common\VO;
 
-use TournayreLabs\Common\VO\Duration;
 use PHPUnit\Framework\TestCase;
+use TournayreLabs\Common\VO\Duration;
 
 final class DurationTest extends TestCase
 {
@@ -21,10 +21,8 @@ final class DurationTest extends TestCase
             + 456; // 456 milliseconds
 
         $test2 = 2 * 24 * 60 * 60 * 1000 // 2 days
-            + 1 * 60 * 60 * 1000 // 1 hour
-            + 0 * 60 * 1000 // 0 minute
-            + 1 * 1000 // 1 second
-            + 0; // 0 millisecond
+            + 60 * 60 * 1000 // 0 minute
+            + 1000; // 0 millisecond
 
         return [
             '1 day 4 hours 31 minutes 12 seconds 456 milliseconds' => [

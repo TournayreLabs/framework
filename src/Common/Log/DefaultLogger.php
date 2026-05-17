@@ -6,12 +6,18 @@ namespace TournayreLabs\Common\Log;
 
 use TournayreLabs\Contracts\Log\LoggerInterface;
 
+/**
+ * Logger implementation that forwards messages to a PSR logger with a prefix.
+ *
+ * The prefix uses the current identifier to keep log entries contextual.
+ */
 final class DefaultLogger extends AbstractLogger implements LoggerInterface
 {
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function exception(\Throwable $exception, array $context = []): void
     {
         $context['exception'] = $exception;
@@ -112,8 +118,9 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function start(array $context = []): void
     {
         $this->logger->info($this->prefixMessage($this->loggerIdentifier(), 'start'), $context);
@@ -121,8 +128,9 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function end(array $context = []): void
     {
         $this->logger->info($this->prefixMessage($this->loggerIdentifier(), 'end'), $context);
@@ -130,8 +138,9 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function success(array $context = []): void
     {
         $this->logger->info($this->prefixMessage($this->loggerIdentifier(), 'success'), $context);
@@ -139,8 +148,9 @@ final class DefaultLogger extends AbstractLogger implements LoggerInterface
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function failFast(array $context = []): void
     {
         $this->logger->info($this->prefixMessage($this->loggerIdentifier(), 'fail fast'), $context);

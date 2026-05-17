@@ -9,6 +9,9 @@ use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Locale;
 use TournayreLabs\Primitives\Numeric;
 
+/**
+ * Exposes Numeric primitive operations to strongly typed numeric wrappers.
+ */
 trait NumericTrait
 {
     private function __construct(

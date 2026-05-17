@@ -55,18 +55,18 @@ interface LoggerInterface extends \Psr\Log\LoggerInterface
      */
     public function log($level, $message, array $context = []): void;
 
-    // @phpstan-ignore-next-line
+    /** @param array<string, mixed> $context */
     public function exception(\Throwable $exception, array $context = []): void;
 
-    // @phpstan-ignore-next-line
+    /** @param array<string, mixed> $context */
     public function start(array $context = []): void;
 
-    // @phpstan-ignore-next-line
+    /** @param array<string, mixed> $context */
     public function end(array $context = []): void;
 
-    // @phpstan-ignore-next-line
+    /** @param array<string, mixed> $context */
     public function success(array $context = []): void;
 
-    // @phpstan-ignore-next-line
+    /** @param array<string, mixed> $context */
     public function failFast(array $context = []): void;
 }

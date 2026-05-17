@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Component\Mailer\VO;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Common\Collection\TemplateContextCollection;
 use TournayreLabs\Common\Types\HtmlTemplatePath;
 use TournayreLabs\Common\Types\TextTemplatePath;
@@ -13,7 +14,6 @@ use TournayreLabs\Component\Mailer\Types\EmailSubject;
 use TournayreLabs\Component\Mailer\VO\EmailContact;
 use TournayreLabs\Component\Mailer\VO\TemplatedEmail;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use PHPUnit\Framework\TestCase;
 
 final class TemplatedEmailTest extends TestCase
 {

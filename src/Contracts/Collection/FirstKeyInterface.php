@@ -14,9 +14,9 @@ interface FirstKeyInterface
     /**
      * Returns the first key.
      *
-     * @return mixed First key of map or NULL if empty
-     *
      * @throws ThrowableInterface
+     *
+     * @return mixed First key of map or NULL if empty
      *
      * @api
      */

@@ -6,11 +6,16 @@ namespace TournayreLabs\Common\Model;
 
 use TournayreLabs\Null\NullTrait;
 
+/**
+ * Null-object user implementation used when no authenticated user is available.
+ *
+ * All credential and identity accessors return empty values.
+ */
 final class DefaultUser extends AbstractUser
 {
     use NullTrait;
 
-    // @phpstan-ignore-next-line
+    /** @return array<string> */
     public function getRoles(): array
     {
         return [];

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Primitives\Collection;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection\DateTimeCollection;
 use TournayreLabs\Primitives\DateTime;
-use PHPUnit\Framework\TestCase;
 
 final class DateTimeCollectionTest extends TestCase
 {

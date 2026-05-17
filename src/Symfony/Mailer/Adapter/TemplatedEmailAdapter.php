@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Symfony\Mailer\Adapter;
 
+use Symfony\Bridge\Twig\Mime\TemplatedEmail as SymfonyTemplatedEmail;
 use TournayreLabs\Component\Mailer\VO\Email;
 use TournayreLabs\Component\Mailer\VO\TemplatedEmail;
-use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail as SymfonyTemplatedEmail;
+use TournayreLabs\Primitives\Collection;
 
+/**
+ * Converts framework templated emails to Symfony Twig templated email objects.
+ */
 final class TemplatedEmailAdapter extends EmailAdapter
 {
     /**
@@ -30,11 +33,13 @@ final class TemplatedEmailAdapter extends EmailAdapter
         $templatedEmail->replyTo(...$symfonyEmail->getReplyTo());
 
         Collection::of($email->attachments()->toArray())
-            ->each(static fn (mixed $attachment) => $templatedEmail->attachFromPath($attachment->getPathname()->toString()));
+            ->each(static fn (mixed $attachment) => $templatedEmail->attachFromPath($attachment->getPathname()->toString()))
+        ;
 
         $headers = $templatedEmail->getHeaders();
         Collection::of($email->tags()->toArray())
-            ->each(static fn (mixed $tagValue, mixed $tagName) => $headers->addTextHeader((string) $tagName, (string) $tagValue));
+            ->each(static fn (mixed $tagValue, mixed $tagName) => $headers->addTextHeader((string) $tagName, (string) $tagValue))
+        ;
 
         if ($email instanceof TemplatedEmail) {
             $templatedEmail->htmlTemplate($email->htmlTemplatePath()->toString());

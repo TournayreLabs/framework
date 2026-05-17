@@ -11,6 +11,11 @@ use TournayreLabs\Null\NullTrait;
 use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Traits\StringTypeTrait;
 
+/**
+ * Holds an e-mail subject as an immutable validated value.
+ *
+ * Use of() for non-empty subjects and asNull() for the null-object variant.
+ */
 final class EmailSubject implements NullableInterface
 {
     use NullTrait;

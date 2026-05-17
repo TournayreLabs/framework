@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Primitives;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\String_;
-use PHPUnit\Framework\TestCase;
 
 final class String_Test extends TestCase
 {

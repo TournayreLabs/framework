@@ -17,9 +17,9 @@ interface FindInterface
      * @param \Closure $callback Function with (value, key) parameters and returns TRUE/FALSE
      * @param bool     $reverse  TRUE to test elements from back to front, FALSE for front to back (default)
      *
-     * @return mixed First matching value or an exception
-     *
      * @throws ThrowableInterface
+     *
+     * @return mixed First matching value or an exception
      *
      * @api
      */
@@ -32,9 +32,9 @@ interface FindInterface
      * @param mixed    $default  Default value if the map contains no matching elements
      * @param bool     $reverse  TRUE to test elements from back to front, FALSE for front to back (default)
      *
-     * @return mixed First matching value or passed default value
-     *
      * @throws ThrowableInterface
+     *
+     * @return mixed First matching value or passed default value
      *
      * @api
      */

@@ -13,6 +13,11 @@ use TournayreLabs\Contracts\Security\UserInterface;
 use TournayreLabs\Null\NullTrait;
 use TournayreLabs\Primitives\DateTime;
 
+/**
+ * Carries request context data as an immutable value object.
+ *
+ * Use create() for normal instances and asNull() for the null-object variant.
+ */
 final class Context implements ContextInterface, LoggableInterface
 {
     use NullTrait;

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Symfony\Routing;
 
+use Symfony\Component\Routing\RouterInterface;
 use TournayreLabs\Contracts\Routing\ReferenceType;
 use TournayreLabs\Contracts\Routing\RoutingInterface;
-use Symfony\Component\Routing\RouterInterface;
 
 final readonly class RoutingService implements RoutingInterface
 {

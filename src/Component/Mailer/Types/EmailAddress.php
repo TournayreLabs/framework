@@ -100,7 +100,6 @@ final class EmailAddress
      */
     public function toCanonical(): self
     {
-        // remove the string after the '+' character including it and before the '@' character, using a regular expression
         $stringEmail = $this->value
             ->replaceMatches('/\+.*(?=@)/', '')
         ;

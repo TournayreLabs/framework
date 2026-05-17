@@ -16,9 +16,9 @@ interface PullInterface
      *
      * @param int|string $key Key to retrieve the value for
      *
-     * @return mixed Value from map
-     *
      * @throws ThrowableInterface
+     *
+     * @return mixed Value from map
      *
      * @api
      */

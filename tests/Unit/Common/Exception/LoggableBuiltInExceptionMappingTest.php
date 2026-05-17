@@ -5,6 +5,19 @@ declare(strict_types=1);
 namespace TournayreLabs\Tests\Unit\Common\Exception;
 
 use PHPUnit\Framework\TestCase;
+use TournayreLabs\Common\Exception\Loggable\BadFunctionCallLoggableException;
+use TournayreLabs\Common\Exception\Loggable\BadMethodCallLoggableException;
+use TournayreLabs\Common\Exception\Loggable\DomainLoggableException;
+use TournayreLabs\Common\Exception\Loggable\InvalidArgumentLoggableException;
+use TournayreLabs\Common\Exception\Loggable\LengthLoggableException;
+use TournayreLabs\Common\Exception\Loggable\LogicLoggableException;
+use TournayreLabs\Common\Exception\Loggable\OutOfBoundsLoggableException;
+use TournayreLabs\Common\Exception\Loggable\OutOfRangeLoggableException;
+use TournayreLabs\Common\Exception\Loggable\OverflowLoggableException;
+use TournayreLabs\Common\Exception\Loggable\RangeLoggableException;
+use TournayreLabs\Common\Exception\Loggable\RuntimeLoggableException;
+use TournayreLabs\Common\Exception\Loggable\UnderflowLoggableException;
+use TournayreLabs\Common\Exception\Loggable\UnexpectedValueLoggableException;
 use TournayreLabs\Contracts\Exception\LoggableThrowableFactoryInterface;
 use TournayreLabs\Contracts\Log\LoggerInterface;
 
@@ -33,18 +46,18 @@ final class LoggableBuiltInExceptionMappingTest extends TestCase
      */
     public static function loggableExceptionsProvider(): iterable
     {
-        yield 'BadFunctionCallLoggableException' => [\TournayreLabs\Common\Exception\Loggable\BadFunctionCallLoggableException::class, \BadFunctionCallException::class];
-        yield 'BadMethodCallLoggableException' => [\TournayreLabs\Common\Exception\Loggable\BadMethodCallLoggableException::class, \BadMethodCallException::class];
-        yield 'DomainLoggableException' => [\TournayreLabs\Common\Exception\Loggable\DomainLoggableException::class, \DomainException::class];
-        yield 'InvalidArgumentLoggableException' => [\TournayreLabs\Common\Exception\Loggable\InvalidArgumentLoggableException::class, \InvalidArgumentException::class];
-        yield 'LengthLoggableException' => [\TournayreLabs\Common\Exception\Loggable\LengthLoggableException::class, \LengthException::class];
-        yield 'LogicLoggableException' => [\TournayreLabs\Common\Exception\Loggable\LogicLoggableException::class, \LogicException::class];
-        yield 'OutOfBoundsLoggableException' => [\TournayreLabs\Common\Exception\Loggable\OutOfBoundsLoggableException::class, \OutOfBoundsException::class];
-        yield 'OutOfRangeLoggableException' => [\TournayreLabs\Common\Exception\Loggable\OutOfRangeLoggableException::class, \OutOfRangeException::class];
-        yield 'OverflowLoggableException' => [\TournayreLabs\Common\Exception\Loggable\OverflowLoggableException::class, \OverflowException::class];
-        yield 'RangeLoggableException' => [\TournayreLabs\Common\Exception\Loggable\RangeLoggableException::class, \RangeException::class];
-        yield 'RuntimeLoggableException' => [\TournayreLabs\Common\Exception\Loggable\RuntimeLoggableException::class, \RuntimeException::class];
-        yield 'UnderflowLoggableException' => [\TournayreLabs\Common\Exception\Loggable\UnderflowLoggableException::class, \UnderflowException::class];
-        yield 'UnexpectedValueLoggableException' => [\TournayreLabs\Common\Exception\Loggable\UnexpectedValueLoggableException::class, \UnexpectedValueException::class];
+        yield 'BadFunctionCallLoggableException' => [BadFunctionCallLoggableException::class, \BadFunctionCallException::class];
+        yield 'BadMethodCallLoggableException' => [BadMethodCallLoggableException::class, \BadMethodCallException::class];
+        yield 'DomainLoggableException' => [DomainLoggableException::class, \DomainException::class];
+        yield 'InvalidArgumentLoggableException' => [InvalidArgumentLoggableException::class, \InvalidArgumentException::class];
+        yield 'LengthLoggableException' => [LengthLoggableException::class, \LengthException::class];
+        yield 'LogicLoggableException' => [LogicLoggableException::class, \LogicException::class];
+        yield 'OutOfBoundsLoggableException' => [OutOfBoundsLoggableException::class, \OutOfBoundsException::class];
+        yield 'OutOfRangeLoggableException' => [OutOfRangeLoggableException::class, \OutOfRangeException::class];
+        yield 'OverflowLoggableException' => [OverflowLoggableException::class, \OverflowException::class];
+        yield 'RangeLoggableException' => [RangeLoggableException::class, \RangeException::class];
+        yield 'RuntimeLoggableException' => [RuntimeLoggableException::class, \RuntimeException::class];
+        yield 'UnderflowLoggableException' => [UnderflowLoggableException::class, \UnderflowException::class];
+        yield 'UnexpectedValueLoggableException' => [UnexpectedValueLoggableException::class, \UnexpectedValueException::class];
     }
 }

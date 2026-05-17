@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Primitives\Collection;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Tests\Fixtures\Collection\PriceCollection;
 use TournayreLabs\Tests\Fixtures\Price;
-use PHPUnit\Framework\TestCase;
 
 final class NumericCollectionTest extends TestCase
 {

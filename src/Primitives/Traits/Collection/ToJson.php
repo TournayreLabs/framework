@@ -6,6 +6,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Collection\ToJsonInterface;
+use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
 /**
  * Trait ToJson.
@@ -17,7 +18,7 @@ trait ToJson
     /**
      * Returns the elements in JSON format.
      *
-     * @throws \TournayreLabs\Contracts\Exception\ThrowableInterface
+     * @throws ThrowableInterface
      *
      * @api
      */

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Common\VO;
 
+use Nyholm\Psr7\Uri as NyholmUri;
 use TournayreLabs\Common\Exception\InvalidArgumentException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Uri\UriInterface;
-use Nyholm\Psr7\Uri as NyholmUri;
 
 final readonly class Uri implements UriInterface
 {

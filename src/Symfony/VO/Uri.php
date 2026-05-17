@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Symfony\VO;
 
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Uri\UriInterface;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 final readonly class Uri implements UriInterface
 {

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Null;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Tests\Fixtures\Title;
-use PHPUnit\Framework\TestCase;
 
 final class NullTest extends TestCase
 {
@@ -68,9 +68,7 @@ final class NullTest extends TestCase
     {
         $title = Title::asNull();
         self::expectException(\RuntimeException::class);
-        $title->orThrow(function () {
-            return new \RuntimeException();
-        });
+        $title->orThrow(fn () => new \RuntimeException());
     }
 
     /**

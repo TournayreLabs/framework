@@ -5,16 +5,13 @@ declare(strict_types=1);
 namespace TournayreLabs\Null;
 
 use TournayreLabs\Common\Exception\RuntimeException;
-use TournayreLabs\Common\Model\DefaultUser;
-use TournayreLabs\Common\VO\Context\Context;
-use TournayreLabs\Common\VO\Security\PlainPassword;
-use TournayreLabs\Component\Mailer\Types\EmailHtml;
-use TournayreLabs\Component\Mailer\Types\EmailSubject;
-use TournayreLabs\Component\Mailer\Types\EmailText;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Primitives\DateTime;
-use TournayreLabs\Tests\Fixtures\Title;
 
+/**
+ * Adds null-object behavior to value objects through a NullEnum flag.
+ *
+ * It provides helpers for nullability checks and fail-fast null handling.
+ */
 trait NullTrait
 {
     protected NullEnum $null;
@@ -22,7 +19,6 @@ trait NullTrait
     /**
      * @param array<int, mixed> $arguments
      */
-    // @phpstan-ignore-next-line
     public function __call(string $name, array $arguments)
     {
         if ('__construct' === $name) {
@@ -92,6 +88,7 @@ trait NullTrait
      *
      * @throws ThrowableInterface
      * @throws \Throwable
+     *
      * @api
      */
     public function orThrow(\Throwable|callable $throwable): self

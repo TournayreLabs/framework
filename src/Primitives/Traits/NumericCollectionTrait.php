@@ -10,6 +10,9 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection as Collection_;
 use TournayreLabs\Primitives\Numeric;
 
+/**
+ * Implements aggregate numeric operations for typed numeric collections.
+ */
 trait NumericCollectionTrait
 {
     use CollectionCommonTrait;

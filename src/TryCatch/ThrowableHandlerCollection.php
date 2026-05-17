@@ -39,8 +39,9 @@ final class ThrowableHandlerCollection implements ThrowableHandlerCollectionInte
     }
 
     /**
-     * @return ThrowableHandlerInterface<mixed>
      * @throws ThrowableInterface
+     *
+     * @return ThrowableHandlerInterface<mixed>
      */
     public function findHandlerFor(\Throwable $throwable): ThrowableHandlerInterface
     {

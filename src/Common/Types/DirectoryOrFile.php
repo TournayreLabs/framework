@@ -8,6 +8,11 @@ use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Traits\StringTypeTrait;
 use Webmozart\Assert\Assert;
 
+/**
+ * Represents a filesystem path that can target either a directory or a file.
+ *
+ * Use this value object to compose and normalize path fragments safely.
+ */
 final class DirectoryOrFile
 {
     use StringTypeTrait;

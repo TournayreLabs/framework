@@ -26,6 +26,5 @@ interface ThrowableFactoryInterface
      *
      * @return ThrowableInterface The new throwable instance
      */
-    // @phpstan-ignore-next-line
     public static function fromThrowable(\Throwable $throwable): ThrowableInterface;
 }

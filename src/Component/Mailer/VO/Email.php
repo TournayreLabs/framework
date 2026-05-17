@@ -16,6 +16,11 @@ use TournayreLabs\Contracts\Types\TypeValidationInterface;
 use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection\FileCollection;
 
+/**
+ * Base immutable e-mail value object containing recipients, body and metadata.
+ *
+ * Use create() to build an instance, then with* methods to derive updated copies.
+ */
 abstract class Email implements LoggableInterface, TypeValidationInterface
 {
     protected function __construct(
@@ -33,9 +38,9 @@ abstract class Email implements LoggableInterface, TypeValidationInterface
     }
 
     /**
-     * @return static
-     *
      * @throws ThrowableInterface
+     *
+     * @return static
      *
      * @api
      */

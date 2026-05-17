@@ -8,6 +8,9 @@ use TournayreLabs\Contracts\Exception\LoggableThrowableFactoryInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggerInterface;
 
+/**
+ * Loggable mutability exception used when an object must stay immutable.
+ */
 final class MutableLoggableException extends \RuntimeException implements ThrowableInterface, LoggableThrowableFactoryInterface
 {
     use LoggableThrowableTrait;

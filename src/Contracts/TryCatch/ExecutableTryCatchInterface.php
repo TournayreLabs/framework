@@ -18,9 +18,9 @@ interface ExecutableTryCatchInterface
     /**
      * Executes the try-catch block and returns the result.
      *
-     * @return T The result of the try block execution
-     *
      * @throws ThrowableInterface If an exception is thrown and not handled
+     *
+     * @return T The result of the try block execution
      */
     public function execute(): mixed;
 }

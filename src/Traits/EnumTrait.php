@@ -12,6 +12,9 @@ use ArchTech\Enums\Names;
 use ArchTech\Enums\Options;
 use ArchTech\Enums\Values;
 
+/**
+ * Aggregates ArchTech enum helper traits used across framework enums.
+ */
 trait EnumTrait
 {
     use Comparable;

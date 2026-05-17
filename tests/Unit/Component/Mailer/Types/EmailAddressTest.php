@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Component\Mailer\Types;
 
-use TournayreLabs\Component\Mailer\Types\EmailAddress;
 use PHPUnit\Framework\TestCase;
+use TournayreLabs\Component\Mailer\Types\EmailAddress;
 
 final class EmailAddressTest extends TestCase
 {

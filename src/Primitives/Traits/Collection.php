@@ -8,6 +8,9 @@ use Aimeos\Map as AimeosMap;
 use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection as Collection_;
 
+/**
+ * Provides collection wrapper behavior around the Collection primitive.
+ */
 trait Collection
 {
     private function __construct(

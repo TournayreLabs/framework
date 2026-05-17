@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\DependencyInjection;
 
+use Psr\Log\LoggerInterface;
 use TournayreLabs\Contracts\CommandBus\CommandBusInterface;
 use TournayreLabs\Contracts\CommandBus\QueryBusInterface;
-use Psr\Log\LoggerInterface;
 
 /**
  * Interface for dependency injection container.

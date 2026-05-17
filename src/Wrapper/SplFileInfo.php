@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Wrapper;
 
+use Symfony\Component\Finder\SplFileInfo as SymfonySplFileInfo;
 use TournayreLabs\Common\Assert\Assert;
 use TournayreLabs\Common\Types\File\Content;
 use TournayreLabs\Common\Types\File\Extension;
@@ -13,7 +14,6 @@ use TournayreLabs\Common\VO\Memory;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggableInterface;
 use TournayreLabs\Primitives\String_;
-use Symfony\Component\Finder\SplFileInfo as SymfonySplFileInfo;
 
 final readonly class SplFileInfo implements LoggableInterface
 {
@@ -33,9 +33,9 @@ final readonly class SplFileInfo implements LoggableInterface
     }
 
     /**
-     * @return array<string, mixed>
-     *
      * @throws ThrowableInterface
+     *
+     * @return array<string, mixed>
      */
     public function toLog(): array
     {

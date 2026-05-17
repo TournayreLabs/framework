@@ -19,11 +19,9 @@ interface NullableInterface
     public function orNull(): ?self;
 
     /**
-     * @param \Throwable|callable $throwable
+     * @throws ThrowableInterface
      *
      * @return $this
-     *
-     * @throws ThrowableInterface
      */
     public function orThrow(\Throwable|callable $throwable): self;
 }

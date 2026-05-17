@@ -43,9 +43,9 @@ interface DependencyInjectionAwareInterface
     /**
      * Gets the dependency injection container.
      *
-     * @return DependencyInjectionInterface The dependency injection container
-     *
      * @throws ThrowableInterface When dependency injection has not been set
+     *
+     * @return DependencyInjectionInterface The dependency injection container
      */
     public function dependencyInjection(): DependencyInjectionInterface;
 }

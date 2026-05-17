@@ -22,7 +22,6 @@ trait LoggableThrowableTrait
     /**
      * @param array<array-key, mixed> $context
      */
-    // @phpstan-ignore-next-line
     public function __construct(LoggerInterface $logger, string $message = '', int $code = 0, ?\Throwable $previous = null, array $context = [])
     {
         $this->logger = $logger;

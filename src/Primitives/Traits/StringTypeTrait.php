@@ -7,6 +7,9 @@ namespace TournayreLabs\Primitives\Traits;
 use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\String_;
 
+/**
+ * Provides String_ primitive delegation for string-based value objects.
+ */
 trait StringTypeTrait
 {
     private function __construct(

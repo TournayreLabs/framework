@@ -17,6 +17,11 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Types\TypeValidationInterface;
 use TournayreLabs\Primitives\Collection\FileCollection;
 
+/**
+ * Email specialization that renders content from HTML or text templates.
+ *
+ * The object stores template paths and context used by templating services.
+ */
 final class TemplatedEmail extends Email implements TypeValidationInterface
 {
     protected function __construct(

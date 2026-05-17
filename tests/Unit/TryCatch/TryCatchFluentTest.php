@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\TryCatch;
 
+use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 use TournayreLabs\Common\Exception\InvalidArgumentException;
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\TryCatch\TryCatch;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\NullLogger;
 
 final class TryCatchFluentTest extends TestCase
 {

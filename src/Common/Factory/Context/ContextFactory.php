@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Common\Factory\Context;
 
+use Psr\Clock\ClockInterface;
 use TournayreLabs\Common\VO\Context\Context;
 use TournayreLabs\Contracts\Context\ContextInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Security\SecurityInterface;
 use TournayreLabs\Contracts\Security\UserInterface;
-use Psr\Clock\ClockInterface;
 
 final readonly class ContextFactory
 {

@@ -9,6 +9,11 @@ use TournayreLabs\Component\Mailer\Types\AttachmentMaxSize;
 use TournayreLabs\Component\Mailer\VO\EmailContact;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
+/**
+ * Immutable mailer configuration aggregate for sender and envelope defaults.
+ *
+ * Use create() and with* methods to derive configured instances.
+ */
 final class MailerConfiguration
 {
     private EmailContact $from;

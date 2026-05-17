@@ -7,9 +7,13 @@ namespace TournayreLabs\Primitives;
 use TournayreLabs\Common\Exception\InvalidArgumentException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggerInterface;
-
 use function Symfony\Component\String\u;
 
+/**
+ * Immutable boolean value object with conversion and assertion helpers.
+ *
+ * Use fromBool() as entry point and asTrue()/asFalse() for explicit factories.
+ */
 final class Bool_
 {
     private const TRUE = 'true';

@@ -18,9 +18,9 @@ trait LastKey
     /**
      * Returns the last key.
      *
-     * @return mixed Last key of map or NULL if empty
-     *
      * @throws ThrowableInterface
+     *
+     * @return mixed Last key of map or NULL if empty
      *
      * @api
      */

@@ -192,9 +192,9 @@ interface UriInterface
      *
      * @param string $scheme the scheme to use with the new instance
      *
-     * @return static a new instance with the specified scheme
-     *
      * @throws ThrowableInterface for invalid or unsupported schemes
+     *
+     * @return static a new instance with the specified scheme
      */
     public function withScheme(string $scheme): UriInterface;
 
@@ -235,9 +235,9 @@ interface UriInterface
      *
      * @param string $host the hostname to use with the new instance
      *
-     * @return static a new instance with the specified host
-     *
      * @throws ThrowableInterface for invalid hostnames
+     *
+     * @return static a new instance with the specified host
      */
     public function withHost(string $host): UriInterface;
 
@@ -256,9 +256,9 @@ interface UriInterface
      * @param int $port the port to use with the new instance; a null value
      *                  removes the port information
      *
-     * @return static a new instance with the specified port
-     *
      * @throws ThrowableInterface for invalid ports
+     *
+     * @return static a new instance with the specified port
      */
     public function withPort(int $port): UriInterface;
 
@@ -284,9 +284,9 @@ interface UriInterface
      *
      * @param string $path the path to use with the new instance
      *
-     * @return static a new instance with the specified path
-     *
      * @throws ThrowableInterface for invalid paths
+     *
+     * @return static a new instance with the specified path
      */
     public function withPath(string $path): UriInterface;
 
@@ -303,9 +303,9 @@ interface UriInterface
      *
      * @param string $query the query string to use with the new instance
      *
-     * @return static a new instance with the specified query string
-     *
      * @throws ThrowableInterface for invalid query strings
+     *
+     * @return static a new instance with the specified query string
      */
     public function withQuery(string $query): UriInterface;
 

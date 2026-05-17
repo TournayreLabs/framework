@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Primitives;
 
-use TournayreLabs\Primitives\Uuid;
 use PHPUnit\Framework\TestCase;
+use TournayreLabs\Primitives\Uuid;
 
 final class UuidTest extends TestCase
 {

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Symfony\Session;
 
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface as SymfonyFlashBagInterface;
 use TournayreLabs\Contracts\Session\FlashBagInterface;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\FlashType;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface as SymfonyFlashBagInterface;
 
 /**
  * Update config/services.yaml:

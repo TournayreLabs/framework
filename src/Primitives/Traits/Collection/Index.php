@@ -6,6 +6,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Collection\IndexInterface;
+use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
 /**
  * Trait Index.
@@ -19,7 +20,7 @@ trait Index
      *
      * @param \Closure|string|int $value Key to search for or function with (key) parameters return TRUE if key is found
      *
-     * @throws \TournayreLabs\Contracts\Exception\ThrowableInterface If the key is not found
+     * @throws ThrowableInterface If the key is not found
      *
      * @api
      */

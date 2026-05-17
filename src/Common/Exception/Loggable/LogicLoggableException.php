@@ -7,6 +7,9 @@ namespace TournayreLabs\Common\Exception\Loggable;
 use TournayreLabs\Contracts\Exception\LoggableThrowableFactoryInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
+/**
+ * Loggable logic exception with logger-aware factory helpers.
+ */
 final class LogicLoggableException extends \LogicException implements ThrowableInterface, LoggableThrowableFactoryInterface
 {
     use LoggableThrowableTrait;

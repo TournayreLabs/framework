@@ -6,6 +6,9 @@ namespace TournayreLabs\Primitives\Traits;
 
 use TournayreLabs\Primitives\Int_;
 
+/**
+ * Adds Int_ primitive delegation to numeric wrapper objects.
+ */
 trait IntegerTrait
 {
     protected Int_ $integer;

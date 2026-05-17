@@ -4,15 +4,20 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Symfony\Middleware;
 
-use TournayreLabs\Contracts\Log\LoggerInterface;
-use TournayreLabs\Contracts\Persistance\AllowFlushInterface;
-use TournayreLabs\Primitives\Collection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Handler\HandlersLocatorInterface;
 use Symfony\Component\Messenger\Middleware\MiddlewareInterface;
 use Symfony\Component\Messenger\Middleware\StackInterface;
+use TournayreLabs\Contracts\Log\LoggerInterface;
+use TournayreLabs\Contracts\Persistance\AllowFlushInterface;
+use TournayreLabs\Primitives\Collection;
 
+/**
+ * Wraps message handling in a Doctrine transaction when a flush-capable handler is present.
+ *
+ * The middleware logs transaction lifecycle events and rolls back on failure.
+ */
 final readonly class DoctrineTransactionMiddleware implements MiddlewareInterface
 {
     public function __construct(
@@ -29,13 +34,10 @@ final readonly class DoctrineTransactionMiddleware implements MiddlewareInterfac
     {
         $this->logger->identifiedAs(self::class);
 
-        // Early return path - no transaction needed
         $shouldApplyTransaction = $this->shouldApplyTransaction($envelope);
         if (!$shouldApplyTransaction) {
             return $stack->next()->handle($envelope, $stack);
         }
-
-        // Transaction path
         $context = $this->messageContext($envelope);
         $this->logger->start($context);
         $this->logger->debug('Starting transaction for message', $context);
@@ -94,7 +96,6 @@ final readonly class DoctrineTransactionMiddleware implements MiddlewareInterfac
 
     private function rollback(): void
     {
-        // Early return if no active transaction
         if (!$this->entityManager->getConnection()->isTransactionActive()) {
             return;
         }

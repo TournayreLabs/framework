@@ -4,14 +4,17 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Primitives\Traits;
 
+use Carbon\Carbon;
 use TournayreLabs\Common\Exception\InvalidArgumentException;
 use TournayreLabs\Contracts\DateTime\DateTimeInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Null\NullTrait;
 use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\DateTime;
-use Carbon\Carbon;
 
+/**
+ * Provides date and time behaviors for the DateTime primitive wrapper.
+ */
 trait DateTimeTrait
 {
     use NullTrait;
@@ -3271,34 +3274,34 @@ trait DateTimeTrait
     public function getTranslatedDayName(string $context = '', string $keySuffix = '', string $defaultValue = ''): string
     {
         return $this->datetime->getTranslatedDayName(
-            $context !== '' ? $context : null,
+            '' !== $context ? $context : null,
             $keySuffix,
-            $defaultValue !== '' ? $defaultValue : null
+            '' !== $defaultValue ? $defaultValue : null
         );
     }
 
     public function getTranslatedShortDayName(string $context = ''): string
     {
-        return $this->datetime->getTranslatedShortDayName($context !== '' ? $context : null);
+        return $this->datetime->getTranslatedShortDayName('' !== $context ? $context : null);
     }
 
     public function getTranslatedMinDayName(string $context = ''): string
     {
-        return $this->datetime->getTranslatedMinDayName($context !== '' ? $context : null);
+        return $this->datetime->getTranslatedMinDayName('' !== $context ? $context : null);
     }
 
     public function getTranslatedMonthName(string $context = '', string $keySuffix = '', string $defaultValue = ''): string
     {
         return $this->datetime->getTranslatedMonthName(
-            $context !== '' ? $context : null,
+            '' !== $context ? $context : null,
             $keySuffix,
-            $defaultValue !== '' ? $defaultValue : null
+            '' !== $defaultValue ? $defaultValue : null
         );
     }
 
     public function getTranslatedShortMonthName(string $context = ''): string
     {
-        return $this->datetime->getTranslatedShortMonthName($context !== '' ? $context : null);
+        return $this->datetime->getTranslatedShortMonthName('' !== $context ? $context : null);
     }
 
     public function weekday(): int

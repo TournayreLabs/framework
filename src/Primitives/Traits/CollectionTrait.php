@@ -6,6 +6,9 @@ namespace TournayreLabs\Primitives\Traits;
 
 use TournayreLabs\Primitives\Collection;
 
+/**
+ * Adds shared behavior for objects storing a Collection primitive.
+ */
 trait CollectionTrait
 {
     use CollectionCommonTrait;

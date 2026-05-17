@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TournayreLabs\DependencyInjection;
 
+use Doctrine\ORM\Event\PostLoadEventArgs;
 use TournayreLabs\Contracts\DependencyInjection\DependencyInjectionAwareInterface;
 use TournayreLabs\Contracts\DependencyInjection\PostLoadHandlerInterface;
-use Doctrine\ORM\Event\PostLoadEventArgs;
 
 /**
  * Doctrine PostLoad handler for dependency injection.
@@ -34,13 +34,9 @@ final readonly class DependencyInjectionPostLoad implements PostLoadHandlerInter
     public function __invoke(PostLoadEventArgs $args): void
     {
         $entity = $args->getObject();
-
-        // Guard: check if entity implements DependencyInjectionAwareInterface
         if (!$entity instanceof DependencyInjectionAwareInterface) {
             return;
         }
-
-        // Inject dependencies into the entity
         $entity->setDependencyInjection($this->entityDependencyInjection);
     }
 }

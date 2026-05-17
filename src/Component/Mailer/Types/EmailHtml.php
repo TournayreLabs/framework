@@ -11,6 +11,11 @@ use TournayreLabs\Null\NullTrait;
 use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Traits\StringTypeTrait;
 
+/**
+ * Holds HTML body content for an e-mail as an immutable value.
+ *
+ * Use of() for validated content and asNull() for null-object semantics.
+ */
 final class EmailHtml implements NullableInterface
 {
     use NullTrait;

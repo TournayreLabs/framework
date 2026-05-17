@@ -14,11 +14,8 @@ final class Title implements NullableInterface
     use NullTrait;
     use IsTrait;
 
-    private readonly string $title;
-
-    private function __construct(string $title)
+    private function __construct(private readonly string $title)
     {
-        $this->title = $title;
         $this->null = NullEnum::fromBool(false);
     }
 

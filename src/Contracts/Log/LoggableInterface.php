@@ -6,6 +6,6 @@ namespace TournayreLabs\Contracts\Log;
 
 interface LoggableInterface
 {
-    // @phpstan-ignore-next-line
+    /** @return array<mixed> */
     public function toLog(): array;
 }

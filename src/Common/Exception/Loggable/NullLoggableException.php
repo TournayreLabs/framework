@@ -8,6 +8,9 @@ use TournayreLabs\Contracts\Exception\LoggableThrowableFactoryInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggerInterface;
 
+/**
+ * Loggable null exception used for explicit empty-value failures.
+ */
 final class NullLoggableException extends \Exception implements ThrowableInterface, LoggableThrowableFactoryInterface
 {
     use LoggableThrowableTrait;

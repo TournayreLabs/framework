@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Symfony\Response;
 
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggerInterface;
 use TournayreLabs\Contracts\Response\ResponseInterface;
 use TournayreLabs\Contracts\Routing\RoutingInterface;
 use TournayreLabs\Contracts\Templating\TemplatingInterface;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Response;
 
 final readonly class ResponseService implements ResponseInterface
 {
@@ -92,7 +92,7 @@ final readonly class ResponseService implements ResponseInterface
         $headers['Content-Disposition'] = sprintf('%s; filename="%s"', $contentDisposition, $filename);
         $this->logger->info('Returning file: '.$file, ['filename' => $filename, 'headers' => $headers]);
 
-        return new BinaryFileResponse($file, 200, $headers);
+        return new BinaryFileResponse($file, Response::HTTP_OK, $headers);
     }
 
     public function empty(int $status = 204, array $headers = []): Response

@@ -6,6 +6,11 @@ namespace TournayreLabs\Common\Log;
 
 use Psr\Log\LoggerInterface;
 
+/**
+ * Base logger adapter that adds identifier management and message prefixing.
+ *
+ * Concrete implementations route messages to the underlying PSR logger.
+ */
 abstract class AbstractLogger implements LoggerInterface
 {
     private ?string $logIdentifier = null;
@@ -112,31 +117,36 @@ abstract class AbstractLogger implements LoggerInterface
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     abstract public function exception(\Exception $exception, array $context = []): void;
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     abstract public function start(array $context = []): void;
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     abstract public function end(array $context = []): void;
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     abstract public function success(array $context = []): void;
 
     /**
      * @api
+     *
+     * @param array<string, mixed> $context
      */
-    // @phpstan-ignore-next-line
     abstract public function failFast(array $context = []): void;
 }

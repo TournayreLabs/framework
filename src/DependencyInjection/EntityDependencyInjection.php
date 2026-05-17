@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TournayreLabs\DependencyInjection;
 
+use Psr\Log\LoggerInterface;
 use TournayreLabs\Contracts\CommandBus\CommandBusInterface;
 use TournayreLabs\Contracts\CommandBus\QueryBusInterface;
 use TournayreLabs\Contracts\DependencyInjection\DependencyInjectionInterface;
-use Psr\Log\LoggerInterface;
 
 /**
  * Entity dependency injection implementation.

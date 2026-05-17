@@ -97,6 +97,7 @@ final class FileCollection implements \IteratorAggregate, LoggableInterface, AsL
 
     /**
      * @throws ThrowableInterface
+     *
      * @api
      */
     public function totalSize(): Memory

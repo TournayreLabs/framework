@@ -50,15 +50,16 @@ final class PublicSignatureCompatibilityTest extends TestCase
     /**
      * @param class-string $fqcn
      *
-     * @return array<string, mixed>
      * @throws \ReflectionException
+     *
+     * @return array<string, mixed>
      */
     private function signatureFor(string $fqcn): array
     {
-        $reflection = new ReflectionClass($fqcn);
+        $reflection = new \ReflectionClass($fqcn);
         $methods = [];
 
-        foreach ($reflection->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
+        foreach ($reflection->getMethods(\ReflectionMethod::IS_PUBLIC) as $method) {
             if ($method->getDeclaringClass()->getName() !== $fqcn) {
                 continue;
             }
@@ -81,7 +82,7 @@ final class PublicSignatureCompatibilityTest extends TestCase
     /**
      * @return array<string, mixed>
      */
-    private function methodSignature(ReflectionMethod $method): array
+    private function methodSignature(\ReflectionMethod $method): array
     {
         return [
             'name' => $method->getName(),
@@ -92,7 +93,7 @@ final class PublicSignatureCompatibilityTest extends TestCase
             'returnType' => $this->typeToString($method->getReturnType()),
             'returnsReference' => $method->returnsReference(),
             'parameters' => array_map(
-                fn (ReflectionParameter $parameter): array => $this->parameterSignature($parameter),
+                fn (\ReflectionParameter $parameter): array => $this->parameterSignature($parameter),
                 $method->getParameters(),
             ),
         ];
@@ -101,7 +102,7 @@ final class PublicSignatureCompatibilityTest extends TestCase
     /**
      * @return array<string, mixed>
      */
-    private function parameterSignature(ReflectionParameter $parameter): array
+    private function parameterSignature(\ReflectionParameter $parameter): array
     {
         return [
             'name' => $parameter->getName(),
@@ -116,7 +117,7 @@ final class PublicSignatureCompatibilityTest extends TestCase
     /**
      * @return array<string, mixed>
      */
-    private function defaultValue(ReflectionParameter $parameter): array
+    private function defaultValue(\ReflectionParameter $parameter): array
     {
         if (!$parameter->isDefaultValueAvailable()) {
             return ['available' => false];
@@ -135,23 +136,23 @@ final class PublicSignatureCompatibilityTest extends TestCase
         ];
     }
 
-    private function typeToString(?ReflectionType $type): ?string
+    private function typeToString(?\ReflectionType $type): ?string
     {
-        if ($type === null) {
+        if (null === $type) {
             return null;
         }
 
-        if ($type instanceof ReflectionNamedType) {
+        if ($type instanceof \ReflectionNamedType) {
             return ($type->allowsNull() && !in_array($type->getName(), ['mixed', 'null'], true) ? '?' : '')
                 .$type->getName();
         }
 
-        if ($type instanceof ReflectionUnionType) {
-            return implode('|', array_map(fn (ReflectionType $innerType): ?string => $this->typeToString($innerType), $type->getTypes()));
+        if ($type instanceof \ReflectionUnionType) {
+            return implode('|', array_map(fn (\ReflectionType $innerType): ?string => $this->typeToString($innerType), $type->getTypes()));
         }
 
-        if ($type instanceof ReflectionIntersectionType) {
-            return implode('&', array_map(fn (ReflectionType $innerType): ?string => $this->typeToString($innerType), $type->getTypes()));
+        if ($type instanceof \ReflectionIntersectionType) {
+            return implode('&', array_map(fn (\ReflectionType $innerType): ?string => $this->typeToString($innerType), $type->getTypes()));
         }
 
         return (string) $type;

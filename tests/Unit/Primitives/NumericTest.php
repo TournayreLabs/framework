@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Primitives;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Locale;
 use TournayreLabs\Primitives\Numeric;
-use PHPUnit\Framework\TestCase;
 
 final class NumericTest extends TestCase
 {

@@ -12,7 +12,7 @@ interface TakeInterface
     /**
      * Returns a new map with the given number of items.
      *
-     * @param int                                 $size   Number of items to return
+     * @param int          $size   Number of items to return
      * @param \Closure|int $offset Number of items to skip or function($item, $key) returning true for skipped items
      *
      * @api

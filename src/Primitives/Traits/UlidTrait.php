@@ -11,6 +11,9 @@ use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\String_;
 use TournayreLabs\Primitives\Ulid;
 
+/**
+ * Adds ULID behaviors to wrapper objects built around the Ulid primitive.
+ */
 trait UlidTrait
 {
     protected Ulid $ulid;
@@ -22,7 +25,7 @@ trait UlidTrait
 
     public static function of(string $string): self
     {
-        return new self(Ulid::of($string));
+        return new self(Ulid::of());
     }
 
     public function toString(): string

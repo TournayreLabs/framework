@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Primitives;
 
-use TournayreLabs\Primitives\Int_;
 use PHPUnit\Framework\TestCase;
+use TournayreLabs\Primitives\Int_;
 
 final class IntegerTest extends TestCase
 {

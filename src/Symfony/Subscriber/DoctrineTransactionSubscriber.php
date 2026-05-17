@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Symfony\Subscriber;
 
-use TournayreLabs\Contracts\Log\LoggerInterface;
-use TournayreLabs\Contracts\Persistance\AllowFlushInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
+use TournayreLabs\Contracts\Log\LoggerInterface;
+use TournayreLabs\Contracts\Persistance\AllowFlushInterface;
 
 final readonly class DoctrineTransactionSubscriber implements EventSubscriberInterface
 {

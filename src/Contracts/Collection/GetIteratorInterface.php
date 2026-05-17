@@ -16,9 +16,9 @@ interface GetIteratorInterface extends \IteratorAggregate
     /**
      * Returns an iterator for the elements.
      *
-     * @return \ArrayIterator<int|string, mixed>
-     *
      * @throws ThrowableInterface
+     *
+     * @return \ArrayIterator<int|string, mixed>
      *
      * @api
      */

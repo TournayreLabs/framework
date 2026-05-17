@@ -7,7 +7,6 @@ namespace TournayreLabs\Primitives;
 use TournayreLabs\Common\Assert\Assert;
 use TournayreLabs\Common\Exception\InvalidArgumentException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-
 use function Symfony\Component\String\u;
 
 final readonly class String_ implements \Stringable
@@ -176,11 +175,11 @@ final readonly class String_ implements \Stringable
     }
 
     /**
-     * @throws ThrowableInterface If needle is not found
-     *
      * @api
      *
      * @param string|string[] $needle
+     *
+     * @throws ThrowableInterface If needle is not found
      */
     public function indexOf($needle, int $offset = 0): int
     {
@@ -194,11 +193,11 @@ final readonly class String_ implements \Stringable
     }
 
     /**
-     * @throws ThrowableInterface If needle is not found
-     *
      * @api
      *
      * @param string|string[] $needle
+     *
+     * @throws ThrowableInterface If needle is not found
      */
     public function indexOfLast($needle, int $offset = 0): int
     {
@@ -276,8 +275,9 @@ final readonly class String_ implements \Stringable
 
     /**
      * @api
+     *
+     * @return array<int|string, string>
      */
-    // @phpstan-ignore-next-line
     public function match(string $regexp, int $flags = 0, int $offset = 0): array
     {
         return u($this->value)->match($regexp, $flags, $offset);

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Primitives;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\DateTime;
 use TournayreLabs\Primitives\Ulid;
-use PHPUnit\Framework\TestCase;
 
 final class UlidTest extends TestCase
 {

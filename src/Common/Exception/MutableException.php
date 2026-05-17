@@ -7,6 +7,9 @@ namespace TournayreLabs\Common\Exception;
 use TournayreLabs\Contracts\Exception\ThrowableFactoryInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
+/**
+ * Framework mutability exception used when an object must stay immutable.
+ */
 final class MutableException extends \RuntimeException implements ThrowableInterface, ThrowableFactoryInterface
 {
     use ThrowableTrait;

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Common\Persistance\Handler;
 
-use TournayreLabs\Common\Persistance\Command\DatabaseFlushCommand;
-use TournayreLabs\Contracts\Persistance\DatabaseFlushHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
+use TournayreLabs\Common\Persistance\Command\DatabaseFlushCommand;
+use TournayreLabs\Contracts\Persistance\DatabaseFlushHandlerInterface;
 
 /**
  * Handler for DatabaseFlushCommand.

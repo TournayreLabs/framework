@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Exception;
 
+use PHPUnit\Framework\TestCase;
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use PHPUnit\Framework\TestCase;
 
 final class RuntimeExceptionTest extends TestCase
 {

@@ -6,6 +6,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Collection\PosInterface;
+use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
 /**
  * Trait Pos.
@@ -19,7 +20,7 @@ trait Pos
      *
      * @param \Closure|mixed $value Value to search for or function with (item, key) parameters return TRUE if value is found
      *
-     * @throws \TournayreLabs\Contracts\Exception\ThrowableInterface If the value is not found
+     * @throws ThrowableInterface If the value is not found
      *
      * @api
      */

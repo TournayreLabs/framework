@@ -27,6 +27,5 @@ interface LoggableThrowableFactoryInterface
      *
      * @return ThrowableInterface The new throwable instance
      */
-    // @phpstan-ignore-next-line
     public static function fromThrowable(LoggerInterface $logger, \Throwable $throwable, array $context = []): ThrowableInterface;
 }

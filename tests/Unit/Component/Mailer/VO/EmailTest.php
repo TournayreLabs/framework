@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Component\Mailer\VO;
 
+use PHPUnit\Framework\TestCase;
+use TournayreLabs\Common\Types\HtmlTemplatePath;
 use TournayreLabs\Component\Mailer\Collection\EmailContactCollection;
 use TournayreLabs\Component\Mailer\Collection\TagCollection;
 use TournayreLabs\Component\Mailer\Types\EmailAddress;
 use TournayreLabs\Component\Mailer\Types\EmailName;
 use TournayreLabs\Component\Mailer\Types\EmailSubject;
-use TournayreLabs\Component\Mailer\VO\Email;
-use TournayreLabs\Component\Mailer\VO\TemplatedEmail;
 use TournayreLabs\Component\Mailer\VO\EmailContact;
+use TournayreLabs\Component\Mailer\VO\TemplatedEmail;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection\FileCollection;
 use TournayreLabs\Wrapper\SplFileInfo;
-use PHPUnit\Framework\TestCase;
 
 final class EmailTest extends TestCase
 {
@@ -75,7 +75,7 @@ final class EmailTest extends TestCase
         $emailContact = EmailContact::create($emailAddress, $emailName);
 
         $email = TemplatedEmail::create($subject, $emailContact)
-            ->withHtmlTemplatePath(\TournayreLabs\Common\Types\HtmlTemplatePath::of('test.html'))
+            ->withHtmlTemplatePath(HtmlTemplatePath::of('test.html'))
         ;
 
         self::assertTrue($email->isValid()->isTrue());

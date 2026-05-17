@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Symfony\Subscriber;
 
-use TournayreLabs\Contracts\Log\LoggerInterface;
-use TournayreLabs\Contracts\Persistance\AllowFlushInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\ConsoleEvents;
@@ -13,6 +11,8 @@ use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Event\ConsoleErrorEvent;
 use Symfony\Component\Console\Event\ConsoleTerminateEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use TournayreLabs\Contracts\Log\LoggerInterface;
+use TournayreLabs\Contracts\Persistance\AllowFlushInterface;
 
 final readonly class DoctrineCommandTransactionSubscriber implements EventSubscriberInterface
 {
