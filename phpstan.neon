@@ -164,15 +164,6 @@ parameters:
             path: src/Common/Collection/EventCollection.php
         -
             message: '#has default value null\|accepts null#'
-            path: src/Component/Mailer/Collection/EmailContactCollection.php
-        -
-            message: '#has default value null#'
-            path: src/Component/Mailer/Collection/EmailContactCollection.php
-        -
-            message: '#accepts null#'
-            path: src/Component/Mailer/Collection/EmailContactCollection.php
-        -
-            message: '#has default value null\|accepts null#'
             path: src/Contracts/Common/Assert/*.php
         -
             message: '#has default value null#'

@@ -40,12 +40,9 @@ final class EmailContactCollection implements LoggableInterface, AsListInterface
 
     /**
      * @api
-     *
-     * @param mixed|null $key
-     * @param mixed|null $value
      */
-    public function contains($key, ?string $operator = null, $value = null): BoolEnum
+    public function contains(EmailContact $emailContact): BoolEnum
     {
-        return $this->collection->contains($key, $operator, $value);
+        return $this->collection->contains($emailContact);
     }
 }
