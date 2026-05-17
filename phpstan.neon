@@ -73,6 +73,30 @@ parameters:
             message: '#has default value null for parameter \$isNull#'
             path: src/*
         -
+            message: '#__call\(\) returns null#'
+            path: src/*
+        -
+            message: '#is mutable#'
+            path: src/Primitives/Numeric.php
+        -
+            message: '#is mutable#'
+            path: src/Common/VO/Uri.php
+        -
+            message: '#is mutable#'
+            path: src/Primitives/BoolEnum.php
+        -
+            message: '#\$null is mutable#'
+            path: src/*
+        -
+            message: '#\$context is mutable#'
+            path: src/Common/Traits/ContextTrait.php
+        -
+            message: '#\$plainPassword is mutable#'
+            path: src/*
+        -
+            message: '#is mutable#'
+            path: src/Component/Mailer/Configuration/MailerConfiguration.php
+        -
             message: '#accepts null#'
             path: tests/*
         -
