@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Primitives\Traits\Collection;
 
-use TournayreLabs\Common\Exception\RuntimeException;
+use Aimeos\Map as AimeosMap;
 use TournayreLabs\Contracts\Collection\FromInterface;
-use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
 /**
  * Trait From.
@@ -18,13 +17,18 @@ trait From
     /**
      * Creates a new map from passed elements.
      *
-     * @throws ThrowableInterface
-     *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
-    public function from()
+    public static function from(mixed $elements = []): self
     {
-        RuntimeException::new('Not implemented yet!')->throw();
+        if ($elements instanceof self) {
+            return $elements;
+        }
+
+        if ($elements instanceof AimeosMap) {
+            return self::of($elements);
+        }
+
+        return self::of(AimeosMap::from($elements));
     }
 }

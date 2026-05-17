@@ -18,6 +18,5 @@ interface IfEmptyInterface
      *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
-    public function ifEmpty();
+    public function ifEmpty(?\Closure $then = null, ?\Closure $else = null): self;
 }

@@ -18,6 +18,5 @@ interface FromInterface
      *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
-    public function from();
+    public static function from(mixed $elements = []): self;
 }

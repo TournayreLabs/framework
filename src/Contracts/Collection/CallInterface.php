@@ -18,6 +18,5 @@ interface CallInterface
      *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
-    public function call();
+    public function call(string $name, array $params = []): self;
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Primitives\Traits\Collection;
 
+use Aimeos\Map as AimeosMap;
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Collection\FromJsonInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
@@ -22,9 +23,12 @@ trait FromJson
      *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
-    public function fromJson()
+    public static function fromJson(string $json, int $options = JSON_BIGINT_AS_STRING): self
     {
-        RuntimeException::new('Not implemented yet!')->throw();
+        try {
+            return self::of(AimeosMap::fromJson($json, $options));
+        } catch (\Throwable $throwable) {
+            throw RuntimeException::fromThrowable($throwable);
+        }
     }
 }

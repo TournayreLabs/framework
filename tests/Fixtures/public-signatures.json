@@ -30329,9 +30329,31 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "self",
                 "returnsReference": false,
-                "parameters": []
+                "parameters": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "params",
+                        "type": "array",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": []
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
             },
             {
                 "name": "cast",
@@ -30693,19 +30715,43 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "void",
                 "returnsReference": false,
-                "parameters": []
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "type": "?callable",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": null
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
             },
             {
                 "name": "delimiter",
                 "visibility": "public",
-                "static": false,
+                "static": true,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "string",
                 "returnsReference": false,
-                "parameters": []
+                "parameters": [
+                    {
+                        "name": "char",
+                        "type": "?string",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": null
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
             },
             {
                 "name": "diff",
@@ -31262,22 +31308,56 @@
             {
                 "name": "from",
                 "visibility": "public",
-                "static": false,
+                "static": true,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "self",
                 "returnsReference": false,
-                "parameters": []
+                "parameters": [
+                    {
+                        "name": "elements",
+                        "type": "mixed",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": []
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
             },
             {
                 "name": "fromJson",
                 "visibility": "public",
-                "static": false,
+                "static": true,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "self",
                 "returnsReference": false,
-                "parameters": []
+                "parameters": [
+                    {
+                        "name": "json",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "options",
+                        "type": "int",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "constant": "TournayreLabs\\Primitives\\Traits\\Collection\\JSON_BIGINT_AS_STRING"
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
             },
             {
                 "name": "get",
@@ -31306,7 +31386,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "ArrayIterator",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -31555,9 +31635,32 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "self",
                 "returnsReference": false,
-                "parameters": []
+                "parameters": [
+                    {
+                        "name": "then",
+                        "type": "?Closure",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": null
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "else",
+                        "type": "?Closure",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": null
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
             },
             {
                 "name": "ifOrElse",

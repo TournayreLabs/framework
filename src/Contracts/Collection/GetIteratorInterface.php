@@ -18,6 +18,5 @@ interface GetIteratorInterface
      *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
-    public function getIterator();
+    public function getIterator(): \ArrayIterator;
 }

@@ -18,6 +18,5 @@ interface FromJsonInterface
      *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
-    public function fromJson();
+    public static function fromJson(string $json, int $options = JSON_BIGINT_AS_STRING): self;
 }

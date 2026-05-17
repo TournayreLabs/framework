@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Primitives\Traits\Collection;
 
-use TournayreLabs\Common\Exception\RuntimeException;
+use Aimeos\Map as AimeosMap;
 use TournayreLabs\Contracts\Collection\DelimiterInterface;
-use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
 /**
  * Trait Delimiter.
@@ -18,13 +17,10 @@ trait Delimiter
     /**
      * Sets or returns the seperator for paths to multi-dimensional arrays.
      *
-     * @throws ThrowableInterface
-     *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
-    public function delimiter()
+    public static function delimiter(?string $char = null): string
     {
-        RuntimeException::new('Not implemented yet!')->throw();
+        return AimeosMap::delimiter($char);
     }
 }

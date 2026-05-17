@@ -18,6 +18,5 @@ interface DelimiterInterface
      *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
-    public function delimiter();
+    public static function delimiter(?string $char = null): string;
 }

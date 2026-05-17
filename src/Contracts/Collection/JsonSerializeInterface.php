@@ -18,6 +18,6 @@ interface JsonSerializeInterface
      *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
+    #[\ReturnTypeWillChange]
     public function jsonSerialize();
 }

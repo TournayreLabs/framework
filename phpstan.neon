@@ -16,6 +16,9 @@ parameters:
             message: '#appears to be a getter#'
             path: src/Contracts/DateTime/DateTimeInterface.php
         -
+            message: '#GetIteratorInterface::getIterator\(\).*appears to be a getter#'
+            path: src/Contracts/Collection/GetIteratorInterface.php
+        -
             message: '#GetInterface::getOrDefault\(\).*appears to be a getter#'
             path: src/Contracts/Collection/GetInterface.php
         -
@@ -27,6 +30,9 @@ parameters:
         -
             message: '#is static#'
             path: src/Common/Assert/Assert.php
+        -
+            message: '#DelimiterInterface::delimiter\(\) is static#'
+            path: src/Contracts/Collection/DelimiterInterface.php
         -
             message: '#is static#'
             path: src/Contracts/Common/Assert/*
@@ -237,6 +243,12 @@ parameters:
         -
             message: '#appears to be a setter#'
             path: src/Primitives/Traits/Collection/Set.php
+        -
+            message: '#Collection::getIterator\(\) appears to be a getter#'
+            path: src/Primitives/Traits/Collection/GetIterator.php
+        -
+            message: '#Collection::delimiter\(\) is static#'
+            path: src/Primitives/Traits/Collection/Delimiter.php
         -
             message: '#appears to be a setter#'
             path: src/Common/Collection/EventCollection.php

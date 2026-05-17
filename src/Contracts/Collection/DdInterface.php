@@ -18,6 +18,5 @@ interface DdInterface
      *
      * @api
      */
-    // @phpstan-ignore-next-line Remove this line when the method is implemented
-    public function dd();
+    public function dd(?callable $callback = null): void;
 }
