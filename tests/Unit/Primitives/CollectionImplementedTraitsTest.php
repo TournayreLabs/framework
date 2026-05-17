@@ -28,6 +28,22 @@ final class CollectionImplementedTraitsTest extends TestCase
         Collection::fromJson('{invalid')->toArray();
     }
 
+    public function testFindReturnsMatchingElement(): void
+    {
+        self::assertSame('bar', Collection::of(['foo', 'bar'])->find(
+            static fn (string $value): bool => str_starts_with($value, 'b'),
+        ));
+    }
+
+    public function testFindThrowsWhenNoElementMatches(): void
+    {
+        $this->expectException(ThrowableInterface::class);
+
+        Collection::of(['foo'])->find(
+            static fn (string $value): bool => str_starts_with($value, 'b'),
+        );
+    }
+
     public function testJsonSerializeReturnsSerializableArray(): void
     {
         self::assertSame(['a' => 'foo'], Collection::of(['a' => 'foo'])->jsonSerialize());

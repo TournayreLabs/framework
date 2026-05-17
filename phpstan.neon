@@ -55,26 +55,17 @@ parameters:
             message: '#accepts null#'
             path: src/TryCatch/TryCatch.php
         -
-            message: '#has default value null\|accepts null#'
-            path: src/Common/Assert/Assert.php
-        -
             message: '#has default value null#'
             path: src/Common/Assert/Assert.php
         -
             message: '#accepts null#'
             path: src/Common/Assert/Assert.php
         -
-            message: '#has default value null\|accepts null#'
-            path: src/Common/Model/DefaultUser.php
-        -
             message: '#has default value null#'
             path: src/Common/Model/DefaultUser.php
         -
             message: '#has default value null#'
             path: src/Common/VO/Context/Context.php
-        -
-            message: '#initializeNull\(\) accepts null\|initializeNull\(\) has default value null#'
-            path: src/*
         -
             message: '#accepts null for parameter \$isNull#'
             path: src/*
@@ -96,9 +87,6 @@ parameters:
         -
             message: '#\$null is mutable#'
             path: src/*
-        -
-            message: '#\$context is mutable#'
-            path: src/Common/Traits/ContextTrait.php
         -
             message: '#\$plainPassword is mutable#'
             path: src/*
@@ -124,9 +112,6 @@ parameters:
             message: '#accepts null#'
             path: tests/*
         -
-            message: '#has default value null#'
-            path: tests/*
-        -
             message: '#returns null#'
             path: tests/*
         -
@@ -145,17 +130,11 @@ parameters:
             message: '#operator new is used#'
             path: tests/*
         -
-            message: '#has default value null\|accepts null#'
-            path: src/Contracts/Collection/*.php
-        -
             message: '#has default value null#'
             path: src/Contracts/Collection/*.php
         -
             message: '#accepts null#'
             path: src/Contracts/Collection/*.php
-        -
-            message: '#has default value null\|accepts null#'
-            path: src/Primitives/Collection.php
         -
             message: '#has default value null#'
             path: src/Primitives/Collection.php
@@ -163,41 +142,11 @@ parameters:
             message: '#accepts null#'
             path: src/Primitives/Collection.php
         -
-            message: '#has default value null\|accepts null#'
-            path: src/Common/Collection/EventCollection.php
-        -
-            message: '#has default value null#'
-            path: src/Common/Collection/EventCollection.php
-        -
-            message: '#accepts null#'
-            path: src/Common/Collection/EventCollection.php
-        -
-            message: '#has default value null\|accepts null#'
-            path: src/Contracts/Common/Assert/*.php
-        -
             message: '#has default value null#'
             path: src/Contracts/Common/Assert/*.php
         -
             message: '#accepts null#'
             path: src/Contracts/Common/Assert/*.php
-        -
-            message: '#has default value null\|accepts null#'
-            path: src/Contracts/Dispatcher/*.php
-        -
-            message: '#has default value null#'
-            path: src/Contracts/Dispatcher/*.php
-        -
-            message: '#accepts null#'
-            path: src/Contracts/Dispatcher/*.php
-        -
-            message: '#has default value null\|accepts null#'
-            path: src/Contracts/Event/*.php
-        -
-            message: '#has default value null#'
-            path: src/Contracts/Event/*.php
-        -
-            message: '#accepts null#'
-            path: src/Contracts/Event/*.php
         -
             message: '#does not implement any interfaces#'
             path: src/*
@@ -244,6 +193,9 @@ parameters:
             message: '#appears to be a setter#'
             path: src/Primitives/Traits/Collection/Set.php
         -
+            message: '#Collection::getOrDefault\(\) appears to be a getter#'
+            path: src/Primitives/Traits/Collection/Get.php
+        -
             message: '#Collection::getIterator\(\) appears to be a getter#'
             path: src/Primitives/Traits/Collection/GetIterator.php
         -
@@ -260,12 +212,6 @@ parameters:
             path: src/Contracts/Dispatcher/EntityEventDispatcher.php
         -
             message: '#is static#'
-            path: src/Primitives/Traits/DateTimeTrait.php
-        -
-            message: '#DateTimeInterface::set\(\) has default value null#'
-            path: src/Primitives/Traits/DateTimeTrait.php
-        -
-            message: '#DateTimeInterface::setUnit\(\) has default value null#'
             path: src/Primitives/Traits/DateTimeTrait.php
         -
             message: '#DateTime::set\(\) has default value null#'

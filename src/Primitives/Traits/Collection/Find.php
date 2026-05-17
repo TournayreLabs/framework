@@ -30,13 +30,7 @@ trait Find
     public function find(\Closure $callback, bool $reverse = false)
     {
         try {
-            $sentinel = new \stdClass();
-            $result = $this->collection->find($callback, $sentinel, $reverse);
-            if ($result === $sentinel) {
-                RuntimeException::new('No matching element found.')->throw();
-            }
-
-            return $result;
+            return $this->collection->find($callback, RuntimeException::new('No matching element found.'), $reverse);
         } catch (\Throwable $throwable) {
             if ($throwable instanceof RuntimeException) {
                 throw $throwable;
