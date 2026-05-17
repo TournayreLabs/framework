@@ -44,8 +44,9 @@ final class ThrowableHandlerCollection implements ThrowableHandlerCollectionInte
      */
     public function findHandlerFor(\Throwable $throwable): ThrowableHandlerInterface
     {
-        $handler = $this->collection->find(
-            static fn (ThrowableHandlerInterface $handler): bool => $handler->canHandle($throwable)
+        $handler = $this->collection->findOrDefault(
+            static fn (ThrowableHandlerInterface $handler): bool => $handler->canHandle($throwable),
+            null
         );
 
         if ($handler instanceof ThrowableHandlerInterface) {
