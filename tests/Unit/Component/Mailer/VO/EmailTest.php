@@ -33,7 +33,7 @@ final class EmailTest extends TestCase
     /**
      * @throws ThrowableInterface
      */
-    public function testValidateEmailWithoutToReturnsError(): void
+    public function testValidateEmailWithoutTemplateReturnsError(): void
     {
         $subject = EmailSubject::of('Test Subject');
         $emailAddress = EmailAddress::of('test@example.com');
@@ -44,8 +44,8 @@ final class EmailTest extends TestCase
 
         $errors = $email->validate();
 
-        self::assertArrayHasKey('to', $errors->toArray());
-        self::assertEquals('validation.email.to.empty', $errors->offsetGet('to'));
+        self::assertArrayHasKey('template', $errors->toArray());
+        self::assertEquals('validation.templated_email.template.empty', $errors->toArray()['template']);
     }
 
     /**
@@ -74,14 +74,8 @@ final class EmailTest extends TestCase
         $emailName = EmailName::of('Test');
         $emailContact = EmailContact::create($emailAddress, $emailName);
 
-        $toAddress = EmailAddress::of('test@example.com');
-        $toName = EmailName::of('Test');
-        $toContact = EmailContact::create($toAddress, $toName);
-
-        $tos = EmailContactCollection::asList([$toContact]);
-
         $email = TemplatedEmail::create($subject, $emailContact)
-            ->withTo($tos)
+            ->withHtmlTemplatePath(\TournayreLabs\Common\Types\HtmlTemplatePath::of('test.html'))
         ;
 
         self::assertTrue($email->isValid()->isTrue());
@@ -151,7 +145,7 @@ final class EmailTest extends TestCase
         $emailContact = EmailContact::create($emailAddress, $emailName);
         $to = EmailContactCollection::asList([$emailContact]);
 
-        $email = Email::create($subject, $emailContact)
+        $email = TemplatedEmail::create($subject, $emailContact)
             ->withTo($to)
         ;
 
