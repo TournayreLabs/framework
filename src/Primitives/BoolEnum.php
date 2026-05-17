@@ -31,6 +31,22 @@ final class BoolEnum
     /**
      * @api
      */
+    public static function asTrue(): self
+    {
+        return self::true();
+    }
+
+    /**
+     * @api
+     */
+    public static function asFalse(): self
+    {
+        return self::false();
+    }
+
+    /**
+     * @api
+     */
     public function withLogger(LoggerInterface $logger): self
     {
         $clone = clone $this;

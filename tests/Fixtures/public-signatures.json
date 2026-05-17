@@ -28795,6 +28795,16 @@
                 "parameters": []
             },
             {
+                "name": "asFalse",
+                "visibility": "public",
+                "static": true,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
                 "name": "asInt",
                 "visibility": "public",
                 "static": false,
@@ -28811,6 +28821,16 @@
                 "abstract": false,
                 "final": false,
                 "returnType": "string",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "asTrue",
+                "visibility": "public",
+                "static": true,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
                 "returnsReference": false,
                 "parameters": []
             },
