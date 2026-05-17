@@ -2,14 +2,19 @@
 
 declare(strict_types=1);
 
+require_once __DIR__.'/../Rector/BoolEnumFromBoolToNamedConstructorRector.php';
+
 use Rector\Config\RectorConfig;
 use Rector\Renaming\Rector\ClassConstFetch\RenameClassConstFetchRector;
 use Rector\Renaming\Rector\MethodCall\RenameMethodRector;
 use Rector\Renaming\Rector\Name\RenameClassRector;
 use Rector\Renaming\ValueObject\MethodCallRename;
 use Rector\Renaming\ValueObject\RenameClassAndConstFetch;
+use TournayreLabs\Rector\BoolEnumFromBoolToNamedConstructorRector;
 
 return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->rule(BoolEnumFromBoolToNamedConstructorRector::class);
+
     $rectorConfig->ruleWithConfiguration(RenameClassRector::class, [
         'TournayreLabs\Primitives\BoolEnum' => 'TournayreLabs\Primitives\Bool_',
     ]);
