@@ -8,7 +8,7 @@ use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use PHPUnit\Framework\TestCase;
 
-class RuntimeExceptionTest extends TestCase
+final class RuntimeExceptionTest extends TestCase
 {
     public function testNew(): void
     {

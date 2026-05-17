@@ -8,7 +8,7 @@ use TournayreLabs\Common\Exception\InvalidArgumentException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use PHPUnit\Framework\TestCase;
 
-class InvalidArgumentExceptionTest extends TestCase
+final class InvalidArgumentExceptionTest extends TestCase
 {
     public function testNew(): void
     {

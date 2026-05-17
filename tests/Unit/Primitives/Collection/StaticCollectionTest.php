@@ -8,7 +8,7 @@ use TournayreLabs\Primitives\StringType;
 use TournayreLabs\Tests\Fixtures\Collection\CodeCollection;
 use PHPUnit\Framework\TestCase;
 
-class StaticCollectionTest extends TestCase
+final class StaticCollectionTest extends TestCase
 {
     public function testCreateMapWithoutParameters(): void
     {

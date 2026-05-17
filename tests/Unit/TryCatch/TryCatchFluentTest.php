@@ -11,7 +11,7 @@ use TournayreLabs\TryCatch\TryCatch;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
 
-class TryCatchFluentTest extends TestCase
+final class TryCatchFluentTest extends TestCase
 {
     private readonly ExampleService $service;
     private readonly NullLogger $logger;
@@ -215,7 +215,7 @@ class TryCatchFluentTest extends TestCase
     }
 }
 
-class ExampleService
+final class ExampleService
 {
     /**
      * @api

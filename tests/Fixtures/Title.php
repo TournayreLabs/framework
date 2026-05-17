@@ -6,6 +6,7 @@ namespace TournayreLabs\Tests\Fixtures;
 
 use TournayreLabs\Common\Traits\IsTrait;
 use TournayreLabs\Contracts\Null\NullableInterface;
+use TournayreLabs\Null\NullEnum;
 use TournayreLabs\Null\NullTrait;
 
 final class Title implements NullableInterface
@@ -13,15 +14,20 @@ final class Title implements NullableInterface
     use NullTrait;
     use IsTrait;
 
-    /**
-     * @api
-     */
-    public string $title;
+    private readonly string $title;
 
     private function __construct(string $title)
     {
         $this->title = $title;
-        $this->initializeNull();
+        $this->null = NullEnum::fromBool(false);
+    }
+
+    /**
+     * @api
+     */
+    public function title(): string
+    {
+        return $this->title;
     }
 
     /**

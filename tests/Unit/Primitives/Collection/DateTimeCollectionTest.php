@@ -9,7 +9,7 @@ use TournayreLabs\Primitives\Collection\DateTimeCollection;
 use TournayreLabs\Primitives\DateTime;
 use PHPUnit\Framework\TestCase;
 
-class DateTimeCollectionTest extends TestCase
+final class DateTimeCollectionTest extends TestCase
 {
     /**
      * @throws ThrowableInterface

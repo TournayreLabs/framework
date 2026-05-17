@@ -29,14 +29,14 @@ final class NullTest extends TestCase
     {
         $title = Title::asNull();
 
-        self::assertEquals('Empty title', $title->title);
+        self::assertEquals('Empty title', $title->title());
     }
 
     public function testNotNullValue(): void
     {
         $title = Title::create('My title');
 
-        self::assertEquals('My title', $title->title);
+        self::assertEquals('My title', $title->title());
     }
 
     public function testNullable(): void
@@ -54,11 +54,11 @@ final class NullTest extends TestCase
     {
         $title = Title::asNull();
         self::assertTrue($title->orNull()->isNull());
-        self::assertSame('Empty title', $title->orNull()->title);
+        self::assertSame('Empty title', $title->orNull()->title());
 
         $title = Title::create('My title');
         self::assertTrue($title->orNull()->isNotNull());
-        self::assertSame('My title', $title->orNull()->title);
+        self::assertSame('My title', $title->orNull()->title());
     }
 
     /**
