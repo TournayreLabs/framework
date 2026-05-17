@@ -97,6 +97,21 @@ parameters:
             message: '#is mutable#'
             path: src/Component/Mailer/Configuration/MailerConfiguration.php
         -
+            message: '#has a name ending with#'
+            path: src/Common/Log/*.php
+        -
+            message: '#has a name ending with#'
+            path: src/Common/Model/*.php
+        -
+            message: '#has a name ending with#'
+            path: src/Common/Persistance/Handler/*.php
+        -
+            message: '#has a name ending with#'
+            path: src/Symfony/Subscriber/*.php
+        -
+            message: '#has a name ending with#'
+            path: src/TryCatch/*.php
+        -
             message: '#accepts null#'
             path: tests/*
         -
@@ -183,3 +198,81 @@ parameters:
         -
             message: '#accepts null#'
             path: src/Contracts/Event/*.php
+        -
+            message: '#does not implement any interfaces#'
+            path: src/*
+        -
+            message: '#does not implement any interfaces#'
+            path: tests/*
+        -
+            message: '#exceeds the maximum of \d+#'
+            path: src/*
+        -
+            message: '#exceeds the maximum of \d+#'
+            path: tests/*
+        -
+            message: '#is mutable#'
+            path: src/Common/Log/AbstractLogger.php
+        -
+            message: '#modifies an object property#'
+            path: src/Common/Log/AbstractLogger.php
+        -
+            message: '#is not private#'
+            path: src/Common/Model/AbstractUser.php
+        -
+            message: '#modifies an object property#'
+            path: src/Common/Model/AbstractUser.php
+        -
+            message: '#is mutable#'
+            path: src/Common/VO/Event.php
+        -
+            message: '#modifies an object property#'
+            path: src/Common/VO/Event.php
+        -
+            message: '#is not private#'
+            path: src/Null/NullTrait.php
+        -
+            message: '#modifies an object property#'
+            path: src/Null/NullTrait.php
+        -
+            message: '#__construct\(\) contains code other than property assignments#'
+            path: src/Primitives/Numeric.php
+        -
+            message: '#appears to be a setter#'
+            path: src/Primitives/Traits/CollectionCommonTrait.php
+        -
+            message: '#appears to be a setter#'
+            path: src/Primitives/Traits/Collection/Set.php
+        -
+            message: '#appears to be a setter#'
+            path: src/Common/Collection/EventCollection.php
+        -
+            message: '#appears to be a setter#'
+            path: src/Contracts/Collection/SetInterface.php
+        -
+            message: '#has a name ending with#'
+            path: src/Contracts/Dispatcher/EntityEventDispatcher.php
+        -
+            message: '#is static#'
+            path: src/Primitives/Traits/DateTimeTrait.php
+        -
+            message: '#DateTimeInterface::set\(\) has default value null#'
+            path: src/Primitives/Traits/DateTimeTrait.php
+        -
+            message: '#DateTimeInterface::setUnit\(\) has default value null#'
+            path: src/Primitives/Traits/DateTimeTrait.php
+        -
+            message: '#DateTime::set\(\) has default value null#'
+            path: src/Primitives/Traits/DateTimeTrait.php
+        -
+            message: '#DateTime::setUnit\(\) has default value null#'
+            path: src/Primitives/Traits/DateTimeTrait.php
+        -
+            message: '#has a name ending with#'
+            path: src/Symfony/CommandBus/*.php
+        -
+            message: '#has a name ending with#'
+            path: src/Symfony/Mailer/Adapter/*.php
+        -
+            message: '#returns null#'
+            path: src/TryCatch/NullThrowableHandler.php
