@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\IsObjectInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait IsObject.
@@ -19,10 +19,10 @@ trait IsObject
      *
      * @api
      */
-    public function isObject(): BoolEnum
+    public function isObject(): Bool_
     {
         $isObject = $this->collection->isObject();
 
-        return BoolEnum::fromBool($isObject);
+        return Bool_::fromBool($isObject);
     }
 }

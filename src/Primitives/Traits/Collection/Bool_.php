@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\BoolInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_ as PrimitiveBool;
 
 /**
  * Trait Bool.
@@ -22,10 +22,10 @@ trait Bool_
      *
      * @api
      */
-    public function bool($key, mixed $default = false): BoolEnum
+    public function bool($key, mixed $default = false): PrimitiveBool
     {
         $bool = $this->collection->bool($key, $default);
 
-        return BoolEnum::fromBool($bool);
+        return PrimitiveBool::fromBool($bool);
     }
 }

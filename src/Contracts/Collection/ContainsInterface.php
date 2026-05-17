@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface ContainsInterface.
@@ -16,12 +16,12 @@ interface ContainsInterface
      *
      * @api
      */
-    public function contains(mixed $value): BoolEnum;
+    public function contains(mixed $value): Bool_;
 
     /**
      * Tests if an item matching the condition exists in the map.
      *
      * @api
      */
-    public function containsWith(mixed $key, string $operator, mixed $value): BoolEnum;
+    public function containsWith(mixed $key, string $operator, mixed $value): Bool_;
 }

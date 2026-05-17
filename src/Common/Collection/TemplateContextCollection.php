@@ -7,7 +7,7 @@ namespace TournayreLabs\Common\Collection;
 use TournayreLabs\Common\Assert\Assert;
 use TournayreLabs\Contracts\Collection\AsMapInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
@@ -30,7 +30,7 @@ final class TemplateContextCollection implements \IteratorAggregate, AsMapInterf
      *
      * @param mixed|null $offset
      */
-    public function has($offset): BoolEnum
+    public function has($offset): Bool_
     {
         return $this->collection
             ->has($offset)

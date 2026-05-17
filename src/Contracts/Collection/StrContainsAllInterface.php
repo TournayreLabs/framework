@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface StrContainsAllInterface.
@@ -19,5 +19,5 @@ interface StrContainsAllInterface
      *
      * @api
      */
-    public function strContainsAll(mixed $value, string $encoding = 'UTF-8'): BoolEnum;
+    public function strContainsAll(mixed $value, string $encoding = 'UTF-8'): Bool_;
 }

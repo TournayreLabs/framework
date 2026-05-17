@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\EqualsInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 
 /**
@@ -22,7 +22,7 @@ trait Equals
      *
      * @api
      */
-    public function equals($elements): BoolEnum
+    public function equals($elements): Bool_
     {
         if ($elements instanceof self) {
             $elements = $elements->toArray();
@@ -30,6 +30,6 @@ trait Equals
 
         $equals = $this->collection->equals($elements);
 
-        return BoolEnum::fromBool($equals);
+        return Bool_::fromBool($equals);
     }
 }

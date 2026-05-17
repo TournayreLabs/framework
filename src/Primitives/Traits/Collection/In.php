@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\InInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait In.
@@ -21,10 +21,10 @@ trait In
      *
      * @api
      */
-    public function in($element, bool $strict = false): BoolEnum
+    public function in($element, bool $strict = false): Bool_
     {
         $in = $this->collection->in($element, $strict);
 
-        return BoolEnum::fromBool($in);
+        return Bool_::fromBool($in);
     }
 }

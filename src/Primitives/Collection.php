@@ -172,7 +172,7 @@ use TournayreLabs\Primitives\Traits\Collection\At;
 use TournayreLabs\Primitives\Traits\Collection\AtLeastOneElement;
 use TournayreLabs\Primitives\Traits\Collection\Avg;
 use TournayreLabs\Primitives\Traits\Collection\Before;
-use TournayreLabs\Primitives\Traits\Collection\Bool_;
+use TournayreLabs\Primitives\Traits\Collection\Bool_ as BoolTrait;
 use TournayreLabs\Primitives\Traits\Collection\Call;
 use TournayreLabs\Primitives\Traits\Collection\Cast;
 use TournayreLabs\Primitives\Traits\Collection\Chunk;
@@ -333,7 +333,7 @@ final readonly class Collection implements AddInterface, AllInterface, AtInterfa
     use AtLeastOneElement;
     use Avg;
     use Before;
-    use Bool_;
+    use BoolTrait;
     use Call;
     use Cast;
     use Chunk;
@@ -485,7 +485,7 @@ final readonly class Collection implements AddInterface, AllInterface, AtInterfa
 
     private function __construct(
         private AimeosMap $collection,
-        private BoolEnum $isReadOnly,
+        private Bool_ $isReadOnly,
     ) {
     }
 
@@ -508,7 +508,7 @@ final readonly class Collection implements AddInterface, AllInterface, AtInterfa
     {
         return new self(
             collection: AimeosMap::from($this->collection),
-            isReadOnly: BoolEnum::fromBool(true),
+            isReadOnly: Bool_::fromBool(true),
         );
     }
 
@@ -523,20 +523,20 @@ final readonly class Collection implements AddInterface, AllInterface, AtInterfa
             $collection instanceof Collection => $collection,
             is_string($collection) => new self(
                 collection: AimeosMap::from([$collection]),
-                isReadOnly: BoolEnum::fromBool(false),
+                isReadOnly: Bool_::fromBool(false),
             ),
             $collection instanceof AimeosMap => new self(
                 collection: $collection,
-                isReadOnly: BoolEnum::fromBool(false),
+                isReadOnly: Bool_::fromBool(false),
             ),
             default => new self(
                 collection: AimeosMap::from($collection ?? []),
-                isReadOnly: BoolEnum::fromBool(false),
+                isReadOnly: Bool_::fromBool(false),
             ),
         };
     }
 
-    public function isReadOnly(): BoolEnum
+    public function isReadOnly(): Bool_
     {
         return $this->isReadOnly;
     }

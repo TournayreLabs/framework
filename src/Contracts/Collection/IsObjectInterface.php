@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface IsObjectInterface.
@@ -16,5 +16,5 @@ interface IsObjectInterface
      *
      * @api
      */
-    public function isObject(): BoolEnum;
+    public function isObject(): Bool_;
 }

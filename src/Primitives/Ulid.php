@@ -42,11 +42,11 @@ final readonly class Ulid
     /**
      * @api
      */
-    public function equalsTo(self $ulid): BoolEnum
+    public function equalsTo(self $ulid): Bool_
     {
         $equalsTo = $this->ulid->equals($ulid->ulid);
 
-        return BoolEnum::fromBool($equalsTo);
+        return Bool_::fromBool($equalsTo);
     }
 
     /**

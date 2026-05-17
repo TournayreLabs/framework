@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Tests\Unit\Primitives;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use PHPUnit\Framework\TestCase;
 
-final class BoolEnumTest extends TestCase
+final class Bool_Test extends TestCase
 {
     public function testAsTrue(): void
     {
-        $bool = BoolEnum::asTrue();
+        $bool = Bool_::asTrue();
 
         self::assertTrue($bool->isTrue());
         self::assertFalse($bool->isFalse());
@@ -22,7 +22,7 @@ final class BoolEnumTest extends TestCase
 
     public function testAsFalse(): void
     {
-        $bool = BoolEnum::asFalse();
+        $bool = Bool_::asFalse();
 
         self::assertTrue($bool->isFalse());
         self::assertFalse($bool->isTrue());
@@ -33,11 +33,11 @@ final class BoolEnumTest extends TestCase
 
     public function testFromBoolTrue(): void
     {
-        self::assertTrue(BoolEnum::fromBool(true)->isTrue());
+        self::assertTrue(Bool_::fromBool(true)->isTrue());
     }
 
     public function testFromBoolFalse(): void
     {
-        self::assertTrue(BoolEnum::fromBool(false)->isFalse());
+        self::assertTrue(Bool_::fromBool(false)->isFalse());
     }
 }

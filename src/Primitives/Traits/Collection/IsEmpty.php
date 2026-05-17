@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\IsEmptyInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait IsEmpty.
@@ -19,10 +19,10 @@ trait IsEmpty
      *
      * @api
      */
-    public function isEmpty(): BoolEnum
+    public function isEmpty(): Bool_
     {
         $isEmpty = $this->collection->isEmpty();
 
-        return BoolEnum::fromBool($isEmpty);
+        return Bool_::fromBool($isEmpty);
     }
 }

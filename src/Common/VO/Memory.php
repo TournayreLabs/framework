@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Common\VO;
 
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 
 final readonly class Memory
@@ -84,10 +84,10 @@ final readonly class Memory
         return round($value, 2).' '.$units->get($unit);
     }
 
-    public function equalsTo(int $size): BoolEnum
+    public function equalsTo(int $size): Bool_
     {
         $isEquals = $this->bytes === $size;
 
-        return BoolEnum::fromBool($isEquals);
+        return Bool_::fromBool($isEquals);
     }
 }

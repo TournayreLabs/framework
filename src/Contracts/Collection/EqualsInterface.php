@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 
 /**
@@ -19,5 +19,5 @@ interface EqualsInterface
      *
      * @api
      */
-    public function equals($elements): BoolEnum;
+    public function equals($elements): Bool_;
 }

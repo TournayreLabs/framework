@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Common\Types;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\StringType;
 use TournayreLabs\Primitives\Traits\StringTypeTrait;
 
@@ -20,7 +20,7 @@ final class TextTemplatePath
         return new self(StringType::of(''));
     }
 
-    public function isEmpty(): BoolEnum
+    public function isEmpty(): Bool_
     {
         return $this->value->equalsTo('');
     }

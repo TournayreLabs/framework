@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Filesystem;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection\FileCollection;
 
 interface FilesystemInterface
@@ -31,15 +31,15 @@ interface FilesystemInterface
 
     public function renameDirectory(string $source, string $destination): void;
 
-    public function exists(): BoolEnum;
+    public function exists(): Bool_;
 
-    public function isFile(): BoolEnum;
+    public function isFile(): Bool_;
 
-    public function isDirectory(): BoolEnum;
+    public function isDirectory(): Bool_;
 
-    public function isNotEmpty(): BoolEnum;
+    public function isNotEmpty(): Bool_;
 
-    public function isEmpty(): BoolEnum;
+    public function isEmpty(): Bool_;
 
     public function countFiles(): int;
 
@@ -49,11 +49,11 @@ interface FilesystemInterface
 
     public function listDirectories(): FileCollection;
 
-    public function isReadable(): BoolEnum;
+    public function isReadable(): Bool_;
 
-    public function isWritable(): BoolEnum;
+    public function isWritable(): Bool_;
 
-    public function isExecutable(): BoolEnum;
+    public function isExecutable(): Bool_;
 
-    public function isLink(): BoolEnum;
+    public function isLink(): Bool_;
 }

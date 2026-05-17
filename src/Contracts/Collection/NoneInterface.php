@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface NoneInterface.
@@ -18,5 +18,5 @@ interface NoneInterface
      *
      * @api
      */
-    public function none($element, bool $strict = false): BoolEnum;
+    public function none($element, bool $strict = false): Bool_;
 }

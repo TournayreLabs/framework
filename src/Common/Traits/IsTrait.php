@@ -4,21 +4,21 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Common\Traits;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 trait IsTrait
 {
-    public function is(self $object): BoolEnum
+    public function is(self $object): Bool_
     {
         $is = $this === $object;
 
-        return BoolEnum::fromBool($is);
+        return Bool_::fromBool($is);
     }
 
-    public function isNot(self $object): BoolEnum
+    public function isNot(self $object): Bool_
     {
         $isNot = $this !== $object;
 
-        return BoolEnum::fromBool($isNot);
+        return Bool_::fromBool($isNot);
     }
 }

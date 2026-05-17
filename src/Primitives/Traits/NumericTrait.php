@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits;
 
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Locale;
 use TournayreLabs\Primitives\Numeric;
 
@@ -75,7 +75,7 @@ trait NumericTrait
      *
      * @api
      */
-    public function greaterThan($numeric): BoolEnum
+    public function greaterThan($numeric): Bool_
     {
         return $this->value->greaterThan($numeric);
     }
@@ -87,7 +87,7 @@ trait NumericTrait
      *
      * @api
      */
-    public function greaterThanOrEqual($numeric): BoolEnum
+    public function greaterThanOrEqual($numeric): Bool_
     {
         return $this->value->greaterThanOrEqual($numeric);
     }
@@ -99,7 +99,7 @@ trait NumericTrait
      *
      * @api
      */
-    public function lessThan($numeric): BoolEnum
+    public function lessThan($numeric): Bool_
     {
         return $this->value->lessThan($numeric);
     }
@@ -111,7 +111,7 @@ trait NumericTrait
      *
      * @api
      */
-    public function lessThanOrEqual($numeric): BoolEnum
+    public function lessThanOrEqual($numeric): Bool_
     {
         return $this->value->lessThanOrEqual($numeric);
     }
@@ -123,7 +123,7 @@ trait NumericTrait
      *
      * @api
      */
-    public function equalTo($numeric): BoolEnum
+    public function equalTo($numeric): Bool_
     {
         return $this->value->equalTo($numeric);
     }
@@ -135,7 +135,7 @@ trait NumericTrait
      *
      * @api
      */
-    public function notEqualTo($numeric): BoolEnum
+    public function notEqualTo($numeric): Bool_
     {
         return $this->value->notEqualTo($numeric);
     }
@@ -148,7 +148,7 @@ trait NumericTrait
      *
      * @api
      */
-    public function between($min, $max): BoolEnum
+    public function between($min, $max): Bool_
     {
         return $this->value->between($min, $max);
     }
@@ -161,7 +161,7 @@ trait NumericTrait
      *
      * @api
      */
-    public function betweenOrEqual($min, $max): BoolEnum
+    public function betweenOrEqual($min, $max): Bool_
     {
         return $this->value->betweenOrEqual($min, $max);
     }
@@ -192,7 +192,7 @@ trait NumericTrait
      *
      * @api
      */
-    public function isZero(): BoolEnum
+    public function isZero(): Bool_
     {
         return $this->value->isZero();
     }

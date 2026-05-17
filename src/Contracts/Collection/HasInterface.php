@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface HasInterface.
@@ -18,5 +18,5 @@ interface HasInterface
      *
      * @api
      */
-    public function has($key): BoolEnum;
+    public function has($key): Bool_;
 }

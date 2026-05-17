@@ -7,7 +7,7 @@ namespace TournayreLabs\Primitives\Traits;
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\DateTime\DateTimeInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\StringType;
 use TournayreLabs\Primitives\Ulid;
 
@@ -30,7 +30,7 @@ trait UlidTrait
         return $this->ulid->toString();
     }
 
-    public function equalsTo(self $ulid): BoolEnum
+    public function equalsTo(self $ulid): Bool_
     {
         return $this->ulid->equalsTo($ulid->ulid);
     }

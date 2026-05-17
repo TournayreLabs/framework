@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface IncludesInterface.
@@ -19,5 +19,5 @@ interface IncludesInterface
      *
      * @api
      */
-    public function includes($element, bool $strict = false): BoolEnum;
+    public function includes($element, bool $strict = false): Bool_;
 }

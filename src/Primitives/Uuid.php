@@ -40,11 +40,11 @@ final readonly class Uuid
     /**
      * @api
      */
-    public function equalsTo(self $uuid): BoolEnum
+    public function equalsTo(self $uuid): Bool_
     {
         $equalsTo = $this->uuid->equals($uuid->uuid);
 
-        return BoolEnum::fromBool($equalsTo);
+        return Bool_::fromBool($equalsTo);
     }
 
     /**

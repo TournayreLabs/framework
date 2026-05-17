@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface CompareInterface.
@@ -16,5 +16,5 @@ interface CompareInterface
      *
      * @api
      */
-    public function compare(string $value, bool $case = true): BoolEnum;
+    public function compare(string $value, bool $case = true): Bool_;
 }

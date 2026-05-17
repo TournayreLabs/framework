@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\IncludesInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait Includes.
@@ -22,10 +22,10 @@ trait Includes
      *
      * @api
      */
-    public function includes($element, bool $strict = false): BoolEnum
+    public function includes($element, bool $strict = false): Bool_
     {
         $includes = $this->collection->includes($element, $strict);
 
-        return BoolEnum::fromBool($includes);
+        return Bool_::fromBool($includes);
     }
 }

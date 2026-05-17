@@ -42,14 +42,14 @@ enum Primitive: string
         ]);
     }
 
-    public function isMixed(): BoolEnum
+    public function isMixed(): Bool_
     {
         $isMixed = $this->is(self::MIXED);
 
-        return BoolEnum::fromBool($isMixed);
+        return Bool_::fromBool($isMixed);
     }
 
-    public function isPrimitive(): BoolEnum
+    public function isPrimitive(): Bool_
     {
         return self::types()
             ->contains($this)

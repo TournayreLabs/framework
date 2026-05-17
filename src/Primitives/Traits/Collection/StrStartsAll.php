@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\StrStartsAllInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait StrStartsAll.
@@ -22,10 +22,10 @@ trait StrStartsAll
      *
      * @api
      */
-    public function strStartsAll($value, string $encoding = 'UTF-8'): BoolEnum
+    public function strStartsAll($value, string $encoding = 'UTF-8'): Bool_
     {
         $strStartsAll = $this->collection->strStartsAll($value, $encoding);
 
-        return BoolEnum::fromBool($strStartsAll);
+        return Bool_::fromBool($strStartsAll);
     }
 }

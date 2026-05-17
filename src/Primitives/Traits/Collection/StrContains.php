@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\StrContainsInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait StrContains.
@@ -22,10 +22,10 @@ trait StrContains
      *
      * @api
      */
-    public function strContains(mixed $value, string $encoding = 'UTF-8'): BoolEnum
+    public function strContains(mixed $value, string $encoding = 'UTF-8'): Bool_
     {
         $strContains = $this->collection->strContains($value, $encoding);
 
-        return BoolEnum::fromBool($strContains);
+        return Bool_::fromBool($strContains);
     }
 }

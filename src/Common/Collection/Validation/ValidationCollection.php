@@ -8,7 +8,7 @@ use TournayreLabs\Common\Assert\Assert;
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Collection\AsMapInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
@@ -45,7 +45,7 @@ final class ValidationCollection implements \IteratorAggregate, AsMapInterface
         return $clone;
     }
 
-    public function isValid(): BoolEnum
+    public function isValid(): Bool_
     {
         return $this->hasNoElement();
     }

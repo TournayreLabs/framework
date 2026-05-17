@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface StrStartsAllInterface.
@@ -19,5 +19,5 @@ interface StrStartsAllInterface
      *
      * @api
      */
-    public function strStartsAll($value, string $encoding = 'UTF-8'): BoolEnum;
+    public function strStartsAll($value, string $encoding = 'UTF-8'): Bool_;
 }

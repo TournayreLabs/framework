@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\NoneInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait None.
@@ -21,10 +21,10 @@ trait None
      *
      * @api
      */
-    public function none($element, bool $strict = false): BoolEnum
+    public function none($element, bool $strict = false): Bool_
     {
         $none = $this->collection->none($element, $strict);
 
-        return BoolEnum::fromBool($none);
+        return Bool_::fromBool($none);
     }
 }

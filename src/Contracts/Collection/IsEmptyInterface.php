@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface IsEmptyInterface.
@@ -16,5 +16,5 @@ interface IsEmptyInterface
      *
      * @api
      */
-    public function isEmpty(): BoolEnum;
+    public function isEmpty(): Bool_;
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\HasXElementsInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait HasXElements.
@@ -14,7 +14,7 @@ use TournayreLabs\Primitives\BoolEnum;
  */
 trait HasXElements
 {
-    public function hasXElements(int $int): BoolEnum
+    public function hasXElements(int $int): Bool_
     {
         return $this->count()->equalsTo($int);
     }

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface HasSeveralElementsInterface.
  */
 interface HasSeveralElementsInterface
 {
-    public function hasSeveralElements(): BoolEnum;
+    public function hasSeveralElements(): Bool_;
 }

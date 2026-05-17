@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Contracts\Collection;
 
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface ImplementsInterface.
@@ -21,5 +21,5 @@ interface ImplementsInterface
      *
      * @api
      */
-    public function implements(string $interface, $throw = false): BoolEnum;
+    public function implements(string $interface, $throw = false): Bool_;
 }

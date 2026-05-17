@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\CompareInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait Compare.
@@ -19,10 +19,10 @@ trait Compare
      *
      * @api
      */
-    public function compare(string $value, bool $case = true): BoolEnum
+    public function compare(string $value, bool $case = true): Bool_
     {
         $compare = $this->collection->strCompare($value, $case);
 
-        return BoolEnum::fromBool($compare);
+        return Bool_::fromBool($compare);
     }
 }

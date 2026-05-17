@@ -147,12 +147,12 @@ final readonly class Numeric
      *
      * @api
      */
-    public function greaterThan($numeric): BoolEnum
+    public function greaterThan($numeric): Bool_
     {
         $that = $numeric instanceof self ? $numeric : self::of($numeric);
         $greaterThan = $this->value > $that->intValue();
 
-        return BoolEnum::fromBool($greaterThan);
+        return Bool_::fromBool($greaterThan);
     }
 
     /**
@@ -162,12 +162,12 @@ final readonly class Numeric
      *
      * @api
      */
-    public function greaterThanOrEqual($numeric): BoolEnum
+    public function greaterThanOrEqual($numeric): Bool_
     {
         $that = $numeric instanceof self ? $numeric : self::of($numeric);
         $greaterThanOrEqual = $this->value >= $that->value();
 
-        return BoolEnum::fromBool($greaterThanOrEqual);
+        return Bool_::fromBool($greaterThanOrEqual);
     }
 
     /**
@@ -177,12 +177,12 @@ final readonly class Numeric
      *
      * @api
      */
-    public function lessThan($numeric): BoolEnum
+    public function lessThan($numeric): Bool_
     {
         $that = $numeric instanceof self ? $numeric : self::of($numeric);
         $lessThan = $this->value < $that->value();
 
-        return BoolEnum::fromBool($lessThan);
+        return Bool_::fromBool($lessThan);
     }
 
     /**
@@ -192,12 +192,12 @@ final readonly class Numeric
      *
      * @api
      */
-    public function lessThanOrEqual($numeric): BoolEnum
+    public function lessThanOrEqual($numeric): Bool_
     {
         $that = $numeric instanceof self ? $numeric : self::of($numeric);
         $lessThanOrEqual = $this->value <= $that->value();
 
-        return BoolEnum::fromBool($lessThanOrEqual);
+        return Bool_::fromBool($lessThanOrEqual);
     }
 
     /**
@@ -207,12 +207,12 @@ final readonly class Numeric
      *
      * @api
      */
-    public function equalTo($numeric): BoolEnum
+    public function equalTo($numeric): Bool_
     {
         $that = $numeric instanceof self ? $numeric : self::of($numeric);
         $equalTo = $this->value === $that->value();
 
-        return BoolEnum::fromBool($equalTo);
+        return Bool_::fromBool($equalTo);
     }
 
     /**
@@ -222,12 +222,12 @@ final readonly class Numeric
      *
      * @api
      */
-    public function notEqualTo($numeric): BoolEnum
+    public function notEqualTo($numeric): Bool_
     {
         $that = $numeric instanceof self ? $numeric : self::of($numeric);
         $equalTo = $this->value !== $that->value();
 
-        return BoolEnum::fromBool($equalTo);
+        return Bool_::fromBool($equalTo);
     }
 
     /**
@@ -238,7 +238,7 @@ final readonly class Numeric
      *
      * @throws ThrowableInterface
      */
-    public function between($min, $max): BoolEnum
+    public function between($min, $max): Bool_
     {
         Numeric::of($min)
             ->greaterThan($max)
@@ -248,7 +248,7 @@ final readonly class Numeric
         $between = $this->greaterThan($min)->isTrue()
             && $this->lessThan($max)->isTrue();
 
-        return BoolEnum::fromBool($between);
+        return Bool_::fromBool($between);
     }
 
     /**
@@ -259,7 +259,7 @@ final readonly class Numeric
      *
      * @throws ThrowableInterface
      */
-    public function betweenOrEqual($min, $max): BoolEnum
+    public function betweenOrEqual($min, $max): Bool_
     {
         Numeric::of($min)
             ->greaterThan($max)
@@ -269,7 +269,7 @@ final readonly class Numeric
         $between = $this->greaterThanOrEqual($min)->isTrue()
             && $this->lessThanOrEqual($max)->isTrue();
 
-        return BoolEnum::fromBool($between);
+        return Bool_::fromBool($between);
     }
 
     /**
@@ -287,13 +287,13 @@ final readonly class Numeric
      *
      * @api
      */
-    public function isZero(): BoolEnum
+    public function isZero(): Bool_
     {
         $isZero = $this->equalTo(0)
             ->isTrue()
         ;
 
-        return BoolEnum::fromBool($isZero);
+        return Bool_::fromBool($isZero);
     }
 
     /**

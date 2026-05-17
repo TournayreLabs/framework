@@ -9,7 +9,7 @@ use TournayreLabs\Component\Mailer\VO\EmailContact;
 use TournayreLabs\Contracts\Collection\AsListInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
@@ -54,7 +54,7 @@ final class EmailContactCollection implements \IteratorAggregate, LoggableInterf
     /**
      * @api
      */
-    public function contains(EmailContact $emailContact): BoolEnum
+    public function contains(EmailContact $emailContact): Bool_
     {
         return $this->collection->contains($emailContact);
     }

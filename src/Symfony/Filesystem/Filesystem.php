@@ -7,7 +7,7 @@ namespace TournayreLabs\Symfony\Filesystem;
 use TournayreLabs\Common\Types\DirectoryOrFile;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Filesystem\FilesystemInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Collection\FileCollection;
 use TournayreLabs\Wrapper\SplFileInfo;
@@ -153,53 +153,53 @@ final readonly class Filesystem implements FilesystemInterface
         $this->moveFile($source, $destination);
     }
 
-    public function exists(): BoolEnum
+    public function exists(): Bool_
     {
         $exists = $this
             ->filesystem
             ->exists($this->directoryOrFile->toString())
         ;
 
-        return BoolEnum::fromBool($exists);
+        return Bool_::fromBool($exists);
     }
 
-    public function isFile(): BoolEnum
+    public function isFile(): Bool_
     {
         $filename = $this->directoryOrFile->toString();
         $isFile = \is_file($filename);
 
-        return BoolEnum::fromBool($isFile);
+        return Bool_::fromBool($isFile);
     }
 
-    public function isDirectory(): BoolEnum
+    public function isDirectory(): Bool_
     {
         $filename = $this->directoryOrFile->toString();
         $isDir = \is_dir($filename);
 
-        return BoolEnum::fromBool($isDir);
+        return Bool_::fromBool($isDir);
     }
 
     /**
      * @throws ThrowableInterface
      */
-    public function isNotEmpty(): BoolEnum
+    public function isNotEmpty(): Bool_
     {
         $isNotEmpty = $this->isEmpty()
             ->no()
         ;
 
-        return BoolEnum::fromBool($isNotEmpty);
+        return Bool_::fromBool($isNotEmpty);
     }
 
     /**
      * @throws ThrowableInterface
      */
-    public function isEmpty(): BoolEnum
+    public function isEmpty(): Bool_
     {
         $isEmpty = $this->listFiles()->hasNoElement()->isTrue()
             && $this->listDirectories()->hasNoElement()->isTrue();
 
-        return BoolEnum::fromBool($isEmpty);
+        return Bool_::fromBool($isEmpty);
     }
 
     /**
@@ -269,35 +269,35 @@ final readonly class Filesystem implements FilesystemInterface
         return FileCollection::asMap($files);
     }
 
-    public function isReadable(): BoolEnum
+    public function isReadable(): Bool_
     {
         $filename = $this->directoryOrFile->toString();
         $isReadable = \is_readable($filename);
 
-        return BoolEnum::fromBool($isReadable);
+        return Bool_::fromBool($isReadable);
     }
 
-    public function isWritable(): BoolEnum
+    public function isWritable(): Bool_
     {
         $filename = $this->directoryOrFile->toString();
         $isWritable = \is_writable($filename);
 
-        return BoolEnum::fromBool($isWritable);
+        return Bool_::fromBool($isWritable);
     }
 
-    public function isExecutable(): BoolEnum
+    public function isExecutable(): Bool_
     {
         $filename = $this->directoryOrFile->toString();
         $isExecutable = \is_executable($filename);
 
-        return BoolEnum::fromBool($isExecutable);
+        return Bool_::fromBool($isExecutable);
     }
 
-    public function isLink(): BoolEnum
+    public function isLink(): Bool_
     {
         $filename = $this->directoryOrFile->toString();
         $isLink = \is_link($filename);
 
-        return BoolEnum::fromBool($isLink);
+        return Bool_::fromBool($isLink);
     }
 }

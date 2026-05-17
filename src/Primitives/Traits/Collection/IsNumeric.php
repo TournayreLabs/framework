@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\IsNumericInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait IsNumeric.
@@ -19,10 +19,10 @@ trait IsNumeric
      *
      * @api
      */
-    public function isNumeric(): BoolEnum
+    public function isNumeric(): Bool_
     {
         $isNumeric = $this->collection->isNumeric();
 
-        return BoolEnum::fromBool($isNumeric);
+        return Bool_::fromBool($isNumeric);
     }
 }

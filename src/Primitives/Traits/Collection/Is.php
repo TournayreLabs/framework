@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\IsInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 
 /**
@@ -23,7 +23,7 @@ trait Is
      *
      * @api
      */
-    public function is($list, bool $strict = false): BoolEnum
+    public function is($list, bool $strict = false): Bool_
     {
         if ($list instanceof self) {
             $list = $list->toArray();
@@ -31,6 +31,6 @@ trait Is
 
         $is = $this->collection->is($list, $strict);
 
-        return BoolEnum::fromBool($is);
+        return Bool_::fromBool($is);
     }
 }

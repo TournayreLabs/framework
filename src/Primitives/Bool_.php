@@ -10,7 +10,7 @@ use TournayreLabs\Contracts\Log\LoggerInterface;
 
 use function Symfony\Component\String\u;
 
-final class BoolEnum
+final class Bool_
 {
     private const TRUE = 'true';
 

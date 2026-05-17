@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 
 /**
@@ -20,5 +20,5 @@ interface IsInterface
      *
      * @api
      */
-    public function is($list, bool $strict = false): BoolEnum;
+    public function is($list, bool $strict = false): Bool_;
 }

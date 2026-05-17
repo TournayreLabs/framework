@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\ContainsInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait Contains.
@@ -19,11 +19,11 @@ trait Contains
      *
      * @api
      */
-    public function contains(mixed $value): BoolEnum
+    public function contains(mixed $value): Bool_
     {
         $contains = $this->collection->contains($value);
 
-        return BoolEnum::fromBool($contains);
+        return Bool_::fromBool($contains);
     }
 
     /**
@@ -31,10 +31,10 @@ trait Contains
      *
      * @api
      */
-    public function containsWith(mixed $key, string $operator, mixed $value): BoolEnum
+    public function containsWith(mixed $key, string $operator, mixed $value): Bool_
     {
         $contains = $this->collection->contains($key, $operator, $value);
 
-        return BoolEnum::fromBool($contains);
+        return Bool_::fromBool($contains);
     }
 }

@@ -6,7 +6,7 @@ namespace TournayreLabs\Primitives\Traits;
 
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Int_;
 
 /**
@@ -74,7 +74,7 @@ trait CollectionCommonTrait
     /**
      * @throws ThrowableInterface
      */
-    public function atLeastOneElement(): BoolEnum
+    public function atLeastOneElement(): Bool_
     {
         return $this->count()
             ->greaterThan(0)
@@ -84,7 +84,7 @@ trait CollectionCommonTrait
     /**
      * @throws ThrowableInterface
      */
-    public function hasSeveralElements(): BoolEnum
+    public function hasSeveralElements(): Bool_
     {
         return $this->count()
             ->greaterThan(1)
@@ -94,7 +94,7 @@ trait CollectionCommonTrait
     /**
      * @throws ThrowableInterface
      */
-    public function hasNoElement(): BoolEnum
+    public function hasNoElement(): Bool_
     {
         return $this->count()
             ->equalsTo(0)
@@ -104,7 +104,7 @@ trait CollectionCommonTrait
     /**
      * @throws ThrowableInterface
      */
-    public function hasOneElement(): BoolEnum
+    public function hasOneElement(): Bool_
     {
         return $this->count()
             ->equalsTo(1)
@@ -114,7 +114,7 @@ trait CollectionCommonTrait
     /**
      * @throws ThrowableInterface
      */
-    public function hasXElements(int $int): BoolEnum
+    public function hasXElements(int $int): Bool_
     {
         return $this->count()
             ->equalsTo($int)

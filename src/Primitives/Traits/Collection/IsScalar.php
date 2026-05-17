@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\IsScalarInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait IsScalar.
@@ -19,10 +19,10 @@ trait IsScalar
      *
      * @api
      */
-    public function isScalar(): BoolEnum
+    public function isScalar(): Bool_
     {
         $isScalar = $this->collection->isScalar();
 
-        return BoolEnum::fromBool($isScalar);
+        return Bool_::fromBool($isScalar);
     }
 }

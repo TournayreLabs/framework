@@ -49,21 +49,21 @@ final readonly class Int_
     /**
      * @api
      */
-    public function isPositive(): BoolEnum
+    public function isPositive(): Bool_
     {
         $isPositive = $this->value > 0;
 
-        return BoolEnum::fromBool($isPositive);
+        return Bool_::fromBool($isPositive);
     }
 
     /**
      * @api
      */
-    public function isNegative(): BoolEnum
+    public function isNegative(): Bool_
     {
         $isNegative = $this->value < 0;
 
-        return BoolEnum::fromBool($isNegative);
+        return Bool_::fromBool($isNegative);
     }
 
     /**
@@ -71,7 +71,7 @@ final readonly class Int_
      *
      * @api
      */
-    public function isZero(): BoolEnum
+    public function isZero(): Bool_
     {
         return $this->equalsTo(0);
     }
@@ -94,7 +94,7 @@ final readonly class Int_
      *
      * @api
      */
-    public function between($of, $of1): BoolEnum
+    public function between($of, $of1): Bool_
     {
         $of = self::of($of);
         $of1 = self::of($of1);
@@ -102,7 +102,7 @@ final readonly class Int_
         $between = $this->value > $of->value()
             && $this->value < $of1->value();
 
-        return BoolEnum::fromBool($between);
+        return Bool_::fromBool($between);
     }
 
     /**
@@ -113,7 +113,7 @@ final readonly class Int_
      *
      * @api
      */
-    public function betweenOrEqual($of, $of1): BoolEnum
+    public function betweenOrEqual($of, $of1): Bool_
     {
         $of = self::of($of);
         $of1 = self::of($of1);
@@ -121,27 +121,27 @@ final readonly class Int_
         $betweenOrEqual = $this->value >= $of->value()
             && $this->value <= $of1->value();
 
-        return BoolEnum::fromBool($betweenOrEqual);
+        return Bool_::fromBool($betweenOrEqual);
     }
 
     /**
      * @api
      */
-    public function isEven(): BoolEnum
+    public function isEven(): Bool_
     {
         $isEven = 0 === $this->value % 2;
 
-        return BoolEnum::fromBool($isEven);
+        return Bool_::fromBool($isEven);
     }
 
     /**
      * @api
      */
-    public function isOdd(): BoolEnum
+    public function isOdd(): Bool_
     {
         $isOdd = 0 !== $this->value % 2;
 
-        return BoolEnum::fromBool($isOdd);
+        return Bool_::fromBool($isOdd);
     }
 
     /**
@@ -151,12 +151,12 @@ final readonly class Int_
      *
      * @api
      */
-    public function greaterThan($of): BoolEnum
+    public function greaterThan($of): Bool_
     {
         $of = self::of($of);
         $greaterThan = $this->value > $of->value();
 
-        return BoolEnum::fromBool($greaterThan);
+        return Bool_::fromBool($greaterThan);
     }
 
     /**
@@ -166,12 +166,12 @@ final readonly class Int_
      *
      * @api
      */
-    public function greaterThanOrEqual($of): BoolEnum
+    public function greaterThanOrEqual($of): Bool_
     {
         $of = self::of($of);
         $greaterThanOrEqual = $this->value >= $of->value();
 
-        return BoolEnum::fromBool($greaterThanOrEqual);
+        return Bool_::fromBool($greaterThanOrEqual);
     }
 
     /**
@@ -181,12 +181,12 @@ final readonly class Int_
      *
      * @api
      */
-    public function lessThan($of): BoolEnum
+    public function lessThan($of): Bool_
     {
         $of = self::of($of);
         $lessThan = $this->value < $of->value();
 
-        return BoolEnum::fromBool($lessThan);
+        return Bool_::fromBool($lessThan);
     }
 
     /**
@@ -196,12 +196,12 @@ final readonly class Int_
      *
      * @api
      */
-    public function lessThanOrEqual($of): BoolEnum
+    public function lessThanOrEqual($of): Bool_
     {
         $of = self::of($of);
         $lessThanOrEqual = $this->value <= $of->value();
 
-        return BoolEnum::fromBool($lessThanOrEqual);
+        return Bool_::fromBool($lessThanOrEqual);
     }
 
     /**
@@ -211,11 +211,11 @@ final readonly class Int_
      *
      * @api
      */
-    public function equalsTo($of): BoolEnum
+    public function equalsTo($of): Bool_
     {
         $of = self::of($of);
         $equalsTo = $this->value === $of->value();
 
-        return BoolEnum::fromBool($equalsTo);
+        return Bool_::fromBool($equalsTo);
     }
 }

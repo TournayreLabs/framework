@@ -151,7 +151,7 @@ parameters:
             path: src/Common/VO/Uri.php
         -
             message: '#is mutable#'
-            path: src/Primitives/BoolEnum.php
+            path: src/Primitives/Bool_.php
         -
             message: '#\$null is mutable#'
             path: src/*

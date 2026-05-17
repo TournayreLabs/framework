@@ -13789,7 +13789,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -13829,7 +13829,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -13850,7 +13850,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -13860,7 +13860,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -13870,7 +13870,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -13880,7 +13880,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -13990,7 +13990,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -14030,7 +14030,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -14040,7 +14040,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -14050,7 +14050,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -14060,7 +14060,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -14081,7 +14081,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -15416,7 +15416,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -15437,7 +15437,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -15485,7 +15485,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -15506,7 +15506,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -15844,7 +15844,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -16302,7 +16302,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -16312,7 +16312,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -16363,7 +16363,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -16373,7 +16373,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -16383,7 +16383,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -16393,7 +16393,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -16471,7 +16471,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -16492,7 +16492,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -16513,7 +16513,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -16534,7 +16534,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -16595,7 +16595,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -16633,7 +16633,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -16743,7 +16743,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -16904,7 +16904,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -17208,7 +17208,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             }
@@ -17325,7 +17325,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             }
@@ -17342,7 +17342,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             }
@@ -17359,7 +17359,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             }
@@ -17376,7 +17376,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21221,7 +21221,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21273,7 +21273,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21283,7 +21283,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21304,7 +21304,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21325,7 +21325,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21346,7 +21346,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21367,7 +21367,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21398,7 +21398,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21429,7 +21429,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21439,7 +21439,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21449,7 +21449,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21459,7 +21459,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21469,7 +21469,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21500,7 +21500,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21510,7 +21510,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21531,7 +21531,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21552,7 +21552,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21562,7 +21562,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21572,7 +21572,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21582,7 +21582,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21592,7 +21592,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21602,7 +21602,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21612,7 +21612,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21622,7 +21622,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21632,7 +21632,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21642,7 +21642,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21652,7 +21652,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21662,7 +21662,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21683,7 +21683,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21704,7 +21704,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21725,7 +21725,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21746,7 +21746,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21767,7 +21767,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21788,7 +21788,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21809,7 +21809,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21830,7 +21830,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21851,7 +21851,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21882,7 +21882,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21903,7 +21903,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21924,7 +21924,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -21945,7 +21945,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21955,7 +21955,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21965,7 +21965,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21975,7 +21975,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21985,7 +21985,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -21995,7 +21995,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -22005,7 +22005,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -22015,7 +22015,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -22025,7 +22025,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -22564,7 +22564,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -28779,7 +28779,7 @@
             }
         ]
     },
-    "TournayreLabs\\Primitives\\BoolEnum": {
+    "TournayreLabs\\Primitives\\Bool_": {
         "kind": "class",
         "abstract": false,
         "final": true,
@@ -29129,7 +29129,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -29191,7 +29191,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -29443,7 +29443,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -29496,7 +29496,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -29517,7 +29517,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -29901,7 +29901,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -29911,7 +29911,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -29932,7 +29932,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -30383,7 +30383,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -30404,7 +30404,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -30414,7 +30414,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -30424,7 +30424,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -30434,7 +30434,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -30631,7 +30631,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -30663,7 +30663,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -30695,7 +30695,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -31101,7 +31101,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -31133,7 +31133,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -31143,7 +31143,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -31153,7 +31153,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -31163,7 +31163,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -31173,7 +31173,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -31426,7 +31426,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -31512,7 +31512,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -32581,7 +32581,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -32845,7 +32845,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -32877,7 +32877,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -32909,7 +32909,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -32941,7 +32941,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -33037,7 +33037,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -33069,7 +33069,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -33854,7 +33854,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -33957,7 +33957,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -33967,7 +33967,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -33977,7 +33977,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -33987,7 +33987,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37528,7 +37528,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37580,7 +37580,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37590,7 +37590,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37611,7 +37611,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37632,7 +37632,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37653,7 +37653,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37674,7 +37674,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37705,7 +37705,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37736,7 +37736,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37746,7 +37746,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37756,7 +37756,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37766,7 +37766,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37776,7 +37776,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37827,7 +37827,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37837,7 +37837,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37858,7 +37858,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -37879,7 +37879,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37889,7 +37889,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37899,7 +37899,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37909,7 +37909,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37919,7 +37919,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37929,7 +37929,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37939,7 +37939,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37949,7 +37949,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37959,7 +37959,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37969,7 +37969,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37979,7 +37979,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37989,7 +37989,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38010,7 +38010,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38031,7 +38031,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38052,7 +38052,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38073,7 +38073,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38094,7 +38094,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38115,7 +38115,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38136,7 +38136,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38157,7 +38157,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38178,7 +38178,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38209,7 +38209,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38230,7 +38230,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38251,7 +38251,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -38272,7 +38272,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -38282,7 +38282,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -38292,7 +38292,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -38302,7 +38302,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -38312,7 +38312,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -38322,7 +38322,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -38332,7 +38332,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -38342,7 +38342,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -38352,7 +38352,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -38891,7 +38891,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43230,7 +43230,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43261,7 +43261,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43292,7 +43292,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43313,7 +43313,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43334,7 +43334,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43355,7 +43355,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -43365,7 +43365,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -43375,7 +43375,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -43385,7 +43385,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -43395,7 +43395,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -43405,7 +43405,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43426,7 +43426,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43605,7 +43605,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43636,7 +43636,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43667,7 +43667,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43761,7 +43761,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43782,7 +43782,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43813,7 +43813,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -43823,7 +43823,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43844,7 +43844,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -43865,7 +43865,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -44137,7 +44137,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -44158,7 +44158,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -44221,7 +44221,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -44484,7 +44484,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45040,7 +45040,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45292,7 +45292,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             }
@@ -45309,7 +45309,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -45349,7 +45349,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -45359,7 +45359,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -45369,7 +45369,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -45379,7 +45379,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45569,7 +45569,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45600,7 +45600,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45631,7 +45631,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45725,7 +45725,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45746,7 +45746,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45777,7 +45777,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -45787,7 +45787,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45808,7 +45808,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45829,7 +45829,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45930,7 +45930,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -46221,7 +46221,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -46252,7 +46252,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -46262,7 +46262,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -46272,7 +46272,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -46282,7 +46282,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -46292,7 +46292,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -46302,7 +46302,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -46312,7 +46312,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -46322,7 +46322,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": []
             },

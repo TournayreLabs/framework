@@ -110,11 +110,11 @@ final readonly class StringType implements \Stringable
      *
      * @param string|string[] $needle
      */
-    public function containsAny($needle): BoolEnum
+    public function containsAny($needle): Bool_
     {
         $containsAny = u($this->value)->containsAny($needle);
 
-        return BoolEnum::fromBool($containsAny);
+        return Bool_::fromBool($containsAny);
     }
 
     /**
@@ -122,11 +122,11 @@ final readonly class StringType implements \Stringable
      *
      * @param string|string[] $suffix
      */
-    public function endsWith($suffix): BoolEnum
+    public function endsWith($suffix): Bool_
     {
         $endsWith = u($this->value)->endsWith($suffix);
 
-        return BoolEnum::fromBool($endsWith);
+        return Bool_::fromBool($endsWith);
     }
 
     /**
@@ -134,11 +134,11 @@ final readonly class StringType implements \Stringable
      *
      * @param string|string[] $string
      */
-    public function equalsTo($string): BoolEnum
+    public function equalsTo($string): Bool_
     {
         $equalsTo = u($this->value)->equalsTo($string);
 
-        return BoolEnum::fromBool($equalsTo);
+        return Bool_::fromBool($equalsTo);
     }
 
     /**
@@ -264,7 +264,7 @@ final readonly class StringType implements \Stringable
      *
      * @api
      */
-    public function lengthIsBetween(int $start, int $end): BoolEnum
+    public function lengthIsBetween(int $start, int $end): Bool_
     {
         return self::of($this->value)
             ->length()
@@ -478,11 +478,11 @@ final readonly class StringType implements \Stringable
      *
      * @param string|string[] $prefix
      */
-    public function startsWith($prefix): BoolEnum
+    public function startsWith($prefix): Bool_
     {
         $startsWith = u($this->value)->startsWith($prefix);
 
-        return BoolEnum::fromBool($startsWith);
+        return Bool_::fromBool($startsWith);
     }
 
     /**

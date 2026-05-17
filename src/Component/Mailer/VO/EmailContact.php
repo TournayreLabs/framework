@@ -7,7 +7,7 @@ namespace TournayreLabs\Component\Mailer\VO;
 use TournayreLabs\Component\Mailer\Types\EmailAddress;
 use TournayreLabs\Component\Mailer\Types\EmailName;
 use TournayreLabs\Contracts\Log\LoggableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 final readonly class EmailContact implements LoggableInterface
 {
@@ -44,7 +44,7 @@ final readonly class EmailContact implements LoggableInterface
     /**
      * @api
      */
-    public function equalsTo(EmailContact $emailContact): BoolEnum
+    public function equalsTo(EmailContact $emailContact): Bool_
     {
         $emailAddressSameAsContact = $this->email
             ->equalsTo($emailContact->email())
@@ -59,7 +59,7 @@ final readonly class EmailContact implements LoggableInterface
         $equalTo = $emailAddressSameAsContact
             && $emailNameSameAsContact;
 
-        return BoolEnum::fromBool($equalTo);
+        return Bool_::fromBool($equalTo);
     }
 
     /**

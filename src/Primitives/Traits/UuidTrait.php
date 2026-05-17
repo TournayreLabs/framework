@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Primitives\Traits;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\StringType;
 use TournayreLabs\Primitives\Uuid;
 
@@ -35,7 +35,7 @@ trait UuidTrait
         return $this->uuid->toString();
     }
 
-    public function equalsTo(self $uuid): BoolEnum
+    public function equalsTo(self $uuid): Bool_
     {
         return $this->uuid->equalsTo($uuid->uuid);
     }

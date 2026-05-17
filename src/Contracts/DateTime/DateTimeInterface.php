@@ -5,39 +5,39 @@ declare(strict_types=1);
 namespace TournayreLabs\Contracts\DateTime;
 
 use TournayreLabs\Contracts\Null\NullableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 interface DateTimeInterface extends NullableInterface
 {
-    public function isAM(): BoolEnum;
+    public function isAM(): Bool_;
 
-    public function isBefore(\DateTimeInterface $datetime): BoolEnum;
+    public function isBefore(\DateTimeInterface $datetime): Bool_;
 
-    public function isAfter(\DateTimeInterface $datetime): BoolEnum;
+    public function isAfter(\DateTimeInterface $datetime): Bool_;
 
-    public function isBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): BoolEnum;
+    public function isBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): Bool_;
 
-    public function isNotBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): BoolEnum;
+    public function isNotBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): Bool_;
 
-    public function isBeforeOrEqual(\DateTimeInterface $datetime): BoolEnum;
+    public function isBeforeOrEqual(\DateTimeInterface $datetime): Bool_;
 
-    public function isAfterOrEqual(\DateTimeInterface $datetime): BoolEnum;
+    public function isAfterOrEqual(\DateTimeInterface $datetime): Bool_;
 
-    public function isBetweenOrEqual(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): BoolEnum;
+    public function isBetweenOrEqual(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): Bool_;
 
-    public function isPM(): BoolEnum;
+    public function isPM(): Bool_;
 
-    public function isSame(\DateTimeInterface $datetime): BoolEnum;
+    public function isSame(\DateTimeInterface $datetime): Bool_;
 
-    public function isSameOrAfter(\DateTimeInterface $datetime): BoolEnum;
+    public function isSameOrAfter(\DateTimeInterface $datetime): Bool_;
 
-    public function isSameOrBefore(\DateTimeInterface $datetime): BoolEnum;
+    public function isSameOrBefore(\DateTimeInterface $datetime): Bool_;
 
-    public function isSameOrBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): BoolEnum;
+    public function isSameOrBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): Bool_;
 
-    public function isWeekday(): BoolEnum;
+    public function isWeekday(): Bool_;
 
-    public function isWeekend(): BoolEnum;
+    public function isWeekend(): Bool_;
 
     public function toDateTime(): \DateTimeInterface;
 
@@ -150,11 +150,11 @@ interface DateTimeInterface extends NullableInterface
 
     public function millennium(): int;
 
-    public function isDst(): BoolEnum;
+    public function isDst(): Bool_;
 
-    public function isLocal(): BoolEnum;
+    public function isLocal(): Bool_;
 
-    public function isUtc(): BoolEnum;
+    public function isUtc(): Bool_;
 
     public function timezoneName(): string;
 
@@ -162,65 +162,65 @@ interface DateTimeInterface extends NullableInterface
 
     public function locale(): string;
 
-    public function isValid(): BoolEnum;
+    public function isValid(): Bool_;
 
-    public function isSunday(): BoolEnum;
+    public function isSunday(): Bool_;
 
-    public function isMonday(): BoolEnum;
+    public function isMonday(): Bool_;
 
-    public function isTuesday(): BoolEnum;
+    public function isTuesday(): Bool_;
 
-    public function isWednesday(): BoolEnum;
+    public function isWednesday(): Bool_;
 
-    public function isThursday(): BoolEnum;
+    public function isThursday(): Bool_;
 
-    public function isFriday(): BoolEnum;
+    public function isFriday(): Bool_;
 
-    public function isSaturday(): BoolEnum;
+    public function isSaturday(): Bool_;
 
-    public function isSameYear(\DateTimeInterface $date): BoolEnum;
+    public function isSameYear(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentYear(): BoolEnum;
+    public function isSameCurrentYear(): Bool_;
 
-    public function isSameWeek(\DateTimeInterface $date): BoolEnum;
+    public function isSameWeek(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentWeek(): BoolEnum;
+    public function isSameCurrentWeek(): Bool_;
 
-    public function isSameDay(\DateTimeInterface $date): BoolEnum;
+    public function isSameDay(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentDay(): BoolEnum;
+    public function isSameCurrentDay(): Bool_;
 
-    public function isSameHour(\DateTimeInterface $date): BoolEnum;
+    public function isSameHour(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentHour(): BoolEnum;
+    public function isSameCurrentHour(): Bool_;
 
-    public function isSameMinute(\DateTimeInterface $date): BoolEnum;
+    public function isSameMinute(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentMinute(): BoolEnum;
+    public function isSameCurrentMinute(): Bool_;
 
-    public function isSameSecond(\DateTimeInterface $date): BoolEnum;
+    public function isSameSecond(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentSecond(): BoolEnum;
+    public function isSameCurrentSecond(): Bool_;
 
-    public function isSameMicro(\DateTimeInterface $date): BoolEnum;
+    public function isSameMicro(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentMicro(): BoolEnum;
+    public function isSameCurrentMicro(): Bool_;
 
-    public function isSameMicrosecond(\DateTimeInterface $date): BoolEnum;
+    public function isSameMicrosecond(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentMicrosecond(): BoolEnum;
+    public function isSameCurrentMicrosecond(): Bool_;
 
-    public function isSameDecade(\DateTimeInterface $date): BoolEnum;
+    public function isSameDecade(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentDecade(): BoolEnum;
+    public function isSameCurrentDecade(): Bool_;
 
-    public function isSameCentury(\DateTimeInterface $date): BoolEnum;
+    public function isSameCentury(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentCentury(): BoolEnum;
+    public function isSameCurrentCentury(): Bool_;
 
-    public function isSameMillennium(\DateTimeInterface $date): BoolEnum;
+    public function isSameMillennium(\DateTimeInterface $date): Bool_;
 
-    public function isSameCurrentMillennium(): BoolEnum;
+    public function isSameCurrentMillennium(): Bool_;
 
     public function years(int $value): DateTimeInterface;
 
@@ -1198,7 +1198,7 @@ interface DateTimeInterface extends NullableInterface
      */
     public function getWeekendDays(): array;
 
-    public function hasRelativeKeywords(string $time): BoolEnum;
+    public function hasRelativeKeywords(string $time): Bool_;
 
     /**
      * @return array<string, string>
@@ -1258,5 +1258,5 @@ interface DateTimeInterface extends NullableInterface
     /**
      * @param DateTimeInterface|string $value
      */
-    public function numberOfDaysIsLowerThanOrEquals($value, int $numberOfDays): BoolEnum;
+    public function numberOfDaysIsLowerThanOrEquals($value, int $numberOfDays): Bool_;
 }

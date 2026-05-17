@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Primitives\Traits;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\StringType;
 
 trait StringTypeTrait
@@ -32,7 +32,7 @@ trait StringTypeTrait
     /**
      * @param string|self $value
      */
-    public function equalsTo($value): BoolEnum
+    public function equalsTo($value): Bool_
     {
         $valueToCheck = $value instanceof self ? $value->toString() : $value;
 

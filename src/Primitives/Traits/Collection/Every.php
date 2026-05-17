@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\EveryInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait Every.
@@ -19,10 +19,10 @@ trait Every
      *
      * @api
      */
-    public function every(\Closure $callback): BoolEnum
+    public function every(\Closure $callback): Bool_
     {
         $every = $this->collection->every($callback);
 
-        return BoolEnum::fromBool($every);
+        return Bool_::fromBool($every);
     }
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits;
 
 use Aimeos\Map as AimeosMap;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection as Collection_;
 
 trait Collection
@@ -35,7 +35,7 @@ trait Collection
         return new self(Collection_::readOnly($collection));
     }
 
-    public function isReadOnly(): BoolEnum
+    public function isReadOnly(): Bool_
     {
         return $this->collection->isReadOnly();
     }

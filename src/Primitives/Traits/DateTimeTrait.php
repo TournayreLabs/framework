@@ -8,7 +8,7 @@ use TournayreLabs\Common\Exception\InvalidArgumentException;
 use TournayreLabs\Contracts\DateTime\DateTimeInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Null\NullTrait;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\DateTime;
 use Carbon\Carbon;
 
@@ -113,7 +113,7 @@ trait DateTimeTrait
     /**
      * @api
      */
-    public function isAM(): BoolEnum
+    public function isAM(): Bool_
     {
         $noon = $this->datetime
             ->copy()
@@ -124,177 +124,177 @@ trait DateTimeTrait
             ->lt($noon)
         ;
 
-        return BoolEnum::fromBool($lt);
+        return Bool_::fromBool($lt);
     }
 
     /**
      * @api
      */
-    public function isAfter(\DateTimeInterface $datetime): BoolEnum
+    public function isAfter(\DateTimeInterface $datetime): Bool_
     {
         $gt = $this->datetime
             ->gt($datetime)
         ;
 
-        return BoolEnum::fromBool($gt);
+        return Bool_::fromBool($gt);
     }
 
     /**
      * @api
      */
-    public function isAfterOrEqual(\DateTimeInterface $datetime): BoolEnum
+    public function isAfterOrEqual(\DateTimeInterface $datetime): Bool_
     {
         $gte = $this->datetime
             ->gte($datetime)
         ;
 
-        return BoolEnum::fromBool($gte);
+        return Bool_::fromBool($gte);
     }
 
     /**
      * @api
      */
-    public function isBefore(\DateTimeInterface $datetime): BoolEnum
+    public function isBefore(\DateTimeInterface $datetime): Bool_
     {
         $lt = $this->datetime
             ->lt($datetime)
         ;
 
-        return BoolEnum::fromBool($lt);
+        return Bool_::fromBool($lt);
     }
 
     /**
      * @api
      */
-    public function isBeforeOrEqual(\DateTimeInterface $datetime): BoolEnum
+    public function isBeforeOrEqual(\DateTimeInterface $datetime): Bool_
     {
         $lte = $this->datetime
             ->lte($datetime)
         ;
 
-        return BoolEnum::fromBool($lte);
+        return Bool_::fromBool($lte);
     }
 
     /**
      * @api
      */
-    public function isBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): BoolEnum
+    public function isBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): Bool_
     {
         $between = $this->datetime
             ->between($datetime1, $datetime2, false)
         ;
 
-        return BoolEnum::fromBool($between);
+        return Bool_::fromBool($between);
     }
 
     /**
      * @api
      */
-    public function isBetweenOrEqual(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): BoolEnum
+    public function isBetweenOrEqual(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): Bool_
     {
         $between = $this->datetime
             ->between($datetime1, $datetime2)
         ;
 
-        return BoolEnum::fromBool($between);
+        return Bool_::fromBool($between);
     }
 
     /**
      * @api
      */
-    public function isNotBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): BoolEnum
+    public function isNotBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): Bool_
     {
         $isNotBetween = $this
             ->isBetween($datetime1, $datetime2)
             ->isFalse()
         ;
 
-        return BoolEnum::fromBool($isNotBetween);
+        return Bool_::fromBool($isNotBetween);
     }
 
     /**
      * @api
      */
-    public function isPM(): BoolEnum
+    public function isPM(): Bool_
     {
         $isNotAM = $this
             ->isAM()
             ->isFalse()
         ;
 
-        return BoolEnum::fromBool($isNotAM);
+        return Bool_::fromBool($isNotAM);
     }
 
     /**
      * @api
      */
-    public function isSame(\DateTimeInterface $datetime): BoolEnum
+    public function isSame(\DateTimeInterface $datetime): Bool_
     {
         $eq = $this->datetime
             ->eq($datetime)
         ;
 
-        return BoolEnum::fromBool($eq);
+        return Bool_::fromBool($eq);
     }
 
     /**
      * @api
      */
-    public function isSameOrAfter(\DateTimeInterface $datetime): BoolEnum
+    public function isSameOrAfter(\DateTimeInterface $datetime): Bool_
     {
         $gte = $this->datetime
             ->gte($datetime)
         ;
 
-        return BoolEnum::fromBool($gte);
+        return Bool_::fromBool($gte);
     }
 
     /**
      * @api
      */
-    public function isSameOrBefore(\DateTimeInterface $datetime): BoolEnum
+    public function isSameOrBefore(\DateTimeInterface $datetime): Bool_
     {
         $lte = $this->datetime
             ->lte($datetime)
         ;
 
-        return BoolEnum::fromBool($lte);
+        return Bool_::fromBool($lte);
     }
 
     /**
      * @api
      */
-    public function isSameOrBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): BoolEnum
+    public function isSameOrBetween(\DateTimeInterface $datetime1, \DateTimeInterface $datetime2): Bool_
     {
         $between = $this->datetime
             ->between($datetime1, $datetime2)
         ;
 
-        return BoolEnum::fromBool($between);
+        return Bool_::fromBool($between);
     }
 
     /**
      * @api
      */
-    public function isWeekday(): BoolEnum
+    public function isWeekday(): Bool_
     {
         $isWeekday = $this->datetime
             ->isWeekday()
         ;
 
-        return BoolEnum::fromBool($isWeekday);
+        return Bool_::fromBool($isWeekday);
     }
 
     /**
      * @api
      */
-    public function isWeekend(): BoolEnum
+    public function isWeekend(): Bool_
     {
         $isWeekend = $this->datetime
             ->isWeekend()
         ;
 
-        return BoolEnum::fromBool($isWeekend);
+        return Bool_::fromBool($isWeekend);
     }
 
     /**
@@ -683,31 +683,31 @@ trait DateTimeTrait
         ;
     }
 
-    public function isDst(): BoolEnum
+    public function isDst(): Bool_
     {
         $isDst = $this->datetime
             ->isDST()
         ;
 
-        return BoolEnum::fromBool($isDst);
+        return Bool_::fromBool($isDst);
     }
 
-    public function isLocal(): BoolEnum
+    public function isLocal(): Bool_
     {
         $isLocal = $this->datetime
             ->isLocal()
         ;
 
-        return BoolEnum::fromBool($isLocal);
+        return Bool_::fromBool($isLocal);
     }
 
-    public function isUtc(): BoolEnum
+    public function isUtc(): Bool_
     {
         $isUtc = $this->datetime
             ->isUtc()
         ;
 
-        return BoolEnum::fromBool($isUtc);
+        return Bool_::fromBool($isUtc);
     }
 
     public function timezoneName(): string
@@ -731,186 +731,186 @@ trait DateTimeTrait
         ;
     }
 
-    public function isValid(): BoolEnum
+    public function isValid(): Bool_
     {
         $isValid = $this->datetime
             ->isValid()
         ;
 
-        return BoolEnum::fromBool($isValid);
+        return Bool_::fromBool($isValid);
     }
 
-    public function isSunday(): BoolEnum
+    public function isSunday(): Bool_
     {
         $isSunday = $this->datetime
             ->isSunday()
         ;
 
-        return BoolEnum::fromBool($isSunday);
+        return Bool_::fromBool($isSunday);
     }
 
-    public function isMonday(): BoolEnum
+    public function isMonday(): Bool_
     {
         $isMonday = $this->datetime
             ->isMonday()
         ;
 
-        return BoolEnum::fromBool($isMonday);
+        return Bool_::fromBool($isMonday);
     }
 
-    public function isTuesday(): BoolEnum
+    public function isTuesday(): Bool_
     {
         $isTuesday = $this->datetime
             ->isTuesday()
         ;
 
-        return BoolEnum::fromBool($isTuesday);
+        return Bool_::fromBool($isTuesday);
     }
 
-    public function isWednesday(): BoolEnum
+    public function isWednesday(): Bool_
     {
         $isWednesday = $this->datetime
             ->isWednesday()
         ;
 
-        return BoolEnum::fromBool($isWednesday);
+        return Bool_::fromBool($isWednesday);
     }
 
-    public function isThursday(): BoolEnum
+    public function isThursday(): Bool_
     {
         $isThursday = $this->datetime
             ->isThursday()
         ;
 
-        return BoolEnum::fromBool($isThursday);
+        return Bool_::fromBool($isThursday);
     }
 
-    public function isFriday(): BoolEnum
+    public function isFriday(): Bool_
     {
         $isFriday = $this->datetime
             ->isFriday()
         ;
 
-        return BoolEnum::fromBool($isFriday);
+        return Bool_::fromBool($isFriday);
     }
 
-    public function isSaturday(): BoolEnum
+    public function isSaturday(): Bool_
     {
         $isSaturday = $this->datetime
             ->isSaturday()
         ;
 
-        return BoolEnum::fromBool($isSaturday);
+        return Bool_::fromBool($isSaturday);
     }
 
-    public function isSameYear(\DateTimeInterface $date): BoolEnum
+    public function isSameYear(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameYear($date));
+        return Bool_::fromBool($this->datetime->isSameYear($date));
     }
 
-    public function isSameCurrentYear(): BoolEnum
+    public function isSameCurrentYear(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameYear());
+        return Bool_::fromBool($this->datetime->isSameYear());
     }
 
-    public function isSameWeek(\DateTimeInterface $date): BoolEnum
+    public function isSameWeek(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameWeek($date));
+        return Bool_::fromBool($this->datetime->isSameWeek($date));
     }
 
-    public function isSameCurrentWeek(): BoolEnum
+    public function isSameCurrentWeek(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameWeek());
+        return Bool_::fromBool($this->datetime->isSameWeek());
     }
 
-    public function isSameDay(\DateTimeInterface $date): BoolEnum
+    public function isSameDay(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameDay($date));
+        return Bool_::fromBool($this->datetime->isSameDay($date));
     }
 
-    public function isSameCurrentDay(): BoolEnum
+    public function isSameCurrentDay(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameDay());
+        return Bool_::fromBool($this->datetime->isSameDay());
     }
 
-    public function isSameHour(\DateTimeInterface $date): BoolEnum
+    public function isSameHour(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameHour($date));
+        return Bool_::fromBool($this->datetime->isSameHour($date));
     }
 
-    public function isSameCurrentHour(): BoolEnum
+    public function isSameCurrentHour(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameHour());
+        return Bool_::fromBool($this->datetime->isSameHour());
     }
 
-    public function isSameMinute(\DateTimeInterface $date): BoolEnum
+    public function isSameMinute(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameMinute($date));
+        return Bool_::fromBool($this->datetime->isSameMinute($date));
     }
 
-    public function isSameCurrentMinute(): BoolEnum
+    public function isSameCurrentMinute(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameMinute());
+        return Bool_::fromBool($this->datetime->isSameMinute());
     }
 
-    public function isSameSecond(\DateTimeInterface $date): BoolEnum
+    public function isSameSecond(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameSecond($date));
+        return Bool_::fromBool($this->datetime->isSameSecond($date));
     }
 
-    public function isSameCurrentSecond(): BoolEnum
+    public function isSameCurrentSecond(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameSecond());
+        return Bool_::fromBool($this->datetime->isSameSecond());
     }
 
-    public function isSameMicro(\DateTimeInterface $date): BoolEnum
+    public function isSameMicro(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameMicro($date));
+        return Bool_::fromBool($this->datetime->isSameMicro($date));
     }
 
-    public function isSameCurrentMicro(): BoolEnum
+    public function isSameCurrentMicro(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameMicro());
+        return Bool_::fromBool($this->datetime->isSameMicro());
     }
 
-    public function isSameMicrosecond(\DateTimeInterface $date): BoolEnum
+    public function isSameMicrosecond(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameMicrosecond($date));
+        return Bool_::fromBool($this->datetime->isSameMicrosecond($date));
     }
 
-    public function isSameCurrentMicrosecond(): BoolEnum
+    public function isSameCurrentMicrosecond(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameMicrosecond());
+        return Bool_::fromBool($this->datetime->isSameMicrosecond());
     }
 
-    public function isSameDecade(\DateTimeInterface $date): BoolEnum
+    public function isSameDecade(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameDecade($date));
+        return Bool_::fromBool($this->datetime->isSameDecade($date));
     }
 
-    public function isSameCurrentDecade(): BoolEnum
+    public function isSameCurrentDecade(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameDecade());
+        return Bool_::fromBool($this->datetime->isSameDecade());
     }
 
-    public function isSameCentury(\DateTimeInterface $date): BoolEnum
+    public function isSameCentury(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameCentury($date));
+        return Bool_::fromBool($this->datetime->isSameCentury($date));
     }
 
-    public function isSameCurrentCentury(): BoolEnum
+    public function isSameCurrentCentury(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameCentury());
+        return Bool_::fromBool($this->datetime->isSameCentury());
     }
 
-    public function isSameMillennium(\DateTimeInterface $date): BoolEnum
+    public function isSameMillennium(\DateTimeInterface $date): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameMillennium($date));
+        return Bool_::fromBool($this->datetime->isSameMillennium($date));
     }
 
-    public function isSameCurrentMillennium(): BoolEnum
+    public function isSameCurrentMillennium(): Bool_
     {
-        return BoolEnum::fromBool($this->datetime->isSameMillennium());
+        return Bool_::fromBool($this->datetime->isSameMillennium());
     }
 
     public function years(int $value): DateTimeInterface
@@ -3472,11 +3472,11 @@ trait DateTimeTrait
         return $this->datetime::getWeekendDays();
     }
 
-    public function hasRelativeKeywords(string $time): BoolEnum
+    public function hasRelativeKeywords(string $time): Bool_
     {
         $hasRelativeKeywords = $this->datetime::hasRelativeKeywords($time);
 
-        return BoolEnum::fromBool($hasRelativeKeywords);
+        return Bool_::fromBool($hasRelativeKeywords);
     }
 
     public function getIsoFormats(string $locale): array
@@ -3583,7 +3583,7 @@ trait DateTimeTrait
     /**
      * @throws ThrowableInterface
      */
-    public function numberOfDaysIsLowerThanOrEquals($value, int $numberOfDays): BoolEnum
+    public function numberOfDaysIsLowerThanOrEquals($value, int $numberOfDays): Bool_
     {
         $dateTime = $this->toDateTime();
         $valueDateTime = $value instanceof DateTimeInterface ? $value->toDateTime() : DateTime::of($value)->toDateTime();
@@ -3592,6 +3592,6 @@ trait DateTimeTrait
 
         $result = $diff->days <= $numberOfDays;
 
-        return BoolEnum::fromBool($result);
+        return Bool_::fromBool($result);
     }
 }

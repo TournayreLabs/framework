@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\HasSeveralElementsInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait HasSeveralElements.
@@ -14,7 +14,7 @@ use TournayreLabs\Primitives\BoolEnum;
  */
 trait HasSeveralElements
 {
-    public function hasSeveralElements(): BoolEnum
+    public function hasSeveralElements(): Bool_
     {
         return $this->count()->greaterThan(1);
     }

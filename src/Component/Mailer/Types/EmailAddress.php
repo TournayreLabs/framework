@@ -7,7 +7,7 @@ namespace TournayreLabs\Component\Mailer\Types;
 use TournayreLabs\Common\Assert\Assert;
 use TournayreLabs\Common\Types\Domain;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\StringType;
 use TournayreLabs\Primitives\Traits\StringTypeTrait;
 
@@ -35,7 +35,7 @@ final class EmailAddress
      *
      * @param string|EmailAddress $email
      */
-    public function is($email): BoolEnum
+    public function is($email): Bool_
     {
         return $this->equalsTo($email);
     }
@@ -55,7 +55,7 @@ final class EmailAddress
     /**
      * @api
      */
-    public function usernameIs(string $username): BoolEnum
+    public function usernameIs(string $username): Bool_
     {
         return EmailUserName::of($username)
             ->equalsTo($this->username())
@@ -77,7 +77,7 @@ final class EmailAddress
     /**
      * @api
      */
-    public function domainIs(string $domain): BoolEnum
+    public function domainIs(string $domain): Bool_
     {
         return Domain::of($domain)
             ->equalsTo($this->domain())
@@ -87,12 +87,12 @@ final class EmailAddress
     /**
      * @api
      */
-    public function isDeliverable(): BoolEnum
+    public function isDeliverable(): Bool_
     {
         $domain = $this->domain()->toString();
         $checkdnsrr = checkdnsrr($domain);
 
-        return BoolEnum::fromBool($checkdnsrr);
+        return Bool_::fromBool($checkdnsrr);
     }
 
     /**

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\HasInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait Has.
@@ -21,10 +21,10 @@ trait Has
      *
      * @api
      */
-    public function has($key): BoolEnum
+    public function has($key): Bool_
     {
         $has = $this->collection->has($key);
 
-        return BoolEnum::fromBool($has);
+        return Bool_::fromBool($has);
     }
 }

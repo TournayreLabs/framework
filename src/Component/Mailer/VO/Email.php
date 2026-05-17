@@ -13,7 +13,7 @@ use TournayreLabs\Component\Mailer\Types\EmailText;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggableInterface;
 use TournayreLabs\Contracts\Types\TypeValidationInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection\FileCollection;
 
 abstract class Email implements LoggableInterface, TypeValidationInterface
@@ -73,7 +73,7 @@ abstract class Email implements LoggableInterface, TypeValidationInterface
      *
      * @api
      */
-    public function isValid(): BoolEnum
+    public function isValid(): Bool_
     {
         return $this->validate()->isValid();
     }

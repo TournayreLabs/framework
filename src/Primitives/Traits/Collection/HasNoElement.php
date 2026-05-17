@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\HasNoElementInterface;
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait HasNoElement.
@@ -14,7 +14,7 @@ use TournayreLabs\Primitives\BoolEnum;
  */
 trait HasNoElement
 {
-    public function hasNoElement(): BoolEnum
+    public function hasNoElement(): Bool_
     {
         return $this->count()->equalsTo(0);
     }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\BoolEnum;
+use TournayreLabs\Primitives\Bool_;
 
 /**
  * Interface IsScalarInterface.
@@ -16,5 +16,5 @@ interface IsScalarInterface
      *
      * @api
      */
-    public function isScalar(): BoolEnum;
+    public function isScalar(): Bool_;
 }
