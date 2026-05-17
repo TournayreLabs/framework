@@ -19,5 +19,14 @@ interface AvgInterface
      *
      * @api
      */
-    public function avg(?string $key = null): Numeric;
+    public function avg(): Numeric;
+
+    /**
+     * Returns the average of all values using the given key.
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function avgBy(string $key): Numeric;
 }

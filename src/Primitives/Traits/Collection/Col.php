@@ -18,7 +18,31 @@ trait Col
      *
      * @api
      */
-    public function col(?string $valuecol = null, ?string $indexcol = null): self
+    public function col(): self
+    {
+        $col = $this->collection->col();
+
+        return self::of($col);
+    }
+
+    /**
+     * Creates a key/value mapping using the given value column.
+     *
+     * @api
+     */
+    public function colBy(string $valuecol): self
+    {
+        $col = $this->collection->col($valuecol);
+
+        return self::of($col);
+    }
+
+    /**
+     * Creates a key/value mapping using the given value and index columns.
+     *
+     * @api
+     */
+    public function colByBoth(string $valuecol, string $indexcol): self
     {
         $col = $this->collection->col($valuecol, $indexcol);
 

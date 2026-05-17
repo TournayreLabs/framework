@@ -16,6 +16,9 @@ parameters:
             message: '#appears to be a getter#'
             path: src/Contracts/DateTime/DateTimeInterface.php
         -
+            message: '#GetInterface::getOrDefault\(\).*appears to be a getter#'
+            path: src/Contracts/Collection/GetInterface.php
+        -
             message: '#appears to be a setter#'
             path: src/Contracts/DateTime/DateTimeInterface.php
         -

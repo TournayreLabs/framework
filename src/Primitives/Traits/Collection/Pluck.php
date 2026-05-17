@@ -18,7 +18,31 @@ trait Pluck
      *
      * @api
      */
-    public function pluck(?string $valuecol = null, ?string $indexcol = null): self
+    public function pluck(): self
+    {
+        $pluck = $this->collection->pluck();
+
+        return self::of($pluck);
+    }
+
+    /**
+     * Creates a key/value mapping using the given value column.
+     *
+     * @api
+     */
+    public function pluckBy(string $valuecol): self
+    {
+        $pluck = $this->collection->pluck($valuecol);
+
+        return self::of($pluck);
+    }
+
+    /**
+     * Creates a key/value mapping using the given value and index columns.
+     *
+     * @api
+     */
+    public function pluckByBoth(string $valuecol, string $indexcol): self
     {
         $pluck = $this->collection->pluck($valuecol, $indexcol);
 

@@ -14,5 +14,12 @@ interface FlatInterface
      *
      * @api
      */
-    public function flat(?int $depth = null): self;
+    public function flat(): self;
+
+    /**
+     * Flattens multi-dimensional elements without overwriting elements up to the given depth.
+     *
+     * @api
+     */
+    public function flatWithDepth(int $depth): self;
 }

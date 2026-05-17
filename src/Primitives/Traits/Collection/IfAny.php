@@ -14,11 +14,23 @@ use TournayreLabs\Contracts\Collection\IfAnyInterface;
 trait IfAny
 {
     /**
-     * Executes callbacks if the map contains elements.
+     * Executes a callback if the map contains elements.
      *
      * @api
      */
-    public function ifAny(?\Closure $then = null, ?\Closure $else = null): self
+    public function ifAny(\Closure $then): self
+    {
+        $ifAny = $this->collection->ifAny($then);
+
+        return self::of($ifAny);
+    }
+
+    /**
+     * Executes a then or else callback depending on whether the map contains elements.
+     *
+     * @api
+     */
+    public function ifAnyOrElse(\Closure $then, \Closure $else): self
     {
         $ifAny = $this->collection->ifAny($then, $else);
 

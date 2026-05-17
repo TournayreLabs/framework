@@ -14,13 +14,25 @@ interface InsertAtInterface
     /**
      * Inserts the element at the given position in the map.
      *
-     * @param int        $pos     Position the element it should be inserted at
-     * @param mixed      $element Element to be inserted
-     * @param mixed|null $key     Element key or NULL to assign an integer key automatically
+     * @param int   $pos     Position the element it should be inserted at
+     * @param mixed $element Element to be inserted
      *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function insertAt(int $pos, mixed $element, $key = null): self;
+    public function insertAt(int $pos, mixed $element): self;
+
+    /**
+     * Inserts the element at the given position in the map with a key.
+     *
+     * @param int   $pos     Position the element it should be inserted at
+     * @param mixed $element Element to be inserted
+     * @param mixed $key     Element key
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function insertAtWithKey(int $pos, mixed $element, mixed $key): self;
 }

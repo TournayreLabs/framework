@@ -18,7 +18,19 @@ trait Collapse
      *
      * @api
      */
-    public function collapse(?int $depth = null): self
+    public function collapse(): self
+    {
+        $collapse = $this->collection->collapse();
+
+        return self::of($collapse);
+    }
+
+    /**
+     * Collapses multi-dimensional elements overwriting elements up to the given depth.
+     *
+     * @api
+     */
+    public function collapseWithDepth(int $depth): self
     {
         $collapse = $this->collection->collapse($depth);
 

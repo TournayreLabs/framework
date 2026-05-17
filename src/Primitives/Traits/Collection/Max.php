@@ -22,7 +22,25 @@ trait Max
      *
      * @api
      */
-    public function max(?string $key = null): Numeric
+    public function max(): Numeric
+    {
+        if ($this->isEmpty()->isTrue()) {
+            return Numeric::of(0);
+        }
+
+        $max = $this->collection->max();
+
+        return Numeric::fromFloat($max ?? 0);
+    }
+
+    /**
+     * Returns the maximum value of all elements using the given key.
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function maxBy(string $key): Numeric
     {
         if ($this->isEmpty()->isTrue()) {
             return Numeric::of(0);

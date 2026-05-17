@@ -47,7 +47,7 @@ final class FileCollection implements LoggableInterface, AsListInterface, AsMapI
     {
         $array = $this
             ->collection
-            ->filter(static fn (SplFileInfo $file): bool => $file->extension()->equalsTo($extension)->isTrue())
+            ->filterWith(static fn (SplFileInfo $file): bool => $file->extension()->equalsTo($extension)->isTrue())
             ->toArray()
         ;
 
@@ -63,7 +63,7 @@ final class FileCollection implements LoggableInterface, AsListInterface, AsMapI
     {
         $array = $this
             ->collection
-            ->filter(static fn (SplFileInfo $file): bool => $file->size()->equalsTo($size)->isTrue())
+            ->filterWith(static fn (SplFileInfo $file): bool => $file->size()->equalsTo($size)->isTrue())
             ->toArray()
         ;
 
@@ -79,7 +79,7 @@ final class FileCollection implements LoggableInterface, AsListInterface, AsMapI
     {
         $array = $this
             ->collection
-            ->filter(static fn (SplFileInfo $file): bool => $file->contents()->containsAny($content)->isTrue())
+            ->filterWith(static fn (SplFileInfo $file): bool => $file->contents()->containsAny($content)->isTrue())
             ->toArray()
         ;
 

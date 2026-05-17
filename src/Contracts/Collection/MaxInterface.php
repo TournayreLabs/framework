@@ -19,5 +19,14 @@ interface MaxInterface
      *
      * @api
      */
-    public function max(?string $key = null): Numeric;
+    public function max(): Numeric;
+
+    /**
+     * Returns the maximum value of all elements using the given key.
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function maxBy(string $key): Numeric;
 }

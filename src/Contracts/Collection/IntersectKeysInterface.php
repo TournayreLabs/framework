@@ -18,5 +18,15 @@ interface IntersectKeysInterface
      *
      * @api
      */
-    public function intersectKeys($elements, ?callable $callback = null): self;
+    public function intersectKeys($elements): self;
+
+    /**
+     * Returns the elements shared by keys using a callback.
+     *
+     * @param iterable<int|string,mixed>|Collection $elements List of elements
+     * @param \Closure                              $callback Function with (valueA, valueB) parameters and returns -1 (<), 0 (=) and 1 (>)
+     *
+     * @api
+     */
+    public function intersectKeysWith($elements, \Closure $callback): self;
 }

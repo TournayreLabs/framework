@@ -16,12 +16,26 @@ trait Slice
     /**
      * Returns a slice of the map.
      *
-     * @param int      $offset Number of elements to start from
-     * @param int|null $length Number of elements to return or NULL for no limit
+     * @param int $offset Number of elements to start from
      *
      * @api
      */
-    public function slice(int $offset, ?int $length = null): self
+    public function slice(int $offset): self
+    {
+        $slice = $this->collection->slice($offset);
+
+        return self::of($slice);
+    }
+
+    /**
+     * Returns a slice of the map with a length limit.
+     *
+     * @param int $offset Number of elements to start from
+     * @param int $length Number of elements to return
+     *
+     * @api
+     */
+    public function sliceWithLength(int $offset, int $length): self
     {
         $slice = $this->collection->slice($offset, $length);
 

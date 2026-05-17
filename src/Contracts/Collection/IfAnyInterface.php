@@ -10,9 +10,16 @@ namespace TournayreLabs\Contracts\Collection;
 interface IfAnyInterface
 {
     /**
-     * Executes callbacks if the map contains elements.
+     * Executes a callback if the map contains elements.
      *
      * @api
      */
-    public function ifAny(?\Closure $then = null, ?\Closure $else = null): self;
+    public function ifAny(\Closure $then): self;
+
+    /**
+     * Executes a then or else callback depending on whether the map contains elements.
+     *
+     * @api
+     */
+    public function ifAnyOrElse(\Closure $then, \Closure $else): self;
 }

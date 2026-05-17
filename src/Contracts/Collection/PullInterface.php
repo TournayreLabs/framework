@@ -4,13 +4,28 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
+use TournayreLabs\Contracts\Exception\ThrowableInterface;
+
 /**
  * Interface PullInterface.
  */
 interface PullInterface
 {
     /**
-     * Returns and removes an element by key.
+     * Returns and removes an element by key or throws if key is absent.
+     *
+     * @param int|string $key Key to retrieve the value for
+     *
+     * @return mixed Value from map
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function pull($key);
+
+    /**
+     * Returns and removes an element by key or returns the default value if key is absent.
      *
      * @param int|string $key     Key to retrieve the value for
      * @param mixed      $default Default value if key isn't available
@@ -19,5 +34,5 @@ interface PullInterface
      *
      * @api
      */
-    public function pull($key, mixed $default = null);
+    public function pullOrDefault($key, mixed $default);
 }

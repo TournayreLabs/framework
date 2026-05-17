@@ -144,10 +144,27 @@ final readonly class StringType implements \Stringable
     /**
      * @api
      */
-    // @phpstan-ignore-next-line
-    public function filterVar(int $filter = FILTER_DEFAULT, $options = null): self
+    public function filterVar(int $filter = FILTER_DEFAULT): self
     {
-        $filterVar = filter_var($this->value, $filter, $options ?? []);
+        $filterVar = filter_var($this->value, $filter);
+        if (false === $filterVar) {
+            throw match ($filter) {
+                FILTER_VALIDATE_EMAIL => InvalidArgumentException::new('Invalid email address'),
+                FILTER_VALIDATE_URL => InvalidArgumentException::new('Invalid URL'),
+                FILTER_VALIDATE_IP => InvalidArgumentException::new('Invalid IP address'),
+                default => InvalidArgumentException::new('Invalid value'),
+            };
+        }
+
+        return self::of($filterVar);
+    }
+
+    /**
+     * @api
+     */
+    public function filterVarWith(int $filter, mixed $options): self
+    {
+        $filterVar = filter_var($this->value, $filter, $options);
         if (false === $filterVar) {
             throw match ($filter) {
                 FILTER_VALIDATE_EMAIL => InvalidArgumentException::new('Invalid email address'),

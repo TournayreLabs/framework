@@ -14,5 +14,12 @@ interface FilterInterface
      *
      * @api
      */
-    public function filter(?callable $callback = null): self;
+    public function filter(): self;
+
+    /**
+     * Applies a filter callback to all elements.
+     *
+     * @api
+     */
+    public function filterWith(\Closure $callback): self;
 }

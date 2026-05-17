@@ -13,11 +13,20 @@ use TournayreLabs\Primitives\Numeric;
 interface MinInterface
 {
     /**
-     * Returns the minium value of all elements.
+     * Returns the minimum value of all elements.
      *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function min(?string $key = null): Numeric;
+    public function min(): Numeric;
+
+    /**
+     * Returns the minimum value of all elements using the given key.
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function minBy(string $key): Numeric;
 }

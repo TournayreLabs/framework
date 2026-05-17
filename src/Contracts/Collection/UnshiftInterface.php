@@ -14,12 +14,23 @@ interface UnshiftInterface
     /**
      * Adds an element at the beginning.
      *
-     * @param mixed           $value Item to add at the beginning
-     * @param int|string|null $key   Key for the item or NULL to reindex all numerical keys
+     * @param mixed $value Item to add at the beginning
      *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function unshift(mixed $value, $key = null): self;
+    public function unshift(mixed $value): self;
+
+    /**
+     * Adds an element at the beginning with a key.
+     *
+     * @param mixed $value Item to add at the beginning
+     * @param mixed $key   Key for the item
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function unshiftWithKey(mixed $value, mixed $key): self;
 }

@@ -12,12 +12,16 @@ use TournayreLabs\Primitives\BoolEnum;
 interface ContainsInterface
 {
     /**
-     * Tests if an item exists in the map.
+     * Tests if a value exists in the map.
      *
      * @api
-     *
-     * @param mixed|null $key
-     * @param mixed|null $value
      */
-    public function contains($key, ?string $operator = null, $value = null): BoolEnum;
+    public function contains(mixed $value): BoolEnum;
+
+    /**
+     * Tests if an item matching the condition exists in the map.
+     *
+     * @api
+     */
+    public function containsWith(mixed $key, string $operator, mixed $value): BoolEnum;
 }

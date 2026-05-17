@@ -19,5 +19,14 @@ interface SumInterface
      *
      * @api
      */
-    public function sum(?string $key = null): Numeric;
+    public function sum(): Numeric;
+
+    /**
+     * Returns the sum of all values in the map using the given key.
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function sumBy(string $key): Numeric;
 }

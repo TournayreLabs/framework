@@ -18,14 +18,32 @@ trait Prepend
     /**
      * Adds an element at the beginning.
      *
-     * @param mixed           $value Item to add at the beginning
-     * @param int|string|null $key   Key for the item or NULL to reindex all numerical keys
+     * @param mixed $value Item to add at the beginning
      *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function prepend(mixed $value, $key = null): self
+    public function prepend(mixed $value): self
+    {
+        $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
+
+        $prepend = $this->collection->prepend($value);
+
+        return self::of($prepend);
+    }
+
+    /**
+     * Adds an element at the beginning with a key.
+     *
+     * @param mixed $value Item to add at the beginning
+     * @param mixed $key   Key for the item
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function prependWithKey(mixed $value, mixed $key): self
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
 

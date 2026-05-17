@@ -23,22 +23,22 @@ trait StaticCollectionTrait
     }
 
     /**
-     * @param mixed|null $value
+     * @param mixed $value
      *
      * @throws ThrowableInterface
      */
-    public function add($value, ?\Closure $callback = null): self
+    public function add(mixed $value): self
     {
         throw BadMethodCallException::new('Static collections cannot be modified.');
     }
 
     /**
-     * @param mixed|null $key
-     * @param mixed|null $value
+     * @param mixed $key
+     * @param mixed $value
      *
      * @throws ThrowableInterface
      */
-    public function set($key, $value, ?\Closure $callback = null): self
+    public function set(mixed $key, mixed $value): self
     {
         throw BadMethodCallException::new('Static collections cannot be modified.');
     }

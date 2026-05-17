@@ -14,15 +14,30 @@ use TournayreLabs\Contracts\Collection\IfInterface;
 trait If_
 {
     /**
-     * Executes callbacks depending on the condition.
+     * Executes a callback depending on the condition.
      *
      * @param \Closure|bool $condition Boolean or function with (map) parameter returning a boolean
-     * @param \Closure|null $then      Function with (map, condition) parameter (optional)
-     * @param \Closure|null $else      Function with (map, condition) parameter (optional)
+     * @param \Closure      $then      Function with (map, condition) parameter
      *
      * @api
      */
-    public function if($condition, ?\Closure $then = null, ?\Closure $else = null): self
+    public function if(\Closure|bool $condition, \Closure $then): self
+    {
+        $if = $this->collection->if($condition, $then);
+
+        return self::of($if);
+    }
+
+    /**
+     * Executes a then or else callback depending on the condition.
+     *
+     * @param \Closure|bool $condition Boolean or function with (map) parameter returning a boolean
+     * @param \Closure      $then      Function with (map, condition) parameter
+     * @param \Closure      $else      Function with (map, condition) parameter
+     *
+     * @api
+     */
+    public function ifOrElse(\Closure|bool $condition, \Closure $then, \Closure $else): self
     {
         $if = $this->collection->if($condition, $then, $else);
 

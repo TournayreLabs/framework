@@ -99,7 +99,7 @@ final class DateTimeCollection implements AsListInterface
         $clone = clone $this;
         $map = $clone
             ->collection
-            ->filter(static fn (DateTimeInterface $date) => $date >= $start && $date <= $end)
+            ->filterWith(static fn (DateTimeInterface $date) => $date >= $start && $date <= $end)
             ->values()
             ->toArray()
         ;
@@ -117,7 +117,7 @@ final class DateTimeCollection implements AsListInterface
         $clone = clone $this;
         $map = $clone
             ->collection
-            ->filter(static fn (DateTimeInterface $d) => $d < $date)
+            ->filterWith(static fn (DateTimeInterface $d) => $d < $date)
             ->values()
             ->toArray()
         ;
@@ -135,7 +135,7 @@ final class DateTimeCollection implements AsListInterface
         $clone = clone $this;
         $map = $clone
             ->collection
-            ->filter(static fn (DateTimeInterface $d) => $d > $date)
+            ->filterWith(static fn (DateTimeInterface $d) => $d > $date)
             ->values()
             ->toArray()
         ;

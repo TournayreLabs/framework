@@ -14,5 +14,12 @@ interface UniqueInterface
      *
      * @api
      */
-    public function unique(?string $key = null): self;
+    public function unique(): self;
+
+    /**
+     * Returns all unique elements preserving keys using the given key.
+     *
+     * @api
+     */
+    public function uniqueBy(string $key): self;
 }

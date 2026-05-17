@@ -14,5 +14,12 @@ interface CollapseInterface
      *
      * @api
      */
-    public function collapse(?int $depth = null): self;
+    public function collapse(): self;
+
+    /**
+     * Collapses multi-dimensional elements overwriting elements up to the given depth.
+     *
+     * @api
+     */
+    public function collapseWithDepth(int $depth): self;
 }

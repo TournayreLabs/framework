@@ -14,5 +14,19 @@ interface ColInterface
      *
      * @api
      */
-    public function col(?string $valuecol = null, ?string $indexcol = null): self;
+    public function col(): self;
+
+    /**
+     * Creates a key/value mapping using the given value column.
+     *
+     * @api
+     */
+    public function colBy(string $valuecol): self;
+
+    /**
+     * Creates a key/value mapping using the given value and index columns.
+     *
+     * @api
+     */
+    public function colByBoth(string $valuecol, string $indexcol): self;
 }

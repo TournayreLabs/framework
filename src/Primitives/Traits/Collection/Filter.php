@@ -18,7 +18,19 @@ trait Filter
      *
      * @api
      */
-    public function filter(?callable $callback = null): self
+    public function filter(): self
+    {
+        $filtered = $this->collection->filter();
+
+        return self::of($filtered);
+    }
+
+    /**
+     * Applies a filter callback to all elements.
+     *
+     * @api
+     */
+    public function filterWith(\Closure $callback): self
     {
         $filtered = $this->collection->filter($callback);
 

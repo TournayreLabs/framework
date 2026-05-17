@@ -67,7 +67,7 @@ final class EventCollection implements AsMapInterface, AddInterface, SearchInter
         $clone = clone $this;
         $events = $clone
             ->collection
-            ->filter(static fn (Event $event): bool => $event instanceof $type)
+            ->filterWith(static fn (Event $event): bool => $event instanceof $type)
             ->toArray()
         ;
 

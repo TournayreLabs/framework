@@ -16,13 +16,31 @@ use TournayreLabs\Primitives\Numeric;
 trait Min
 {
     /**
-     * Returns the minium value of all elements.
+     * Returns the minimum value of all elements.
      *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function min(?string $key = null): Numeric
+    public function min(): Numeric
+    {
+        if ($this->isEmpty()->isTrue()) {
+            return Numeric::of(0);
+        }
+
+        $min = $this->collection->min();
+
+        return Numeric::fromFloat($min ?? 0);
+    }
+
+    /**
+     * Returns the minimum value of all elements using the given key.
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function minBy(string $key): Numeric
     {
         if ($this->isEmpty()->isTrue()) {
             return Numeric::of(0);

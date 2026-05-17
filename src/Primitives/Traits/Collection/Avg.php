@@ -22,7 +22,21 @@ trait Avg
      *
      * @api
      */
-    public function avg(?string $key = null): Numeric
+    public function avg(): Numeric
+    {
+        $avg = $this->collection->avg();
+
+        return Numeric::fromFloat($avg);
+    }
+
+    /**
+     * Returns the average of all values using the given key.
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function avgBy(string $key): Numeric
     {
         $avg = $this->collection->avg($key);
 

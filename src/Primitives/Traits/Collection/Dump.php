@@ -18,7 +18,19 @@ trait Dump
      *
      * @api
      */
-    public function dump(?callable $callback = null): self
+    public function dump(): self
+    {
+        $dump = $this->collection->dump();
+
+        return self::of($dump);
+    }
+
+    /**
+     * Prints the map content using a callback.
+     *
+     * @api
+     */
+    public function dumpWith(\Closure $callback): self
     {
         $dump = $this->collection->dump($callback);
 

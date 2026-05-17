@@ -18,7 +18,19 @@ trait Flat
      *
      * @api
      */
-    public function flat(?int $depth = null): self
+    public function flat(): self
+    {
+        $flat = $this->collection->flat();
+
+        return self::of($flat);
+    }
+
+    /**
+     * Flattens multi-dimensional elements without overwriting elements up to the given depth.
+     *
+     * @api
+     */
+    public function flatWithDepth(int $depth): self
     {
         $flat = $this->collection->flat($depth);
 

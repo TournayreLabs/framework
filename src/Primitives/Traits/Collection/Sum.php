@@ -22,7 +22,21 @@ trait Sum
      *
      * @api
      */
-    public function sum(?string $key = null): Numeric
+    public function sum(): Numeric
+    {
+        $sum = $this->collection->sum();
+
+        return Numeric::fromFloat($sum);
+    }
+
+    /**
+     * Returns the sum of all values in the map using the given key.
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function sumBy(string $key): Numeric
     {
         $sum = $this->collection->sum($key);
 
