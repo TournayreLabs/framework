@@ -86,8 +86,6 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
 
         if (!$primitive instanceof Primitive) {
             throw InvalidArgumentException::new(\sprintf('Invalid type "%s". Expected one of "string", "int", "float", "bool", "array", "object" or "null".', $type));
-
-            return;
         }
 
         $primitive->assert($primitive, $value, $message);
