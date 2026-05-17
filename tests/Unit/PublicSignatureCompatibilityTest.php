@@ -19,7 +19,7 @@ final class PublicSignatureCompatibilityTest extends TestCase
     {
         $expected = $this->expectedSignatures();
 
-        self::assertCount(105, $expected);
+        self::assertCount(100, $expected);
 
         foreach ($expected as $fqcn => $signature) {
             self::assertTrue(

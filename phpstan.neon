@@ -7,9 +7,6 @@ parameters:
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
         -
-            message: '#has typehint with deprecated class TournayreLabs\\#'
-            path: src/*
-        -
             message: '#Public method "TournayreLabs\\[^"]+" is never used#'
             path: src/*
         -
@@ -172,12 +169,6 @@ parameters:
             message: '#modifies an object property#'
             path: src/Common/Model/AbstractUser.php
         -
-            message: '#is mutable#'
-            path: src/Common/VO/Event.php
-        -
-            message: '#modifies an object property#'
-            path: src/Common/VO/Event.php
-        -
             message: '#is not private#'
             path: src/Null/NullTrait.php
         -
@@ -203,13 +194,7 @@ parameters:
             path: src/Primitives/Traits/Collection/Delimiter.php
         -
             message: '#appears to be a setter#'
-            path: src/Common/Collection/EventCollection.php
-        -
-            message: '#appears to be a setter#'
             path: src/Contracts/Collection/SetInterface.php
-        -
-            message: '#has a name ending with#'
-            path: src/Contracts/Dispatcher/EntityEventDispatcher.php
         -
             message: '#is static#'
             path: src/Primitives/Traits/DateTimeTrait.php
