@@ -9,6 +9,9 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggableInterface;
 use TournayreLabs\Contracts\Log\LoggerInterface;
 use TournayreLabs\Contracts\Mailer\SendMailInterface;
+use Symfony\Component\Mailer\Envelope;
+use TournayreLabs\Component\Mailer\VO\Email;
+use TournayreLabs\Component\Mailer\VO\TemplatedEmail;
 
 final readonly class MailService
 {
@@ -24,7 +27,7 @@ final readonly class MailService
      *
      * @api
      */
-    public function send($message): void
+    public function send(Email|TemplatedEmail $message): void
     {
         $this->logSendingEmail($message);
         $this->sendMail->send($message);
@@ -35,7 +38,7 @@ final readonly class MailService
      *
      * @api
      */
-    public function sendWithEnvelope($message, $envelope): void
+    public function sendWithEnvelope(Email|TemplatedEmail $message, Envelope $envelope): void
     {
         $this->logSendingEmail($message);
         $this->sendMail->sendWithEnvelope($message, $envelope);

@@ -223,8 +223,10 @@ final readonly class Filesystem implements FilesystemInterface
             ->in($this->directoryOrFile->toString())
         ;
         $files = $this->fromIteratorToSplFileInfos($finder);
+        $files = Collection::of($files)->values()->toArray();
+        /** @var array<int, SplFileInfo> $files */
 
-        return FileCollection::asMap($files);
+        return FileCollection::asList($files);
     }
 
     /**
@@ -234,7 +236,9 @@ final readonly class Filesystem implements FilesystemInterface
      */
     private function fromIteratorToSplFileInfos(iterable $files): array
     {
-        return Collection::of($files)
+        $arrayFiles = is_array($files) ? $files : iterator_to_array($files, false);
+
+        return Collection::of($arrayFiles)
             ->map(static fn (SymfonySplFileInfo $file) => SplFileInfo::of(
                 $file->getRealPath(),
                 $file->getRelativePath(),
@@ -265,8 +269,10 @@ final readonly class Filesystem implements FilesystemInterface
             ->in($this->directoryOrFile->toString())
         ;
         $files = $this->fromIteratorToSplFileInfos($finder);
+        $files = Collection::of($files)->values()->toArray();
+        /** @var array<int, SplFileInfo> $files */
 
-        return FileCollection::asMap($files);
+        return FileCollection::asList($files);
     }
 
     public function isReadable(): Bool_

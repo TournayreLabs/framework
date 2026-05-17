@@ -16,6 +16,8 @@ trait JsonSerialize
     /**
      * Specifies the data which should be serialized to JSON.
      *
+     * @return mixed
+     *
      * @api
      */
     #[\ReturnTypeWillChange]

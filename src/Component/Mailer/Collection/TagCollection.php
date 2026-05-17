@@ -11,6 +11,9 @@ use TournayreLabs\Contracts\Log\LoggableInterface;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
+/**
+ * @implements \IteratorAggregate<int|string, mixed>
+ */
 final class TagCollection implements \IteratorAggregate, LoggableInterface, AsMapInterface
 {
     use CollectionTrait;

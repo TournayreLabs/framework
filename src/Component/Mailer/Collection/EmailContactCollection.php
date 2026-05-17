@@ -13,6 +13,9 @@ use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
+/**
+ * @implements \IteratorAggregate<int|string, mixed>
+ */
 final class EmailContactCollection implements \IteratorAggregate, LoggableInterface, AsListInterface
 {
     use CollectionTrait;

@@ -4,7 +4,7 @@ includes:
     - tools/phpstan/disallowed-constructs.neon
 
 parameters:
-    level: 5
+    level: 8
     treatPhpDocTypesAsCertain: false
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:

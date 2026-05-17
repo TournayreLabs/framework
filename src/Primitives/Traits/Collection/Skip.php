@@ -16,11 +16,11 @@ trait Skip
     /**
      * Skips the given number of items and return the rest.
      *
-     * @param \Closure|int|array<array-key,mixed> $offset Number of items to skip or function($item, $key) returning true for skipped items
+     * @param \Closure|int $offset Number of items to skip or function($item, $key) returning true for skipped items
      *
      * @api
      */
-    public function skip($offset): self
+    public function skip(\Closure|int $offset): self
     {
         $skip = $this->collection->skip($offset);
 

@@ -55,6 +55,14 @@ trait DateTimeTrait
             }
         }
 
+        if ($datetime instanceof DateTimeInterface) {
+            try {
+                return new self(Carbon::parse($datetime->toDateTime()));
+            } catch (\Exception $exception) {
+                throw InvalidArgumentException::fromThrowable($exception);
+            }
+        }
+
         if (is_int($datetime)) {
             try {
                 return new self(Carbon::createFromTimestamp($datetime));
@@ -90,6 +98,14 @@ trait DateTimeTrait
         if ($datetime instanceof \DateTimeInterface) {
             try {
                 return new self(Carbon::parse($datetime)->setTimezone($timezone));
+            } catch (\Exception $exception) {
+                throw InvalidArgumentException::fromThrowable($exception);
+            }
+        }
+
+        if ($datetime instanceof DateTimeInterface) {
+            try {
+                return new self(Carbon::parse($datetime->toDateTime())->setTimezone($timezone));
             } catch (\Exception $exception) {
                 throw InvalidArgumentException::fromThrowable($exception);
             }
@@ -3287,7 +3303,12 @@ trait DateTimeTrait
 
     public function weekday(): int
     {
-        return $this->datetime->weekday();
+        $weekday = $this->datetime->weekday();
+        if (!is_int($weekday)) {
+            throw InvalidArgumentException::new('Unable to get weekday as integer.');
+        }
+
+        return $weekday;
     }
 
     public function setWeekday(int $value): DateTimeInterface
@@ -3299,7 +3320,12 @@ trait DateTimeTrait
 
     public function isoWeekday(): int
     {
-        return $this->datetime->isoWeekday();
+        $weekday = $this->datetime->isoWeekday();
+        if (!is_int($weekday)) {
+            throw InvalidArgumentException::new('Unable to get ISO weekday as integer.');
+        }
+
+        return $weekday;
     }
 
     public function setIsoWeekday(int $value): DateTimeInterface
@@ -3403,7 +3429,7 @@ trait DateTimeTrait
         return $this;
     }
 
-    public function shiftTimezone($value): DateTimeInterface
+    public function shiftTimezone(\DateTimeZone|string $value): DateTimeInterface
     {
         $this->datetime->shiftTimezone($value);
 

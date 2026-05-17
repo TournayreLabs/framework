@@ -118,7 +118,7 @@ final readonly class Numeric
 
         $format = $fmt->format($this->value);
         if (false === $format) {
-            RuntimeException::new('Failed to format the number.')->throw();
+            throw RuntimeException::new('Failed to format the number.');
         }
 
         return $format;
@@ -136,7 +136,7 @@ final readonly class Numeric
             PHP_ROUND_HALF_DOWN => self::of(round($this->value, $this->precision, PHP_ROUND_HALF_DOWN), $this->precision),
             PHP_ROUND_HALF_EVEN => self::of(round($this->value, $this->precision, PHP_ROUND_HALF_EVEN), $this->precision),
             PHP_ROUND_HALF_ODD => self::of(round($this->value, $this->precision, PHP_ROUND_HALF_ODD), $this->precision),
-            default => InvalidArgumentException::new('Invalid rounding mode provided.')->throw(),
+            default => throw InvalidArgumentException::new('Invalid rounding mode provided.'),
         };
     }
 
@@ -240,13 +240,16 @@ final readonly class Numeric
      */
     public function between($min, $max): Bool_
     {
-        Numeric::of($min)
-            ->greaterThan($max)
+        $minNumeric = $min instanceof self ? $min : Numeric::of($min);
+        $maxNumeric = $max instanceof self ? $max : Numeric::of($max);
+
+        $minNumeric
+            ->greaterThan($maxNumeric)
             ->throwIfTrue('The minimum value must be less than the maximum value.')
         ;
 
-        $between = $this->greaterThan($min)->isTrue()
-            && $this->lessThan($max)->isTrue();
+        $between = $this->greaterThan($minNumeric)->isTrue()
+            && $this->lessThan($maxNumeric)->isTrue();
 
         return Bool_::fromBool($between);
     }
@@ -261,13 +264,16 @@ final readonly class Numeric
      */
     public function betweenOrEqual($min, $max): Bool_
     {
-        Numeric::of($min)
-            ->greaterThan($max)
+        $minNumeric = $min instanceof self ? $min : Numeric::of($min);
+        $maxNumeric = $max instanceof self ? $max : Numeric::of($max);
+
+        $minNumeric
+            ->greaterThan($maxNumeric)
             ->throwIfTrue('The minimum value must be less than the maximum value.')
         ;
 
-        $between = $this->greaterThanOrEqual($min)->isTrue()
-            && $this->lessThanOrEqual($max)->isTrue();
+        $between = $this->greaterThanOrEqual($minNumeric)->isTrue()
+            && $this->lessThanOrEqual($maxNumeric)->isTrue();
 
         return Bool_::fromBool($between);
     }

@@ -19,13 +19,13 @@ trait Implements_
     /**
      * Tests if all entries are objects implementing the interface.
      *
-     * @param \Throwable|bool|string $throw Passing TRUE or an exception name will throw the exception instead of returning FALSE
+     * @param \Throwable|bool $throw Passing TRUE or an exception will throw instead of returning FALSE
      *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function implements(string $interface, $throw = false): Bool_
+    public function implements(string $interface, \Throwable|bool $throw = false): Bool_
     {
         try {
             $implements = $this->collection->implements($interface, $throw);

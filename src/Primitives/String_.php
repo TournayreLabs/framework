@@ -213,6 +213,8 @@ final readonly class String_ implements \Stringable
 
     /**
      * @api
+     *
+     * @param array<int, string> $strings
      */
     public function join(array $strings): self
     {
@@ -221,6 +223,8 @@ final readonly class String_ implements \Stringable
 
     /**
      * @api
+     *
+     * @param array<int, string> $strings
      */
     public function joinWithLastGlue(array $strings, string $lastGlue): self
     {

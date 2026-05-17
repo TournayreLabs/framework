@@ -14,6 +14,9 @@ use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 use TournayreLabs\Wrapper\SplFileInfo;
 
+/**
+ * @implements \IteratorAggregate<int|string, SplFileInfo>
+ */
 final class FileCollection implements \IteratorAggregate, LoggableInterface, AsListInterface, AsMapInterface
 {
     use CollectionTrait;
@@ -48,8 +51,10 @@ final class FileCollection implements \IteratorAggregate, LoggableInterface, AsL
         $array = $this
             ->collection
             ->filterWith(static fn (SplFileInfo $file): bool => $file->extension()->equalsTo($extension)->isTrue())
+            ->values()
             ->toArray()
         ;
+        /** @var array<int, SplFileInfo> $array */
 
         return FileCollection::asList($array);
     }
@@ -64,8 +69,10 @@ final class FileCollection implements \IteratorAggregate, LoggableInterface, AsL
         $array = $this
             ->collection
             ->filterWith(static fn (SplFileInfo $file): bool => $file->size()->equalsTo($size)->isTrue())
+            ->values()
             ->toArray()
         ;
+        /** @var array<int, SplFileInfo> $array */
 
         return FileCollection::asList($array);
     }
@@ -80,13 +87,16 @@ final class FileCollection implements \IteratorAggregate, LoggableInterface, AsL
         $array = $this
             ->collection
             ->filterWith(static fn (SplFileInfo $file): bool => $file->contents()->containsAny($content)->isTrue())
+            ->values()
             ->toArray()
         ;
+        /** @var array<int, SplFileInfo> $array */
 
         return FileCollection::asList($array);
     }
 
     /**
+     * @throws ThrowableInterface
      * @api
      */
     public function totalSize(): Memory

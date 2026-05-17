@@ -11,6 +11,9 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
+/**
+ * @implements \IteratorAggregate<int|string, mixed>
+ */
 final class DateTimeCollection implements \IteratorAggregate, AsListInterface
 {
     use CollectionTrait;
@@ -39,6 +42,7 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->values()
             ->toArray()
         ;
+        /** @var array<int, DateTimeInterface> $values */
 
         return DateTimeCollection::asList($values);
     }
@@ -57,6 +61,7 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->values()
             ->toArray()
         ;
+        /** @var array<int, DateTimeInterface> $values */
 
         return DateTimeCollection::asList($values);
     }
@@ -103,6 +108,7 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->values()
             ->toArray()
         ;
+        /** @var array<int, DateTimeInterface> $map */
 
         return DateTimeCollection::asList($map);
     }
@@ -121,6 +127,7 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->values()
             ->toArray()
         ;
+        /** @var array<int, DateTimeInterface> $map */
 
         return DateTimeCollection::asList($map);
     }
@@ -139,6 +146,7 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->values()
             ->toArray()
         ;
+        /** @var array<int, DateTimeInterface> $map */
 
         return DateTimeCollection::asList($map);
     }

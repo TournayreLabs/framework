@@ -14,6 +14,8 @@ interface JsonSerializeInterface
     /**
      * Specifies the data which should be serialized to JSON.
      *
+     * @return mixed
+     *
      * @throws ThrowableInterface
      *
      * @api

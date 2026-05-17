@@ -12,6 +12,7 @@ use TournayreLabs\Contracts\Mailer\SendMailInterface;
 use TournayreLabs\Symfony\Mailer\Adapter\EmailAdapter;
 use TournayreLabs\Symfony\Mailer\Adapter\TemplatedEmailAdapter;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mailer\Envelope;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\RawMessage;
 
@@ -27,39 +28,41 @@ final readonly class SendMailService implements SendMailInterface
      *
      * @throws ThrowableInterface
      */
-    public function send($message): void
+    public function send(Email|TemplatedEmail $message): void
     {
         try {
             $message = $this->adaptMessage($message);
 
             $this->mailer->send($message);
         } catch (\Exception|TransportExceptionInterface $exception) {
-            RuntimeException::fromThrowable($exception)->throw();
+            throw RuntimeException::fromThrowable($exception);
         }
     }
 
     /**
      * @param Email|TemplatedEmail $message
+     * @param Envelope $envelope
      *
      * @throws ThrowableInterface
      */
-    public function sendWithEnvelope($message, $envelope): void
+    public function sendWithEnvelope(Email|TemplatedEmail $message, Envelope $envelope): void
     {
         try {
             $message = $this->adaptMessage($message);
 
             $this->mailer->send($message, $envelope);
         } catch (\Exception|TransportExceptionInterface $exception) {
-            RuntimeException::fromThrowable($exception)->throw();
+            throw RuntimeException::fromThrowable($exception);
         }
     }
 
     /**
      * @param Email|TemplatedEmail $message
      *
+     * @return RawMessage
      * @throws ThrowableInterface
      */
-    private function adaptMessage($message): RawMessage
+    private function adaptMessage(Email|TemplatedEmail $message): RawMessage
     {
         if ($message instanceof TemplatedEmail) {
             return TemplatedEmailAdapter::fromMessage($message);

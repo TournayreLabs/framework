@@ -46,6 +46,7 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
             return;
         }
 
+        /** @var class-string<object> $classOrType */
         \Webmozart\Assert\Assert::allIsInstanceOf($array, $classOrType, $message);
     }
 
@@ -72,6 +73,7 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
             return;
         }
 
+        /** @var class-string<object> $classOrType */
         \Webmozart\Assert\Assert::allIsInstanceOf($array, $classOrType, $message);
     }
 
@@ -83,12 +85,12 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         $primitive = Primitive::tryFrom($type);
 
         if (!$primitive instanceof Primitive) {
-            InvalidArgumentException::new(\sprintf('Invalid type "%s". Expected one of "string", "int", "float", "bool", "array", "object" or "null".', $type))
-                ->throw()
-            ;
+            throw InvalidArgumentException::new(\sprintf('Invalid type "%s". Expected one of "string", "int", "float", "bool", "array", "object" or "null".', $type));
+
+            return;
         }
 
-        $primitive->assert(Primitive::tryFrom($type), $value, $message);
+        $primitive->assert($primitive, $value, $message);
     }
 
     /**
@@ -98,7 +100,8 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
      */
     public static function allIsType(array $value, string|Primitive $type, string $message = ''): void
     {
-        Collection::of($value)->each(static fn (mixed $element) => Assert::isType($element, $type, $message));
+        $typeAsString = $type instanceof Primitive ? $type->value : $type;
+        Collection::of($value)->each(static fn (mixed $element) => Assert::isType($element, $typeAsString, $message));
     }
 
     /**
@@ -108,15 +111,16 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
      */
     public static function __callStatic(mixed $name, array $arguments): void
     {
-        $method = String_::fromString($name)
-            ->prepend(\Webmozart\Assert\Assert::class, '::')
-            ->toString()
-        ;
-
+        $methodName = String_::fromString((string) $name)->toString();
         try {
-            $method(...$arguments);
+            if (!method_exists(\Webmozart\Assert\Assert::class, $methodName)) {
+                throw InvalidArgumentException::new(sprintf('Unknown assert method "%s::%s".', \Webmozart\Assert\Assert::class, $methodName));
+            }
+
+            // @phpstan-ignore-next-line
+            \Webmozart\Assert\Assert::{$methodName}(...$arguments);
         } catch (\Throwable $throwable) {
-            InvalidArgumentException::fromThrowable($throwable)->throw();
+            throw InvalidArgumentException::fromThrowable($throwable);
         }
     }
 

@@ -8,11 +8,15 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 
 /**
  * Interface GetIteratorInterface.
+ *
+ * @extends \IteratorAggregate<int|string, mixed>
  */
 interface GetIteratorInterface extends \IteratorAggregate
 {
     /**
      * Returns an iterator for the elements.
+     *
+     * @return \ArrayIterator<int|string, mixed>
      *
      * @throws ThrowableInterface
      *

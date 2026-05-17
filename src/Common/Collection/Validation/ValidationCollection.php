@@ -12,6 +12,9 @@ use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
+/**
+ * @implements \IteratorAggregate<int|string, mixed>
+ */
 final class ValidationCollection implements \IteratorAggregate, AsMapInterface
 {
     use CollectionTrait;

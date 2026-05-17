@@ -48,7 +48,10 @@ final class PublicSignatureCompatibilityTest extends TestCase
     }
 
     /**
+     * @param class-string $fqcn
+     *
      * @return array<string, mixed>
+     * @throws \ReflectionException
      */
     private function signatureFor(string $fqcn): array
     {

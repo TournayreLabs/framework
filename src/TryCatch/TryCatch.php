@@ -172,7 +172,9 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
                 throw InvalidArgumentException::new(sprintf('Class "%s" must implement "%s"', $throwableClass, ThrowableFactoryInterface::class));
             }
 
-            throw $throwableClass::new(message: '' !== $message ? $message : $throwable->getMessage(), code: 0 !== $code ? $code : $throwable->getCode())->withPrevious($throwable);
+            $throwableCode = 0 !== $code ? $code : (int) $throwable->getCode();
+
+            throw $throwableClass::new(message: '' !== $message ? $message : $throwable->getMessage(), code: $throwableCode)->withPrevious($throwable);
         }));
 
         /* @var self<T> */

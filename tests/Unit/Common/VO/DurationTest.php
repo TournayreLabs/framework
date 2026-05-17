@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 final class DurationTest extends TestCase
 {
     /**
-     * @return array<string, array<int>>
+     * @return array<string, array<int, float|int|string>>
      */
     public function dataProvider(): array
     {

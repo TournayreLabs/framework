@@ -12,6 +12,9 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
+/**
+ * @implements \IteratorAggregate<int|string, EmailAddress>
+ */
 final class EmailAddressCollection implements \IteratorAggregate, AsListInterface, AsMapInterface
 {
     use CollectionTrait;
@@ -37,7 +40,7 @@ final class EmailAddressCollection implements \IteratorAggregate, AsListInterfac
     }
 
     /**
-     * @param array<string> $emails
+     * @param array<int, string> $emails
      *
      * @throws ThrowableInterface
      *
@@ -47,8 +50,10 @@ final class EmailAddressCollection implements \IteratorAggregate, AsListInterfac
     {
         $map = Collection::of($emails)
             ->each(static fn (string $email) => EmailAddress::of($email))
+            ->values()
             ->toArray()
         ;
+        /** @var array<int, EmailAddress> $map */
 
         return EmailAddressCollection::asList($map);
     }

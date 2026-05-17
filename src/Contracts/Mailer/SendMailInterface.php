@@ -7,6 +7,7 @@ namespace TournayreLabs\Contracts\Mailer;
 use TournayreLabs\Component\Mailer\VO\Email;
 use TournayreLabs\Component\Mailer\VO\TemplatedEmail;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use Symfony\Component\Mailer\Envelope;
 
 interface SendMailInterface
 {
@@ -17,14 +18,15 @@ interface SendMailInterface
      *
      * @throws ThrowableInterface
      */
-    public function send($message): void;
+    public function send(Email|TemplatedEmail $message): void;
 
     /**
      * @param Email|TemplatedEmail $message
+     * @param Envelope             $envelope
      *
      * @api
      *
      * @throws ThrowableInterface
      */
-    public function sendWithEnvelope($message, $envelope): void;
+    public function sendWithEnvelope(Email|TemplatedEmail $message, Envelope $envelope): void;
 }

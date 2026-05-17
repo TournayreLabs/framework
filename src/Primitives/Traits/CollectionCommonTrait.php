@@ -175,6 +175,9 @@ trait CollectionCommonTrait
         return $clone;
     }
 
+    /**
+     * @return \ArrayIterator<int|string, mixed>
+     */
     public function getIterator(): \ArrayIterator
     {
         return $this->collection->getIterator();

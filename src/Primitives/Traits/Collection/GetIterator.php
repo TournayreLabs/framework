@@ -16,6 +16,8 @@ trait GetIterator
     /**
      * Returns an iterator for the elements.
      *
+     * @return \ArrayIterator<int|string, mixed>
+     *
      * @api
      */
     public function getIterator(): \ArrayIterator

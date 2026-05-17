@@ -25,5 +25,5 @@ interface NullableInterface
      *
      * @throws ThrowableInterface
      */
-    public function orThrow($throwable): self;
+    public function orThrow(\Throwable|callable $throwable): self;
 }

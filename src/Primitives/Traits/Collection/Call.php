@@ -16,6 +16,8 @@ trait Call
     /**
      * Calls the given method on all items.
      *
+     * @param array<int, mixed> $params
+     *
      * @api
      */
     public function call(string $name, array $params = []): self

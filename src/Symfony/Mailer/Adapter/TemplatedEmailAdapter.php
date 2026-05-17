@@ -22,7 +22,7 @@ final class TemplatedEmailAdapter extends EmailAdapter
         $symfonyEmail = parent::fromMessage($email);
 
         $templatedEmail = new SymfonyTemplatedEmail();
-        $templatedEmail->subject($symfonyEmail->getSubject());
+        $templatedEmail->subject($symfonyEmail->getSubject() ?? '');
         $templatedEmail->from(...$symfonyEmail->getFrom());
         $templatedEmail->to(...$symfonyEmail->getTo());
         $templatedEmail->cc(...$symfonyEmail->getCc());
