@@ -28,6 +28,9 @@ return static function (RectorConfig $rectorConfig): void {
         // - ->slice($start, $length) → ->sliceWithLength($start, $length) [StringType]
         // - ->splice($repl, $start, $length) → ->spliceWithLength($repl, $start, $length) [StringType]
         // - ->split($delim, $limit, $flags) → ->splitWithLimit($delim, $limit, $flags) [StringType]
+        // - ->join($strings, $lastGlue) → ->joinWithLastGlue($strings, $lastGlue) [StringType] (2-arg form only)
+        // - EventCollection::contains($key, $op, $value) → contains(Event $event) [EventCollection]
+        // - EmailContactCollection::contains($key, $op, $value) → contains(EmailContact $emailContact)
     ]);
 
     $rectorConfig->ruleWithConfiguration(RenameClassConstFetchRector::class, [

@@ -193,12 +193,17 @@ final readonly class StringType implements \Stringable
     /**
      * @api
      */
-    // @phpstan-ignore-next-line
-    public function join(array $strings, ?string $lastGlue = null): self
+    public function join(array $strings): self
     {
-        $u = u($this->value)->join($strings, $lastGlue);
+        return self::of(u($this->value)->join($strings)->toString());
+    }
 
-        return self::of($u->toString());
+    /**
+     * @api
+     */
+    public function joinWithLastGlue(array $strings, string $lastGlue): self
+    {
+        return self::of(u($this->value)->join($strings, $lastGlue)->toString());
     }
 
     /**

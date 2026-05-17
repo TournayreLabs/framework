@@ -13780,17 +13780,6 @@
                         },
                         "variadic": false,
                         "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
                     }
                 ]
             },
@@ -13867,33 +13856,11 @@
                 "returnsReference": false,
                 "parameters": [
                     {
-                        "name": "key",
-                        "type": "mixed",
+                        "name": "event",
+                        "type": "TournayreLabs\\Common\\VO\\Event",
                         "optional": false,
                         "default": {
                             "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "operator",
-                        "type": "?string",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -13999,21 +13966,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "hasNoElement",
@@ -14082,21 +14037,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "map",
@@ -14225,7 +14168,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -14235,7 +14178,38 @@
                     },
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setIf",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "value",
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -14245,11 +14219,10 @@
                     },
                     {
                         "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -14284,21 +14257,10 @@
                 "parameters": [
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -14373,21 +14335,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "has",
@@ -14477,21 +14427,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "map",
@@ -14567,7 +14505,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -14577,7 +14515,38 @@
                     },
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setIf",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "value",
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -14587,11 +14556,10 @@
                     },
                     {
                         "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -14626,21 +14594,10 @@
                 "parameters": [
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -14715,21 +14672,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "hasNoElement",
@@ -14808,21 +14753,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "map",
@@ -14898,7 +14831,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -14908,7 +14841,38 @@
                     },
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setIf",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "value",
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -14918,11 +14882,10 @@
                     },
                     {
                         "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -14988,7 +14951,7 @@
     "TournayreLabs\\Common\\Exception\\InvalidArgumentException": {
         "kind": "class",
         "abstract": false,
-        "final": false,
+        "final": true,
         "methods": [
             {
                 "name": "fromThrowable",
@@ -15052,14 +15015,23 @@
                 "final": false,
                 "returnType": "void",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "throwWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "void",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "logger",
-                        "type": "?TournayreLabs\\Contracts\\Log\\LoggerInterface",
-                        "optional": true,
+                        "type": "TournayreLabs\\Contracts\\Log\\LoggerInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -15103,7 +15075,7 @@
     "TournayreLabs\\Common\\Exception\\RuntimeException": {
         "kind": "class",
         "abstract": false,
-        "final": false,
+        "final": true,
         "methods": [
             {
                 "name": "fromThrowable",
@@ -15167,14 +15139,23 @@
                 "final": false,
                 "returnType": "void",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "throwWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "void",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "logger",
-                        "type": "?TournayreLabs\\Contracts\\Log\\LoggerInterface",
-                        "optional": true,
+                        "type": "TournayreLabs\\Contracts\\Log\\LoggerInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -15282,14 +15263,23 @@
                 "final": false,
                 "returnType": "void",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "throwWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "void",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "logger",
-                        "type": "?TournayreLabs\\Contracts\\Log\\LoggerInterface",
-                        "optional": true,
+                        "type": "TournayreLabs\\Contracts\\Log\\LoggerInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -16756,7 +16746,7 @@
     "TournayreLabs\\Common\\VO\\Event": {
         "kind": "class",
         "abstract": false,
-        "final": false,
+        "final": true,
         "methods": [
             {
                 "name": "_identifier",
@@ -17314,21 +17304,10 @@
                 "parameters": [
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -17376,33 +17355,11 @@
                 "returnsReference": false,
                 "parameters": [
                     {
-                        "name": "key",
-                        "type": null,
+                        "name": "emailContact",
+                        "type": "TournayreLabs\\Component\\Mailer\\VO\\EmailContact",
                         "optional": false,
                         "default": {
                             "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "operator",
-                        "type": "?string",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -17446,21 +17403,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "hasNoElement",
@@ -17529,21 +17474,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "map",
@@ -17619,7 +17552,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -17629,7 +17562,38 @@
                     },
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setIf",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "value",
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -17639,11 +17603,10 @@
                     },
                     {
                         "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -18337,17 +18300,6 @@
                         },
                         "variadic": false,
                         "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
                     }
                 ]
             },
@@ -18542,21 +18494,9 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             }
         ]
     },
@@ -18679,21 +18619,9 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             }
         ]
     },
@@ -18769,7 +18697,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -18779,7 +18707,38 @@
                     },
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setWithCallback",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "void",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "value",
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -18789,11 +18748,10 @@
                     },
                     {
                         "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22051,16 +22009,25 @@
                 "parameters": [
                     {
                         "name": "locale",
-                        "type": null,
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "getCalendarFormatsForCurrentLocale",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "array",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "getDays",
@@ -22069,6 +22036,16 @@
                 "abstract": true,
                 "final": false,
                 "returnType": "array",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "getDaysFromStartOfCurrentLocaleWeek",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "int",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -22083,11 +22060,10 @@
                 "parameters": [
                     {
                         "name": "weekStartsAt",
-                        "type": null,
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22115,16 +22091,25 @@
                 "parameters": [
                     {
                         "name": "locale",
-                        "type": null,
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "getIsoFormatsForCurrentLocale",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "array",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "getIsoUnits",
@@ -22223,11 +22208,11 @@
                 "parameters": [
                     {
                         "name": "context",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22245,11 +22230,11 @@
                     },
                     {
                         "name": "defaultValue",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22267,11 +22252,11 @@
                 "parameters": [
                     {
                         "name": "context",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22289,11 +22274,11 @@
                 "parameters": [
                     {
                         "name": "context",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22311,11 +22296,11 @@
                     },
                     {
                         "name": "defaultValue",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22333,11 +22318,11 @@
                 "parameters": [
                     {
                         "name": "context",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22355,11 +22340,11 @@
                 "parameters": [
                     {
                         "name": "context",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22717,16 +22702,125 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "isSameCurrentCentury",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentDay",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentDecade",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentHour",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentMicro",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentMicrosecond",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentMillennium",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentMinute",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentSecond",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentWeek",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentYear",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "isSameDay",
@@ -22739,11 +22833,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22761,11 +22854,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22783,11 +22875,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22805,11 +22896,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22827,11 +22917,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22849,11 +22938,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22871,11 +22959,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22966,11 +23053,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -22988,11 +23074,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -23010,11 +23095,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -23129,14 +23213,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "isoFormatFrom",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "format",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "originalFormat",
-                        "type": null,
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -23171,19 +23275,7 @@
                 "final": false,
                 "returnType": "int",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "value",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "isoWeeksInYear",
@@ -23246,15 +23338,36 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
+                    {
+                        "name": "parts",
+                        "type": "int",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": 1
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "longAbsoluteDiffFromNowForHumans",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
                     {
                         "name": "parts",
                         "type": "int",
@@ -23279,15 +23392,36 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
+                    {
+                        "name": "parts",
+                        "type": "int",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": 1
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "longRelativeDiffFromNowForHumans",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
                     {
                         "name": "parts",
                         "type": "int",
@@ -23310,17 +23444,6 @@
                 "returnType": "string",
                 "returnsReference": false,
                 "parameters": [
-                    {
-                        "name": "other",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
                     {
                         "name": "parts",
                         "type": "int",
@@ -23345,11 +23468,10 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -23681,14 +23803,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "ordinalWithPeriod",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "period",
-                        "type": null,
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -24633,16 +24775,25 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "setDateFromNow",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "setDateTime",
@@ -24738,16 +24889,25 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "setDateTimeFromNow",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "setDay",
@@ -24792,6 +24952,27 @@
                 ]
             },
             {
+                "name": "setDaysFromStartOfCurrentLocaleWeek",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "numberOfDays",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
                 "name": "setDaysFromStartOfWeek",
                 "visibility": "public",
                 "static": false,
@@ -24812,11 +24993,10 @@
                     },
                     {
                         "name": "weekStartsAt",
-                        "type": null,
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -24901,6 +25081,27 @@
                         "default": {
                             "available": true,
                             "value": 1
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setIsoWeekday",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -25265,16 +25466,25 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "setTimeFromNow",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "setTimeFromTimeString",
@@ -25329,7 +25539,7 @@
                 "parameters": [
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "DateTimeZone|string",
                         "optional": false,
                         "default": {
                             "available": false
@@ -25413,6 +25623,48 @@
                 ]
             },
             {
+                "name": "setUtcOffset",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "minuteOffset",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setWeekday",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
                 "name": "setYear",
                 "visibility": "public",
                 "static": false,
@@ -25465,7 +25717,7 @@
                 "parameters": [
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "DateTimeZone|string",
                         "optional": false,
                         "default": {
                             "available": false
@@ -25486,15 +25738,36 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
+                    {
+                        "name": "parts",
+                        "type": "int",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": 1
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "shortAbsoluteDiffFromNowForHumans",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
                     {
                         "name": "parts",
                         "type": "int",
@@ -25559,15 +25832,36 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
+                    {
+                        "name": "parts",
+                        "type": "int",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": 1
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "shortRelativeDiffFromNowForHumans",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
                     {
                         "name": "parts",
                         "type": "int",
@@ -25590,17 +25884,6 @@
                 "returnType": "string",
                 "returnsReference": false,
                 "parameters": [
-                    {
-                        "name": "other",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
                     {
                         "name": "parts",
                         "type": "int",
@@ -25625,11 +25908,10 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -27561,28 +27843,6 @@
                 "parameters": []
             },
             {
-                "name": "utcOffset",
-                "visibility": "public",
-                "static": false,
-                "abstract": true,
-                "final": false,
-                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "minuteOffset",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "week",
                 "visibility": "public",
                 "static": false,
@@ -27640,19 +27900,7 @@
                 "final": false,
                 "returnType": "int",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "value",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "weeksInYear",
@@ -27860,14 +28108,23 @@
                 "final": false,
                 "returnType": "void",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "throwWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "void",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "logger",
-                        "type": "?TournayreLabs\\Contracts\\Log\\LoggerInterface",
-                        "optional": true,
+                        "type": "TournayreLabs\\Contracts\\Log\\LoggerInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -28167,6 +28424,27 @@
                 ]
             },
             {
+                "name": "identifiedAs",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "void",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "identifier",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
                 "name": "info",
                 "visibility": "public",
                 "static": false,
@@ -28273,25 +28551,14 @@
                 ]
             },
             {
-                "name": "setLoggerIdentifier",
+                "name": "resetIdentifier",
                 "visibility": "public",
                 "static": false,
                 "abstract": true,
                 "final": false,
                 "returnType": "void",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "identifier",
-                        "type": "?string",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "start",
@@ -28897,11 +29164,11 @@
                     },
                     {
                         "name": "referenceType",
-                        "type": "int",
+                        "type": "TournayreLabs\\Contracts\\Routing\\ReferenceType",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "constant": "self::ABSOLUTE_PATH"
+                            "constant": "TournayreLabs\\Contracts\\Routing\\ReferenceType::ABSOLUTE_PATH"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -29955,17 +30222,6 @@
                         },
                         "variadic": false,
                         "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
                     }
                 ]
             },
@@ -30856,21 +31112,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "firstKey",
@@ -31742,21 +31986,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "lastKey",
@@ -32026,7 +32258,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -32036,21 +32268,10 @@
                     },
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -32365,7 +32586,28 @@
                 "parameters": [
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "pushWithCallback",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -32375,11 +32617,10 @@
                     },
                     {
                         "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -32707,7 +32948,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -32717,7 +32958,38 @@
                     },
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setWithCallback",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "void",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "value",
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -32727,11 +32999,10 @@
                     },
                     {
                         "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -33874,21 +34145,10 @@
                 "parameters": [
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -34047,21 +34307,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "hasNoElement",
@@ -34130,21 +34378,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "map",
@@ -34220,7 +34456,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -34230,7 +34466,38 @@
                     },
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setIf",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "value",
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -34240,11 +34507,10 @@
                     },
                     {
                         "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -37389,16 +37655,25 @@
                 "parameters": [
                     {
                         "name": "locale",
-                        "type": null,
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "getCalendarFormatsForCurrentLocale",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "array",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "getDays",
@@ -37407,6 +37682,16 @@
                 "abstract": false,
                 "final": false,
                 "returnType": "array",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "getDaysFromStartOfCurrentLocaleWeek",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "int",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -37421,11 +37706,10 @@
                 "parameters": [
                     {
                         "name": "weekStartsAt",
-                        "type": null,
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -37453,16 +37737,25 @@
                 "parameters": [
                     {
                         "name": "locale",
-                        "type": null,
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "getIsoFormatsForCurrentLocale",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "array",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "getIsoUnits",
@@ -37561,11 +37854,11 @@
                 "parameters": [
                     {
                         "name": "context",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -37583,11 +37876,11 @@
                     },
                     {
                         "name": "defaultValue",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -37605,11 +37898,11 @@
                 "parameters": [
                     {
                         "name": "context",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -37627,11 +37920,11 @@
                 "parameters": [
                     {
                         "name": "context",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -37649,11 +37942,11 @@
                     },
                     {
                         "name": "defaultValue",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -37671,11 +37964,11 @@
                 "parameters": [
                     {
                         "name": "context",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -37693,11 +37986,11 @@
                 "parameters": [
                     {
                         "name": "context",
-                        "type": null,
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": ""
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38075,16 +38368,125 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "isSameCurrentCentury",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentDay",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentDecade",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentHour",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentMicro",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentMicrosecond",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentMillennium",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentMinute",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentSecond",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentWeek",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "isSameCurrentYear",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "isSameDay",
@@ -38097,11 +38499,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38119,11 +38520,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38141,11 +38541,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38163,11 +38562,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38185,11 +38583,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38207,11 +38604,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38229,11 +38625,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38324,11 +38719,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38346,11 +38740,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38368,11 +38761,10 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38487,14 +38879,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "isoFormatFrom",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "format",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "originalFormat",
-                        "type": null,
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -38529,19 +38941,7 @@
                 "final": false,
                 "returnType": "int",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "value",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "isoWeeksInYear",
@@ -38604,15 +39004,36 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
+                    {
+                        "name": "parts",
+                        "type": "int",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": 1
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "longAbsoluteDiffFromNowForHumans",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
                     {
                         "name": "parts",
                         "type": "int",
@@ -38637,15 +39058,36 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
+                    {
+                        "name": "parts",
+                        "type": "int",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": 1
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "longRelativeDiffFromNowForHumans",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
                     {
                         "name": "parts",
                         "type": "int",
@@ -38668,17 +39110,6 @@
                 "returnType": "string",
                 "returnsReference": false,
                 "parameters": [
-                    {
-                        "name": "other",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
                     {
                         "name": "parts",
                         "type": "int",
@@ -38703,11 +39134,10 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -39009,14 +39439,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "ofWithTimezone",
+                "visibility": "public",
+                "static": true,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "datetime",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "timezone",
-                        "type": "?DateTimeZone",
-                        "optional": true,
+                        "type": "DateTimeZone",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -39102,14 +39552,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "ordinalWithPeriod",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "period",
-                        "type": null,
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -40054,16 +40524,25 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "setDateFromNow",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "setDateTime",
@@ -40159,16 +40638,25 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "setDateTimeFromNow",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "setDay",
@@ -40213,6 +40701,27 @@
                 ]
             },
             {
+                "name": "setDaysFromStartOfCurrentLocaleWeek",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "numberOfDays",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
                 "name": "setDaysFromStartOfWeek",
                 "visibility": "public",
                 "static": false,
@@ -40233,11 +40742,10 @@
                     },
                     {
                         "name": "weekStartsAt",
-                        "type": null,
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -40322,6 +40830,27 @@
                         "default": {
                             "available": true,
                             "value": 1
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setIsoWeekday",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -40686,16 +41215,25 @@
                 "parameters": [
                     {
                         "name": "date",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     }
                 ]
+            },
+            {
+                "name": "setTimeFromNow",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": []
             },
             {
                 "name": "setTimeFromTimeString",
@@ -40749,12 +41287,11 @@
                 "returnsReference": false,
                 "parameters": [
                     {
-                        "name": "timezone",
-                        "type": null,
-                        "optional": true,
+                        "name": "value",
+                        "type": "DateTimeZone|string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -40825,6 +41362,48 @@
                     {
                         "name": "overflowUnit",
                         "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setUtcOffset",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "minuteOffset",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setWeekday",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "int",
                         "optional": false,
                         "default": {
                             "available": false
@@ -40908,15 +41487,36 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
+                    {
+                        "name": "parts",
+                        "type": "int",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": 1
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "shortAbsoluteDiffFromNowForHumans",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
                     {
                         "name": "parts",
                         "type": "int",
@@ -40981,15 +41581,36 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
+                    {
+                        "name": "parts",
+                        "type": "int",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": 1
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "shortRelativeDiffFromNowForHumans",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "string",
+                "returnsReference": false,
+                "parameters": [
                     {
                         "name": "parts",
                         "type": "int",
@@ -41012,17 +41633,6 @@
                 "returnType": "string",
                 "returnsReference": false,
                 "parameters": [
-                    {
-                        "name": "other",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
                     {
                         "name": "parts",
                         "type": "int",
@@ -41047,11 +41657,10 @@
                 "parameters": [
                     {
                         "name": "other",
-                        "type": null,
-                        "optional": true,
+                        "type": "DateTimeInterface",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -42993,28 +43602,6 @@
                 "parameters": []
             },
             {
-                "name": "utcOffset",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "TournayreLabs\\Contracts\\DateTime\\DateTimeInterface",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "minuteOffset",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "week",
                 "visibility": "public",
                 "static": false,
@@ -43072,19 +43659,7 @@
                 "final": false,
                 "returnType": "int",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "value",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "weeksInYear",
@@ -43415,10 +43990,20 @@
         ]
     },
     "TournayreLabs\\Primitives\\Locale": {
-        "kind": "class",
+        "kind": "enum",
         "abstract": false,
         "final": true,
         "methods": [
+            {
+                "name": "cases",
+                "visibility": "public",
+                "static": true,
+                "abstract": false,
+                "final": false,
+                "returnType": "array",
+                "returnsReference": false,
+                "parameters": []
+            },
             {
                 "name": "code",
                 "visibility": "public",
@@ -43428,6 +44013,27 @@
                 "returnType": "string",
                 "returnsReference": false,
                 "parameters": []
+            },
+            {
+                "name": "from",
+                "visibility": "public",
+                "static": true,
+                "abstract": false,
+                "final": false,
+                "returnType": "static",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "string|int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
             },
             {
                 "name": "fullName",
@@ -43451,6 +44057,27 @@
                     {
                         "name": "value",
                         "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "tryFrom",
+                "visibility": "public",
+                "static": true,
+                "abstract": false,
+                "final": false,
+                "returnType": "?static",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "string|int",
                         "optional": false,
                         "default": {
                             "available": false
@@ -44282,14 +44909,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "joinWithLastGlue",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "strings",
+                        "type": "array",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "lastGlue",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -44692,14 +45339,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "sliceWithLength",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "start",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "length",
-                        "type": "?int",
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -44745,14 +45412,44 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "spliceWithLength",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "replacement",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "start",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "length",
-                        "type": "?int",
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -44777,25 +45474,45 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "splitWithLimit",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "array",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "delimiter",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "limit",
-                        "type": "?int",
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
                     {
                         "name": "flags",
-                        "type": "?int",
+                        "type": "int",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": 0
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -44870,7 +45587,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -44892,7 +45609,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -44935,7 +45652,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45082,21 +45799,10 @@
                 "parameters": [
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45150,21 +45856,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "hasNoElement",
@@ -45233,21 +45927,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "map",
@@ -45323,7 +46005,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -45333,7 +46015,38 @@
                     },
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setIf",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "value",
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -45343,11 +46056,10 @@
                     },
                     {
                         "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45923,21 +46635,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "hasNoElement",
@@ -46006,21 +46706,9 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
+                "parameters": []
             },
             {
                 "name": "map",
@@ -46121,6 +46809,47 @@
                         "default": {
                             "available": true,
                             "value": null
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "setIf",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "value",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "callback",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -47221,11 +47950,11 @@
                     },
                     {
                         "name": "referenceType",
-                        "type": "int",
+                        "type": "TournayreLabs\\Contracts\\Routing\\ReferenceType",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "constant": "TournayreLabs\\Contracts\\Routing\\RoutingInterface::ABSOLUTE_PATH"
+                            "constant": "TournayreLabs\\Contracts\\Routing\\ReferenceType::ABSOLUTE_PATH"
                         },
                         "variadic": false,
                         "passedByReference": false

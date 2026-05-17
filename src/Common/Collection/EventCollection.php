@@ -9,7 +9,6 @@ use TournayreLabs\Common\VO\Event;
 use TournayreLabs\Contracts\Collection\AddInterface;
 use TournayreLabs\Contracts\Collection\AsMapInterface;
 use TournayreLabs\Contracts\Collection\AtLeastOneElementInterface;
-use TournayreLabs\Contracts\Collection\ContainsInterface;
 use TournayreLabs\Contracts\Collection\CountInterface;
 use TournayreLabs\Contracts\Collection\EachInterface;
 use TournayreLabs\Contracts\Collection\FirstInterface;
@@ -32,7 +31,7 @@ use Symfony\Component\Messenger\MessageBusInterface;
  * @deprecated This class is deprecated and will be removed in a future version.
  *             Use the Domain Events Management system instead.
  */
-final class EventCollection implements AsMapInterface, AddInterface, ContainsInterface, SearchInterface, CountInterface, ToArrayInterface, FirstInterface, LastInterface, EachInterface, KeysInterface, HasXElementsInterface, HasNoElementInterface, HasOneElementInterface, HasSeveralElementsInterface, AtLeastOneElementInterface
+final class EventCollection implements AsMapInterface, AddInterface, SearchInterface, CountInterface, ToArrayInterface, FirstInterface, LastInterface, EachInterface, KeysInterface, HasXElementsInterface, HasNoElementInterface, HasOneElementInterface, HasSeveralElementsInterface, AtLeastOneElementInterface
 {
     use CollectionTrait;
 
@@ -109,12 +108,9 @@ final class EventCollection implements AsMapInterface, AddInterface, ContainsInt
     /**
      * @api
      */
-    public function contains(mixed $key, ?string $operator = null, mixed $value = null): BoolEnum
+    public function contains(Event $event): BoolEnum
     {
-        return $this
-            ->collection
-            ->contains($key, $operator, $value)
-        ;
+        return $this->collection->contains($event);
     }
 
     /**
