@@ -1,0 +1,9 @@
+services:
+    -
+      class: TournayreLabs\PHPStan\Rules\NoForeachRule
+      arguments:
+          excludedPaths:
+              - src/PHPStan/
+              - tests/
+      tags:
+        - phpstan.rules.rule

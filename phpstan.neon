@@ -1,5 +1,7 @@
 includes:
     - tools/phpstan/elegant-object.neon
+    - tools/phpstan/disallowed-calls.neon
+    - tools/phpstan/disallowed-constructs.neon
 
 parameters:
     level: 5
@@ -26,6 +28,9 @@ parameters:
         # Méthodes au nom de getter ou setter conservées par contrat public
         -
             message: '#appears to be a getter#'
+            path: src/PHPStan/Rules/NoForeachRule.php
+        -
+            message: '#appears to be a getter#'
             path: src/Contracts/DateTime/DateTimeInterface.php
         -
             message: '#GetInterface::getOrDefault\(\).*appears to be a getter#'
@@ -39,6 +44,9 @@ parameters:
         -
             message: '#Collection::getIterator\(\) appears to be a getter#'
             path: src/Primitives/Traits/Collection/GetIterator.php
+        -
+            message: '#getIterator\(\).*appears to be a getter#'
+            path: src/Primitives/Traits/CollectionCommonTrait.php
         -
             message: '#appears to be a setter#'
             path: src/Contracts/DateTime/DateTimeInterface.php

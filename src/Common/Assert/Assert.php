@@ -14,6 +14,7 @@ use TournayreLabs\Contracts\Common\Assert\AssertNullInterface;
 use TournayreLabs\Contracts\Common\Assert\AssertNumericInterface;
 use TournayreLabs\Contracts\Common\Assert\AssertStringInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Primitive;
 use TournayreLabs\Primitives\StringType;
 
@@ -97,9 +98,7 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
      */
     public static function allIsType(array $value, string|Primitive $type, string $message = ''): void
     {
-        foreach ($value as $element) {
-            Assert::isType($element, $type, $message);
-        }
+        Collection::of($value)->each(static fn (mixed $element) => Assert::isType($element, $type, $message));
     }
 
     /**

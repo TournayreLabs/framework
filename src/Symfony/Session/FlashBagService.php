@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Symfony\Session;
 
 use TournayreLabs\Contracts\Session\FlashBagInterface;
+use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\FlashType;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface as SymfonyFlashBagInterface;
 
@@ -66,8 +67,6 @@ final readonly class FlashBagService implements FlashBagInterface
     {
         $messages = is_string($message) ? [$message] : $message;
 
-        foreach ($messages as $flashBagMessage) {
-            $this->symfonyFlashBag->add($type->value, $flashBagMessage);
-        }
+        Collection::of($messages)->each(fn (string $flashBagMessage) => $this->symfonyFlashBag->add($type->value, $flashBagMessage));
     }
 }

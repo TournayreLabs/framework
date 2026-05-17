@@ -6,6 +6,7 @@ namespace TournayreLabs\Symfony\Middleware;
 
 use TournayreLabs\Contracts\Log\LoggerInterface;
 use TournayreLabs\Contracts\Persistance\AllowFlushInterface;
+use TournayreLabs\Primitives\Collection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Handler\HandlersLocatorInterface;
@@ -81,23 +82,14 @@ final readonly class DoctrineTransactionMiddleware implements MiddlewareInterfac
 
     private function shouldApplyTransaction(Envelope $envelope): bool
     {
-        $handlers = $this->handlersLocator->getHandlers($envelope);
+        $handlers = iterator_to_array($this->handlersLocator->getHandlers($envelope));
 
-        foreach ($handlers as $handlerDescriptor) {
+        return Collection::of($handlers)->some(static function (mixed $handlerDescriptor): bool {
             $handler = $handlerDescriptor->getHandler();
 
-            // Early return if handler is a callable array with an object implementing AllowFlushInterface
-            if (is_array($handler) && isset($handler[0]) && $handler[0] instanceof AllowFlushInterface) {
-                return true;
-            }
-
-            // Early return if handler is an object implementing AllowFlushInterface
-            if ($handler instanceof AllowFlushInterface) {
-                return true;
-            }
-        }
-
-        return false;
+            return ($handler instanceof AllowFlushInterface)
+                || (is_array($handler) && isset($handler[0]) && $handler[0] instanceof AllowFlushInterface);
+        })->isTrue();
     }
 
     private function rollback(): void

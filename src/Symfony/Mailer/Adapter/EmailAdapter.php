@@ -8,6 +8,7 @@ use TournayreLabs\Component\Mailer\Collection\EmailContactCollection;
 use TournayreLabs\Component\Mailer\VO\Email;
 use TournayreLabs\Component\Mailer\VO\EmailContact;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Primitives\Collection;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email as SymfonyEmail;
 
@@ -42,20 +43,20 @@ abstract class EmailAdapter
         $symfonyEmail->bcc(...$bccs);
         $symfonyEmail->replyTo(...$replyTos);
 
-        foreach ($email->attachments()->toArray() as $attachment) {
-            $symfonyEmail->attachFromPath($attachment->getPathname()->toString());
-        }
+        Collection::of($email->attachments()->toArray())
+            ->each(static fn (mixed $attachment) => $symfonyEmail->attachFromPath($attachment->getPathname()->toString()));
 
         $headers = $symfonyEmail->getHeaders();
-        foreach ($email->tags()->toArray() as $tagName => $tagValue) {
-            $headers->addTextHeader($tagName, $tagValue);
-        }
+        Collection::of($email->tags()->toArray())
+            ->each(static fn (mixed $tagValue, mixed $tagName) => $headers->addTextHeader((string) $tagName, (string) $tagValue));
 
         return $symfonyEmail;
     }
 
     /**
      * @return array|Address[]
+     *
+     * @throws ThrowableInterface
      */
     private static function collectionToAddresses(EmailContactCollection $emailContactCollection): array
     {
@@ -63,7 +64,7 @@ abstract class EmailAdapter
             return [];
         }
 
-        return $emailContactCollection
+        return Collection::of($emailContactCollection->toArray())
             ->map(static fn (EmailContact $emailContact): Address => new Address(
                 $emailContact->email()->toString(),
                 $emailContact->name()->toString()

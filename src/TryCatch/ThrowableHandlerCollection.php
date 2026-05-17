@@ -40,13 +40,16 @@ final class ThrowableHandlerCollection implements ThrowableHandlerCollectionInte
 
     /**
      * @return ThrowableHandlerInterface<mixed>
+     * @throws ThrowableInterface
      */
     public function findHandlerFor(\Throwable $throwable): ThrowableHandlerInterface
     {
-        foreach ($this->collection->toArray() as $handler) {
-            if ($handler->canHandle($throwable)) {
-                return $handler;
-            }
+        $handler = $this->collection->find(
+            static fn (ThrowableHandlerInterface $handler): bool => $handler->canHandle($throwable)
+        );
+
+        if ($handler instanceof ThrowableHandlerInterface) {
+            return $handler;
         }
 
         return NullThrowableHandler::new();
