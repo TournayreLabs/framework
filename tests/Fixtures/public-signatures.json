@@ -18422,14 +18422,23 @@
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "countByWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -18783,14 +18792,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "sliceWithLength",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "length",
-                        "type": "?int",
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -28661,14 +28690,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "sendWithEnvelope",
+                "visibility": "public",
+                "static": false,
+                "abstract": true,
+                "final": false,
+                "returnType": "void",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "envelope",
                         "type": null,
-                        "optional": true,
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -30380,14 +30429,23 @@
                 "final": false,
                 "returnType": "TournayreLabs\\Primitives\\Numeric",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "avgBy",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\Numeric",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "key",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -30539,25 +30597,54 @@
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "colBy",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "valuecol",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "colByBoth",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "valuecol",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
                     {
                         "name": "indexcol",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -30572,14 +30659,23 @@
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "collapseWithDepth",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "depth",
-                        "type": "?int",
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -30670,8 +30766,29 @@
                 "returnsReference": false,
                 "parameters": [
                     {
+                        "name": "value",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "containsWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\BoolEnum",
+                "returnsReference": false,
+                "parameters": [
+                    {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -30681,22 +30798,20 @@
                     },
                     {
                         "name": "operator",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
                     {
                         "name": "value",
-                        "type": null,
-                        "optional": true,
+                        "type": "mixed",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -30731,14 +30846,23 @@
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "countByWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -30783,17 +30907,6 @@
                         },
                         "variadic": false,
                         "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
                     }
                 ]
             },
@@ -30815,14 +30928,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "diffAssocWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "elements",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -30847,14 +30980,65 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "diffKeysWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "elements",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "diffWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "elements",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "callback",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -30869,14 +31053,23 @@
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "dumpWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -30891,14 +31084,23 @@
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "duplicatesBy",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "key",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -31049,14 +31251,23 @@
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "filterWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -31083,12 +31294,43 @@
                         "passedByReference": false
                     },
                     {
-                        "name": "default",
-                        "type": "mixed",
+                        "name": "reverse",
+                        "type": "bool",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "findOrDefault",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": null,
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "default",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -31134,14 +31376,23 @@
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "flatWithDepth",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "depth",
-                        "type": "?int",
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -31228,17 +31479,6 @@
                         },
                         "variadic": false,
                         "passedByReference": false
-                    },
-                    {
-                        "name": "default",
-                        "type": null,
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
                     }
                 ]
             },
@@ -31251,6 +31491,37 @@
                 "returnType": null,
                 "returnsReference": false,
                 "parameters": []
+            },
+            {
+                "name": "getOrDefault",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": null,
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "default",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
             },
             {
                 "name": "grep",
@@ -31388,7 +31659,7 @@
                 "parameters": [
                     {
                         "name": "condition",
-                        "type": null,
+                        "type": "Closure|bool",
                         "optional": false,
                         "default": {
                             "available": false
@@ -31398,22 +31669,10 @@
                     },
                     {
                         "name": "then",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "else",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -31431,22 +31690,41 @@
                 "parameters": [
                     {
                         "name": "then",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "ifAnyOrElse",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "then",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
                     {
                         "name": "else",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -31462,6 +31740,47 @@
                 "returnType": null,
                 "returnsReference": false,
                 "parameters": []
+            },
+            {
+                "name": "ifOrElse",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "condition",
+                        "type": "Closure|bool",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "then",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "else",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
             },
             {
                 "name": "implements",
@@ -31639,14 +31958,44 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "insertAtWithKey",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "pos",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "element",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "key",
-                        "type": null,
-                        "optional": true,
+                        "type": "mixed",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -31734,17 +32083,6 @@
                         },
                         "variadic": false,
                         "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
-                        },
-                        "variadic": false,
-                        "passedByReference": false
                     }
                 ]
             },
@@ -31766,14 +32104,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "intersectAssocWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "elements",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -31798,14 +32156,65 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "intersectKeysWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "elements",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "intersectWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "elements",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "callback",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -32051,14 +32460,23 @@
                 "final": false,
                 "returnType": "TournayreLabs\\Primitives\\Numeric",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "maxBy",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\Numeric",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "key",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -32105,14 +32523,23 @@
                 "final": false,
                 "returnType": "TournayreLabs\\Primitives\\Numeric",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "minBy",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\Numeric",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "key",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -32359,14 +32786,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "padWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "size",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "value",
                         "type": "mixed",
-                        "optional": true,
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -32423,25 +32870,54 @@
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "pluckBy",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "valuecol",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "pluckByBoth",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "valuecol",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
                     {
                         "name": "indexcol",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -32497,14 +32973,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "prefixWithDepth",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "prefix",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "depth",
-                        "type": "?int",
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -32529,14 +33025,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "prependWithKey",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "key",
-                        "type": null,
-                        "optional": true,
+                        "type": "mixed",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -32561,14 +33077,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "pullOrDefault",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": null,
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "default",
                         "type": "mixed",
-                        "optional": true,
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -32713,7 +33249,28 @@
                 "parameters": [
                     {
                         "name": "callback",
-                        "type": "callable",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "reduceWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": null,
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "type": "Closure",
                         "optional": false,
                         "default": {
                             "available": false
@@ -32724,10 +33281,9 @@
                     {
                         "name": "initial",
                         "type": "mixed",
-                        "optional": true,
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -33080,14 +33636,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "sliceWithLength",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "length",
-                        "type": "?int",
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -33166,14 +33742,24 @@
                         },
                         "variadic": false,
                         "passedByReference": false
-                    },
+                    }
+                ]
+            },
+            {
+                "name": "spliceReplacing",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
                     {
-                        "name": "length",
-                        "type": "?int",
-                        "optional": true,
+                        "name": "offset",
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -33181,10 +33767,81 @@
                     {
                         "name": "replacement",
                         "type": "mixed",
-                        "optional": true,
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": []
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "spliceReplacingWithLength",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "length",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "replacement",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "spliceWithLength",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "length",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -33605,14 +34262,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "suffixWithDepth",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "suffix",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "depth",
-                        "type": "?int",
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -33627,14 +34304,23 @@
                 "final": false,
                 "returnType": "TournayreLabs\\Primitives\\Numeric",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "sumBy",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "TournayreLabs\\Primitives\\Numeric",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "key",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -33756,12 +34442,33 @@
                 "returnsReference": false,
                 "parameters": [
                     {
-                        "name": "callback",
-                        "type": "?Closure",
+                        "name": "nestKey",
+                        "type": "string",
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": null
+                            "value": "children"
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "traverseWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -33914,14 +34621,23 @@
                 "final": false,
                 "returnType": "self",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "uniqueBy",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "key",
-                        "type": "?string",
-                        "optional": true,
+                        "type": "string",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -33946,14 +34662,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "unshiftWithKey",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "mixed",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "key",
-                        "type": null,
-                        "optional": true,
+                        "type": "mixed",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -34002,7 +34738,39 @@
                 "parameters": [
                     {
                         "name": "callback",
-                        "type": "callable",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "recursive",
+                        "type": "bool",
+                        "optional": true,
+                        "default": {
+                            "available": true,
+                            "value": true
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "walkWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "type": "Closure",
                         "optional": false,
                         "default": {
                             "available": false
@@ -34013,10 +34781,9 @@
                     {
                         "name": "data",
                         "type": "mixed",
-                        "optional": true,
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -44760,14 +45527,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "filterVarWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "options",
-                        "type": null,
-                        "optional": true,
+                        "type": "mixed",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45587,7 +46374,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f ﻿"
+                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45609,7 +46396,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f ﻿"
+                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45652,7 +46439,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f ﻿"
+                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -46157,14 +46944,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "sliceWithLength",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "type": "int",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "length",
-                        "type": "?int",
-                        "optional": true,
+                        "type": "int",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -46567,21 +47374,10 @@
                 "parameters": [
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -46784,7 +47580,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -46794,21 +47590,10 @@
                     },
                     {
                         "name": "value",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "?Closure",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": null
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -47517,14 +48302,34 @@
                         },
                         "variadic": false,
                         "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "sendWithEnvelope",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "void",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "message",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
                     },
                     {
                         "name": "envelope",
                         "type": null,
-                        "optional": true,
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false

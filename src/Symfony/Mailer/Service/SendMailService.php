@@ -27,8 +27,23 @@ final readonly class SendMailService implements SendMailInterface
      *
      * @throws ThrowableInterface
      */
-    // @phpstan-ignore-next-line
-    public function send($message, $envelope = null): void
+    public function send($message): void
+    {
+        try {
+            $message = $this->adaptMessage($message);
+
+            $this->mailer->send($message);
+        } catch (\Exception|TransportExceptionInterface $exception) {
+            RuntimeException::fromThrowable($exception)->throw();
+        }
+    }
+
+    /**
+     * @param Email|TemplatedEmail $message
+     *
+     * @throws ThrowableInterface
+     */
+    public function sendWithEnvelope($message, $envelope): void
     {
         try {
             $message = $this->adaptMessage($message);

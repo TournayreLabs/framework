@@ -24,11 +24,21 @@ final readonly class MailService
      *
      * @api
      */
-    // @phpstan-ignore-next-line
-    public function send($message, $envelope = null): void
+    public function send($message): void
     {
         $this->logSendingEmail($message);
-        $this->sendMail->send($message, $envelope);
+        $this->sendMail->send($message);
+    }
+
+    /**
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function sendWithEnvelope($message, $envelope): void
+    {
+        $this->logSendingEmail($message);
+        $this->sendMail->sendWithEnvelope($message, $envelope);
     }
 
     // @phpstan-ignore-next-line
