@@ -25,11 +25,12 @@ final class BoolEnumFromBoolToNamedConstructorRector extends AbstractRector
         return [StaticCall::class];
     }
 
-    /**
-     * @param StaticCall $node
-     */
     public function refactor(Node $node): ?StaticCall
     {
+        if (!$node instanceof StaticCall) {
+            return null;
+        }
+
         if (!$this->isName($node->name, 'fromBool')) {
             return null;
         }
@@ -38,13 +39,15 @@ final class BoolEnumFromBoolToNamedConstructorRector extends AbstractRector
             return null;
         }
 
-        if (count($node->args) !== 1) {
+        $firstArg = $node->args[0] ?? null;
+
+        if (!$firstArg instanceof Arg || isset($node->args[1])) {
             return null;
         }
 
-        $methodName = $this->resolveNamedConstructor($node->args[0]);
+        $methodName = $this->resolveNamedConstructor($firstArg);
 
-        if ($methodName === null) {
+        if (null === $methodName) {
             return null;
         }
 

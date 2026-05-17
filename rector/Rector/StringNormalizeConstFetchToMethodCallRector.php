@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Rector;
 
 use PhpParser\Node;
+use PhpParser\Node\Arg;
 use PhpParser\Node\Expr\ClassConstFetch;
 use PhpParser\Node\Expr\MethodCall;
 use PhpParser\Node\Identifier;
@@ -29,28 +30,31 @@ final class StringNormalizeConstFetchToMethodCallRector extends AbstractRector
         return [MethodCall::class];
     }
 
-    /**
-     * @param MethodCall $node
-     */
     public function refactor(Node $node): ?MethodCall
     {
+        if (!$node instanceof MethodCall) {
+            return null;
+        }
+
         if (!$this->isName($node->name, 'normalize')) {
             return null;
         }
 
-        if ($node->args === []) {
+        if ([] === $node->args) {
             $node->name = new Identifier('normalizeNfc');
 
             return $node;
         }
 
-        if (count($node->args) !== 1) {
+        $firstArg = $node->args[0] ?? null;
+
+        if (!$firstArg instanceof Arg || isset($node->args[1])) {
             return null;
         }
 
-        $methodName = $this->resolveMethodName($node->args[0]->value);
+        $methodName = $this->resolveMethodName($firstArg->value);
 
-        if ($methodName === null) {
+        if (null === $methodName) {
             return null;
         }
 
@@ -91,7 +95,7 @@ CODE_SAMPLE,
 
         $constantName = $this->getName($node->name);
 
-        if ($constantName === null) {
+        if (null === $constantName) {
             return null;
         }
 

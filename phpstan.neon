@@ -8,241 +8,60 @@ parameters:
     treatPhpDocTypesAsCertain: false
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
-        # API publique et compatibilité
+        # PHPStan standard — API publique jamais utilisée dans ce dépôt
         -
             message: '#Public method "TournayreLabs\\[^"]+" is never used#'
             path: src/*
-        -
-            message: '#does not implement any interfaces#'
-            path: src/*
-        -
-            message: '#does not implement any interfaces#'
-            path: tests/*
-        -
-            message: '#exceeds the maximum of \d+#'
-            path: src/*
-        -
-            message: '#exceeds the maximum of \d+#'
-            path: tests/*
 
-        # Méthodes au nom de getter ou setter conservées par contrat public
+        # PHPStan standard — appel dynamique sur Webmozart\Assert
         -
-            message: '#appears to be a getter#'
-            path: src/PHPStan/Rules/NoForeachRule.php
-        -
-            message: '#appears to be a getter#'
-            path: src/Contracts/DateTime/DateTimeInterface.php
-        -
-            message: '#GetInterface::getOrDefault\(\).*appears to be a getter#'
-            path: src/Contracts/Collection/GetInterface.php
-        -
-            message: '#GetIteratorInterface::getIterator\(\).*appears to be a getter#'
-            path: src/Contracts/Collection/GetIteratorInterface.php
-        -
-            message: '#Collection::getOrDefault\(\) appears to be a getter#'
-            path: src/Primitives/Traits/Collection/Get.php
-        -
-            message: '#Collection::getIterator\(\) appears to be a getter#'
-            path: src/Primitives/Traits/Collection/GetIterator.php
-        -
-            message: '#getIterator\(\).*appears to be a getter#'
-            path: src/Primitives/Traits/CollectionCommonTrait.php
-        -
-            message: '#appears to be a setter#'
-            path: src/Contracts/DateTime/DateTimeInterface.php
-        -
-            message: '#appears to be a setter#'
-            path: src/Contracts/DependencyInjection/DependencyInjectionAwareInterface.php
-        -
-            message: '#appears to be a setter#'
-            path: src/Contracts/Collection/SetInterface.php
-        -
-            message: '#appears to be a setter#'
-            path: src/Primitives/Traits/CollectionCommonTrait.php
-        -
-            message: '#appears to be a setter#'
-            path: src/Primitives/Traits/Collection/Set.php
-
-        # Méthodes statiques assumées
-        -
-            message: '#is static#'
+            message: '#Variable static method call on Webmozart\\Assert\\Assert#'
             path: src/Common/Assert/Assert.php
-        -
-            message: '#is static#'
-            path: src/Contracts/Common/Assert/*
-        -
-            message: '#DelimiterInterface::delimiter\(\) is static#'
-            path: src/Contracts/Collection/DelimiterInterface.php
-        -
-            message: '#Collection::delimiter\(\) is static#'
-            path: src/Primitives/Traits/Collection/Delimiter.php
-        -
-            message: '#is static#'
-            path: src/Primitives/Traits/DateTimeTrait.php
-        -
-            message: '#is static#'
-            path: src/Symfony/Mailer/Adapter/EmailAdapter.php
 
-        # Nullabilité imposée par les API existantes
+        # PHPStan standard — paramètre sans type (API Symfony Mailer)
         -
-            message: '#DateTimeInterface::set\(\) has default value null#'
-            path: src/Contracts/DateTime/DateTimeInterface.php
-        -
-            message: '#DateTimeInterface::setUnit\(\) has default value null#'
-            path: src/Contracts/DateTime/DateTimeInterface.php
-        -
-            message: '#DateTime::set\(\) has default value null#'
-            path: src/Primitives/Traits/DateTimeTrait.php
-        -
-            message: '#DateTime::setUnit\(\) has default value null#'
-            path: src/Primitives/Traits/DateTimeTrait.php
-        -
-            message: '#has default value null#'
-            path: src/Common/Assert/Assert.php
-        -
-            message: '#accepts null#'
-            path: src/Common/Assert/Assert.php
-        -
-            message: '#has default value null#'
-            path: src/Common/Model/DefaultUser.php
-        -
-            message: '#has default value null#'
-            path: src/Common/VO/Context/Context.php
-        -
-            message: '#has default value null#'
-            path: src/Contracts/Collection/*.php
-        -
-            message: '#accepts null#'
-            path: src/Contracts/Collection/*.php
-        -
-            message: '#has default value null#'
-            path: src/Contracts/Common/Assert/*.php
-        -
-            message: '#accepts null#'
-            path: src/Contracts/Common/Assert/*.php
-        -
-            message: '#has default value null#'
-            path: src/Primitives/Collection.php
-        -
-            message: '#accepts null#'
-            path: src/Primitives/Collection.php
-        -
-            message: '#has default value null#'
-            path: src/TryCatch/TryCatch.php
-        -
-            message: '#accepts null#'
-            path: src/TryCatch/TryCatch.php
-        -
-            message: '#accepts null for parameter \$isNull#'
-            path: src/*
-        -
-            message: '#has default value null for parameter \$isNull#'
-            path: src/*
-        -
-            message: '#accepts null#'
-            path: tests/*
+            message: '#Method TournayreLabs\\Component\\Mailer\\Service\\MailService::logSendingEmail\(\) has parameter \$message with no type specified#'
+            path: src/Component/Mailer/Service/MailService.php
 
-        # Mutabilité et modifications internes
+        # PHPStan standard — __call() sans type de retour (NullTrait dynamique)
         -
-            message: '#is mutable#'
-            path: src/Primitives/Numeric.php
-        -
-            message: '#is mutable#'
-            path: src/Common/VO/Uri.php
-        -
-            message: '#is mutable#'
-            path: src/Primitives/Bool_.php
-        -
-            message: '#\$null is mutable#'
-            path: src/*
-        -
-            message: '#\$plainPassword is mutable#'
-            path: src/*
-        -
-            message: '#is mutable#'
-            path: src/Component/Mailer/Configuration/MailerConfiguration.php
-        -
-            message: '#is mutable#'
-            path: src/Common/Log/AbstractLogger.php
-        -
-            message: '#modifies an object property#'
-            path: src/Common/Log/AbstractLogger.php
-        -
-            message: '#modifies an object property#'
-            path: src/Common/Model/AbstractUser.php
-        -
-            message: '#modifies an object property#'
-            path: src/Null/NullTrait.php
-
-        # Encapsulation et instanciation
-        -
-            message: '#operator new is used#'
-            path: src/Component/Mailer/Types/EmailAddress.php
-        -
-            message: '#operator new is used#'
-            path: src/Primitives/Numeric.php
-        -
-            message: '#operator new is used#'
-            path: src/Symfony/Mailer/Adapter/EmailAdapter.php
-        -
-            message: '#operator new is used#'
-            path: src/Symfony/Response/ResponseService.php
-        -
-            message: '#operator new is used#'
-            path: tests/*
-        -
-            message: '#is not private#'
-            path: src/Common/Model/AbstractUser.php
-        -
-            message: '#is not private#'
+            message: '#Method TournayreLabs\\Common\\Model\\DefaultUser::__call\(\) has no return type specified#'
             path: src/Null/NullTrait.php
         -
-            message: '#__construct\(\) contains code other than property assignments#'
-            path: src/Primitives/Numeric.php
-
-        # Retours nullables dynamiques
+            message: '#Method TournayreLabs\\Common\\VO\\Context\\Context::__call\(\) has no return type specified#'
+            path: src/Null/NullTrait.php
         -
-            message: '#__call\(\) returns null#'
-            path: src/*
+            message: '#Method TournayreLabs\\Common\\VO\\Security\\PlainPassword::__call\(\) has no return type specified#'
+            path: src/Null/NullTrait.php
         -
-            message: '#returns null#'
-            path: src/TryCatch/NullThrowableHandler.php
+            message: '#Method TournayreLabs\\Component\\Mailer\\Types\\EmailHtml::__call\(\) has no return type specified#'
+            path: src/Null/NullTrait.php
         -
-            message: '#returns null#'
-            path: tests/*
-
-        # NullObject pattern intentionnel — orNull() fait partie du contrat NullableInterface
+            message: '#Method TournayreLabs\\Component\\Mailer\\Types\\EmailSubject::__call\(\) has no return type specified#'
+            path: src/Null/NullTrait.php
         -
-            message: '#NullableInterface::orNull\(\) has a nullable return#'
-            path: src/Contracts/Null/NullableInterface.php
+            message: '#Method TournayreLabs\\Component\\Mailer\\Types\\EmailText::__call\(\) has no return type specified#'
+            path: src/Null/NullTrait.php
         -
-            message: '#orNull\(\) has a nullable return#'
+            message: '#Method TournayreLabs\\Primitives\\DateTime::__call\(\) has no return type specified#'
+            path: src/Null/NullTrait.php
+        -
+            message: '#Method TournayreLabs\\Tests\\Fixtures\\Title::__call\(\) has no return type specified#'
             path: src/Null/NullTrait.php
 
-        # Nommage legacy conservé
+        # PHPStan standard — interface Symfony Security sans types (contrat legacy)
         -
-            message: '#has a name ending with#'
-            path: src/Common/Log/*.php
+            message: '#Method TournayreLabs\\Contracts\\Security\\UserInterface::getRoles\(\) has no return type specified#'
+            path: src/Contracts/Security/UserInterface.php
         -
-            message: '#has a name ending with#'
-            path: src/Common/Model/*.php
+            message: '#Method TournayreLabs\\Contracts\\Security\\UserInterface::getPassword\(\) has no return type specified#'
+            path: src/Contracts/Security/UserInterface.php
         -
-            message: '#has a name ending with#'
-            path: src/Common/Persistance/Handler/*.php
+            message: '#Method TournayreLabs\\Contracts\\Security\\UserInterface::getSalt\(\) has no return type specified#'
+            path: src/Contracts/Security/UserInterface.php
         -
-            message: '#has a name ending with#'
-            path: src/Symfony/CommandBus/*.php
+            message: '#Method TournayreLabs\\Contracts\\Security\\UserInterface::getUsername\(\) has no return type specified#'
+            path: src/Contracts/Security/UserInterface.php
         -
-            message: '#has a name ending with#'
-            path: src/Symfony/Mailer/Adapter/*.php
-        -
-            message: '#has a name ending with#'
-            path: src/Symfony/Subscriber/*.php
-        -
-            message: '#has a name ending with#'
-            path: src/TryCatch/*.php
-
-        # Constantes publiques conservées
-        -
-            message: '#has a public constant#'
-            path: src/Primitives/String_.php
+            message: '#Method TournayreLabs\\Contracts\\Security\\UserInterface::eraseCredentials\(\) has no return type specified#'
+            path: src/Contracts/Security/UserInterface.php

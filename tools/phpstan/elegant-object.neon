@@ -1,21 +1,54 @@
 services:
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\AllPropertiesMustBePrivateRule
+      arguments:
+        allowedPropertiesNames:
+          - 'null'
+          - 'plainPassword'
+        excludedPaths:
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\AlwaysUseInterfaceRule
+      arguments:
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/'
+          - '%currentWorkingDirectory%/tests/'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\BeEitherFinalOrAbstractRule
+      arguments:
+        excludedPaths:
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\BeImmutableRule
+      arguments:
+        allowedPropertyNames:
+          - 'null'
+          - 'plainPassword'
+          - 'logIdentifier'
+        allowedMethodNames:
+          - 'identifiedAs'
+          - 'resetIdentifier'
+          - 'eraseCredentials'
+          - 'initializeNull'
+          - 'toNullable'
+          - 'asNull'
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/Primitives/Numeric.php'
+          - '%currentWorkingDirectory%/src/Common/VO/Uri.php'
+          - '%currentWorkingDirectory%/src/Primitives/Bool_.php'
+          - '%currentWorkingDirectory%/src/Component/Mailer/Configuration/MailerConfiguration.php'
+          - '%currentWorkingDirectory%/src/Common/Log/AbstractLogger.php'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
@@ -38,23 +71,54 @@ services:
           - 'depuis'
           - 'types'
           - 'validateElement'
+          - 'delimiter'
+          - 'ofWithTimezone'
         allowedInterfaces:
           - 'Symfony\Component\EventDispatcher\EventSubscriberInterface'
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/Common/Assert/Assert.php'
+          - '%currentWorkingDirectory%/src/Contracts/Common/Assert/'
+          - '%currentWorkingDirectory%/src/Symfony/Mailer/Adapter/EmailAdapter.php'
+          - '%currentWorkingDirectory%/src/Contracts/Exception/LoggableThrowableFactoryInterface.php'
+          - '%currentWorkingDirectory%/src/Contracts/Exception/ThrowableFactoryInterface.php'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\KeepConstructorsCodeFreeRule
+      arguments:
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/Primitives/Numeric.php'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\NeverReturnNullRule
+      arguments:
+        allowedMethodNames:
+          - '__call'
+          - 'orNull'
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/TryCatch/NullThrowableHandler.php'
+          - '%currentWorkingDirectory%/tests/'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\NeverUseErNamesRule
+      arguments:
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/Common/Log/'
+          - '%currentWorkingDirectory%/src/Common/Model/'
+          - '%currentWorkingDirectory%/src/Common/Persistance/Handler/'
+          - '%currentWorkingDirectory%/src/Symfony/CommandBus/'
+          - '%currentWorkingDirectory%/src/Symfony/Mailer/Adapter/'
+          - '%currentWorkingDirectory%/src/Symfony/Subscriber/'
+          - '%currentWorkingDirectory%/src/TryCatch/'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
@@ -65,11 +129,32 @@ services:
           - 'TournayreLabs\Contracts\Security\UserInterface'
           - 'TournayreLabs\Contracts\DateTime\DateTimeInterface'
           - 'Symfony\Component\EventDispatcher\EventSubscriberInterface'
+        allowedMethodNames:
+          - 'getOrDefault'
+          - 'getIterator'
+          - 'setWithCallback'
+          - 'setIf'
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/PHPStan/Rules/NoForeachRule.php'
+          - '%currentWorkingDirectory%/src/Contracts/DateTime/DateTimeInterface.php'
+          - '%currentWorkingDirectory%/src/Contracts/Collection/GetInterface.php'
+          - '%currentWorkingDirectory%/src/Contracts/Collection/GetIteratorInterface.php'
+          - '%currentWorkingDirectory%/src/Primitives/Traits/Collection/Get.php'
+          - '%currentWorkingDirectory%/src/Primitives/Traits/Collection/GetIterator.php'
+          - '%currentWorkingDirectory%/src/Primitives/Traits/CollectionCommonTrait.php'
+          - '%currentWorkingDirectory%/src/Contracts/DependencyInjection/DependencyInjectionAwareInterface.php'
+          - '%currentWorkingDirectory%/src/Contracts/Collection/SetInterface.php'
+          - '%currentWorkingDirectory%/src/Primitives/Traits/Collection/Set.php'
+          - '%currentWorkingDirectory%/src/Contracts/Security/UserInterface.php'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\NeverUsePublicConstantsRule
+      arguments:
+        excludedPaths:
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
@@ -77,6 +162,10 @@ services:
       class: Atournayre\PHPStan\ElegantObject\Rules\KeepInterfacesShortRule
       arguments:
         maxMethods: 5
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/'
+          - '%currentWorkingDirectory%/tests/'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
@@ -84,11 +173,32 @@ services:
       class: Atournayre\PHPStan\ElegantObject\Rules\ExposeFewPublicMethodsRule
       arguments:
         maxPublicMethods: 5
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/'
+          - '%currentWorkingDirectory%/tests/'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
     -
       class: Atournayre\PHPStan\ElegantObject\Rules\NeverAcceptNullArgumentsRule
+      arguments:
+        allowedParameterNames:
+          - 'isNull'
+          - 'previous'
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/Contracts/DateTime/DateTimeInterface.php'
+          - '%currentWorkingDirectory%/src/Primitives/Traits/DateTimeTrait.php'
+          - '%currentWorkingDirectory%/src/Primitives/DateTime.php'
+          - '%currentWorkingDirectory%/src/Common/Assert/Assert.php'
+          - '%currentWorkingDirectory%/src/Common/Model/DefaultUser.php'
+          - '%currentWorkingDirectory%/src/Common/VO/Context/Context.php'
+          - '%currentWorkingDirectory%/src/Contracts/Collection/'
+          - '%currentWorkingDirectory%/src/Contracts/Common/Assert/'
+          - '%currentWorkingDirectory%/src/Primitives/Collection.php'
+          - '%currentWorkingDirectory%/src/TryCatch/TryCatch.php'
+          - '%currentWorkingDirectory%/tests/'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
 
@@ -119,5 +229,12 @@ services:
           - 'v4'
           - 'v6'
           - 'v7'
+        excludedPaths:
+          - '%currentWorkingDirectory%/src/Component/Mailer/Types/EmailAddress.php'
+          - '%currentWorkingDirectory%/src/Primitives/Numeric.php'
+          - '%currentWorkingDirectory%/src/Symfony/Mailer/Adapter/EmailAdapter.php'
+          - '%currentWorkingDirectory%/src/Symfony/Response/ResponseService.php'
+          - '%currentWorkingDirectory%/tests/'
+          - '%currentWorkingDirectory%/rector/'
       tags:
         - phpstan.rules.rule
