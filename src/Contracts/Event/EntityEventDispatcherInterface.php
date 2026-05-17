@@ -8,5 +8,7 @@ use TournayreLabs\Common\Collection\EventCollection;
 
 interface EntityEventDispatcherInterface
 {
-    public function dispatch(EventCollection $eventCollection, ?string $type = null): void;
+    public function dispatch(EventCollection $eventCollection): void;
+
+    public function dispatchByType(EventCollection $eventCollection, string $type): void;
 }

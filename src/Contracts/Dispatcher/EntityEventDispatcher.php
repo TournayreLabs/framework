@@ -22,15 +22,19 @@ final readonly class EntityEventDispatcher implements EntityEventDispatcherInter
     /**
      * @throws ThrowableInterface
      */
-    public function dispatch(EventCollection $eventCollection, ?string $type = null): void
+    public function dispatch(EventCollection $eventCollection): void
     {
-        if (null === $type) {
-            $this->dispatchAllEvents($eventCollection);
+        $this->dispatchAllEvents($eventCollection);
+    }
 
-            return;
-        }
+    /**
+     * @throws ThrowableInterface
+     */
+    public function dispatchByType(EventCollection $eventCollection, string $type): void
+    {
+        $eventCollection = $eventCollection->filterByType($type);
 
-        $this->dispatchEventsByType($eventCollection, $type);
+        $this->dispatchAllEvents($eventCollection);
     }
 
     private function dispatchAllEvents(EventCollection $eventCollection): void
@@ -52,15 +56,5 @@ final readonly class EntityEventDispatcher implements EntityEventDispatcherInter
         $this->eventDispatcher->dispatch($event);
 
         $this->logger->info(sprintf('Event %s dispatched', $event->_type()), $event->toLog());
-    }
-
-    /**
-     * @throws ThrowableInterface
-     */
-    private function dispatchEventsByType(EventCollection $eventCollection, string $type): void
-    {
-        $eventCollection = $eventCollection->filterByType($type);
-
-        $this->dispatchAllEvents($eventCollection);
     }
 }
