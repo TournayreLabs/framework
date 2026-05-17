@@ -18,7 +18,15 @@ trait Dd
      *
      * @api
      */
-    public function dd(?callable $callback = null): void
+    public function dd(): void
+    {
+        $this->collection->dd();
+    }
+
+    /**
+     * @api
+     */
+    public function ddWith(\Closure $callback): void
     {
         $this->collection->dd($callback);
     }

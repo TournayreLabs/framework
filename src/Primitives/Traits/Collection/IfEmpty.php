@@ -18,10 +18,16 @@ trait IfEmpty
      *
      * @api
      */
-    public function ifEmpty(?\Closure $then = null, ?\Closure $else = null): self
+    public function ifEmpty(\Closure $then): self
     {
-        $ifEmpty = $this->collection->ifEmpty($then, $else);
+        return self::of($this->collection->ifEmpty($then));
+    }
 
-        return self::of($ifEmpty);
+    /**
+     * @api
+     */
+    public function ifEmptyOrElse(\Closure $then, \Closure $else): self
+    {
+        return self::of($this->collection->ifEmpty($then, $else));
     }
 }

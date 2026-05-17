@@ -18,5 +18,12 @@ interface IfEmptyInterface
      *
      * @api
      */
-    public function ifEmpty(?\Closure $then = null, ?\Closure $else = null): self;
+    public function ifEmpty(\Closure $then): self;
+
+    /**
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function ifEmptyOrElse(\Closure $then, \Closure $else): self;
 }

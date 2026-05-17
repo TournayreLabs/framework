@@ -30060,14 +30060,23 @@
                 "final": false,
                 "returnType": "void",
                 "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "ddWith",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "void",
+                "returnsReference": false,
                 "parameters": [
                     {
                         "name": "callback",
-                        "type": "?callable",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -30983,22 +30992,41 @@
                 "parameters": [
                     {
                         "name": "then",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "ifEmptyOrElse",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "then",
+                        "type": "Closure",
+                        "optional": false,
+                        "default": {
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
                     },
                     {
                         "name": "else",
-                        "type": "?Closure",
-                        "optional": true,
+                        "type": "Closure",
+                        "optional": false,
                         "default": {
-                            "available": true,
-                            "value": null
+                            "available": false
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45638,7 +45666,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45660,7 +45688,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45703,7 +45731,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false

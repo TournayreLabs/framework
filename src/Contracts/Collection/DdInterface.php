@@ -18,5 +18,12 @@ interface DdInterface
      *
      * @api
      */
-    public function dd(?callable $callback = null): void;
+    public function dd(): void;
+
+    /**
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function ddWith(\Closure $callback): void;
 }

@@ -65,12 +65,12 @@ final class CollectionImplementedTraitsTest extends TestCase
 
     public function testIfEmptyExecutesThenCallbackOnlyForEmptyCollection(): void
     {
-        $empty = Collection::of([])->ifEmpty(
+        $empty = Collection::of([])->ifEmptyOrElse(
             static fn ($map) => $map->push('created'),
             static fn ($map) => $map->push('ignored'),
         );
 
-        $filled = Collection::of(['existing'])->ifEmpty(
+        $filled = Collection::of(['existing'])->ifEmptyOrElse(
             static fn ($map) => $map->push('ignored'),
             static fn ($map) => $map->push('kept'),
         );
