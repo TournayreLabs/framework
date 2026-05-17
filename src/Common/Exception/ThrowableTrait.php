@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace TournayreLabs\Common\Exception;
 
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Contracts\Log\LoggerInterface;
 
 /**
  * Trait implementing common functionality for throwable objects.
@@ -59,18 +58,6 @@ trait ThrowableTrait
      */
     public function throw(): void
     {
-        throw $this;
-    }
-
-    /**
-     * @param array<array-key, mixed> $context
-     *
-     * @throws ThrowableInterface Always throws this throwable
-     */
-    public function throwWith(LoggerInterface $logger, array $context = []): void
-    {
-        $logger->exception($this, $context);
-
         throw $this;
     }
 }

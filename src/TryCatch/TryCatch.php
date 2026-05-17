@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\TryCatch;
 
 use TournayreLabs\Common\Exception\InvalidArgumentException;
+use TournayreLabs\Contracts\Exception\ThrowableFactoryInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\TryCatch\ExecutableTryCatchInterface;
 use TournayreLabs\Contracts\TryCatch\ThrowableHandlerCollectionInterface;
@@ -151,7 +152,7 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
      *
      * @return self<T>
      *
-     * @throws ThrowableInterface If the throwable class doesn't implement ThrowableInterface
+     * @throws ThrowableInterface If the throwable class doesn't implement ThrowableFactoryInterface
      *
      * @api
      */
@@ -167,8 +168,8 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
                 'exception' => $throwable,
             ]);
 
-            if (!is_a($throwableClass, ThrowableInterface::class, true)) {
-                throw InvalidArgumentException::new(sprintf('Class "%s" must implement "%s"', $throwableClass, ThrowableInterface::class));
+            if (!is_a($throwableClass, ThrowableFactoryInterface::class, true)) {
+                throw InvalidArgumentException::new(sprintf('Class "%s" must implement "%s"', $throwableClass, ThrowableFactoryInterface::class));
             }
 
             throw $throwableClass::new(message: '' !== $message ? $message : $throwable->getMessage(), code: 0 !== $code ? $code : $throwable->getCode())->withPrevious($throwable);

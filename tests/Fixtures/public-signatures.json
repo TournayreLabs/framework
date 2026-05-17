@@ -15018,38 +15018,6 @@
                 "parameters": []
             },
             {
-                "name": "throwWith",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "void",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "logger",
-                        "type": "TournayreLabs\\Contracts\\Log\\LoggerInterface",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "context",
-                        "type": "array",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": []
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "withPrevious",
                 "visibility": "public",
                 "static": false,
@@ -15142,38 +15110,6 @@
                 "parameters": []
             },
             {
-                "name": "throwWith",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "void",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "logger",
-                        "type": "TournayreLabs\\Contracts\\Log\\LoggerInterface",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "context",
-                        "type": "array",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": []
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "withPrevious",
                 "visibility": "public",
                 "static": false,
@@ -15264,38 +15200,6 @@
                 "returnType": "void",
                 "returnsReference": false,
                 "parameters": []
-            },
-            {
-                "name": "throwWith",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "void",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "logger",
-                        "type": "TournayreLabs\\Contracts\\Log\\LoggerInterface",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "context",
-                        "type": "array",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": []
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
             },
             {
                 "name": "withPrevious",
@@ -28076,60 +27980,6 @@
         "final": false,
         "methods": [
             {
-                "name": "fromThrowable",
-                "visibility": "public",
-                "static": true,
-                "abstract": true,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "throwable",
-                        "type": "Throwable",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "new",
-                "visibility": "public",
-                "static": true,
-                "abstract": true,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "message",
-                        "type": "string",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": ""
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "code",
-                        "type": "int",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": 0
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "throw",
                 "visibility": "public",
                 "static": false,
@@ -28138,38 +27988,6 @@
                 "returnType": "void",
                 "returnsReference": false,
                 "parameters": []
-            },
-            {
-                "name": "throwWith",
-                "visibility": "public",
-                "static": false,
-                "abstract": true,
-                "final": false,
-                "returnType": "void",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "logger",
-                        "type": "TournayreLabs\\Contracts\\Log\\LoggerInterface",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "context",
-                        "type": "array",
-                        "optional": true,
-                        "default": {
-                            "available": true,
-                            "value": []
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
             },
             {
                 "name": "withPrevious",
