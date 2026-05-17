@@ -203,6 +203,14 @@ parameters:
             message: '#returns null#'
             path: tests/*
 
+        # NullObject pattern intentionnel — orNull() fait partie du contrat NullableInterface
+        -
+            message: '#NullableInterface::orNull\(\) has a nullable return#'
+            path: src/Contracts/Null/NullableInterface.php
+        -
+            message: '#orNull\(\) has a nullable return#'
+            path: src/Null/NullTrait.php
+
         # Nommage legacy conservé
         -
             message: '#has a name ending with#'

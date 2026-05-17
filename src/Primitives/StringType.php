@@ -188,23 +188,39 @@ final readonly class StringType implements \Stringable
     }
 
     /**
+     * @throws ThrowableInterface If needle is not found
+     *
      * @api
      *
      * @param string|string[] $needle
      */
-    public function indexOf($needle, int $offset = 0): ?int
+    public function indexOf($needle, int $offset = 0): int
     {
-        return u($this->value)->indexOf($needle, $offset);
+        $result = u($this->value)->indexOf($needle, $offset);
+
+        if (null === $result) {
+            throw InvalidArgumentException::new('Needle not found in string');
+        }
+
+        return $result;
     }
 
     /**
+     * @throws ThrowableInterface If needle is not found
+     *
      * @api
      *
      * @param string|string[] $needle
      */
-    public function indexOfLast($needle, int $offset = 0): ?int
+    public function indexOfLast($needle, int $offset = 0): int
     {
-        return u($this->value)->indexOfLast($needle, $offset);
+        $result = u($this->value)->indexOfLast($needle, $offset);
+
+        if (null === $result) {
+            throw InvalidArgumentException::new('Needle not found in string');
+        }
+
+        return $result;
     }
 
     /**

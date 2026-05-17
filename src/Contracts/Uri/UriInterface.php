@@ -103,19 +103,11 @@ interface UriInterface
     /**
      * Retrieve the port component of the URI.
      *
-     * If a port is present, and it is non-standard for the current scheme,
-     * this method MUST return it as an integer. If the port is the standard port
-     * used with the current scheme, this method SHOULD return null.
+     * Returns 0 if no port is present.
      *
-     * If no port is present, and no scheme is present, this method MUST return
-     * a null value.
-     *
-     * If no port is present, but a scheme is present, this method MAY return
-     * the standard port for that scheme, but SHOULD return null.
-     *
-     * @return int|null the URI port
+     * @return int the URI port, or 0 if absent
      */
-    public function port(): ?int;
+    public function port(): int;
 
     /**
      * Retrieve the path component of the URI.

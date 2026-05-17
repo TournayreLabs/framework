@@ -16,7 +16,9 @@ interface ThrowableHandlerCollectionInterface extends AddInterface
     /**
      * Finds a handler that can handle the given throwable.
      *
-     * @return ThrowableHandlerInterface<mixed>|null
+     * Returns a NullThrowableHandler if no handler is found.
+     *
+     * @return ThrowableHandlerInterface<mixed>
      */
-    public function findHandlerFor(\Throwable $throwable): ?ThrowableHandlerInterface;
+    public function findHandlerFor(\Throwable $throwable): ThrowableHandlerInterface;
 }

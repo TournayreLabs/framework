@@ -16328,7 +16328,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "?int",
+                "returnType": "int",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -28700,7 +28700,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": "?int",
+                "returnType": "int",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -31176,12 +31176,43 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "?int",
+                "returnType": "int",
                 "returnsReference": false,
                 "parameters": [
                     {
                         "name": "value",
                         "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "indexOrDefault",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "int",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "default",
+                        "type": "int",
                         "optional": false,
                         "default": {
                             "available": false
@@ -32232,12 +32263,43 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "?int",
+                "returnType": "int",
                 "returnsReference": false,
                 "parameters": [
                     {
                         "name": "value",
                         "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    }
+                ]
+            },
+            {
+                "name": "posOrDefault",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "int",
+                "returnsReference": false,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": null,
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "default",
+                        "type": "int",
                         "optional": false,
                         "default": {
                             "available": false
@@ -33688,7 +33750,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "?string",
+                "returnType": "string",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -44912,7 +44974,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "?int",
+                "returnType": "int",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -44944,7 +45006,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "?int",
+                "returnType": "int",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -45666,7 +45728,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f ﻿"
+                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45688,7 +45750,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f ﻿"
+                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45731,7 +45793,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f ﻿"
+                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -48101,7 +48163,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "?int",
+                "returnType": "int",
                 "returnsReference": false,
                 "parameters": []
             },

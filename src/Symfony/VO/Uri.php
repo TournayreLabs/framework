@@ -68,7 +68,7 @@ final readonly class Uri implements UriInterface
         return $this->generateUri()->host();
     }
 
-    public function port(): ?int
+    public function port(): int
     {
         return $this->generateUri()->port();
     }

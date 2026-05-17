@@ -46,9 +46,9 @@ final readonly class Uri implements UriInterface
         return $this->uri->getHost();
     }
 
-    public function port(): ?int
+    public function port(): int
     {
-        return $this->uri->getPort();
+        return $this->uri->getPort() ?? 0;
     }
 
     public function path(): string
