@@ -15,17 +15,12 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 trait OffsetSet
 {
     /**
-     * Overwrites an element.
-     *
-     * @param mixed|null $key
-     * @param mixed|null $value
-     *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function offsetSet($key, $value, ?\Closure $callback = null): void
+    public function offsetSet(mixed $key, mixed $value): void
     {
-        $this->set($key, $value, $callback);
+        $this->set($key, $value);
     }
 }

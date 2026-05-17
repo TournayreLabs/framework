@@ -85,10 +85,10 @@ final class EventCollection implements AsMapInterface, AddInterface, ContainsInt
      *
      * @api
      */
-    public function add(mixed $value, ?\Closure $callback = null): self
+    public function add(mixed $value): self
     {
         $key = $value->_identifier();
-        $this->set($key, $value, $callback);
+        $this->set($key, $value);
 
         return $this;
     }
@@ -101,7 +101,7 @@ final class EventCollection implements AsMapInterface, AddInterface, ContainsInt
     public function addWithCallback(mixed $value, \Closure $callback): self
     {
         $key = $value->_identifier();
-        $this->set($key, $value, $callback);
+        $this->setIf($key, $value, $callback);
 
         return $this;
     }

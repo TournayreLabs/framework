@@ -6,7 +6,9 @@ namespace TournayreLabs\Contracts\Log;
 
 interface LoggerInterface extends \Psr\Log\LoggerInterface
 {
-    public function identifiedAs(?string $identifier): void;
+    public function identifiedAs(string $identifier): void;
+
+    public function resetIdentifier(): void;
 
     /**
      * @param \Stringable|string $message

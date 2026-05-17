@@ -36,7 +36,7 @@ final class DirectoryOrFile
             ->append($suffixString)
         ;
 
-        return new self($newPath);
+        return self::of($newPath->toString());
     }
 
     /**
@@ -56,6 +56,6 @@ final class DirectoryOrFile
             ->prepend($prefixString)
         ;
 
-        return new self($newPath);
+        return self::of($newPath->toString());
     }
 }

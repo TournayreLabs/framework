@@ -12,15 +12,9 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 interface FirstInterface
 {
     /**
-     * Returns the first element.
-     *
-     * @param mixed|null $default
-     *
-     * @return mixed|null
-     *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function first($default = null);
+    public function first(): mixed;
 }

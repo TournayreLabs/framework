@@ -12,15 +12,9 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 interface LastInterface
 {
     /**
-     * Returns the last element.
-     *
-     * @param mixed|null $default
-     *
-     * @return mixed|null
-     *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function last($default = null);
+    public function last(): mixed;
 }

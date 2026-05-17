@@ -33,7 +33,7 @@ final readonly class DoctrineCommandTransactionSubscriber implements EventSubscr
 
     public function startTransaction(ConsoleCommandEvent $event): void
     {
-        $this->logger->setLoggerIdentifier(self::class);
+        $this->logger->identifiedAs(self::class);
 
         $context = $this->contextFromEvent($event);
         if ([] === $context) {

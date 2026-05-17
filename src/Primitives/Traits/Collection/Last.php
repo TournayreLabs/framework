@@ -16,20 +16,14 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 trait Last
 {
     /**
-     * Returns the last element.
-     *
-     * @param mixed|null $default
-     *
-     * @return mixed|null
-     *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function last($default = null)
+    public function last(): mixed
     {
         try {
-            return $this->collection->last($default);
+            return $this->collection->last();
         } catch (\Throwable $throwable) {
             throw RuntimeException::fromThrowable($throwable);
         }

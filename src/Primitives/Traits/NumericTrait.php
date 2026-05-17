@@ -65,7 +65,7 @@ trait NumericTrait
      */
     public function round(int $mode = PHP_ROUND_HALF_UP): self
     {
-        return new self($this->value->round($mode));
+        return self::fromNumeric($this->value->round($mode));
     }
 
     /**
@@ -166,14 +166,17 @@ trait NumericTrait
         return $this->value->betweenOrEqual($min, $max);
     }
 
+    private static function fromNumeric(Numeric $numeric): self
+    {
+        return new self($numeric);
+    }
+
     /**
      * @throws ThrowableInterface
      */
     public static function fromInt(int $value, int $precision): self
     {
-        $numeric = Numeric::fromInt($value, $precision);
-
-        return new self($numeric);
+        return self::fromNumeric(Numeric::fromInt($value, $precision));
     }
 
     /**
@@ -181,9 +184,7 @@ trait NumericTrait
      */
     public static function fromFloat(float $value): self
     {
-        $numeric = Numeric::fromFloat($value);
-
-        return new self($numeric);
+        return self::fromNumeric(Numeric::fromFloat($value));
     }
 
     /**
@@ -203,8 +204,6 @@ trait NumericTrait
      */
     public function abs(): self
     {
-        $abs = $this->value->abs();
-
-        return new self($abs);
+        return self::fromNumeric($this->value->abs());
     }
 }

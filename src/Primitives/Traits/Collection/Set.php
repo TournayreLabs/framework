@@ -16,20 +16,27 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 trait Set
 {
     /**
-     * Overwrites or adds an element.
-     *
-     * @param mixed|null $key
-     * @param mixed|null $value
-     *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function set($key, $value, ?\Closure $callback = null): void
+    public function set(mixed $key, mixed $value): void
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
 
-        if ($callback instanceof \Closure && !$callback($key, $value)) {
+        $this->collection->set($key, $value);
+    }
+
+    /**
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function setWithCallback(mixed $key, mixed $value, \Closure $callback): void
+    {
+        $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
+
+        if (!$callback($key, $value)) {
             return;
         }
 

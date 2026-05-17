@@ -37,17 +37,11 @@ trait DateTimeTrait
      *
      * @api
      */
-    public static function of(
-        $datetime,
-        ?\DateTimeZone $timezone = null,
-    ): DateTimeInterface {
+    public static function of($datetime): DateTimeInterface
+    {
         if ($datetime instanceof self) {
             try {
-                $fromInterface = Carbon::parse($datetime->toDateTime())
-                    ->setTimezone($timezone ?? $datetime->toDateTime()->getTimezone())
-                ;
-
-                return new self($fromInterface);
+                return new self(Carbon::parse($datetime->toDateTime()));
             } catch (\Exception $exception) {
                 throw InvalidArgumentException::fromThrowable($exception);
             }
@@ -55,11 +49,7 @@ trait DateTimeTrait
 
         if ($datetime instanceof \DateTimeInterface) {
             try {
-                $newDateTime = Carbon::parse($datetime)
-                    ->setTimezone($timezone)
-                ;
-
-                return new self($newDateTime);
+                return new self(Carbon::parse($datetime));
             } catch (\Exception $exception) {
                 throw InvalidArgumentException::fromThrowable($exception);
             }
@@ -67,20 +57,54 @@ trait DateTimeTrait
 
         if (is_int($datetime)) {
             try {
-                $newDateTime = Carbon::createFromTimestamp($datetime)
-                    ->setTimezone($timezone)
-                ;
-
-                return new self($newDateTime);
+                return new self(Carbon::createFromTimestamp($datetime));
             } catch (\Exception $exception) {
                 throw InvalidArgumentException::fromThrowable($exception);
             }
         }
 
         try {
-            $datetimeObject = Carbon::parse($datetime, $timezone);
+            return new self(Carbon::parse($datetime));
+        } catch (\Exception $exception) {
+            throw InvalidArgumentException::fromThrowable($exception);
+        }
+    }
 
-            return new self($datetimeObject);
+    /**
+     * @param \DateTimeInterface|DateTimeInterface|string|int|DateTime $datetime
+     *
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public static function ofWithTimezone($datetime, \DateTimeZone $timezone): DateTimeInterface
+    {
+        if ($datetime instanceof self) {
+            try {
+                return new self(Carbon::parse($datetime->toDateTime())->setTimezone($timezone));
+            } catch (\Exception $exception) {
+                throw InvalidArgumentException::fromThrowable($exception);
+            }
+        }
+
+        if ($datetime instanceof \DateTimeInterface) {
+            try {
+                return new self(Carbon::parse($datetime)->setTimezone($timezone));
+            } catch (\Exception $exception) {
+                throw InvalidArgumentException::fromThrowable($exception);
+            }
+        }
+
+        if (is_int($datetime)) {
+            try {
+                return new self(Carbon::createFromTimestamp($datetime)->setTimezone($timezone));
+            } catch (\Exception $exception) {
+                throw InvalidArgumentException::fromThrowable($exception);
+            }
+        }
+
+        try {
+            return new self(Carbon::parse($datetime, $timezone));
         } catch (\Exception $exception) {
             throw InvalidArgumentException::fromThrowable($exception);
         }

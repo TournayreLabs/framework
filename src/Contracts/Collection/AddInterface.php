@@ -18,7 +18,7 @@ interface AddInterface
      *
      * @api
      */
-    public function add(mixed $value, ?\Closure $callback = null): self;
+    public function add(mixed $value): self;
 
     /**
      * Adds an element using callback.

@@ -21,13 +21,9 @@ trait Add
      *
      * @api
      */
-    public function add(mixed $value, ?\Closure $callback = null): self
+    public function add(mixed $value): self
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
-
-        if ($callback instanceof \Closure && !$callback($value)) {
-            return $this;
-        }
 
         $newCollection = $this
             ->collection->push($value)

@@ -54,6 +54,7 @@
     },
     "require-dev": {
         "atournayre/phpstan-elegant-object": "^0.2",
+        "atournayre/rector-auto-upgrade": "^0.2",
         "friendsofphp/php-cs-fixer": "^3.59",
         "phparkitect/phparkitect": "^0.3.33",
         "phpstan/extension-installer": "^1.4",
@@ -72,7 +73,8 @@
     },
     "config": {
         "allow-plugins": {
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "atournayre/rector-auto-upgrade": true
         },
         "sort-packages": true
     },

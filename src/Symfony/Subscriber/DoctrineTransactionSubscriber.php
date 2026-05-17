@@ -32,7 +32,7 @@ final readonly class DoctrineTransactionSubscriber implements EventSubscriberInt
 
     public function startTransaction(ControllerEvent $event): void
     {
-        $this->logger->setLoggerIdentifier(self::class);
+        $this->logger->identifiedAs(self::class);
 
         if (!$event->isMainRequest()) {
             return;

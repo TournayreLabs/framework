@@ -16,19 +16,29 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 trait Push
 {
     /**
-     * Adds an element to the end.
-     *
-     * @param mixed|null $value
-     *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function push($value, ?\Closure $callback = null): self
+    public function push(mixed $value): self
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
 
-        if ($callback instanceof \Closure && !$callback($value)) {
+        $this->collection->push($value);
+
+        return $this;
+    }
+
+    /**
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function pushWithCallback(mixed $value, \Closure $callback): self
+    {
+        $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
+
+        if (!$callback($value)) {
             return $this;
         }
 

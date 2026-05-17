@@ -43,14 +43,16 @@ interface ThrowableInterface extends \Throwable
     public function withPrevious(\Throwable $previous): self;
 
     /**
-     * Throws this throwable.
+     * @throws ThrowableInterface Always throws this throwable
+     */
+    public function throw(): void;
+
+    /**
+     * Logs the exception then throws it.
      *
-     * If a logger is provided, logs the exception before throwing it.
-     *
-     * @param LoggerInterface|null    $logger  The logger to use for logging the exception
-     * @param array<array-key, mixed> $context Additional context information for logging
+     * @param array<array-key, mixed> $context
      *
      * @throws ThrowableInterface Always throws this throwable
      */
-    public function throw(?LoggerInterface $logger = null, array $context = []): void;
+    public function throwWith(LoggerInterface $logger, array $context = []): void;
 }

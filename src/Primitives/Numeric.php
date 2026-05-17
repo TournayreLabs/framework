@@ -132,10 +132,10 @@ final readonly class Numeric
     public function round(int $mode = PHP_ROUND_HALF_UP): self
     {
         return match ($mode) {
-            PHP_ROUND_HALF_UP => new self(round($this->value, $this->precision), $this->precision),
-            PHP_ROUND_HALF_DOWN => new self(round($this->value, $this->precision, PHP_ROUND_HALF_DOWN), $this->precision),
-            PHP_ROUND_HALF_EVEN => new self(round($this->value, $this->precision, PHP_ROUND_HALF_EVEN), $this->precision),
-            PHP_ROUND_HALF_ODD => new self(round($this->value, $this->precision, PHP_ROUND_HALF_ODD), $this->precision),
+            PHP_ROUND_HALF_UP => self::of(round($this->value, $this->precision), $this->precision),
+            PHP_ROUND_HALF_DOWN => self::of(round($this->value, $this->precision, PHP_ROUND_HALF_DOWN), $this->precision),
+            PHP_ROUND_HALF_EVEN => self::of(round($this->value, $this->precision, PHP_ROUND_HALF_EVEN), $this->precision),
+            PHP_ROUND_HALF_ODD => self::of(round($this->value, $this->precision, PHP_ROUND_HALF_ODD), $this->precision),
             default => InvalidArgumentException::new('Invalid rounding mode provided.')->throw(),
         };
     }
@@ -303,8 +303,6 @@ final readonly class Numeric
      */
     public function abs(): self
     {
-        $abs = abs($this->value);
-
-        return new self($abs, $this->precision);
+        return self::of(abs($this->value), $this->precision);
     }
 }

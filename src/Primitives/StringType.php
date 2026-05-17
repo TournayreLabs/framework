@@ -364,7 +364,17 @@ final readonly class StringType implements \Stringable
     /**
      * @api
      */
-    public function slice(int $start = 0, ?int $length = null): self
+    public function slice(int $start = 0): self
+    {
+        $u = u($this->value)->slice($start);
+
+        return self::of($u->toString());
+    }
+
+    /**
+     * @api
+     */
+    public function sliceWithLength(int $start, int $length): self
     {
         $u = u($this->value)->slice($start, $length);
 
@@ -384,7 +394,17 @@ final readonly class StringType implements \Stringable
     /**
      * @api
      */
-    public function splice(string $replacement, int $start = 0, ?int $length = null): self
+    public function splice(string $replacement, int $start = 0): self
+    {
+        $u = u($this->value)->splice($replacement, $start);
+
+        return self::of($u->toString());
+    }
+
+    /**
+     * @api
+     */
+    public function spliceWithLength(string $replacement, int $start, int $length): self
     {
         $u = u($this->value)->splice($replacement, $start, $length);
 
@@ -396,7 +416,19 @@ final readonly class StringType implements \Stringable
      *
      * @return self[]
      */
-    public function split(string $delimiter, ?int $limit = null, ?int $flags = null): array
+    public function split(string $delimiter): array
+    {
+        $splits = u($this->value)->split($delimiter);
+
+        return array_map(static fn ($chunk) => StringType::of($chunk->toString()), $splits);
+    }
+
+    /**
+     * @api
+     *
+     * @return self[]
+     */
+    public function splitWithLimit(string $delimiter, int $limit, int $flags = 0): array
     {
         $splits = u($this->value)->split($delimiter, $limit, $flags);
 

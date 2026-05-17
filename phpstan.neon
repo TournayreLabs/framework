@@ -39,3 +39,123 @@ parameters:
         -
             message: '#DateTimeInterface::setUnit\(\) has default value null#'
             path: src/Contracts/DateTime/DateTimeInterface.php
+        -
+            message: '#has default value null#'
+            path: src/TryCatch/TryCatch.php
+        -
+            message: '#accepts null#'
+            path: src/TryCatch/TryCatch.php
+        -
+            message: '#has default value null\|accepts null#'
+            path: src/Common/Assert/Assert.php
+        -
+            message: '#has default value null#'
+            path: src/Common/Assert/Assert.php
+        -
+            message: '#accepts null#'
+            path: src/Common/Assert/Assert.php
+        -
+            message: '#has default value null\|accepts null#'
+            path: src/Common/Model/DefaultUser.php
+        -
+            message: '#has default value null#'
+            path: src/Common/Model/DefaultUser.php
+        -
+            message: '#has default value null#'
+            path: src/Common/VO/Context/Context.php
+        -
+            message: '#initializeNull\(\) accepts null\|initializeNull\(\) has default value null#'
+            path: src/*
+        -
+            message: '#accepts null for parameter \$isNull#'
+            path: src/*
+        -
+            message: '#has default value null for parameter \$isNull#'
+            path: src/*
+        -
+            message: '#accepts null#'
+            path: tests/*
+        -
+            message: '#has default value null#'
+            path: tests/*
+        -
+            message: '#returns null#'
+            path: tests/*
+        -
+            message: '#operator new is used#'
+            path: src/Symfony/Response/ResponseService.php
+        -
+            message: '#operator new is used#'
+            path: src/Symfony/Mailer/Adapter/EmailAdapter.php
+        -
+            message: '#operator new is used#'
+            path: src/Component/Mailer/Types/EmailAddress.php
+        -
+            message: '#operator new is used#'
+            path: src/Primitives/Numeric.php
+        -
+            message: '#operator new is used#'
+            path: tests/*
+        -
+            message: '#has default value null\|accepts null#'
+            path: src/Contracts/Collection/*.php
+        -
+            message: '#has default value null#'
+            path: src/Contracts/Collection/*.php
+        -
+            message: '#accepts null#'
+            path: src/Contracts/Collection/*.php
+        -
+            message: '#has default value null\|accepts null#'
+            path: src/Primitives/Collection.php
+        -
+            message: '#has default value null#'
+            path: src/Primitives/Collection.php
+        -
+            message: '#accepts null#'
+            path: src/Primitives/Collection.php
+        -
+            message: '#has default value null\|accepts null#'
+            path: src/Common/Collection/EventCollection.php
+        -
+            message: '#has default value null#'
+            path: src/Common/Collection/EventCollection.php
+        -
+            message: '#accepts null#'
+            path: src/Common/Collection/EventCollection.php
+        -
+            message: '#has default value null\|accepts null#'
+            path: src/Component/Mailer/Collection/EmailContactCollection.php
+        -
+            message: '#has default value null#'
+            path: src/Component/Mailer/Collection/EmailContactCollection.php
+        -
+            message: '#accepts null#'
+            path: src/Component/Mailer/Collection/EmailContactCollection.php
+        -
+            message: '#has default value null\|accepts null#'
+            path: src/Contracts/Common/Assert/*.php
+        -
+            message: '#has default value null#'
+            path: src/Contracts/Common/Assert/*.php
+        -
+            message: '#accepts null#'
+            path: src/Contracts/Common/Assert/*.php
+        -
+            message: '#has default value null\|accepts null#'
+            path: src/Contracts/Dispatcher/*.php
+        -
+            message: '#has default value null#'
+            path: src/Contracts/Dispatcher/*.php
+        -
+            message: '#accepts null#'
+            path: src/Contracts/Dispatcher/*.php
+        -
+            message: '#has default value null\|accepts null#'
+            path: src/Contracts/Event/*.php
+        -
+            message: '#has default value null#'
+            path: src/Contracts/Event/*.php
+        -
+            message: '#accepts null#'
+            path: src/Contracts/Event/*.php

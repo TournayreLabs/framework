@@ -64,7 +64,7 @@ abstract class Email implements LoggableInterface, TypeValidationInterface
     public function validate(): ValidationCollection
     {
         return ValidationCollection::asMap([])
-            ->set('to', 'validation.email.to.empty', fn () => $this->to->hasNoElement()->isTrue())
+            ->setIf('to', 'validation.email.to.empty', fn () => $this->to->hasNoElement()->isTrue())
         ;
     }
 

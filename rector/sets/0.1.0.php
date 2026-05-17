@@ -16,6 +16,18 @@ return static function (RectorConfig $rectorConfig): void {
         new MethodCallRename('TournayreLabs\Common\Log\AbstractLogger', 'setLoggerIdentifier', 'identifiedAs'),
         // LoggerInterface::setLoggerIdentifier() → identifiedAs() (EO: no setters)
         new MethodCallRename('TournayreLabs\Contracts\Log\LoggerInterface', 'setLoggerIdentifier', 'identifiedAs'),
+        // Manual migrations required (Rector cannot distinguish calls by arg count):
+        // - ->throw($logger, $ctx) → ->throwWith($logger, $ctx) [ThrowableInterface]
+        // - ->add($value, $callback) → ->addWithCallback($value, $callback) [AddInterface]
+        // - ->push($value, $callback) → ->pushWithCallback($value, $callback) [PushInterface]
+        // - ->set($key, $value, $callback) → ->setIf($key, $value, $callback) [CollectionCommonTrait]
+        // - ->set($key, $value, $callback) → ->setWithCallback($key, $value, $callback) [SetInterface]
+        // - ->identifiedAs(null) → ->resetIdentifier() [LoggerInterface]
+        // - Ulid::of($string) → Ulid::fromString($string)
+        // - DateTime::of($dt, $tz) → DateTime::ofWithTimezone($dt, $tz)
+        // - ->slice($start, $length) → ->sliceWithLength($start, $length) [StringType]
+        // - ->splice($repl, $start, $length) → ->spliceWithLength($repl, $start, $length) [StringType]
+        // - ->split($delim, $limit, $flags) → ->splitWithLimit($delim, $limit, $flags) [StringType]
     ]);
 
     $rectorConfig->ruleWithConfiguration(RenameClassConstFetchRector::class, [

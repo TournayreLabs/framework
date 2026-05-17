@@ -12,13 +12,16 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 interface PushInterface
 {
     /**
-     * Adds an element to the end.
-     *
-     * @param mixed|null $value
-     *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function push($value, ?\Closure $callback = null): self;
+    public function push(mixed $value): self;
+
+    /**
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function pushWithCallback(mixed $value, \Closure $callback): self;
 }

@@ -92,20 +92,20 @@ final readonly class Duration
         $seconds = floor($this->milliseconds / self::MILLISECONDS_IN_SECOND) % self::SECONDS_IN_MINUTE;
         $milliseconds = $this->milliseconds % self::MILLISECONDS_IN_SECOND;
 
-        $pushCallback = fn ($value): bool => $value >= 0;
-        $pluralCallback = fn ($value, $singular, $plural): string => $value <= 1 ? $singular : $plural;
+        $isNonNegative = fn ($value): bool => $value >= 0;
+        $pluralize = fn ($value, $singular, $plural): string => $value <= 1 ? $singular : $plural;
 
         return Collection::of()
-            ->push($days, $pushCallback)
-            ->push($pluralCallback($days, 'day', 'days').$glue, $pushCallback)
-            ->push($hours, $pushCallback)
-            ->push($pluralCallback($hours, 'hour', 'hours').$glue, $pushCallback)
-            ->push($minutes, $pushCallback)
-            ->push($pluralCallback($minutes, 'minute', 'minutes').$glue, $pushCallback)
-            ->push($seconds, $pushCallback)
-            ->push($pluralCallback($seconds, 'second', 'seconds').$glue, $pushCallback)
-            ->push($milliseconds, $pushCallback)
-            ->push($pluralCallback($milliseconds, 'millisecond', 'milliseconds'), $pushCallback)
+            ->pushWithCallback($days, $isNonNegative)
+            ->pushWithCallback($pluralize($days, 'day', 'days').$glue, $isNonNegative)
+            ->pushWithCallback($hours, $isNonNegative)
+            ->pushWithCallback($pluralize($hours, 'hour', 'hours').$glue, $isNonNegative)
+            ->pushWithCallback($minutes, $isNonNegative)
+            ->pushWithCallback($pluralize($minutes, 'minute', 'minutes').$glue, $isNonNegative)
+            ->pushWithCallback($seconds, $isNonNegative)
+            ->pushWithCallback($pluralize($seconds, 'second', 'seconds').$glue, $isNonNegative)
+            ->pushWithCallback($milliseconds, $isNonNegative)
+            ->pushWithCallback($pluralize($milliseconds, 'millisecond', 'milliseconds'), $isNonNegative)
             ->join(' ')
         ;
     }

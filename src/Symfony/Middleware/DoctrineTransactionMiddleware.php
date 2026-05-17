@@ -26,7 +26,7 @@ final readonly class DoctrineTransactionMiddleware implements MiddlewareInterfac
      */
     public function handle(Envelope $envelope, StackInterface $stack): Envelope
     {
-        $this->logger->setLoggerIdentifier(self::class);
+        $this->logger->identifiedAs(self::class);
 
         // Early return path - no transaction needed
         $shouldApplyTransaction = $this->shouldApplyTransaction($envelope);

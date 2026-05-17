@@ -16,20 +16,14 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 trait First
 {
     /**
-     * Returns the first element.
-     *
-     * @param mixed|null $default
-     *
-     * @return mixed|null
-     *
      * @throws ThrowableInterface
      *
      * @api
      */
-    public function first($default = null)
+    public function first(): mixed
     {
         try {
-            return $this->collection->first($default);
+            return $this->collection->first();
         } catch (\Throwable $throwable) {
             throw RuntimeException::fromThrowable($throwable);
         }

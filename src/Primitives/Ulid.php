@@ -18,7 +18,15 @@ final readonly class Ulid
     /**
      * @api
      */
-    public static function of(?string $string = null): Ulid
+    public static function of(): Ulid
+    {
+        return new self(new SymfonyUlid());
+    }
+
+    /**
+     * @api
+     */
+    public static function fromString(string $string): Ulid
     {
         return new self(new SymfonyUlid($string));
     }

@@ -30,32 +30,24 @@ trait CollectionCommonTrait
     }
 
     /**
-     * @param mixed|null $default
-     *
-     * @return mixed|null
-     *
      * @throws ThrowableInterface
      */
-    public function first($default = null)
+    public function first(): mixed
     {
         try {
-            return $this->collection->first($default);
+            return $this->collection->first();
         } catch (\Throwable $throwable) {
             throw RuntimeException::fromThrowable($throwable);
         }
     }
 
     /**
-     * @param mixed|null $default
-     *
-     * @return mixed|null
-     *
      * @throws ThrowableInterface
      */
-    public function last($default = null)
+    public function last(): mixed
     {
         try {
-            return $this->collection->last($default);
+            return $this->collection->last();
         } catch (\Throwable $throwable) {
             throw RuntimeException::fromThrowable($throwable);
         }
@@ -130,34 +122,41 @@ trait CollectionCommonTrait
     }
 
     /**
-     * @param mixed|null $value
-     *
      * @throws ThrowableInterface
      */
-    public function add($value, ?\Closure $callback = null): self
+    public function add(mixed $value): self
     {
         $this->ensureMutable('add');
 
         $clone = clone $this;
-        $clone->collection->push($value, $callback);
+        $clone->collection->push($value);
 
         return $clone;
     }
 
     /**
-     * @param mixed|null $key
-     * @param mixed|null $value
-     *
      * @throws ThrowableInterface
      */
-    public function set($key, $value, ?\Closure $callback = null): self
+    public function set(mixed $key, mixed $value): self
     {
         $this->ensureMutable('set');
 
         $clone = clone $this;
-        $clone->collection->set($key, $value, $callback);
+        $clone->collection->set($key, $value);
 
         return $clone;
+    }
+
+    /**
+     * @throws ThrowableInterface
+     */
+    public function setIf(mixed $key, mixed $value, \Closure $callback): self
+    {
+        if (!$callback($key, $value)) {
+            return $this;
+        }
+
+        return $this->set($key, $value);
     }
 
     public function map(\Closure $callback): self

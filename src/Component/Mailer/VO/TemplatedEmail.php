@@ -134,7 +134,7 @@ final class TemplatedEmail extends Email implements TypeValidationInterface
     public function validate(): ValidationCollection
     {
         return ValidationCollection::asMap([])
-            ->set(
+            ->setIf(
                 'template',
                 'validation.templated_email.template.empty',
                 fn () => $this->htmlTemplatePath->isEmpty()->isTrue()
