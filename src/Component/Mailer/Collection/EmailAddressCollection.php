@@ -12,7 +12,7 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
-final class EmailAddressCollection implements AsListInterface, AsMapInterface
+final class EmailAddressCollection implements \IteratorAggregate, AsListInterface, AsMapInterface
 {
     use CollectionTrait;
 

@@ -9,7 +9,7 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 /**
  * Interface GetIteratorInterface.
  */
-interface GetIteratorInterface
+interface GetIteratorInterface extends \IteratorAggregate
 {
     /**
      * Returns an iterator for the elements.

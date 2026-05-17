@@ -14,7 +14,7 @@ use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 use TournayreLabs\Wrapper\SplFileInfo;
 
-final class FileCollection implements LoggableInterface, AsListInterface, AsMapInterface
+final class FileCollection implements \IteratorAggregate, LoggableInterface, AsListInterface, AsMapInterface
 {
     use CollectionTrait;
 

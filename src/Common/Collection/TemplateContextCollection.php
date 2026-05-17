@@ -11,7 +11,7 @@ use TournayreLabs\Primitives\BoolEnum;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
-final class TemplateContextCollection implements AsMapInterface
+final class TemplateContextCollection implements \IteratorAggregate, AsMapInterface
 {
     use CollectionTrait;
 

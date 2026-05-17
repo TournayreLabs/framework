@@ -11,7 +11,7 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
-final class DateTimeCollection implements AsListInterface
+final class DateTimeCollection implements \IteratorAggregate, AsListInterface
 {
     use CollectionTrait;
 

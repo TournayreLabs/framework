@@ -13763,27 +13763,6 @@
         "final": true,
         "methods": [
             {
-                "name": "add",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "asMap",
                 "visibility": "public",
                 "static": true,
@@ -13825,33 +13804,22 @@
                 "parameters": []
             },
             {
-                "name": "each",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "first",
                 "visibility": "public",
                 "static": false,
                 "abstract": false,
                 "final": false,
                 "returnType": "mixed",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "getIterator",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "ArrayIterator",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -13928,16 +13896,6 @@
                 ]
             },
             {
-                "name": "keys",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "array",
-                "returnsReference": false,
-                "parameters": []
-            },
-            {
                 "name": "last",
                 "visibility": "public",
                 "static": false,
@@ -13946,141 +13904,6 @@
                 "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": []
-            },
-            {
-                "name": "map",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "offsetGet",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": null,
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "type": null,
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "offsetUnset",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "void",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "type": null,
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "set",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "key",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "setIf",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "key",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
             },
             {
                 "name": "toArray",
@@ -14100,7 +13923,7 @@
         "final": true,
         "methods": [
             {
-                "name": "add",
+                "name": "addIf",
                 "visibility": "public",
                 "static": false,
                 "abstract": false,
@@ -14109,8 +13932,28 @@
                 "returnsReference": false,
                 "parameters": [
                     {
-                        "name": "value",
-                        "type": "mixed",
+                        "name": "key",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "optional": false,
+                        "default": {
+                            "available": false
+                        },
+                        "variadic": false,
+                        "passedByReference": false
+                    },
+                    {
+                        "name": "condition",
+                        "type": "Closure",
                         "optional": false,
                         "default": {
                             "available": false
@@ -14162,33 +14005,22 @@
                 "parameters": []
             },
             {
-                "name": "each",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "first",
                 "visibility": "public",
                 "static": false,
                 "abstract": false,
                 "final": false,
                 "returnType": "mixed",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "getIterator",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "ArrayIterator",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -14254,16 +14086,6 @@
                 "parameters": []
             },
             {
-                "name": "keys",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "array",
-                "returnsReference": false,
-                "parameters": []
-            },
-            {
                 "name": "last",
                 "visibility": "public",
                 "static": false,
@@ -14272,141 +14094,6 @@
                 "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": []
-            },
-            {
-                "name": "map",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "offsetGet",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": null,
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "type": null,
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "offsetUnset",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "void",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "type": null,
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "set",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "key",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "setIf",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "key",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
             },
             {
                 "name": "throwException",
@@ -16578,7 +16265,7 @@
                 "parameters": [
                     {
                         "name": "value",
-                        "type": "mixed",
+                        "type": "TournayreLabs\\Component\\Mailer\\VO\\EmailContact",
                         "optional": false,
                         "default": {
                             "available": false
@@ -16651,33 +16338,22 @@
                 "parameters": []
             },
             {
-                "name": "each",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "first",
                 "visibility": "public",
                 "static": false,
                 "abstract": false,
                 "final": false,
                 "returnType": "mixed",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "getIterator",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "ArrayIterator",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -16733,16 +16409,6 @@
                 ]
             },
             {
-                "name": "keys",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "array",
-                "returnsReference": false,
-                "parameters": []
-            },
-            {
                 "name": "last",
                 "visibility": "public",
                 "static": false,
@@ -16751,141 +16417,6 @@
                 "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": []
-            },
-            {
-                "name": "map",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "offsetGet",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": null,
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "type": null,
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "offsetUnset",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "void",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "type": null,
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "set",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "key",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "setIf",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "key",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
             },
             {
                 "name": "toArray",
@@ -34256,27 +33787,6 @@
         "final": true,
         "methods": [
             {
-                "name": "add",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "asList",
                 "visibility": "public",
                 "static": true,
@@ -34337,27 +33847,6 @@
                 "returnType": "TournayreLabs\\Primitives\\Int_",
                 "returnsReference": false,
                 "parameters": []
-            },
-            {
-                "name": "each",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
             },
             {
                 "name": "filterByContent",
@@ -34433,6 +33922,16 @@
                 "parameters": []
             },
             {
+                "name": "getIterator",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "ArrayIterator",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
                 "name": "hasNoElement",
                 "visibility": "public",
                 "static": false,
@@ -34484,16 +33983,6 @@
                 ]
             },
             {
-                "name": "keys",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "array",
-                "returnsReference": false,
-                "parameters": []
-            },
-            {
                 "name": "last",
                 "visibility": "public",
                 "static": false,
@@ -34502,141 +33991,6 @@
                 "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": []
-            },
-            {
-                "name": "map",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "offsetGet",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": null,
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "type": null,
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "offsetUnset",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "void",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "type": null,
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "set",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "key",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "setIf",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "key",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
             },
             {
                 "name": "toArray",
@@ -45728,7 +45082,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45750,7 +45104,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45793,7 +45147,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -45930,27 +45284,6 @@
         "final": false,
         "methods": [
             {
-                "name": "add",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "atLeastOneElement",
                 "visibility": "public",
                 "static": false,
@@ -45971,33 +45304,22 @@
                 "parameters": []
             },
             {
-                "name": "each",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
                 "name": "first",
                 "visibility": "public",
                 "static": false,
                 "abstract": false,
                 "final": false,
                 "returnType": "mixed",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
+                "name": "getIterator",
+                "visibility": "public",
+                "static": false,
+                "abstract": false,
+                "final": false,
+                "returnType": "ArrayIterator",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -46053,16 +45375,6 @@
                 ]
             },
             {
-                "name": "keys",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "array",
-                "returnsReference": false,
-                "parameters": []
-            },
-            {
                 "name": "last",
                 "visibility": "public",
                 "static": false,
@@ -46071,141 +45383,6 @@
                 "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": []
-            },
-            {
-                "name": "map",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "offsetGet",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": null,
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "type": null,
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "offsetUnset",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "void",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "offset",
-                        "type": null,
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "set",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "key",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
-            },
-            {
-                "name": "setIf",
-                "visibility": "public",
-                "static": false,
-                "abstract": false,
-                "final": false,
-                "returnType": "self",
-                "returnsReference": false,
-                "parameters": [
-                    {
-                        "name": "key",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "value",
-                        "type": "mixed",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    },
-                    {
-                        "name": "callback",
-                        "type": "Closure",
-                        "optional": false,
-                        "default": {
-                            "available": false
-                        },
-                        "variadic": false,
-                        "passedByReference": false
-                    }
-                ]
             },
             {
                 "name": "toArray",

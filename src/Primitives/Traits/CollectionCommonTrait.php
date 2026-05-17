@@ -58,7 +58,7 @@ trait CollectionCommonTrait
      *
      * @return mixed|null
      */
-    public function offsetGet($offset)
+    protected function offsetGet($offset)
     {
         return $this->collection->offsetGet($offset);
     }
@@ -66,7 +66,7 @@ trait CollectionCommonTrait
     /**
      * @param array-key $offset
      */
-    public function offsetUnset($offset): void
+    protected function offsetUnset($offset): void
     {
         $this->collection->offsetUnset($offset);
     }
@@ -124,7 +124,7 @@ trait CollectionCommonTrait
     /**
      * @throws ThrowableInterface
      */
-    public function add(mixed $value): self
+    protected function add(mixed $value): self
     {
         $this->ensureMutable('add');
 
@@ -137,7 +137,7 @@ trait CollectionCommonTrait
     /**
      * @throws ThrowableInterface
      */
-    public function set(mixed $key, mixed $value): self
+    protected function set(mixed $key, mixed $value): self
     {
         $this->ensureMutable('set');
 
@@ -150,7 +150,7 @@ trait CollectionCommonTrait
     /**
      * @throws ThrowableInterface
      */
-    public function setIf(mixed $key, mixed $value, \Closure $callback): self
+    protected function setIf(mixed $key, mixed $value, \Closure $callback): self
     {
         if (!$callback($key, $value)) {
             return $this;
@@ -159,7 +159,7 @@ trait CollectionCommonTrait
         return $this->set($key, $value);
     }
 
-    public function map(\Closure $callback): self
+    protected function map(\Closure $callback): self
     {
         $clone = clone $this;
         $clone->collection = $this->collection->map($callback);
@@ -167,7 +167,7 @@ trait CollectionCommonTrait
         return $clone;
     }
 
-    public function each(\Closure $callback): self
+    protected function each(\Closure $callback): self
     {
         $clone = clone $this;
         $clone->collection->each($callback);
@@ -175,10 +175,15 @@ trait CollectionCommonTrait
         return $clone;
     }
 
+    public function getIterator(): \ArrayIterator
+    {
+        return $this->collection->getIterator();
+    }
+
     /**
      * @return array-key[]
      */
-    public function keys(): array
+    protected function keys(): array
     {
         return $this->collection
             ->keys()

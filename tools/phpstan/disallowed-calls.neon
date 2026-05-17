@@ -1,0 +1,180 @@
+includes:
+    - ../../vendor/spaze/phpstan-disallowed-calls/disallowed-dangerous-calls.neon
+    - ../../vendor/spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
+    - ../../vendor/spaze/phpstan-disallowed-calls/disallowed-insecure-calls.neon
+    - ../../vendor/spaze/phpstan-disallowed-calls/disallowed-loose-calls.neon
+
+parameters:
+    disallowedFunctionCalls:
+        -
+            function:
+                - 'explode()'
+                - 'join()'
+                - 'ltrim()'
+                - 'mb_strtolower()'
+                - 'rtrim()'
+                - 'split()'
+                - 'str_contains()'
+                - 'str_ends_with()'
+                - 'str_pad()'
+                - 'str_repeat()'
+                - 'str_replace()'
+                - 'str_shuffle()'
+                - 'str_split()'
+                - 'str_starts_with()'
+                - 'strlen()'
+                - 'strtolower()'
+                - 'strtoupper()'
+                - 'substr()'
+                - 'trim()'
+                - 'ucfirst()'
+                - 'ucwords()'
+                - 'preg_match()'
+            message: 'use TournayreLabs\Primitives\StringType instead, because it is more secure and toString() performs assertion'
+            allowIn:
+                - src/Primitives/StringType.php
+                - tests/*
+        -
+            function:
+                - 'dump()'
+                - 'dd()'
+            message: 'use some logger instead'
+        -
+            function:
+                - 'ini_set()'
+                - 'ini_get()'
+                - 'ini_restore()'
+            message: 'ini_* functions are not allowed'
+        -
+            function:
+                - 'phpinfo()'
+            message: 'Exposing the PHP configuration is a security risk'
+        -
+            function:
+                - 'die()'
+                - 'exit()'
+            message: 'die() and exit() are not allowed'
+        -
+            function:
+                - 'assert()'
+            message: 'use TournayreLabs\Common\Assert\Assert instead, because it provides better error handling and is always enabled'
+        -
+            function:
+                - 'array_chunk()'           # chunk()
+                - 'array_column()'          # col()
+                - 'array_combine()'         # combine()
+                - 'array_count_values()'    # countBy()
+                - 'array_diff()'            # diff()
+                - 'array_diff_assoc()'      # diffAssoc()
+                - 'array_diff_key()'        # diffKeys()
+                - 'array_filter()'          # filter()
+                - 'array_flip()'            # flip()
+                - 'array_intersect()'       # intersect()
+                - 'array_intersect_assoc()' # intersectAssoc()
+                - 'array_intersect_key()'   # intersectKeys()
+                - 'array_key_exists()'      # has()
+                - 'array_key_first()'       # firstKey()
+                - 'array_key_last()'        # lastKey()
+                - 'array_keys()'            # keys()
+                - 'array_map()'             # map()
+                - 'array_merge()'           # merge()
+                - 'array_pad()'             # pad()
+                - 'array_pop()'             # pop()
+                - 'array_push()'            # push()
+                - 'array_rand()'            # random()
+                - 'array_reduce()'          # reduce()
+                - 'array_replace()'         # replace()
+                - 'array_reverse()'         # reverse()
+                - 'array_search()'          # search()
+                - 'array_shift()'           # shift()
+                - 'array_slice()'           # slice()
+                - 'array_splice()'          # splice()
+                - 'array_sum()'             # sum()
+                - 'array_unique()'          # unique()
+                - 'array_unshift()'         # unshift()
+                - 'array_values()'          # values()
+                - 'array_walk()'            # walk()
+                - 'arsort()'                # arsort()
+                - 'asort()'                 # asort()
+                - 'count()'                 # count()
+                - 'in_array()'              # in() / includes() / contains()
+                - 'key_exists()'            # has()
+                - 'krsort()'                # krsort()
+                - 'ksort()'                 # ksort()
+                - 'rsort()'                 # rsort()
+                - 'shuffle()'               # shuffle()
+                - 'sizeof()'                # count()
+                - 'sort()'                  # sort()
+                - 'uasort()'                # uasort()
+                - 'uksort()'                # uksort()
+                - 'usort()'                 # usort()
+            message: 'use TournayreLabs\Primitives\Collection instead'
+        -
+            function:
+                - 'basename()'          # filename()
+                - 'file_get_contents()' # contents()
+                - 'filesize()'          # size()
+                - 'pathinfo()'          # extension() / filenameWithoutExtension() / filename() / pathname()
+                - 'realpath()'          # pathname()
+            message: 'use TournayreLabs\Wrapper\SplFileInfo instead'
+        -
+            function:
+                - 'copy()'              # copyFile()
+                - 'file_exists()'       # exists()
+                - 'file_put_contents()' # createFile()
+                - 'is_dir()'            # isDirectory()
+                - 'is_executable()'     # isExecutable()
+                - 'is_file()'           # isFile()
+                - 'is_link()'           # isLink()
+                - 'is_readable()'       # isReadable()
+                - 'is_writable()'       # isWritable()
+                - 'is_writeable()'      # isWritable()
+                - 'mkdir()'             # createDirectory()
+                - 'rename()'            # renameFile() / moveFile()
+                - 'rmdir()'             # removeDirectory()
+                - 'unlink()'            # removeFile()
+            message: 'use TournayreLabs\Symfony\Filesystem\Filesystem instead'
+
+    disallowedMethodCalls:
+        -
+            method: '\DateTimeImmutable::createFromInterface()'
+            message: 'use TournayreLabs\Primitives\DateTime instead'
+        -
+            method: '\DateTimeImmutable::__construct()'
+            message: 'use TournayreLabs\Primitives\DateTime or ClockInterface instead'
+
+    disallowedSuperglobals:
+        -
+            superglobal: '$_GET'
+            message: 'use the Symfony\Component\HttpFoundation\Request methods instead'
+            errorTip: 'see https://symfony.com/doc/current/components/http_foundation.html#request'
+        -
+            superglobal: '$_POST'
+            message: 'use the Symfony\Component\HttpFoundation\Request methods instead'
+            errorTip: 'see https://symfony.com/doc/current/components/http_foundation.html#request'
+        -
+            superglobal: '$_REQUEST'
+            message: 'use the Symfony\Component\HttpFoundation\Request methods instead'
+            errorTip: 'see https://symfony.com/doc/current/components/http_foundation.html#request'
+        -
+            superglobal: '$_SERVER'
+            message: 'use the Symfony\Component\HttpFoundation\Request methods instead'
+            errorTip: 'see https://symfony.com/doc/current/components/http_foundation.html#request'
+            allowIn:
+                - tests/bootstrap.php
+        -
+            superglobal: '$_SESSION'
+            message: 'use the Symfony\Component\HttpFoundation\Request methods instead'
+            errorTip: 'see https://symfony.com/doc/current/components/http_foundation.html#request'
+        -
+            superglobal: '$_COOKIE'
+            message: 'use the Symfony\Component\HttpFoundation\Request methods instead'
+            errorTip: 'see https://symfony.com/doc/current/components/http_foundation.html#request'
+        -
+            superglobal: '$_FILES'
+            message: 'use the Symfony\Component\HttpFoundation\Request methods instead'
+            errorTip: 'see https://symfony.com/doc/current/components/http_foundation.html#request'
+        -
+            superglobal: '$_ENV'
+            message: 'use the Symfony\Component\HttpFoundation\Request methods instead'
+            errorTip: 'see https://symfony.com/doc/current/components/http_foundation.html#request'

@@ -13,7 +13,7 @@ use TournayreLabs\Primitives\BoolEnum;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
-final class EmailContactCollection implements LoggableInterface, AsListInterface
+final class EmailContactCollection implements \IteratorAggregate, LoggableInterface, AsListInterface
 {
     use CollectionTrait;
 
@@ -25,6 +25,19 @@ final class EmailContactCollection implements LoggableInterface, AsListInterface
         Assert::isListOf($collection, EmailContact::class);
 
         return new self(Collection::of($collection));
+    }
+
+    /**
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function add(EmailContact $value): self
+    {
+        $clone = clone $this;
+        $clone->collection = $this->collection->push($value);
+
+        return $clone;
     }
 
     /**

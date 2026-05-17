@@ -12,7 +12,7 @@ use TournayreLabs\Primitives\BoolEnum;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
-final class ValidationCollection implements AsMapInterface
+final class ValidationCollection implements \IteratorAggregate, AsMapInterface
 {
     use CollectionTrait;
 
@@ -26,6 +26,23 @@ final class ValidationCollection implements AsMapInterface
         Assert::isMapOf($collection, 'string');
 
         return new self(Collection::of($collection));
+    }
+
+    /**
+     * @throws ThrowableInterface
+     *
+     * @api
+     */
+    public function addIf(string $key, string $message, \Closure $condition): self
+    {
+        if (!$condition()) {
+            return $this;
+        }
+
+        $clone = clone $this;
+        $clone->collection->set($key, $message);
+
+        return $clone;
     }
 
     public function isValid(): BoolEnum
