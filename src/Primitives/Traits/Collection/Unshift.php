@@ -46,6 +46,9 @@ trait Unshift
     public function unshiftWithKey(mixed $value, mixed $key): self
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
+        if (!\is_int($key) && !\is_string($key) && null !== $key) {
+            return $this;
+        }
 
         $unshift = $this->collection->unshift($value, $key);
 

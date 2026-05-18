@@ -117,9 +117,14 @@ final class FileCollection implements \IteratorAggregate, LoggableInterface, AsL
      */
     public function toLog(): array
     {
-        return $this->collection
-            ->map(static fn (SplFileInfo $file): array => $file->toLog())
-            ->toArray()
-        ;
+        $log = [];
+        Collection::of($this->collection->toArray())
+            ->filterWith(static fn (mixed $file): bool => $file instanceof SplFileInfo)
+            ->each(static function (mixed $file) use (&$log): void {
+                /** @var SplFileInfo $file */
+                $log[] = $file->toLog();
+            });
+
+        return $log;
     }
 }

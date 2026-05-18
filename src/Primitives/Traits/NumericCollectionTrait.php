@@ -40,6 +40,9 @@ trait NumericCollectionTrait
      */
     public function add(mixed $numeric): self
     {
+        Assert::isInstanceOf($numeric, Numeric::class);
+        /** @var Numeric $numeric */
+
         Assert::same($numeric->precision(), $this->precision, 'Precisions must be the same.');
 
         $clone = clone $this;
@@ -62,7 +65,11 @@ trait NumericCollectionTrait
         }
 
         if ($this->hasOneElement()->isTrue()) {
-            return Numeric::of($this->first()->value(), $this->precision);
+            $first = $this->first();
+            Assert::isInstanceOf($first, Numeric::class);
+            /** @var Numeric $first */
+
+            return Numeric::of($first->value(), $this->precision);
         }
 
         $sum = $this->collection
@@ -85,7 +92,11 @@ trait NumericCollectionTrait
         }
 
         if ($this->hasOneElement()->isTrue()) {
-            return Numeric::of($this->first()->value(), $this->precision);
+            $first = $this->first();
+            Assert::isInstanceOf($first, Numeric::class);
+            /** @var Numeric $first */
+
+            return Numeric::of($first->value(), $this->precision);
         }
 
         $this->_validateCollection();
@@ -110,7 +121,11 @@ trait NumericCollectionTrait
         }
 
         if ($this->hasOneElement()->isTrue()) {
-            return Numeric::of($this->first()->value(), $this->precision);
+            $first = $this->first();
+            Assert::isInstanceOf($first, Numeric::class);
+            /** @var Numeric $first */
+
+            return Numeric::of($first->value(), $this->precision);
         }
 
         $this->_validateCollection();
@@ -135,7 +150,11 @@ trait NumericCollectionTrait
         }
 
         if ($this->hasOneElement()->isTrue()) {
-            return Numeric::of($this->first()->value(), $this->precision);
+            $first = $this->first();
+            Assert::isInstanceOf($first, Numeric::class);
+            /** @var Numeric $first */
+
+            return Numeric::of($first->value(), $this->precision);
         }
 
         $this->_validateCollection();

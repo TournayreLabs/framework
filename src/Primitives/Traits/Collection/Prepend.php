@@ -46,6 +46,9 @@ trait Prepend
     public function prependWithKey(mixed $value, mixed $key): self
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
+        if (!\is_int($key) && !\is_string($key) && null !== $key) {
+            return $this;
+        }
 
         $prepend = $this->collection->prepend($value, $key);
 

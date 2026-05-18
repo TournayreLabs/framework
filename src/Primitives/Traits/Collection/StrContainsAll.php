@@ -24,6 +24,10 @@ trait StrContainsAll
      */
     public function strContainsAll(mixed $value, string $encoding = 'UTF-8'): Bool_
     {
+        if (!\is_string($value) && !\is_array($value)) {
+            return Bool_::asFalse();
+        }
+
         $strContainsAll = $this->collection->strContainsAll($value, $encoding);
 
         return Bool_::fromBool($strContainsAll);

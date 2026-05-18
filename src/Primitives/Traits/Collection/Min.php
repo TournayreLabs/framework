@@ -29,8 +29,11 @@ trait Min
         }
 
         $min = $this->collection->min();
+        if (!\is_int($min) && !\is_float($min)) {
+            return Numeric::of(0);
+        }
 
-        return Numeric::fromFloat($min ?? 0);
+        return Numeric::fromFloat((float) $min);
     }
 
     /**
@@ -47,7 +50,10 @@ trait Min
         }
 
         $min = $this->collection->min($key);
+        if (!\is_int($min) && !\is_float($min)) {
+            return Numeric::of(0);
+        }
 
-        return Numeric::fromFloat($min ?? 0);
+        return Numeric::fromFloat((float) $min);
     }
 }

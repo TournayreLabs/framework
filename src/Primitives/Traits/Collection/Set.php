@@ -23,6 +23,9 @@ trait Set
     public function set(mixed $key, mixed $value): void
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
+        if (!\is_int($key) && !\is_string($key)) {
+            return;
+        }
 
         $this->collection->set($key, $value);
     }
@@ -35,6 +38,9 @@ trait Set
     public function setWithCallback(mixed $key, mixed $value, \Closure $callback): void
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
+        if (!\is_int($key) && !\is_string($key)) {
+            return;
+        }
 
         if (!$callback($key, $value)) {
             return;

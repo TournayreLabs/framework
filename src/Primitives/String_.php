@@ -24,6 +24,7 @@ final readonly class String_ implements \Stringable
     public static function fromPattern(string $string, mixed ...$arg): self
     {
         Assert::allString([...$arg], 'The arguments must be strings');
+        /** @var array<int, string> $arg */
         $string = sprintf($string, ...$arg);
 
         return self::fromString($string);
@@ -148,8 +149,10 @@ final readonly class String_ implements \Stringable
 
     /**
      * @api
+     *
+     * @param array<string, mixed>|int $options
      */
-    public function filterVarWith(int $filter, mixed $options): self
+    public function filterVarWith(int $filter, array|int $options): self
     {
         $filterVar = filter_var($this->value, $filter, $options);
         if (false === $filterVar) {

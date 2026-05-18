@@ -73,11 +73,15 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
      */
     public function mostRecent(): DateTimeInterface
     {
-        return $this
+        $dateTime = $this
             ->sortDesc()
             ->collection
             ->first()
         ;
+        Assert::isInstanceOf($dateTime, DateTimeInterface::class);
+        /** @var DateTimeInterface $dateTime */
+
+        return $dateTime;
     }
 
     /**
@@ -87,11 +91,15 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
      */
     public function oldest(): DateTimeInterface
     {
-        return $this
+        $dateTime = $this
             ->sortAsc()
             ->collection
             ->first()
         ;
+        Assert::isInstanceOf($dateTime, DateTimeInterface::class);
+        /** @var DateTimeInterface $dateTime */
+
+        return $dateTime;
     }
 
     /**

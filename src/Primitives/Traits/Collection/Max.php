@@ -29,8 +29,11 @@ trait Max
         }
 
         $max = $this->collection->max();
+        if (!\is_int($max) && !\is_float($max)) {
+            return Numeric::of(0);
+        }
 
-        return Numeric::fromFloat($max ?? 0);
+        return Numeric::fromFloat((float) $max);
     }
 
     /**
@@ -47,7 +50,10 @@ trait Max
         }
 
         $max = $this->collection->max($key);
+        if (!\is_int($max) && !\is_float($max)) {
+            return Numeric::of(0);
+        }
 
-        return Numeric::fromFloat($max ?? 0);
+        return Numeric::fromFloat((float) $max);
     }
 }
