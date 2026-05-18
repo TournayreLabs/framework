@@ -48,10 +48,15 @@ final class EmailContactCollection implements \IteratorAggregate, LoggableInterf
      */
     public function toLog(): array
     {
-        return $this->collection
-            ->map(fn (EmailContact $emailContact) => $emailContact->toLog())
-            ->toArray()
-        ;
+        $log = [];
+        Collection::of($this->collection->toArray())
+            ->filterWith(static fn (mixed $emailContact): bool => $emailContact instanceof EmailContact)
+            ->each(static function (mixed $emailContact) use (&$log): void {
+                /** @var EmailContact $emailContact */
+                $log[] = $emailContact->toLog();
+            });
+
+        return $log;
     }
 
     /**

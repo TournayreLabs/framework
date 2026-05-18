@@ -34,7 +34,7 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
             $message = \sprintf('Expected list - non-associative array of %s.', $classOrType);
         }
 
-        self::isList($array, $message);
+        self::__callStatic('isList', [$array, $message]);
 
         if (Primitive::tryFrom($classOrType)?->isMixed()->yes() ?? false) {
             return;
@@ -61,7 +61,7 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
             $message = \sprintf('Expected map - associative array with string keys of %s.', $classOrType);
         }
 
-        self::isMap($array, $message);
+        self::__callStatic('isMap', [$array, $message]);
 
         if (Primitive::tryFrom($classOrType)?->isMixed()->yes() ?? false) {
             return;
@@ -109,6 +109,10 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
      */
     public static function __callStatic(mixed $name, array $arguments): void
     {
+        if (!\is_string($name) && !\is_int($name) && !\is_float($name) && !\is_bool($name)) {
+            throw InvalidArgumentException::new('Assert method name must be scalar.');
+        }
+
         $methodName = String_::fromString((string) $name)->toString();
         try {
             if (!method_exists(\Webmozart\Assert\Assert::class, $methodName)) {

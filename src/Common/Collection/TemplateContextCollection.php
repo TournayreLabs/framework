@@ -35,6 +35,10 @@ final class TemplateContextCollection implements \IteratorAggregate, AsMapInterf
      */
     public function has($offset): Bool_
     {
+        if (!\is_int($offset) && !\is_string($offset) && !\is_array($offset)) {
+            return Bool_::asFalse();
+        }
+
         return $this->collection
             ->has($offset)
         ;

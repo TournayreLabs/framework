@@ -9,7 +9,7 @@ namespace TournayreLabs\Contracts\TryCatch;
  *
  * Defines the contract for handling throwables.
  *
- * @template T
+ * @template-covariant T
  */
 interface ThrowableHandlerInterface
 {

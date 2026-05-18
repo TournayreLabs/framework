@@ -56,8 +56,14 @@ final class TagCollection implements \IteratorAggregate, LoggableInterface, AsMa
      */
     public function toLog(): array
     {
-        return $this->collection
-            ->toArray()
-        ;
+        $log = [];
+        Collection::of($this->collection->toArray())
+            ->filterWith(static fn (mixed $tag): bool => \is_string($tag))
+            ->each(static function (mixed $tag) use (&$log): void {
+                /** @var string $tag */
+                $log[] = $tag;
+            });
+
+        return $log;
     }
 }
