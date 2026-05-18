@@ -8,60 +8,7 @@ parameters:
     treatPhpDocTypesAsCertain: false
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
-        # PHPStan standard — API publique jamais utilisée dans ce dépôt
-        -
-            message: '#Public method "TournayreLabs\\[^"]+" is never used#'
-            path: src/*
-
-        # PHPStan standard — appel dynamique sur Webmozart\Assert
+        # PHPStan standard — dispatch dynamique volontaire vers Webmozart\Assert::method(...)
         -
             message: '#Variable static method call on Webmozart\\Assert\\Assert#'
             path: src/Common/Assert/Assert.php
-
-        # PHPStan standard — paramètre sans type (API Symfony Mailer)
-        -
-            message: '#Method TournayreLabs\\Component\\Mailer\\Service\\MailService::logSendingEmail\(\) has parameter \$message with no type specified#'
-            path: src/Component/Mailer/Service/MailService.php
-
-        # PHPStan standard — __call() sans type de retour (NullTrait dynamique)
-        -
-            message: '#Method TournayreLabs\\Common\\Model\\DefaultUser::__call\(\) has no return type specified#'
-            path: src/Null/NullTrait.php
-        -
-            message: '#Method TournayreLabs\\Common\\VO\\Context\\Context::__call\(\) has no return type specified#'
-            path: src/Null/NullTrait.php
-        -
-            message: '#Method TournayreLabs\\Common\\VO\\Security\\PlainPassword::__call\(\) has no return type specified#'
-            path: src/Null/NullTrait.php
-        -
-            message: '#Method TournayreLabs\\Component\\Mailer\\Types\\EmailHtml::__call\(\) has no return type specified#'
-            path: src/Null/NullTrait.php
-        -
-            message: '#Method TournayreLabs\\Component\\Mailer\\Types\\EmailSubject::__call\(\) has no return type specified#'
-            path: src/Null/NullTrait.php
-        -
-            message: '#Method TournayreLabs\\Component\\Mailer\\Types\\EmailText::__call\(\) has no return type specified#'
-            path: src/Null/NullTrait.php
-        -
-            message: '#Method TournayreLabs\\Primitives\\DateTime::__call\(\) has no return type specified#'
-            path: src/Null/NullTrait.php
-        -
-            message: '#Method TournayreLabs\\Tests\\Fixtures\\Title::__call\(\) has no return type specified#'
-            path: src/Null/NullTrait.php
-
-        # PHPStan standard — interface Symfony Security sans types (contrat legacy)
-        -
-            message: '#Method TournayreLabs\\Contracts\\Security\\UserInterface::getRoles\(\) has no return type specified#'
-            path: src/Contracts/Security/UserInterface.php
-        -
-            message: '#Method TournayreLabs\\Contracts\\Security\\UserInterface::getPassword\(\) has no return type specified#'
-            path: src/Contracts/Security/UserInterface.php
-        -
-            message: '#Method TournayreLabs\\Contracts\\Security\\UserInterface::getSalt\(\) has no return type specified#'
-            path: src/Contracts/Security/UserInterface.php
-        -
-            message: '#Method TournayreLabs\\Contracts\\Security\\UserInterface::getUsername\(\) has no return type specified#'
-            path: src/Contracts/Security/UserInterface.php
-        -
-            message: '#Method TournayreLabs\\Contracts\\Security\\UserInterface::eraseCredentials\(\) has no return type specified#'
-            path: src/Contracts/Security/UserInterface.php

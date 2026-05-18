@@ -9,7 +9,6 @@ use TournayreLabs\Component\Mailer\Configuration\MailerConfiguration;
 use TournayreLabs\Component\Mailer\VO\Email;
 use TournayreLabs\Component\Mailer\VO\TemplatedEmail;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
-use TournayreLabs\Contracts\Log\LoggableInterface;
 use TournayreLabs\Contracts\Log\LoggerInterface;
 use TournayreLabs\Contracts\Mailer\SendMailInterface;
 
@@ -49,10 +48,9 @@ final readonly class MailService
         $this->sendMail->sendWithEnvelope($message, $envelope);
     }
 
-    private function logSendingEmail($message): void
+    private function logSendingEmail(Email|TemplatedEmail $message): void
     {
-        $logContext = $message instanceof LoggableInterface ? $message->toLog() : [];
-        $this->logger->info('Sending email', $logContext);
+        $this->logger->info('Sending email', $message->toLog());
     }
 
     /**

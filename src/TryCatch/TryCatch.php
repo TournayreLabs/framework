@@ -64,6 +64,8 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
      * @throws ThrowableInterface
      *
      * @return self<TReturn>
+     *
+     * @api
      */
     public static function with(
         \Closure $tryBlock,
@@ -85,6 +87,8 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
      * @throws ThrowableInterface
      *
      * @return self<T>
+     *
+     * @api
      */
     public function catch(string $throwableClass, \Closure $handler): self
     {

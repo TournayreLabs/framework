@@ -17,6 +17,8 @@ final class MutableLoggableException extends \RuntimeException implements Throwa
 
     /**
      * @param array<array-key, mixed> $context
+     *
+     * @api
      */
     public static function becauseMustBeImmutable(LoggerInterface $logger, array $context = []): self
     {

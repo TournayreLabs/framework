@@ -19,7 +19,7 @@ trait NullTrait
     /**
      * @param array<int, mixed> $arguments
      */
-    public function __call(string $name, array $arguments)
+    public function __call(string $name, array $arguments): mixed
     {
         if ('__construct' === $name) {
             $this->initializeNull();
