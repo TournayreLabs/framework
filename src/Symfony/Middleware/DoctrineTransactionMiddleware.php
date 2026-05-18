@@ -6,12 +6,14 @@ namespace TournayreLabs\Symfony\Middleware;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Messenger\Envelope;
+use Symfony\Component\Messenger\Handler\HandlerDescriptor;
 use Symfony\Component\Messenger\Handler\HandlersLocatorInterface;
 use Symfony\Component\Messenger\Middleware\MiddlewareInterface;
 use Symfony\Component\Messenger\Middleware\StackInterface;
 use TournayreLabs\Contracts\Log\LoggerInterface;
 use TournayreLabs\Contracts\Persistance\AllowFlushInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\String_;
 
 /**
  * Wraps message handling in a Doctrine transaction when a flush-capable handler is present.
@@ -86,12 +88,19 @@ final readonly class DoctrineTransactionMiddleware implements MiddlewareInterfac
     {
         $handlers = iterator_to_array($this->handlersLocator->getHandlers($envelope));
 
-        return Collection::of($handlers)->some(static function (mixed $handlerDescriptor): bool {
-            $handler = $handlerDescriptor->getHandler();
+        return Collection::of($handlers)
+            ->filterWith(static fn (mixed $handlerDescriptor): bool => $handlerDescriptor instanceof HandlerDescriptor)
+            ->some(static function (mixed $handlerDescriptor): bool {
+            /** @var HandlerDescriptor $handlerDescriptor */
+            $handlerName = $handlerDescriptor->getName();
+            $firstChunk = Collection::of(String_::fromString($handlerName)->split('::'))->first();
+            $handlerClass = $firstChunk instanceof String_ ? $firstChunk->toString() : '';
+            if ('Closure' === $handlerClass || '' === $handlerClass) {
+                return false;
+            }
 
-            return ($handler instanceof AllowFlushInterface)
-                || (is_array($handler) && isset($handler[0]) && $handler[0] instanceof AllowFlushInterface);
-        })->isTrue();
+            return is_a($handlerClass, AllowFlushInterface::class, true);
+            })->isTrue();
     }
 
     private function rollback(): void

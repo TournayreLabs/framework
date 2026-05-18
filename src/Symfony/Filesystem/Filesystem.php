@@ -237,15 +237,21 @@ final readonly class Filesystem implements FilesystemInterface
     private function fromIteratorToSplFileInfos(iterable $files): array
     {
         $arrayFiles = is_array($files) ? $files : iterator_to_array($files, false);
-
-        return Collection::of($arrayFiles)
-            ->map(static fn (SymfonySplFileInfo $file) => SplFileInfo::of(
+        $splFiles = Collection::of($arrayFiles)
+            ->filterWith(static fn (mixed $file): bool => $file instanceof SymfonySplFileInfo)
+            ->map(static function (mixed $file): SplFileInfo {
+                /** @var SymfonySplFileInfo $file */
+                return SplFileInfo::of(
                 $file->getRealPath(),
                 $file->getRelativePath(),
                 $file->getRelativePathname()
-            ))
-            ->toArray()
-        ;
+                );
+            })
+            ->toArray();
+
+        /** @var array<int|string, SplFileInfo> $splFiles */
+
+        return $splFiles;
     }
 
     /**

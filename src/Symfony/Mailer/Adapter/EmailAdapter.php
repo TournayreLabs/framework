@@ -11,6 +11,7 @@ use TournayreLabs\Component\Mailer\VO\Email;
 use TournayreLabs\Component\Mailer\VO\EmailContact;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Wrapper\SplFileInfo;
 
 /**
  * Converts framework Email value objects to Symfony Mime Email instances.
@@ -47,13 +48,24 @@ abstract class EmailAdapter
         $symfonyEmail->replyTo(...$replyTos);
 
         Collection::of($email->attachments()->toArray())
-            ->each(static fn (mixed $attachment) => $symfonyEmail->attachFromPath($attachment->getPathname()->toString()))
-        ;
+            ->filterWith(static fn (mixed $attachment): bool => $attachment instanceof SplFileInfo)
+            ->each(static function (mixed $attachment) use ($symfonyEmail): void {
+                /** @var SplFileInfo $attachment */
+                $pathname = $attachment->pathname();
+                $symfonyEmail->attachFromPath($pathname->toString());
+            });
 
         $headers = $symfonyEmail->getHeaders();
         Collection::of($email->tags()->toArray())
-            ->each(static fn (mixed $tagValue, mixed $tagName) => $headers->addTextHeader((string) $tagName, (string) $tagValue))
-        ;
+            ->filterWith(static fn (mixed $tagValue, mixed $tagName): bool => \is_string($tagName) && \is_scalar($tagValue))
+            ->each(static function (mixed $tagValue, mixed $tagName) use ($headers): void {
+                /** @var string $tagName */
+                if (!\is_scalar($tagValue)) {
+                    return;
+                }
+
+                $headers->addTextHeader($tagName, (string) $tagValue);
+            });
 
         return $symfonyEmail;
     }
@@ -69,12 +81,20 @@ abstract class EmailAdapter
             return [];
         }
 
-        return Collection::of($emailContactCollection->toArray())
-            ->map(static fn (EmailContact $emailContact): Address => new Address(
-                $emailContact->email()->toString(),
-                $emailContact->name()->toString()
-            ))
-            ->toArray()
+        $addresses = [];
+        Collection::of($emailContactCollection->toArray())
+            ->filterWith(static fn (mixed $emailContact): bool => $emailContact instanceof EmailContact)
+            ->each(static function (mixed $emailContact) use (&$addresses): void {
+                /** @var EmailContact $emailContact */
+                $addresses[] = new Address(
+                    $emailContact->email()->toString(),
+                    $emailContact->name()->toString()
+                );
+            })
         ;
+
+        /** @var array<Address> $addresses */
+
+        return $addresses;
     }
 }

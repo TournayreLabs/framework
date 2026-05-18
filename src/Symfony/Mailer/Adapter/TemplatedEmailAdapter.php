@@ -9,6 +9,7 @@ use TournayreLabs\Component\Mailer\VO\Email;
 use TournayreLabs\Component\Mailer\VO\TemplatedEmail;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Wrapper\SplFileInfo;
 
 /**
  * Converts framework templated emails to Symfony Twig templated email objects.
@@ -33,13 +34,24 @@ final class TemplatedEmailAdapter extends EmailAdapter
         $templatedEmail->replyTo(...$symfonyEmail->getReplyTo());
 
         Collection::of($email->attachments()->toArray())
-            ->each(static fn (mixed $attachment) => $templatedEmail->attachFromPath($attachment->getPathname()->toString()))
-        ;
+            ->filterWith(static fn (mixed $attachment): bool => $attachment instanceof SplFileInfo)
+            ->each(static function (mixed $attachment) use ($templatedEmail): void {
+                /** @var SplFileInfo $attachment */
+                $pathname = $attachment->pathname();
+                $templatedEmail->attachFromPath($pathname->toString());
+            });
 
         $headers = $templatedEmail->getHeaders();
         Collection::of($email->tags()->toArray())
-            ->each(static fn (mixed $tagValue, mixed $tagName) => $headers->addTextHeader((string) $tagName, (string) $tagValue))
-        ;
+            ->filterWith(static fn (mixed $tagValue, mixed $tagName): bool => \is_string($tagName) && \is_scalar($tagValue))
+            ->each(static function (mixed $tagValue, mixed $tagName) use ($headers): void {
+                /** @var string $tagName */
+                if (!\is_scalar($tagValue)) {
+                    return;
+                }
+
+                $headers->addTextHeader($tagName, (string) $tagValue);
+            });
 
         if ($email instanceof TemplatedEmail) {
             $templatedEmail->htmlTemplate($email->htmlTemplatePath()->toString());

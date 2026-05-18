@@ -13,6 +13,7 @@ use TournayreLabs\Contracts\Log\LoggerInterface;
 use TournayreLabs\Contracts\Response\ResponseInterface;
 use TournayreLabs\Contracts\Routing\RoutingInterface;
 use TournayreLabs\Contracts\Templating\TemplatingInterface;
+use TournayreLabs\Primitives\Collection;
 
 final readonly class ResponseService implements ResponseInterface
 {
@@ -88,7 +89,12 @@ final readonly class ResponseService implements ResponseInterface
 
     public function file(string $file, string $filename, array $headers = []): BinaryFileResponse
     {
-        $contentDisposition = $headers['Content-Disposition'] ?? 'attachment';
+        $contentDisposition = Collection::of([$headers['Content-Disposition'] ?? 'attachment'])
+            ->filterWith(static fn (mixed $value): bool => \is_scalar($value))
+            ->first()
+        ;
+        $contentDisposition = \is_scalar($contentDisposition) ? $contentDisposition : 'attachment';
+
         $headers['Content-Disposition'] = sprintf('%s; filename="%s"', $contentDisposition, $filename);
         $this->logger->info('Returning file: '.$file, ['filename' => $filename, 'headers' => $headers]);
 
