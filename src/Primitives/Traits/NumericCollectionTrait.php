@@ -7,6 +7,7 @@ namespace TournayreLabs\Primitives\Traits;
 use Aimeos\Map as AimeosMap;
 use TournayreLabs\Common\Assert\Assert;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Contracts\Types\NumericInterface;
 use TournayreLabs\Primitives\Collection as Collection_;
 use TournayreLabs\Primitives\Numeric;
 
@@ -40,9 +41,8 @@ trait NumericCollectionTrait
      */
     public function add(mixed $numeric): self
     {
-        Assert::isInstanceOf($numeric, Numeric::class);
-        /** @var Numeric $numeric */
-
+        Assert::isInstanceOf($numeric, NumericInterface::class);
+        /** @var NumericInterface $numeric */
         Assert::same($numeric->precision(), $this->precision, 'Precisions must be the same.');
 
         $clone = clone $this;
@@ -66,8 +66,8 @@ trait NumericCollectionTrait
 
         if ($this->hasOneElement()->isTrue()) {
             $first = $this->first();
-            Assert::isInstanceOf($first, Numeric::class);
-            /** @var Numeric $first */
+            Assert::isInstanceOf($first, NumericInterface::class);
+            /** @var NumericInterface $first */
 
             return Numeric::of($first->value(), $this->precision);
         }
@@ -93,8 +93,8 @@ trait NumericCollectionTrait
 
         if ($this->hasOneElement()->isTrue()) {
             $first = $this->first();
-            Assert::isInstanceOf($first, Numeric::class);
-            /** @var Numeric $first */
+            Assert::isInstanceOf($first, NumericInterface::class);
+            /** @var NumericInterface $first */
 
             return Numeric::of($first->value(), $this->precision);
         }
@@ -122,8 +122,8 @@ trait NumericCollectionTrait
 
         if ($this->hasOneElement()->isTrue()) {
             $first = $this->first();
-            Assert::isInstanceOf($first, Numeric::class);
-            /** @var Numeric $first */
+            Assert::isInstanceOf($first, NumericInterface::class);
+            /** @var NumericInterface $first */
 
             return Numeric::of($first->value(), $this->precision);
         }
@@ -151,8 +151,8 @@ trait NumericCollectionTrait
 
         if ($this->hasOneElement()->isTrue()) {
             $first = $this->first();
-            Assert::isInstanceOf($first, Numeric::class);
-            /** @var Numeric $first */
+            Assert::isInstanceOf($first, NumericInterface::class);
+            /** @var NumericInterface $first */
 
             return Numeric::of($first->value(), $this->precision);
         }

@@ -519,21 +519,28 @@ final readonly class Collection implements AddInterface, AllInterface, AtInterfa
      */
     public static function of(Collection|AimeosMap|array|string|null $collection = []): self
     {
-        return match (true) {
-            $collection instanceof Collection => $collection,
-            is_string($collection) => new self(
+        if (Mixed_::of($collection)->is()->instanceOf(Collection::class)->isTrue()) {
+            return $collection;
+        }
+
+        if (Mixed_::of($collection)->is()->string()->isTrue()) {
+            return new self(
                 collection: AimeosMap::from([$collection]),
                 isReadOnly: Bool_::fromBool(false),
-            ),
-            $collection instanceof AimeosMap => new self(
+            );
+        }
+
+        if (Mixed_::of($collection)->is()->instanceOf(AimeosMap::class)->isTrue()) {
+            return new self(
                 collection: $collection,
                 isReadOnly: Bool_::fromBool(false),
-            ),
-            default => new self(
-                collection: AimeosMap::from($collection ?? []),
-                isReadOnly: Bool_::fromBool(false),
-            ),
-        };
+            );
+        }
+
+        return new self(
+            collection: AimeosMap::from($collection ?? []),
+            isReadOnly: Bool_::fromBool(false),
+        );
     }
 
     public function isReadOnly(): Bool_

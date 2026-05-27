@@ -49,6 +49,7 @@ services:
           - '%currentWorkingDirectory%/src/Component/Mailer/Configuration/MailerConfiguration.php'
           - '%currentWorkingDirectory%/src/Common/Log/AbstractLogger.php'
           - '%currentWorkingDirectory%/rector/'
+          - '%currentWorkingDirectory%/tools/'
       tags:
         - phpstan.rules.rule
 
@@ -104,6 +105,7 @@ services:
           - '%currentWorkingDirectory%/src/TryCatch/NullThrowableHandler.php'
           - '%currentWorkingDirectory%/tests/'
           - '%currentWorkingDirectory%/rector/'
+          - '%currentWorkingDirectory%/tools/'
       tags:
         - phpstan.rules.rule
 
@@ -236,5 +238,6 @@ services:
           - '%currentWorkingDirectory%/src/Symfony/Response/ResponseService.php'
           - '%currentWorkingDirectory%/tests/'
           - '%currentWorkingDirectory%/rector/'
+          - '%currentWorkingDirectory%/tools/'
       tags:
         - phpstan.rules.rule

@@ -6,6 +6,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\DiffAssocInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Trait DiffAssoc.
@@ -23,7 +24,7 @@ trait DiffAssoc
      */
     public function diffAssoc($elements): self
     {
-        if ($elements instanceof self) {
+        if (Mixed_::of($elements)->is()->instanceOf(static::class)->isTrue()) {
             $elements = $elements->toArray();
         }
 
@@ -42,7 +43,7 @@ trait DiffAssoc
      */
     public function diffAssocWith($elements, \Closure $callback): self
     {
-        if ($elements instanceof self) {
+        if (Mixed_::of($elements)->is()->instanceOf(static::class)->isTrue()) {
             $elements = $elements->toArray();
         }
 

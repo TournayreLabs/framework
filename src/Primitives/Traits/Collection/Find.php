@@ -7,6 +7,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Collection\FindInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Trait Find.
@@ -32,7 +33,7 @@ trait Find
         try {
             return $this->collection->find($callback, RuntimeException::new('No matching element found.'), $reverse);
         } catch (\Throwable $throwable) {
-            if ($throwable instanceof RuntimeException) {
+            if (Mixed_::of($throwable)->is()->instanceOf(RuntimeException::class)->isTrue()) {
                 throw $throwable;
             }
             throw RuntimeException::fromThrowable($throwable);

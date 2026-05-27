@@ -11,6 +11,7 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\TryCatch\ThrowableHandlerCollectionInterface;
 use TournayreLabs\Contracts\TryCatch\ThrowableHandlerInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Primitives\Traits\Collection\Add;
 use TournayreLabs\Primitives\Traits\Collection\ToArray;
 
@@ -50,7 +51,7 @@ final class ThrowableHandlerCollection implements ThrowableHandlerCollectionInte
             null
         );
 
-        if ($handler instanceof ThrowableHandlerInterface) {
+        if (Mixed_::of($handler)->is()->instanceOf(ThrowableHandlerInterface::class)->isTrue()) {
             return $handler;
         }
 

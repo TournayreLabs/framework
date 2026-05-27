@@ -12,6 +12,7 @@ use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use TournayreLabs\Contracts\Log\LoggerInterface;
 use TournayreLabs\Contracts\Persistance\AllowFlushInterface;
+use TournayreLabs\Primitives\Mixed_;
 
 final readonly class DoctrineTransactionSubscriber implements EventSubscriberInterface
 {
@@ -39,7 +40,7 @@ final readonly class DoctrineTransactionSubscriber implements EventSubscriberInt
         }
 
         $controller = $event->getController();
-        if (!is_array($controller) || !isset($controller[0])) {
+        if (Mixed_::of($controller)->is()->array()->isFalse() || !isset($controller[0])) {
             return;
         }
 
@@ -56,7 +57,7 @@ final readonly class DoctrineTransactionSubscriber implements EventSubscriberInt
 
     private function isAllowFlushController(object $controller): bool
     {
-        return $controller instanceof AllowFlushInterface;
+        return Mixed_::of($controller)->is()->instanceOf(AllowFlushInterface::class)->isTrue();
     }
 
     /**
@@ -66,7 +67,7 @@ final readonly class DoctrineTransactionSubscriber implements EventSubscriberInt
      */
     private function controllerContext(mixed $controller): array
     {
-        if (!is_array($controller) || !isset($controller[0], $controller[1])) {
+        if (Mixed_::of($controller)->is()->array()->isFalse() || !isset($controller[0], $controller[1])) {
             return ['controller' => 'unknown'];
         }
 
@@ -109,7 +110,7 @@ final readonly class DoctrineTransactionSubscriber implements EventSubscriberInt
 
     private function isValidTransactionController(mixed $controller): bool
     {
-        return is_array($controller) && isset($controller[0]) && $this->isAllowFlushController($controller[0]);
+        return Mixed_::of($controller)->is()->array()->isTrue() && isset($controller[0]) && $this->isAllowFlushController($controller[0]);
     }
 
     public function rollbackTransaction(ExceptionEvent $event): void

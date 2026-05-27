@@ -100,7 +100,8 @@ final readonly class DoctrineTransactionMiddleware implements MiddlewareInterfac
             }
 
             return is_a($handlerClass, AllowFlushInterface::class, true);
-            })->isTrue();
+            })->isTrue()
+        ;
     }
 
     private function rollback(): void

@@ -9,6 +9,7 @@ use TournayreLabs\Contracts\Collection\AsMapInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
 /**
@@ -35,12 +36,14 @@ final class TemplateContextCollection implements \IteratorAggregate, AsMapInterf
      */
     public function has($offset): Bool_
     {
-        if (!\is_int($offset) && !\is_string($offset) && !\is_array($offset)) {
-            return Bool_::asFalse();
+        if (
+            Mixed_::of($offset)->is()->int()->isTrue()
+            || Mixed_::of($offset)->is()->string()->isTrue()
+            || Mixed_::of($offset)->is()->array()->isTrue()
+        ) {
+            return $this->collection->has($offset);
         }
 
-        return $this->collection
-            ->has($offset)
-        ;
+        return Bool_::asFalse();
     }
 }

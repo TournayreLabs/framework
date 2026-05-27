@@ -7,12 +7,14 @@ namespace TournayreLabs\Symfony\Filesystem;
 use Symfony\Component\Filesystem\Filesystem as SymfonyFilesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo as SymfonySplFileInfo;
+use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Common\Types\DirectoryOrFile;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Filesystem\FilesystemInterface;
 use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\Collection\FileCollection;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Wrapper\SplFileInfo;
 
 final readonly class Filesystem implements FilesystemInterface
@@ -238,16 +240,15 @@ final readonly class Filesystem implements FilesystemInterface
     {
         $arrayFiles = is_array($files) ? $files : iterator_to_array($files, false);
         $splFiles = Collection::of($arrayFiles)
-            ->filterWith(static fn (mixed $file): bool => $file instanceof SymfonySplFileInfo)
+            ->filterWith(static fn (mixed $file): bool => Mixed_::of($file)->is()->instanceOf(SymfonySplFileInfo::class)->isTrue())
             ->map(static function (mixed $file): SplFileInfo {
-                /** @var SymfonySplFileInfo $file */
-                return SplFileInfo::of(
-                $file->getRealPath(),
-                $file->getRelativePath(),
-                $file->getRelativePathname()
-                );
+                if (Mixed_::of($file)->is()->instanceOf(SymfonySplFileInfo::class)->isTrue()) {
+                    return SplFileInfo::of($file->getRealPath(), $file->getRelativePath(), $file->getRelativePathname());
+                }
+                throw RuntimeException::new('Expected SymfonySplFileInfo after filter');
             })
-            ->toArray();
+            ->toArray()
+        ;
 
         /** @var array<int|string, SplFileInfo> $splFiles */
 

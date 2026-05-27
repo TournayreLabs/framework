@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Collection;
 
 use TournayreLabs\Common\Assert\Assert;
+use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Collection\AsListInterface;
 use TournayreLabs\Contracts\DateTime\DateTimeInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
 /**
@@ -25,7 +27,12 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
     {
         Assert::isListOf($collection, DateTimeInterface::class);
 
-        return new self(Collection::of($collection));
+        return self::fromCollection(Collection::of($collection));
+    }
+
+    private static function fromCollection(Collection $collection): self
+    {
+        return new self($collection);
     }
 
     /**
@@ -40,11 +47,9 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->collection
             ->usort(static fn (DateTimeInterface $a, DateTimeInterface $b) => $a <=> $b)
             ->values()
-            ->toArray()
         ;
-        /** @var array<int, DateTimeInterface> $values */
 
-        return DateTimeCollection::asList($values);
+        return self::fromCollection($values);
     }
 
     /**
@@ -59,11 +64,9 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->collection
             ->usort(static fn (DateTimeInterface $a, DateTimeInterface $b) => $b <=> $a)
             ->values()
-            ->toArray()
         ;
-        /** @var array<int, DateTimeInterface> $values */
 
-        return DateTimeCollection::asList($values);
+        return self::fromCollection($values);
     }
 
     /**
@@ -79,7 +82,9 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->first()
         ;
         Assert::isInstanceOf($dateTime, DateTimeInterface::class);
-        /** @var DateTimeInterface $dateTime */
+        if (Mixed_::of($dateTime)->is()->instanceOf(DateTimeInterface::class)->isFalse()) {
+            throw RuntimeException::new('Unexpected DateTime value');
+        }
 
         return $dateTime;
     }
@@ -97,7 +102,9 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->first()
         ;
         Assert::isInstanceOf($dateTime, DateTimeInterface::class);
-        /** @var DateTimeInterface $dateTime */
+        if (Mixed_::of($dateTime)->is()->instanceOf(DateTimeInterface::class)->isFalse()) {
+            throw RuntimeException::new('Unexpected DateTime value');
+        }
 
         return $dateTime;
     }
@@ -114,11 +121,9 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->collection
             ->filterWith(static fn (DateTimeInterface $date) => $date >= $start && $date <= $end)
             ->values()
-            ->toArray()
         ;
-        /** @var array<int, DateTimeInterface> $map */
 
-        return DateTimeCollection::asList($map);
+        return self::fromCollection($map);
     }
 
     /**
@@ -133,11 +138,9 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->collection
             ->filterWith(static fn (DateTimeInterface $d) => $d < $date)
             ->values()
-            ->toArray()
         ;
-        /** @var array<int, DateTimeInterface> $map */
 
-        return DateTimeCollection::asList($map);
+        return self::fromCollection($map);
     }
 
     /**
@@ -152,10 +155,8 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->collection
             ->filterWith(static fn (DateTimeInterface $d) => $d > $date)
             ->values()
-            ->toArray()
         ;
-        /** @var array<int, DateTimeInterface> $map */
 
-        return DateTimeCollection::asList($map);
+        return self::fromCollection($map);
     }
 }

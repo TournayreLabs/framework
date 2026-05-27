@@ -11,6 +11,7 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Null\NullTrait;
 use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\DateTime;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Provides date and time behaviors for the DateTime primitive wrapper.
@@ -42,7 +43,7 @@ trait DateTimeTrait
      */
     public static function of($datetime): DateTimeInterface
     {
-        if ($datetime instanceof self) {
+        if (Mixed_::of($datetime)->is()->instanceOf(static::class)->isTrue()) {
             try {
                 return new self(Carbon::parse($datetime->toDateTime()));
             } catch (\Exception $exception) {
@@ -50,7 +51,7 @@ trait DateTimeTrait
             }
         }
 
-        if ($datetime instanceof \DateTimeInterface) {
+        if (Mixed_::of($datetime)->is()->instanceOf(\DateTimeInterface::class)->isTrue()) {
             try {
                 return new self(Carbon::parse($datetime));
             } catch (\Exception $exception) {
@@ -58,7 +59,7 @@ trait DateTimeTrait
             }
         }
 
-        if ($datetime instanceof DateTimeInterface) {
+        if (Mixed_::of($datetime)->is()->instanceOf(DateTimeInterface::class)->isTrue()) {
             try {
                 return new self(Carbon::parse($datetime->toDateTime()));
             } catch (\Exception $exception) {
@@ -66,7 +67,7 @@ trait DateTimeTrait
             }
         }
 
-        if (is_int($datetime)) {
+        if (Mixed_::of($datetime)->is()->int()->isTrue()) {
             try {
                 return new self(Carbon::createFromTimestamp($datetime));
             } catch (\Exception $exception) {
@@ -90,7 +91,7 @@ trait DateTimeTrait
      */
     public static function ofWithTimezone($datetime, \DateTimeZone $timezone): DateTimeInterface
     {
-        if ($datetime instanceof self) {
+        if (Mixed_::of($datetime)->is()->instanceOf(static::class)->isTrue()) {
             try {
                 return new self(Carbon::parse($datetime->toDateTime())->setTimezone($timezone));
             } catch (\Exception $exception) {
@@ -98,7 +99,7 @@ trait DateTimeTrait
             }
         }
 
-        if ($datetime instanceof \DateTimeInterface) {
+        if (Mixed_::of($datetime)->is()->instanceOf(\DateTimeInterface::class)->isTrue()) {
             try {
                 return new self(Carbon::parse($datetime)->setTimezone($timezone));
             } catch (\Exception $exception) {
@@ -106,7 +107,7 @@ trait DateTimeTrait
             }
         }
 
-        if ($datetime instanceof DateTimeInterface) {
+        if (Mixed_::of($datetime)->is()->instanceOf(DateTimeInterface::class)->isTrue()) {
             try {
                 return new self(Carbon::parse($datetime->toDateTime())->setTimezone($timezone));
             } catch (\Exception $exception) {
@@ -114,7 +115,7 @@ trait DateTimeTrait
             }
         }
 
-        if (is_int($datetime)) {
+        if (Mixed_::of($datetime)->is()->int()->isTrue()) {
             try {
                 return new self(Carbon::createFromTimestamp($datetime)->setTimezone($timezone));
             } catch (\Exception $exception) {
@@ -3307,7 +3308,7 @@ trait DateTimeTrait
     public function weekday(): int
     {
         $weekday = $this->datetime->weekday();
-        if (!is_int($weekday)) {
+        if (Mixed_::of($weekday)->is()->int()->isFalse()) {
             throw InvalidArgumentException::new('Unable to get weekday as integer.');
         }
 
@@ -3324,7 +3325,7 @@ trait DateTimeTrait
     public function isoWeekday(): int
     {
         $weekday = $this->datetime->isoWeekday();
-        if (!is_int($weekday)) {
+        if (Mixed_::of($weekday)->is()->int()->isFalse()) {
             throw InvalidArgumentException::new('Unable to get ISO weekday as integer.');
         }
 
@@ -3615,7 +3616,7 @@ trait DateTimeTrait
     public function numberOfDaysIsLowerThanOrEquals($value, int $numberOfDays): Bool_
     {
         $dateTime = $this->toDateTime();
-        $valueDateTime = $value instanceof DateTimeInterface ? $value->toDateTime() : DateTime::of($value)->toDateTime();
+        $valueDateTime = Mixed_::of($value)->is()->instanceOf(DateTimeInterface::class)->isTrue() ? $value->toDateTime() : DateTime::of($value)->toDateTime();
 
         $diff = $dateTime->diff($valueDateTime);
 

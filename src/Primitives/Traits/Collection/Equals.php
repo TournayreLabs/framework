@@ -7,6 +7,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 use TournayreLabs\Contracts\Collection\EqualsInterface;
 use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Trait Equals.
@@ -24,7 +25,7 @@ trait Equals
      */
     public function equals($elements): Bool_
     {
-        if ($elements instanceof self) {
+        if (Mixed_::of($elements)->is()->instanceOf(static::class)->isTrue()) {
             $elements = $elements->toArray();
         }
 

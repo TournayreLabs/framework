@@ -9,6 +9,7 @@ use TournayreLabs\Contracts\Collection\AsMapInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggableInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
 /**
@@ -58,11 +59,14 @@ final class TagCollection implements \IteratorAggregate, LoggableInterface, AsMa
     {
         $log = [];
         Collection::of($this->collection->toArray())
-            ->filterWith(static fn (mixed $tag): bool => \is_string($tag))
             ->each(static function (mixed $tag) use (&$log): void {
-                /** @var string $tag */
+                if (Mixed_::of($tag)->is()->string()->isFalse()) {
+                    return;
+                }
+
                 $log[] = $tag;
-            });
+            })
+        ;
 
         return $log;
     }

@@ -10,6 +10,7 @@ use TournayreLabs\Contracts\Exception\ThrowableFactoryInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\TryCatch\ExecutableTryCatchInterface;
 use TournayreLabs\Contracts\TryCatch\ThrowableHandlerCollectionInterface;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Class TryCatch.
@@ -207,7 +208,7 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
 
             $handler = $this->handlers->findHandlerFor($throwable);
 
-            if ($handler instanceof NullThrowableHandler) {
+            if (Mixed_::of($handler)->is()->instanceOf(NullThrowableHandler::class)->isTrue()) {
                 throw $throwable;
             }
 
@@ -228,7 +229,7 @@ final readonly class TryCatch implements ExecutableTryCatchInterface
      */
     private function executeFinallyBlock(mixed $currentResult): mixed
     {
-        if (!$this->finallyBlock instanceof \Closure) {
+        if (Mixed_::of($this->finallyBlock)->is()->instanceOf(\Closure::class)->isFalse()) {
             return $currentResult;
         }
 

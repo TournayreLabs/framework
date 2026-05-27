@@ -49,12 +49,10 @@ final class EmailAddressCollection implements \IteratorAggregate, AsListInterfac
     public static function fromArray(array $emails): self
     {
         $map = Collection::of($emails)
-            ->each(static fn (string $email) => EmailAddress::of($email))
+            ->map(static fn (string $email): EmailAddress => EmailAddress::of($email))
             ->values()
-            ->toArray()
         ;
-        /** @var array<int, EmailAddress> $map */
 
-        return EmailAddressCollection::asList($map);
+        return new self($map);
     }
 }

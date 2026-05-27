@@ -6,6 +6,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\MinInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Primitives\Numeric;
 
 /**
@@ -29,11 +30,11 @@ trait Min
         }
 
         $min = $this->collection->min();
-        if (!\is_int($min) && !\is_float($min)) {
-            return Numeric::of(0);
+        if (Mixed_::of($min)->is()->int()->isTrue() || Mixed_::of($min)->is()->float()->isTrue()) {
+            return Numeric::fromFloat((float) $min);
         }
 
-        return Numeric::fromFloat((float) $min);
+        return Numeric::of(0);
     }
 
     /**
@@ -50,10 +51,10 @@ trait Min
         }
 
         $min = $this->collection->min($key);
-        if (!\is_int($min) && !\is_float($min)) {
-            return Numeric::of(0);
+        if (Mixed_::of($min)->is()->int()->isTrue() || Mixed_::of($min)->is()->float()->isTrue()) {
+            return Numeric::fromFloat((float) $min);
         }
 
-        return Numeric::fromFloat((float) $min);
+        return Numeric::of(0);
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\TryCatch;
 
 use TournayreLabs\Contracts\TryCatch\ThrowableHandlerInterface;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Class ThrowableHandler.
@@ -30,7 +31,7 @@ final readonly class ThrowableHandler implements ThrowableHandlerInterface
 
     public function canHandle(\Throwable $throwable): bool
     {
-        return $throwable instanceof $this->throwableClass;
+        return Mixed_::of($throwable)->is()->instanceOf($this->throwableClass)->isTrue();
     }
 
     public function handle(\Throwable $throwable): mixed

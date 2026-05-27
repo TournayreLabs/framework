@@ -6,6 +6,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\ReplaceInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Trait Replace.
@@ -24,7 +25,7 @@ trait Replace
      */
     public function replace($elements, bool $recursive = true): self
     {
-        if ($elements instanceof self) {
+        if (Mixed_::of($elements)->is()->instanceOf(static::class)->isTrue()) {
             $elements = $elements->toArray();
         }
 

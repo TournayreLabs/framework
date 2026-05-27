@@ -14,6 +14,7 @@ use TournayreLabs\Contracts\Response\ResponseInterface;
 use TournayreLabs\Contracts\Routing\RoutingInterface;
 use TournayreLabs\Contracts\Templating\TemplatingInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 
 final readonly class ResponseService implements ResponseInterface
 {
@@ -90,10 +91,12 @@ final readonly class ResponseService implements ResponseInterface
     public function file(string $file, string $filename, array $headers = []): BinaryFileResponse
     {
         $contentDisposition = Collection::of([$headers['Content-Disposition'] ?? 'attachment'])
-            ->filterWith(static fn (mixed $value): bool => \is_scalar($value))
+            ->filterWith(static fn (mixed $value): bool => Mixed_::of($value)->is()->scalar()->isTrue())
             ->first()
         ;
-        $contentDisposition = \is_scalar($contentDisposition) ? $contentDisposition : 'attachment';
+        if (Mixed_::of($contentDisposition)->is()->scalar()->isFalse()) {
+            $contentDisposition = 'attachment';
+        }
 
         $headers['Content-Disposition'] = sprintf('%s; filename="%s"', $contentDisposition, $filename);
         $this->logger->info('Returning file: '.$file, ['filename' => $filename, 'headers' => $headers]);

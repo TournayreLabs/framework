@@ -6,6 +6,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\MaxInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Primitives\Numeric;
 
 /**
@@ -29,11 +30,11 @@ trait Max
         }
 
         $max = $this->collection->max();
-        if (!\is_int($max) && !\is_float($max)) {
-            return Numeric::of(0);
+        if (Mixed_::of($max)->is()->int()->isTrue() || Mixed_::of($max)->is()->float()->isTrue()) {
+            return Numeric::fromFloat((float) $max);
         }
 
-        return Numeric::fromFloat((float) $max);
+        return Numeric::of(0);
     }
 
     /**
@@ -50,10 +51,10 @@ trait Max
         }
 
         $max = $this->collection->max($key);
-        if (!\is_int($max) && !\is_float($max)) {
-            return Numeric::of(0);
+        if (Mixed_::of($max)->is()->int()->isTrue() || Mixed_::of($max)->is()->float()->isTrue()) {
+            return Numeric::fromFloat((float) $max);
         }
 
-        return Numeric::fromFloat((float) $max);
+        return Numeric::of(0);
     }
 }

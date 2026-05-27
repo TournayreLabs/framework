@@ -2,6 +2,7 @@ includes:
     - tools/phpstan/elegant-object.neon
     - tools/phpstan/disallowed-calls.neon
     - tools/phpstan/disallowed-constructs.neon
+    - tools/phpstan/mixed-type-specifier.neon
 
 parameters:
     level: 9
@@ -12,3 +13,12 @@ parameters:
         -
             message: '#Variable static method call on Webmozart\\Assert\\Assert#'
             path: src/Common/Assert/Assert.php
+        # PHPStan extension code — EO rules don't apply to the extension infrastructure
+        -
+            message: '#(Elegant Objects|new outside of secondary constructors|instanceof.*deprecated|empty\(\) is not allowed|returns null|which violates object encapsulation)#'
+            path: tools/phpstan/Extension/MixedIsTypeSpecifyingExtension.php
+        # numeric() check on a string-narrowed variable: is_numeric() is a runtime check,
+        # not representable purely via type narrowing (numeric strings are a subset of strings)
+        -
+            message: '#Call to method TournayreLabs\\Primitives\\Bool_::isFalse\(\) will always evaluate to (true|false)#'
+            path: src/Primitives/Numeric.php

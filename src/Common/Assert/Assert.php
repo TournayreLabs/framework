@@ -15,6 +15,7 @@ use TournayreLabs\Contracts\Common\Assert\AssertNumericInterface;
 use TournayreLabs\Contracts\Common\Assert\AssertStringInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Primitives\Primitive;
 use TournayreLabs\Primitives\String_;
 
@@ -46,7 +47,10 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
             return;
         }
 
-        /** @var class-string<object> $classOrType */
+        if (!class_exists($classOrType) && !interface_exists($classOrType)) {
+            throw InvalidArgumentException::new(\sprintf('Expected class-string for "%s".', $classOrType));
+        }
+
         \Webmozart\Assert\Assert::allIsInstanceOf($array, $classOrType, $message);
     }
 
@@ -73,7 +77,10 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
             return;
         }
 
-        /** @var class-string<object> $classOrType */
+        if (!class_exists($classOrType) && !interface_exists($classOrType)) {
+            throw InvalidArgumentException::new(\sprintf('Expected class-string for "%s".', $classOrType));
+        }
+
         \Webmozart\Assert\Assert::allIsInstanceOf($array, $classOrType, $message);
     }
 
@@ -84,7 +91,7 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
     {
         $primitive = Primitive::tryFrom($type);
 
-        if (!$primitive instanceof Primitive) {
+        if (Mixed_::of($primitive)->is()->instanceOf(Primitive::class)->isFalse()) {
             throw InvalidArgumentException::new(\sprintf('Invalid type "%s". Expected one of "string", "int", "float", "bool", "array", "object" or "null".', $type));
         }
 
@@ -98,7 +105,11 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
      */
     public static function allIsType(array $value, string|Primitive $type, string $message = ''): void
     {
-        $typeAsString = $type instanceof Primitive ? $type->value : $type;
+        if (Mixed_::of($type)->is()->instanceOf(Primitive::class)->isTrue()) {
+            $typeAsString = $type->value;
+        } else {
+            $typeAsString = $type;
+        }
         Collection::of($value)->each(static fn (mixed $element) => Assert::isType($element, $typeAsString, $message));
     }
 
@@ -109,7 +120,7 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
      */
     public static function __callStatic(mixed $name, array $arguments): void
     {
-        if (!\is_string($name) && !\is_int($name) && !\is_float($name) && !\is_bool($name)) {
+        if (Mixed_::of($name)->is()->scalar()->isFalse()) {
             throw InvalidArgumentException::new('Assert method name must be scalar.');
         }
 

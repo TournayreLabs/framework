@@ -6,6 +6,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\IntersectAssocInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Trait IntersectAssoc.
@@ -23,7 +24,7 @@ trait IntersectAssoc
      */
     public function intersectAssoc($elements): self
     {
-        if ($elements instanceof self) {
+        if (Mixed_::of($elements)->is()->instanceOf(static::class)->isTrue()) {
             $elements = $elements->toArray();
         }
 
@@ -42,7 +43,7 @@ trait IntersectAssoc
      */
     public function intersectAssocWith($elements, \Closure $callback): self
     {
-        if ($elements instanceof self) {
+        if (Mixed_::of($elements)->is()->instanceOf(static::class)->isTrue()) {
             $elements = $elements->toArray();
         }
 

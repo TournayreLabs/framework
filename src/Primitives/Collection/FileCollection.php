@@ -11,6 +11,7 @@ use TournayreLabs\Contracts\Collection\AsMapInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Contracts\Log\LoggableInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 use TournayreLabs\Wrapper\SplFileInfo;
 
@@ -119,11 +120,12 @@ final class FileCollection implements \IteratorAggregate, LoggableInterface, AsL
     {
         $log = [];
         Collection::of($this->collection->toArray())
-            ->filterWith(static fn (mixed $file): bool => $file instanceof SplFileInfo)
+            ->filterWith(static fn (mixed $file): bool => Mixed_::of($file)->is()->instanceOf(SplFileInfo::class)->isTrue())
             ->each(static function (mixed $file) use (&$log): void {
                 /** @var SplFileInfo $file */
                 $log[] = $file->toLog();
-            });
+            })
+        ;
 
         return $log;
     }

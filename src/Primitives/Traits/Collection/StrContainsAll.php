@@ -6,6 +6,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\StrContainsAllInterface;
 use TournayreLabs\Primitives\Bool_;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Trait StrContainsAll.
@@ -24,12 +25,12 @@ trait StrContainsAll
      */
     public function strContainsAll(mixed $value, string $encoding = 'UTF-8'): Bool_
     {
-        if (!\is_string($value) && !\is_array($value)) {
-            return Bool_::asFalse();
+        if (Mixed_::of($value)->is()->string()->isTrue() || Mixed_::of($value)->is()->array()->isTrue()) {
+            $strContainsAll = $this->collection->strContainsAll($value, $encoding);
+
+            return Bool_::fromBool($strContainsAll);
         }
 
-        $strContainsAll = $this->collection->strContainsAll($value, $encoding);
-
-        return Bool_::fromBool($strContainsAll);
+        return Bool_::asFalse();
     }
 }

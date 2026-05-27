@@ -7,6 +7,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 use TournayreLabs\Common\Exception\MutableException;
 use TournayreLabs\Contracts\Collection\SetInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Trait Set.
@@ -23,11 +24,9 @@ trait Set
     public function set(mixed $key, mixed $value): void
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
-        if (!\is_int($key) && !\is_string($key)) {
-            return;
+        if (Mixed_::of($key)->is()->int()->isTrue() || Mixed_::of($key)->is()->string()->isTrue()) {
+            $this->collection->set($key, $value);
         }
-
-        $this->collection->set($key, $value);
     }
 
     /**
@@ -38,14 +37,11 @@ trait Set
     public function setWithCallback(mixed $key, mixed $value, \Closure $callback): void
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
-        if (!\is_int($key) && !\is_string($key)) {
-            return;
+        if (
+            (Mixed_::of($key)->is()->int()->isTrue() || Mixed_::of($key)->is()->string()->isTrue())
+            && $callback($key, $value)
+        ) {
+            $this->collection->set($key, $value);
         }
-
-        if (!$callback($key, $value)) {
-            return;
-        }
-
-        $this->collection->set($key, $value);
     }
 }

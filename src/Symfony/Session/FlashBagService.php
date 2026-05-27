@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface as SymfonyF
 use TournayreLabs\Contracts\Session\FlashBagInterface;
 use TournayreLabs\Primitives\Collection;
 use TournayreLabs\Primitives\FlashType;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Update config/services.yaml:
@@ -65,7 +66,11 @@ final readonly class FlashBagService implements FlashBagInterface
      */
     private function displayMessages(FlashType $type, $message): void
     {
-        $messages = is_string($message) ? [$message] : $message;
+        if (Mixed_::of($message)->is()->string()->isTrue()) {
+            $messages = [$message];
+        } else {
+            $messages = $message;
+        }
 
         Collection::of($messages)->each(fn (string $flashBagMessage) => $this->symfonyFlashBag->add($type->value, $flashBagMessage));
     }

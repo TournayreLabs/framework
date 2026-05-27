@@ -11,6 +11,7 @@ use TournayreLabs\Component\Mailer\VO\Email;
 use TournayreLabs\Component\Mailer\VO\EmailContact;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Wrapper\SplFileInfo;
 
 /**
@@ -53,19 +54,20 @@ abstract class EmailAdapter
                 /** @var SplFileInfo $attachment */
                 $pathname = $attachment->pathname();
                 $symfonyEmail->attachFromPath($pathname->toString());
-            });
+            })
+        ;
 
         $headers = $symfonyEmail->getHeaders();
         Collection::of($email->tags()->toArray())
-            ->filterWith(static fn (mixed $tagValue, mixed $tagName): bool => \is_string($tagName) && \is_scalar($tagValue))
+            ->filterWith(static fn (mixed $tagValue, mixed $tagName): bool => Mixed_::of($tagName)->is()->string()->isTrue() && Mixed_::of($tagValue)->is()->scalar()->isTrue())
             ->each(static function (mixed $tagValue, mixed $tagName) use ($headers): void {
-                /** @var string $tagName */
-                if (!\is_scalar($tagValue)) {
+                if (Mixed_::of($tagValue)->is()->scalar()->isFalse()) {
                     return;
                 }
-
+                /** @var string $tagName */
                 $headers->addTextHeader($tagName, (string) $tagValue);
-            });
+            })
+        ;
 
         return $symfonyEmail;
     }

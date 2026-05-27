@@ -61,6 +61,29 @@ parameters:
             message: 'use TournayreLabs\Common\Assert\Assert instead, because it provides better error handling and is always enabled'
         -
             function:
+                - 'is_string()'
+                - 'is_int()'
+                - 'is_integer()'
+                - 'is_long()'
+                - 'is_float()'
+                - 'is_double()'
+                - 'is_bool()'
+                - 'is_array()'
+                - 'is_object()'
+                - 'is_null()'
+                - 'is_numeric()'
+                - 'is_scalar()'
+                - 'is_callable()'
+            message: 'use Mixed_::of($value)->is()->*() instead for OOP type checking'
+            allowIn:
+                - '*/phpstan/*'
+                - src/Primitives/MixedAs.php
+                - src/Primitives/MixedIs.php
+                - src/Primitives/Mixed_.php
+                - src/Symfony/Filesystem/Filesystem.php
+                - tests/*
+        -
+            function:
                 - 'array_chunk()'           # chunk()
                 - 'array_column()'          # col()
                 - 'array_combine()'         # combine()
@@ -112,6 +135,7 @@ parameters:
             message: 'use TournayreLabs\Primitives\Collection instead'
             allowIn:
                 - '*/PHPStan/*'
+                - '*/phpstan/*'
                 - src/Primitives/String_.php
                 - tests/*
         -

@@ -21,11 +21,11 @@ final readonly class Int_
      */
     public static function of($value): self
     {
-        if ($value instanceof self) {
+        if (Mixed_::of($value)->is()->instanceOf(self::class)->isTrue()) {
             return $value;
         }
 
-        Assert::false(is_float($value), 'Integer::of() expects parameter 1 to be integer or string, '.gettype($value).' given');
+        Assert::false(Mixed_::of($value)->is()->float()->isTrue(), 'Integer::of() expects parameter 1 to be integer or string, '.gettype($value).' given');
 
         return new self((int) $value);
     }

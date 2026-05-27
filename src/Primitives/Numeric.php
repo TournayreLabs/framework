@@ -7,8 +7,9 @@ namespace TournayreLabs\Primitives;
 use TournayreLabs\Common\Exception\InvalidArgumentException;
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Contracts\Types\NumericInterface;
 
-final readonly class Numeric
+final readonly class Numeric implements NumericInterface
 {
     private float $value;
 
@@ -59,7 +60,7 @@ final readonly class Numeric
             InvalidArgumentException::new('Precision cannot be negative.')->throw();
         }
 
-        if (is_string($value) && !is_numeric($value)) {
+        if (Mixed_::of($value)->is()->string()->isTrue() && Mixed_::of($value)->is()->numeric()->isFalse()) {
             InvalidArgumentException::new('The provided string value must be numeric.')->throw();
         }
 
@@ -149,7 +150,11 @@ final readonly class Numeric
      */
     public function greaterThan($numeric): Bool_
     {
-        $that = $numeric instanceof self ? $numeric : self::of($numeric);
+        if (Mixed_::of($numeric)->is()->instanceOf(self::class)->isTrue()) {
+            $that = $numeric;
+        } else {
+            $that = self::of($numeric);
+        }
         $greaterThan = $this->value > $that->intValue();
 
         return Bool_::fromBool($greaterThan);
@@ -164,7 +169,11 @@ final readonly class Numeric
      */
     public function greaterThanOrEqual($numeric): Bool_
     {
-        $that = $numeric instanceof self ? $numeric : self::of($numeric);
+        if (Mixed_::of($numeric)->is()->instanceOf(self::class)->isTrue()) {
+            $that = $numeric;
+        } else {
+            $that = self::of($numeric);
+        }
         $greaterThanOrEqual = $this->value >= $that->value();
 
         return Bool_::fromBool($greaterThanOrEqual);
@@ -179,7 +188,11 @@ final readonly class Numeric
      */
     public function lessThan($numeric): Bool_
     {
-        $that = $numeric instanceof self ? $numeric : self::of($numeric);
+        if (Mixed_::of($numeric)->is()->instanceOf(self::class)->isTrue()) {
+            $that = $numeric;
+        } else {
+            $that = self::of($numeric);
+        }
         $lessThan = $this->value < $that->value();
 
         return Bool_::fromBool($lessThan);
@@ -194,7 +207,11 @@ final readonly class Numeric
      */
     public function lessThanOrEqual($numeric): Bool_
     {
-        $that = $numeric instanceof self ? $numeric : self::of($numeric);
+        if (Mixed_::of($numeric)->is()->instanceOf(self::class)->isTrue()) {
+            $that = $numeric;
+        } else {
+            $that = self::of($numeric);
+        }
         $lessThanOrEqual = $this->value <= $that->value();
 
         return Bool_::fromBool($lessThanOrEqual);
@@ -209,7 +226,11 @@ final readonly class Numeric
      */
     public function equalTo($numeric): Bool_
     {
-        $that = $numeric instanceof self ? $numeric : self::of($numeric);
+        if (Mixed_::of($numeric)->is()->instanceOf(self::class)->isTrue()) {
+            $that = $numeric;
+        } else {
+            $that = self::of($numeric);
+        }
         $equalTo = $this->value === $that->value();
 
         return Bool_::fromBool($equalTo);
@@ -224,7 +245,11 @@ final readonly class Numeric
      */
     public function notEqualTo($numeric): Bool_
     {
-        $that = $numeric instanceof self ? $numeric : self::of($numeric);
+        if (Mixed_::of($numeric)->is()->instanceOf(self::class)->isTrue()) {
+            $that = $numeric;
+        } else {
+            $that = self::of($numeric);
+        }
         $equalTo = $this->value !== $that->value();
 
         return Bool_::fromBool($equalTo);
@@ -240,8 +265,17 @@ final readonly class Numeric
      */
     public function between($min, $max): Bool_
     {
-        $minNumeric = $min instanceof self ? $min : Numeric::of($min);
-        $maxNumeric = $max instanceof self ? $max : Numeric::of($max);
+        if (Mixed_::of($min)->is()->instanceOf(self::class)->isTrue()) {
+            $minNumeric = $min;
+        } else {
+            $minNumeric = Numeric::of($min);
+        }
+
+        if (Mixed_::of($max)->is()->instanceOf(self::class)->isTrue()) {
+            $maxNumeric = $max;
+        } else {
+            $maxNumeric = Numeric::of($max);
+        }
 
         $minNumeric
             ->greaterThan($maxNumeric)
@@ -264,8 +298,17 @@ final readonly class Numeric
      */
     public function betweenOrEqual($min, $max): Bool_
     {
-        $minNumeric = $min instanceof self ? $min : Numeric::of($min);
-        $maxNumeric = $max instanceof self ? $max : Numeric::of($max);
+        if (Mixed_::of($min)->is()->instanceOf(self::class)->isTrue()) {
+            $minNumeric = $min;
+        } else {
+            $minNumeric = Numeric::of($min);
+        }
+
+        if (Mixed_::of($max)->is()->instanceOf(self::class)->isTrue()) {
+            $maxNumeric = $max;
+        } else {
+            $maxNumeric = Numeric::of($max);
+        }
 
         $minNumeric
             ->greaterThan($maxNumeric)

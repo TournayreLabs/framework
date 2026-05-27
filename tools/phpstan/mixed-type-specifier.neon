@@ -1,0 +1,5 @@
+services:
+    -
+        class: TournayreLabs\PHPStan\Extension\MixedIsTypeSpecifyingExtension
+        tags:
+            - phpstan.typeSpecifier.methodTypeSpecifyingExtension

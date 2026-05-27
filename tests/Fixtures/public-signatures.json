@@ -19461,7 +19461,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -20368,7 +20368,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -20757,7 +20757,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -22440,7 +22440,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -22680,7 +22680,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -22851,7 +22851,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -33667,7 +33667,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": null,
+                "returnType": "void",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -33677,7 +33677,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": null,
+                "returnType": "string",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -33687,7 +33687,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": null,
+                "returnType": "array",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -33697,7 +33697,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": null,
+                "returnType": "string",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -33707,7 +33707,7 @@
                 "static": false,
                 "abstract": true,
                 "final": false,
-                "returnType": null,
+                "returnType": "string",
                 "returnsReference": false,
                 "parameters": []
             },
@@ -38851,7 +38851,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -48975,7 +48975,7 @@
                     },
                     {
                         "name": "options",
-                        "type": "mixed",
+                        "type": "array|int",
                         "optional": false,
                         "default": {
                             "available": false
@@ -49816,7 +49816,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -49838,7 +49838,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false
@@ -49881,7 +49881,7 @@
                         "optional": true,
                         "default": {
                             "available": true,
-                            "value": " \t\n\r\u0000\u000b\f\u00a0\ufeff"
+                            "value": " \t\n\r\u0000\u000b\f ﻿"
                         },
                         "variadic": false,
                         "passedByReference": false

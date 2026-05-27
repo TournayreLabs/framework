@@ -7,6 +7,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 use TournayreLabs\Contracts\Collection\IsInterface;
 use TournayreLabs\Primitives\Bool_;
 use TournayreLabs\Primitives\Collection;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Trait Is.
@@ -25,7 +26,7 @@ trait Is
      */
     public function is($list, bool $strict = false): Bool_
     {
-        if ($list instanceof self) {
+        if (Mixed_::of($list)->is()->instanceOf(static::class)->isTrue()) {
             $list = $list->toArray();
         }
 

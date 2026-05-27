@@ -6,6 +6,7 @@ namespace TournayreLabs\Null;
 
 use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Adds null-object behavior to value objects through a NullEnum flag.
@@ -97,17 +98,17 @@ trait NullTrait
             return $this;
         }
 
-        if ($throwable instanceof \Throwable) {
+        if (Mixed_::of($throwable)->is()->instanceOf(\Throwable::class)->isTrue()) {
             RuntimeException::fromThrowable($throwable)->throw();
         }
 
-        if (!is_callable($throwable)) {
+        if (Mixed_::of($throwable)->is()->callable()->isFalse()) {
             throw RuntimeException::new('Throwable callback is not callable.');
         }
 
         /** @var callable():mixed $throwable */
         $generatedThrowable = $throwable();
-        if (!$generatedThrowable instanceof \Throwable) {
+        if (Mixed_::of($generatedThrowable)->is()->instanceOf(\Throwable::class)->isFalse()) {
             throw RuntimeException::new('Throwable callback must return a Throwable.');
         }
 

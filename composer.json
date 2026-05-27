@@ -49,7 +49,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "TournayreLabs\\Tests\\": "tests/"
+            "TournayreLabs\\Tests\\": "tests/",
+            "TournayreLabs\\PHPStan\\Extension\\": "tools/phpstan/Extension/"
         }
     },
     "require-dev": {

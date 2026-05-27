@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits;
 
 use TournayreLabs\Primitives\Bool_;
+use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Primitives\String_;
 
 /**
@@ -37,7 +38,7 @@ trait StringTypeTrait
      */
     public function equalsTo($value): Bool_
     {
-        $valueToCheck = $value instanceof self ? $value->toString() : $value;
+        $valueToCheck = Mixed_::of($value)->is()->instanceOf(static::class)->isTrue() ? $value->toString() : $value;
 
         return $this->value->equalsTo($valueToCheck);
     }

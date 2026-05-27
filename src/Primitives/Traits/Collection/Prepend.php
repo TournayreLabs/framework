@@ -7,6 +7,7 @@ namespace TournayreLabs\Primitives\Traits\Collection;
 use TournayreLabs\Common\Exception\MutableException;
 use TournayreLabs\Contracts\Collection\PrependInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
+use TournayreLabs\Primitives\Mixed_;
 
 /**
  * Trait Prepend.
@@ -46,12 +47,12 @@ trait Prepend
     public function prependWithKey(mixed $value, mixed $key): self
     {
         $this->isReadOnly()->throwIfTrue(MutableException::becauseMustBeImmutable());
-        if (!\is_int($key) && !\is_string($key) && null !== $key) {
-            return $this;
+        if (Mixed_::of($key)->is()->int()->isTrue() || Mixed_::of($key)->is()->string()->isTrue() || null === $key) {
+            $prepend = $this->collection->prepend($value, $key);
+
+            return self::of($prepend);
         }
 
-        $prepend = $this->collection->prepend($value, $key);
-
-        return self::of($prepend);
+        return $this;
     }
 }

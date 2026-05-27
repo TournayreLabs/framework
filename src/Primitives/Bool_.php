@@ -144,9 +144,11 @@ final class Bool_
      */
     private function throw(string|\Exception $message): void
     {
-        $invalidArgumentException = is_string($message)
-            ? InvalidArgumentException::new($message)
-            : InvalidArgumentException::new($message->getMessage())->withPrevious($message);
+        if (Mixed_::of($message)->is()->string()->isTrue()) {
+            $invalidArgumentException = InvalidArgumentException::new($message);
+        } else {
+            $invalidArgumentException = InvalidArgumentException::new($message->getMessage())->withPrevious($message);
+        }
 
         $this->logger?->exception($invalidArgumentException);
 
