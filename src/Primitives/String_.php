@@ -39,6 +39,14 @@ final readonly class String_ implements \Stringable
     /**
      * @api
      */
+    public static function empty(): self
+    {
+        return self::fromString('');
+    }
+
+    /**
+     * @api
+     */
     public function append(string ...$suffix): self
     {
         $u = u($this->value)->append(...$suffix);

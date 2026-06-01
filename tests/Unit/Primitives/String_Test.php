@@ -10,6 +10,13 @@ use TournayreLabs\Primitives\String_;
 
 final class String_Test extends TestCase
 {
+    public function testEmptyCreatesAnEmptyString(): void
+    {
+        $string = String_::empty();
+
+        self::assertSame('', $string->toString());
+    }
+
     public function testAppendAddsSuffixToString(): void
     {
         $string = String_::fromString('Hello');
