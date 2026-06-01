@@ -46,7 +46,8 @@ final class EmailAddress
     public function username(): EmailUserName
     {
         $emailUserName = $this->value
-            ->split('@')[0]->toString()
+            ->sliceWithLength(0, $this->value->indexOf('@'))
+            ->toString()
         ;
 
         return EmailUserName::of($emailUserName);
@@ -68,7 +69,8 @@ final class EmailAddress
     public function domain(): Domain
     {
         $domain = $this->value
-            ->split('@')[1]->toString()
+            ->slice($this->value->indexOf('@') + 1)
+            ->toString()
         ;
 
         return Domain::of($domain);

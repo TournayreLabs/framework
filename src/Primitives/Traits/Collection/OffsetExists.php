@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Traits\Collection;
 
 use TournayreLabs\Contracts\Collection\OffsetExistsInterface;
-use TournayreLabs\Primitives\Bool_;
 
 /**
  * Trait OffsetExists.
@@ -21,10 +20,8 @@ trait OffsetExists
      *
      * @api
      */
-    public function offsetExists($key): Bool_
+    public function offsetExists(mixed $key): bool
     {
-        $exists = $this->collection->offsetExists($key);
-
-        return Bool_::fromBool($exists);
+        return $this->collection->offsetExists($key);
     }
 }

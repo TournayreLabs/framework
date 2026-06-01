@@ -628,7 +628,30 @@ final class String_Test extends TestCase
             String_::fromString('Hello'),
             String_::fromString('World'),
         ];
-        self::assertEquals($results, $result);
+        self::assertEquals($results, $result->toArray());
+    }
+
+    public function testSplitReturnsCollectionCompatibleWithForeach(): void
+    {
+        $string = String_::fromString('Hello World');
+        $result = [];
+
+        foreach ($string->split(' ') as $chunk) {
+            self::assertInstanceOf(String_::class, $chunk);
+            $result[] = $chunk->toString();
+        }
+
+        self::assertSame(['Hello', 'World'], $result);
+    }
+
+    public function testSplitReturnsCollectionCompatibleWithArrayAccess(): void
+    {
+        $string = String_::fromString('Hello World');
+        $result = $string->split(' ');
+
+        self::assertEquals(String_::fromString('Hello'), $result[0]);
+        self::assertTrue(isset($result[0]));
+        self::assertFalse(isset($result[2]));
     }
 
     public function testSplitSplitsStringWithLimit(): void

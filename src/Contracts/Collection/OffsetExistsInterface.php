@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Contracts\Collection;
 
-use TournayreLabs\Primitives\Bool_;
-
 /**
  * Interface OffsetExistsInterface.
  */
@@ -18,5 +16,5 @@ interface OffsetExistsInterface
      *
      * @api
      */
-    public function offsetExists($key): Bool_;
+    public function offsetExists(int|string $key): bool;
 }

@@ -34230,12 +34230,12 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\Bool_",
+                "returnType": "bool",
                 "returnsReference": false,
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -36572,12 +36572,12 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": null,
+                "returnType": "mixed",
                 "returnsReference": false,
                 "parameters": [
                     {
                         "name": "offset",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -36629,7 +36629,7 @@
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -41941,7 +41941,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "array",
+                "returnType": "TournayreLabs\\Primitives\\Collection",
                 "returnsReference": false,
                 "parameters": [
                     {

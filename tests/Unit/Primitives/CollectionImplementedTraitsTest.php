@@ -86,6 +86,15 @@ final class CollectionImplementedTraitsTest extends TestCase
         self::assertSame(['a' => 'foo', 'b' => 'bar'], iterator_to_array($iterator));
     }
 
+    public function testArrayAccessReadsElementsByOffset(): void
+    {
+        $collection = Collection::of(['foo', 'bar']);
+
+        self::assertSame('foo', $collection[0]);
+        self::assertTrue(isset($collection[0]));
+        self::assertFalse(isset($collection[2]));
+    }
+
     public function testDelimiterReturnsPreviousSeparatorAndUpdatesFutureSeparator(): void
     {
         $previous = Collection::delimiter();

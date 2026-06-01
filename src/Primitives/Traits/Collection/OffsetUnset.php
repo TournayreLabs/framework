@@ -20,7 +20,7 @@ trait OffsetUnset
      *
      * @param array-key $key
      */
-    public function offsetUnset($key): void
+    public function offsetUnset(mixed $key): void
     {
         $this->collection->offsetUnset($key);
     }

@@ -16,5 +16,5 @@ interface OffsetUnsetInterface
      *
      * @param array-key $key
      */
-    public function offsetUnset($key): void;
+    public function offsetUnset(int|string $key): void;
 }

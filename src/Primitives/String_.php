@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TournayreLabs\Primitives;
 
+use Symfony\Component\String\AbstractString;
 use TournayreLabs\Common\Assert\Assert;
 use TournayreLabs\Common\Exception\InvalidArgumentException;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
@@ -476,13 +477,15 @@ final readonly class String_ implements \Stringable
     /**
      * @api
      *
-     * @return self[]
+     * @return Collection
      */
-    public function split(string $delimiter): array
+    public function split(string $delimiter): Collection
     {
         $splits = u($this->value)->split($delimiter);
 
-        return array_map(static fn ($chunk) => String_::fromString($chunk->toString()), $splits);
+        return Collection::of($splits)
+            ->map(static fn (AbstractString $chunk): self => self::fromString($chunk->toString()))
+        ;
     }
 
     /**

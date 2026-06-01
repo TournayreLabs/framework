@@ -22,7 +22,7 @@ trait OffsetGet
      *
      * @api
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->collection->offsetGet($offset);
     }

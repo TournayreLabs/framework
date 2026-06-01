@@ -16,5 +16,5 @@ interface OffsetSetInterface
      *
      * @api
      */
-    public function offsetSet(mixed $key, mixed $value): void;
+    public function offsetSet(int|string|null $key, mixed $value): void;
 }

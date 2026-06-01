@@ -18,5 +18,5 @@ interface OffsetGetInterface
      *
      * @api
      */
-    public function offsetGet($offset);
+    public function offsetGet(int|string $offset): mixed;
 }
