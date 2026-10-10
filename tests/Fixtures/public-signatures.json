@@ -34230,12 +34230,12 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "bool",
+                "returnType": "TournayreLabs\\Primitives\\Bool_",
                 "returnsReference": false,
                 "parameters": [
                     {
                         "name": "key",
-                        "type": "mixed",
+                        "type": null,
                         "optional": false,
                         "default": {
                             "available": false
@@ -36551,12 +36551,12 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\Bool_",
+                "returnType": "bool",
                 "returnsReference": false,
                 "parameters": [
                     {
                         "name": "key",
-                        "type": null,
+                        "type": "mixed",
                         "optional": false,
                         "default": {
                             "available": false
@@ -41941,7 +41941,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "TournayreLabs\\Primitives\\Collection",
+                "returnType": "array",
                 "returnsReference": false,
                 "parameters": [
                     {
@@ -48849,6 +48849,16 @@
                 ]
             },
             {
+                "name": "empty",
+                "visibility": "public",
+                "static": true,
+                "abstract": false,
+                "final": false,
+                "returnType": "self",
+                "returnsReference": false,
+                "parameters": []
+            },
+            {
                 "name": "endsWith",
                 "visibility": "public",
                 "static": false,
@@ -49691,7 +49701,7 @@
                 "static": false,
                 "abstract": false,
                 "final": false,
-                "returnType": "array",
+                "returnType": "TournayreLabs\\Primitives\\Collection",
                 "returnsReference": false,
                 "parameters": [
                     {
