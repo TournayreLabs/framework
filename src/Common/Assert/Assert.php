@@ -136,181 +136,369 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         }
     }
 
+    /**
+     * @phpstan-assert iterable<string> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allString(mixed $value, string $message = ''): void
     {
         self::__callStatic('allString', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<string|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrString(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrString', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<non-empty-string> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allStringNotEmpty(mixed $value, string $message = ''): void
     {
         self::__callStatic('allStringNotEmpty', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<non-empty-string|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrStringNotEmpty(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrStringNotEmpty', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<int> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allInteger(mixed $value, string $message = ''): void
     {
         self::__callStatic('allInteger', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<int|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrInteger(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrInteger', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<numeric> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIntegerish(mixed $value, string $message = ''): void
     {
         self::__callStatic('allIntegerish', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<numeric|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIntegerish(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrIntegerish', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<positive-int> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allPositiveInteger(mixed $value, string $message = ''): void
     {
         self::__callStatic('allPositiveInteger', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<positive-int|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrPositiveInteger(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrPositiveInteger', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<float> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allFloat(mixed $value, string $message = ''): void
     {
         self::__callStatic('allFloat', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<float|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrFloat(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrFloat', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<numeric> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNumeric(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNumeric', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<numeric|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrNumeric(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrNumeric', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<positive-int|0> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNatural(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNatural', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<positive-int|0|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrNatural(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrNatural', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<bool> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allBoolean(mixed $value, string $message = ''): void
     {
         self::__callStatic('allBoolean', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<bool|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrBoolean(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrBoolean', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<scalar> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allScalar(mixed $value, string $message = ''): void
     {
         self::__callStatic('allScalar', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<scalar|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrScalar(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrScalar', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<object> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allObject(mixed $value, string $message = ''): void
     {
         self::__callStatic('allObject', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<object|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrObject(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrObject', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<resource> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allResource(mixed $value, ?string $type = null, string $message = ''): void
     {
         self::__callStatic('allResource', [$value, $type, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<resource|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrResource(mixed $value, ?string $type = null, string $message = ''): void
     {
         self::__callStatic('allNullOrResource', [$value, $type, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<callable> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsCallable(mixed $value, string $message = ''): void
     {
         self::__callStatic('allIsCallable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<callable|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsCallable(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrIsCallable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsArray(mixed $value, string $message = ''): void
     {
         self::__callStatic('allIsArray', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsArray(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrIsArray', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array|\ArrayAccess> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsArrayAccessible(mixed $value, string $message = ''): void
     {
         self::__callStatic('allIsArrayAccessible', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array|\ArrayAccess|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsArrayAccessible(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrIsArrayAccessible', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array|\Countable> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsCountable(mixed $value, string $message = ''): void
     {
         self::__callStatic('allIsCountable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array|\Countable|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsCountable(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrIsCountable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<iterable> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsIterable(mixed $value, string $message = ''): void
     {
         self::__callStatic('allIsIterable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<iterable|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsIterable(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrIsIterable', [$value, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert iterable<ExpectedType> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsInstanceOf(mixed $value, object|string $class, string $message = ''): void
     {
         self::__callStatic('allIsInstanceOf', [$value, $class, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert iterable<ExpectedType|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsInstanceOf(mixed $value, object|string $class, string $message = ''): void
     {
         self::__callStatic('allNullOrIsInstanceOf', [$value, $class, $message]);
@@ -336,11 +524,29 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('allNullOrIsInstanceOfAny', [$value, $classes, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert iterable<ExpectedType|class-string<ExpectedType>> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsAOf(iterable $value, string $class, string $message = ''): void
     {
         self::__callStatic('allIsAOf', [$value, $class, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert iterable<ExpectedType|class-string<ExpectedType>|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsAOf(iterable $value, string $class, string $message = ''): void
     {
         self::__callStatic('allNullOrIsAOf', [$value, $class, $message]);
@@ -366,11 +572,21 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('allNullOrIsAnyOf', [$value, $classes, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<empty> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsEmpty(mixed $value, string $message = ''): void
     {
         self::__callStatic('allIsEmpty', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<empty|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsEmpty(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrIsEmpty', [$value, $message]);
@@ -386,6 +602,11 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('allNullOrNotEmpty', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNull(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNull', [$value, $message]);
@@ -396,21 +617,41 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('allNotNull', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<true> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allTrue(mixed $value, string $message = ''): void
     {
         self::__callStatic('allTrue', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<true|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrTrue(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrTrue', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<false> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allFalse(mixed $value, string $message = ''): void
     {
         self::__callStatic('allFalse', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<false|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrFalse(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrFalse', [$value, $message]);
@@ -726,11 +967,21 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('allNullOrAlnum', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<lowercase-string> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allLower(iterable $value, string $message = ''): void
     {
         self::__callStatic('allLower', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<lowercase-string|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrLower(iterable $value, string $message = ''): void
     {
         self::__callStatic('allNullOrLower', [$value, $message]);
@@ -836,41 +1087,97 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('allNullOrWritable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<class-string> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allClassExists(mixed $value, string $message = ''): void
     {
         self::__callStatic('allClassExists', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<class-string|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrClassExists(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrClassExists', [$value, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert iterable<class-string<ExpectedType>|ExpectedType> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allSubclassOf(mixed $value, object|string $class, string $message = ''): void
     {
         self::__callStatic('allSubclassOf', [$value, $class, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert iterable<class-string<ExpectedType>|ExpectedType|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrSubclassOf(mixed $value, object|string $class, string $message = ''): void
     {
         self::__callStatic('allNullOrSubclassOf', [$value, $class, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<class-string> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allInterfaceExists(mixed $value, string $message = ''): void
     {
         self::__callStatic('allInterfaceExists', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<class-string|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrInterfaceExists(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrInterfaceExists', [$value, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $interface
+     *
+     * @phpstan-assert iterable<class-string<ExpectedType>|ExpectedType> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allImplementsInterface(mixed $value, mixed $interface, string $message = ''): void
     {
         self::__callStatic('allImplementsInterface', [$value, $interface, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $interface
+     *
+     * @phpstan-assert iterable<class-string<ExpectedType>|ExpectedType|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrImplementsInterface(mixed $value, mixed $interface, string $message = ''): void
     {
         self::__callStatic('allNullOrImplementsInterface', [$value, $interface, $message]);
@@ -936,11 +1243,21 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('allNullOrKeyNotExists', [$array, $key, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array-key> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allValidArrayKey(mixed $value, string $message = ''): void
     {
         self::__callStatic('allValidArrayKey', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array-key|null> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrValidArrayKey(mixed $value, string $message = ''): void
     {
         self::__callStatic('allNullOrValidArrayKey', [$value, $message]);
@@ -986,31 +1303,61 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('allNullOrCountBetween', [$array, $min, $max, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<list> $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsList(array $array, string $message = ''): void
     {
         self::__callStatic('allIsList', [$array, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<list|null> $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsList(array $array, string $message = ''): void
     {
         self::__callStatic('allNullOrIsList', [$array, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<non-empty-list> $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsNonEmptyList(array $array, string $message = ''): void
     {
         self::__callStatic('allIsNonEmptyList', [$array, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<non-empty-list|null> $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsNonEmptyList(array $array, string $message = ''): void
     {
         self::__callStatic('allNullOrIsNonEmptyList', [$array, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array<string, mixed>> $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function allIsMap(array $array, string $message = ''): void
     {
         self::__callStatic('allIsMap', [$array, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array<string, mixed>|null> $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsMap(array $array, string $message = ''): void
     {
         self::__callStatic('allNullOrIsMap', [$array, $message]);
@@ -1021,6 +1368,11 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('allIsNonEmptyMap', [$array, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable<array<string, mixed>|null> $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function allNullOrIsNonEmptyMap(array $array, string $message = ''): void
     {
         self::__callStatic('allNullOrIsNonEmptyMap', [$array, $message]);
@@ -1046,11 +1398,21 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('allNullOrThrows', [$expression, $class, $message]);
     }
 
+    /**
+     * @phpstan-assert true $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function true(mixed $value, string $message = ''): void
     {
         self::__callStatic('true', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert false $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function false(mixed $value, string $message = ''): void
     {
         self::__callStatic('false', [$value, $message]);
@@ -1171,11 +1533,21 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('alnum', [$value, $message = '']);
     }
 
+    /**
+     * @phpstan-assert lowercase-string $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function lower(string $value, string $message = ''): void
     {
         self::__callStatic('lower', [$value, $message = '']);
     }
 
+    /**
+     * @phpstan-assert !lowercase-string $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function upper(string $value, string $message = ''): void
     {
         self::__callStatic('upper', [$value, $message = '']);
@@ -1226,21 +1598,49 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('writable', [$value, $message = '']);
     }
 
+    /**
+     * @phpstan-assert class-string $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function classExists(mixed $value, string $message = ''): void
     {
         self::__callStatic('classExists', [$value, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert class-string<ExpectedType>|ExpectedType $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function subclassOf(mixed $value, object|string $class, string $message = ''): void
     {
         self::__callStatic('subclassOf', [$value, $class, $message]);
     }
 
+    /**
+     * @phpstan-assert class-string $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function interfaceExists(mixed $value, string $message = ''): void
     {
         self::__callStatic('interfaceExists', [$value, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $interface
+     *
+     * @phpstan-assert class-string<ExpectedType>|ExpectedType $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function implementsInterface(mixed $value, mixed $interface, string $message = ''): void
     {
         self::__callStatic('implementsInterface', [$value, $interface, $message]);
@@ -1276,6 +1676,11 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('keyNotExists', [$array, $key, $message]);
     }
 
+    /**
+     * @phpstan-assert array-key $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function validArrayKey(mixed $value, string $message = ''): void
     {
         self::__callStatic('validArrayKey', [$value, $message]);
@@ -1311,31 +1716,65 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('throws', [$expression, $class, $message]);
     }
 
+    /**
+     * @phpstan-assert callable $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function isCallable(mixed $value, string $message = ''): void
     {
         self::__callStatic('isCallable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert array $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function isArray(mixed $value, string $message = ''): void
     {
         self::__callStatic('isArray', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert array|\ArrayAccess $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function isArrayAccessible(mixed $value, string $message = ''): void
     {
         self::__callStatic('isArrayAccessible', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert array|\Countable $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function isCountable(mixed $value, string $message = ''): void
     {
         self::__callStatic('isCountable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function isIterable(mixed $value, string $message = ''): void
     {
         self::__callStatic('isIterable', [$value, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert ExpectedType $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function isInstanceOf(mixed $value, object|string $class, string $message = ''): void
     {
         self::__callStatic('isInstanceOf', [$value, $class, $message]);
@@ -1346,11 +1785,30 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('isInstanceOfAny', [$value, $classes, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert ExpectedType|class-string<ExpectedType> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function isAOf(object|string $value, string $class, string $message = ''): void
     {
         self::__callStatic('isAOf', [$value, $class, $message]);
     }
 
+    /**
+     * @template UnexpectedType of object
+     *
+     * @param class-string<UnexpectedType> $class
+     *
+     * @phpstan-assert !UnexpectedType $value
+     * @phpstan-assert !class-string<UnexpectedType> $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function isNotA(object|string $value, string $class, string $message = ''): void
     {
         self::__callStatic('isNotA', [$value, $class, $message]);
@@ -1361,66 +1819,144 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('isAnyOf', [$value, $classes, $message]);
     }
 
+    /**
+     * @phpstan-assert empty $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function isEmpty(mixed $value, string $message = ''): void
     {
         self::__callStatic('isEmpty', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert list $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function isList(array $array, string $message = ''): void
     {
         self::__callStatic('isList', [$array, $message]);
     }
 
+    /**
+     * @phpstan-assert non-empty-list $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function isNonEmptyList(array $array, string $message = ''): void
     {
         self::__callStatic('isNonEmptyList', [$array, $message]);
     }
 
+    /**
+     * @template TValue
+     *
+     * @param array<TValue> $array
+     *
+     * @phpstan-assert array<string, TValue> $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function isMap(array $array, string $message = ''): void
     {
         self::__callStatic('isMap', [$array, $message]);
     }
 
+    /**
+     * @template TValue
+     *
+     * @param array<TValue> $array
+     *
+     * @phpstan-assert array<string, TValue> $array
+     * @phpstan-assert !empty $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function isNonEmptyMap(array $array, string $message = ''): void
     {
         self::__callStatic('isNonEmptyMap', [$array, $message]);
     }
 
+    /**
+     * @phpstan-assert bool $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function boolean(mixed $value, string $message = ''): void
     {
         self::__callStatic('boolean', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert scalar $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function scalar(mixed $value, string $message = ''): void
     {
         self::__callStatic('scalar', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert object $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function object(mixed $value, string $message = ''): void
     {
         self::__callStatic('object', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert resource $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function resource(mixed $value, ?string $type = null, string $message = ''): void
     {
         self::__callStatic('resource', [$value, $type, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert !ExpectedType $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function notInstanceOf(mixed $value, object|string $class, string $message = ''): void
     {
         self::__callStatic('notInstanceOf', [$value, $class, $message]);
     }
 
+    /**
+     * @phpstan-assert !empty $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function notEmpty(mixed $value, string $message = ''): void
     {
         self::__callStatic('notEmpty', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert !null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function notNull(mixed $value, string $message = ''): void
     {
         self::__callStatic('notNull', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert !false $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function notFalse(mixed $value, string $message = ''): void
     {
         self::__callStatic('notFalse', [$value, $message]);
@@ -1461,96 +1997,195 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('notRegex', [$value, $pattern, $message]);
     }
 
+    /**
+     * @phpstan-assert null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function null(mixed $value, string $message = ''): void
     {
         self::__callStatic('null', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert string|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrString(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrString', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert non-empty-string|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrStringNotEmpty(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrStringNotEmpty', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert int|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrInteger(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrInteger', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert numeric|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIntegerish(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrIntegerish', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert positive-int|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrPositiveInteger(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrPositiveInteger', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert float|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrFloat(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrFloat', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert numeric|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrNumeric(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrNumeric', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert positive-int|0|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrNatural(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrNatural', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert bool|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrBoolean(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrBoolean', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert scalar|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrScalar(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrScalar', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert object|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrObject(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrObject', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert resource|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrResource(mixed $value, ?string $type = null, string $message = ''): void
     {
         self::__callStatic('nullOrResource', [$value, $type, $message]);
     }
 
+    /**
+     * @phpstan-assert callable|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsCallable(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrIsCallable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert array|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsArray(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrIsArray', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert array|\ArrayAccess|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsArrayAccessible(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrIsArrayAccessible', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert array|\Countable|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsCountable(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrIsCountable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert iterable|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsIterable(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrIsIterable', [$value, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert ExpectedType|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsInstanceOf(mixed $value, object|string $class, string $message = ''): void
     {
         self::__callStatic('nullOrIsInstanceOf', [$value, $class, $message]);
@@ -1566,6 +2201,15 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('nullOrIsInstanceOfAny', [$value, $classes, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert ExpectedType|class-string<ExpectedType>|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsAOf(object|string|null $value, string $class, string $message = ''): void
     {
         self::__callStatic('nullOrIsAOf', [$value, $class, $message]);
@@ -1581,6 +2225,11 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('nullOrIsAnyOf', [$value, $classes, $message]);
     }
 
+    /**
+     * @phpstan-assert empty $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsEmpty(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrIsEmpty', [$value, $message]);
@@ -1591,11 +2240,21 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('nullOrNotEmpty', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert true|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrTrue(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrTrue', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert false|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrFalse(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrFalse', [$value, $message]);
@@ -1756,6 +2415,11 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('nullOrAlnum', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert lowercase-string|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrLower(?string $value, string $message = ''): void
     {
         self::__callStatic('nullOrLower', [$value, $message]);
@@ -1811,21 +2475,49 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('nullOrWritable', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert class-string|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrClassExists(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrClassExists', [$value, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
+     * @phpstan-assert class-string<ExpectedType>|ExpectedType|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrSubclassOf(mixed $value, object|string $class, string $message = ''): void
     {
         self::__callStatic('nullOrSubclassOf', [$value, $class, $message]);
     }
 
+    /**
+     * @phpstan-assert class-string|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrInterfaceExists(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrInterfaceExists', [$value, $message]);
     }
 
+    /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $interface
+     *
+     * @phpstan-assert class-string<ExpectedType>|ExpectedType|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrImplementsInterface(mixed $value, mixed $interface, string $message = ''): void
     {
         self::__callStatic('nullOrImplementsInterface', [$value, $interface, $message]);
@@ -1861,6 +2553,11 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('nullOrKeyNotExists', [$array, $key, $message]);
     }
 
+    /**
+     * @phpstan-assert array-key|null $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrValidArrayKey(mixed $value, string $message = ''): void
     {
         self::__callStatic('nullOrValidArrayKey', [$value, $message]);
@@ -1886,16 +2583,35 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('nullOrCountBetween', [$array, $min, $max, $message]);
     }
 
+    /**
+     * @phpstan-assert list|null $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsList(array $array, string $message = ''): void
     {
         self::__callStatic('nullOrIsList', [$array, $message]);
     }
 
+    /**
+     * @phpstan-assert non-empty-list|null $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsNonEmptyList(array $array, string $message = ''): void
     {
         self::__callStatic('nullOrIsNonEmptyList', [$array, $message]);
     }
 
+    /**
+     * @template TValue
+     *
+     * @param array<TValue> $array
+     *
+     * @phpstan-assert array<string, TValue>|null $array
+     *
+     * @throws ThrowableInterface
+     */
     public static function nullOrIsMap(array $array, string $message = ''): void
     {
         self::__callStatic('nullOrIsMap', [$array, $message]);
@@ -1916,41 +2632,81 @@ final class Assert implements AssertInterface, AssertStringInterface, AssertNume
         self::__callStatic('nullOrThrows', [$expression, $class, $message]);
     }
 
+    /**
+     * @phpstan-assert int $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function integer(mixed $value, string $message = ''): void
     {
         self::__callStatic('integer', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert numeric $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function integerish(mixed $value, string $message = ''): void
     {
         self::__callStatic('integerish', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert positive-int $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function positiveInteger(mixed $value, string $message = ''): void
     {
         self::__callStatic('positiveInteger', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert float $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function float(mixed $value, string $message = ''): void
     {
         self::__callStatic('float', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert numeric $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function numeric(mixed $value, string $message = ''): void
     {
         self::__callStatic('numeric', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert positive-int|0 $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function natural(mixed $value, string $message = ''): void
     {
         self::__callStatic('natural', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert string $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function string(mixed $value, string $message = ''): void
     {
         self::__callStatic('string', [$value, $message]);
     }
 
+    /**
+     * @phpstan-assert non-empty-string $value
+     *
+     * @throws ThrowableInterface
+     */
     public static function stringNotEmpty(mixed $value, string $message = ''): void
     {
         self::__callStatic('stringNotEmpty', [$value, $message]);

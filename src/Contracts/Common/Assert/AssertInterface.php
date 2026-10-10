@@ -216,6 +216,10 @@ interface AssertInterface
     public static function classExists(mixed $value, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function subclassOf(mixed $value, string|object $class, string $message = ''): void;
@@ -226,6 +230,10 @@ interface AssertInterface
     public static function interfaceExists(mixed $value, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $interface
+     *
      * @throws ThrowableInterface
      */
     public static function implementsInterface(mixed $value, mixed $interface, string $message = ''): void;

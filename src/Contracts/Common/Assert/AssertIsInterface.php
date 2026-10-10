@@ -34,6 +34,10 @@ interface AssertIsInterface
     public static function isIterable(mixed $value, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function isInstanceOf(mixed $value, string|object $class, string $message = ''): void;
@@ -46,11 +50,19 @@ interface AssertIsInterface
     public static function isInstanceOfAny(mixed $value, array $classes, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function isAOf(object|string $value, string $class, string $message = ''): void;
 
     /**
+     * @template UnexpectedType of object
+     *
+     * @param class-string<UnexpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function isNotA(object|string $value, string $class, string $message = ''): void;

@@ -4,7 +4,7 @@ COMPOSER = composer
 
 # Misc
 .DEFAULT_GOAL = help
-.PHONY        : help composer vendor validate qa tests phpstan phpstan-files rector rector-check fix fix-check
+.PHONY        : help composer vendor validate qa tests phpstan phpstan-files mago rector rector-check fix fix-check
 
 help: ## Outputs this help screen
 	@grep -E '(^[a-zA-Z0-9\./_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}{printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
@@ -34,6 +34,9 @@ phpstan-files: ## Run PHPStan on specific files (use files="file1.php file2.php"
 	@$(eval files ?=)
 	@if [ -z "$(files)" ]; then echo 'Usage: make phpstan-files files="path/to/File.php [path/to/Other.php]"'; exit 2; fi
 	@$(PHP) vendor/bin/phpstan analyse $(files) --memory-limit=4G
+
+mago: ## Run Mago analyzer (scope defined in mago.toml)
+	@$(PHP) vendor/bin/mago analyze
 
 rector: ## Run Rector with project rules
 	@$(PHP) vendor/bin/rector process --config=tools/rector.php --no-diffs

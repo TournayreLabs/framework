@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace TournayreLabs\Primitives\Collection;
 
 use TournayreLabs\Common\Assert\Assert;
-use TournayreLabs\Common\Exception\RuntimeException;
 use TournayreLabs\Contracts\Collection\AsListInterface;
 use TournayreLabs\Contracts\DateTime\DateTimeInterface;
 use TournayreLabs\Contracts\Exception\ThrowableInterface;
 use TournayreLabs\Primitives\Collection;
-use TournayreLabs\Primitives\Mixed_;
 use TournayreLabs\Primitives\Traits\CollectionTrait;
 
 /**
@@ -82,9 +80,6 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->first()
         ;
         Assert::isInstanceOf($dateTime, DateTimeInterface::class);
-        if (Mixed_::of($dateTime)->is()->instanceOf(DateTimeInterface::class)->isFalse()) {
-            throw RuntimeException::new('Unexpected DateTime value');
-        }
 
         return $dateTime;
     }
@@ -102,9 +97,6 @@ final class DateTimeCollection implements \IteratorAggregate, AsListInterface
             ->first()
         ;
         Assert::isInstanceOf($dateTime, DateTimeInterface::class);
-        if (Mixed_::of($dateTime)->is()->instanceOf(DateTimeInterface::class)->isFalse()) {
-            throw RuntimeException::new('Unexpected DateTime value');
-        }
 
         return $dateTime;
     }

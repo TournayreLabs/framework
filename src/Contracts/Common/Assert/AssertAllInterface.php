@@ -183,11 +183,19 @@ interface AssertAllInterface
     public static function allNullOrIsIterable(mixed $value, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function allIsInstanceOf(mixed $value, string|object $class, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function allNullOrIsInstanceOf(mixed $value, string|object $class, string $message = ''): void;
@@ -217,14 +225,20 @@ interface AssertAllInterface
     public static function allNullOrIsInstanceOfAny(mixed $value, array $classes, string $message = ''): void;
 
     /**
-     * @param iterable<object|string> $value
+     * @template ExpectedType of object
+     *
+     * @param iterable<object|string>    $value
+     * @param class-string<ExpectedType> $class
      *
      * @throws ThrowableInterface
      */
     public static function allIsAOf(iterable $value, string $class, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
      * @param iterable<object|string|null> $value
+     * @param class-string<ExpectedType>   $class
      *
      * @throws ThrowableInterface
      */
@@ -829,11 +843,19 @@ interface AssertAllInterface
     public static function allNullOrClassExists(mixed $value, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function allSubclassOf(mixed $value, string|object $class, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function allNullOrSubclassOf(mixed $value, string|object $class, string $message = ''): void;
@@ -849,11 +871,19 @@ interface AssertAllInterface
     public static function allNullOrInterfaceExists(mixed $value, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $interface
+     *
      * @throws ThrowableInterface
      */
     public static function allImplementsInterface(mixed $value, mixed $interface, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $interface
+     *
      * @throws ThrowableInterface
      */
     public static function allNullOrImplementsInterface(mixed $value, mixed $interface, string $message = ''): void;
