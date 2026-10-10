@@ -1,0 +1,6 @@
+php-version = "8.2"
+
+[source]
+paths = ["tests/PHPStan/AssertNarrowingReproduction.php"]
+includes = ["src", "vendor"]
+excludes = ["vendor/carthage-software/mago"]

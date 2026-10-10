@@ -101,6 +101,10 @@ interface AssertNullInterface
     public static function nullOrIsIterable(mixed $value, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function nullOrIsInstanceOf(mixed $value, string|object $class, string $message = ''): void;
@@ -118,6 +122,10 @@ interface AssertNullInterface
     public static function nullOrIsInstanceOfAny(mixed $value, array $classes, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function nullOrIsAOf(object|string|null $value, string $class, string $message = ''): void;
@@ -376,6 +384,10 @@ interface AssertNullInterface
     public static function nullOrClassExists(mixed $value, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function nullOrSubclassOf(mixed $value, string|object $class, string $message = ''): void;
@@ -386,6 +398,10 @@ interface AssertNullInterface
     public static function nullOrInterfaceExists(mixed $value, string $message = ''): void;
 
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $interface
+     *
      * @throws ThrowableInterface
      */
     public static function nullOrImplementsInterface(mixed $value, mixed $interface, string $message = ''): void;

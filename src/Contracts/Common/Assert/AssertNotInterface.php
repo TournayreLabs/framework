@@ -9,6 +9,10 @@ use TournayreLabs\Contracts\Exception\ThrowableInterface;
 interface AssertNotInterface
 {
     /**
+     * @template ExpectedType of object
+     *
+     * @param class-string<ExpectedType> $class
+     *
      * @throws ThrowableInterface
      */
     public static function notInstanceOf(mixed $value, string|object $class, string $message = ''): void;
