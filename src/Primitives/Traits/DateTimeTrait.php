@@ -830,7 +830,7 @@ trait DateTimeTrait
 
     public function isSameCurrentYear(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameYear());
+        return Bool_::fromBool($this->datetime->isSameYear(Carbon::now()));
     }
 
     public function isSameWeek(\DateTimeInterface $date): Bool_
@@ -840,7 +840,7 @@ trait DateTimeTrait
 
     public function isSameCurrentWeek(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameWeek());
+        return Bool_::fromBool($this->datetime->isSameWeek(Carbon::now()));
     }
 
     public function isSameDay(\DateTimeInterface $date): Bool_
@@ -850,7 +850,7 @@ trait DateTimeTrait
 
     public function isSameCurrentDay(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameDay());
+        return Bool_::fromBool($this->datetime->isSameDay(Carbon::now()));
     }
 
     public function isSameHour(\DateTimeInterface $date): Bool_
@@ -860,7 +860,7 @@ trait DateTimeTrait
 
     public function isSameCurrentHour(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameHour());
+        return Bool_::fromBool($this->datetime->isSameHour(Carbon::now()));
     }
 
     public function isSameMinute(\DateTimeInterface $date): Bool_
@@ -870,7 +870,7 @@ trait DateTimeTrait
 
     public function isSameCurrentMinute(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameMinute());
+        return Bool_::fromBool($this->datetime->isSameMinute(Carbon::now()));
     }
 
     public function isSameSecond(\DateTimeInterface $date): Bool_
@@ -880,7 +880,7 @@ trait DateTimeTrait
 
     public function isSameCurrentSecond(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameSecond());
+        return Bool_::fromBool($this->datetime->isSameSecond(Carbon::now()));
     }
 
     public function isSameMicro(\DateTimeInterface $date): Bool_
@@ -890,7 +890,7 @@ trait DateTimeTrait
 
     public function isSameCurrentMicro(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameMicro());
+        return Bool_::fromBool($this->datetime->isSameMicro(Carbon::now()));
     }
 
     public function isSameMicrosecond(\DateTimeInterface $date): Bool_
@@ -900,7 +900,7 @@ trait DateTimeTrait
 
     public function isSameCurrentMicrosecond(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameMicrosecond());
+        return Bool_::fromBool($this->datetime->isSameMicrosecond(Carbon::now()));
     }
 
     public function isSameDecade(\DateTimeInterface $date): Bool_
@@ -910,7 +910,7 @@ trait DateTimeTrait
 
     public function isSameCurrentDecade(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameDecade());
+        return Bool_::fromBool($this->datetime->isSameDecade(Carbon::now()));
     }
 
     public function isSameCentury(\DateTimeInterface $date): Bool_
@@ -920,7 +920,7 @@ trait DateTimeTrait
 
     public function isSameCurrentCentury(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameCentury());
+        return Bool_::fromBool($this->datetime->isSameCentury(Carbon::now()));
     }
 
     public function isSameMillennium(\DateTimeInterface $date): Bool_
@@ -930,7 +930,7 @@ trait DateTimeTrait
 
     public function isSameCurrentMillennium(): Bool_
     {
-        return Bool_::fromBool($this->datetime->isSameMillennium());
+        return Bool_::fromBool($this->datetime->isSameMillennium(Carbon::now()));
     }
 
     public function years(int $value): DateTimeInterface
@@ -2251,420 +2251,420 @@ trait DateTimeTrait
 
     public function addRealMicros(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealMicros($value);
+        $this->datetime->addUTCUnit('microsecond', $value);
 
         return $this;
     }
 
     public function addRealMicro(): DateTimeInterface
     {
-        $this->datetime->addRealMicro();
+        $this->datetime->addUTCUnit('microsecond');
 
         return $this;
     }
 
     public function subRealMicros(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealMicros($value);
+        $this->datetime->subUTCUnit('microsecond', $value);
 
         return $this;
     }
 
     public function subRealMicro(): DateTimeInterface
     {
-        $this->datetime->subRealMicro();
+        $this->datetime->subUTCUnit('microsecond');
 
         return $this;
     }
 
     public function addRealMicroseconds(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealMicroseconds($value);
+        $this->datetime->addUTCUnit('microsecond', $value);
 
         return $this;
     }
 
     public function addRealMicrosecond(): DateTimeInterface
     {
-        $this->datetime->addRealMicrosecond();
+        $this->datetime->addUTCUnit('microsecond');
 
         return $this;
     }
 
     public function subRealMicroseconds(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealMicroseconds($value);
+        $this->datetime->subUTCUnit('microsecond', $value);
 
         return $this;
     }
 
     public function subRealMicrosecond(): DateTimeInterface
     {
-        $this->datetime->subRealMicrosecond();
+        $this->datetime->subUTCUnit('microsecond');
 
         return $this;
     }
 
     public function addRealMillis(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealMillis($value);
+        $this->datetime->addUTCUnit('millisecond', $value);
 
         return $this;
     }
 
     public function addRealMilli(): DateTimeInterface
     {
-        $this->datetime->addRealMilli();
+        $this->datetime->addUTCUnit('millisecond');
 
         return $this;
     }
 
     public function subRealMillis(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealMillis($value);
+        $this->datetime->subUTCUnit('millisecond', $value);
 
         return $this;
     }
 
     public function subRealMilli(): DateTimeInterface
     {
-        $this->datetime->subRealMilli();
+        $this->datetime->subUTCUnit('millisecond');
 
         return $this;
     }
 
     public function addRealMilliseconds(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealMilliseconds($value);
+        $this->datetime->addUTCUnit('millisecond', $value);
 
         return $this;
     }
 
     public function addRealMillisecond(): DateTimeInterface
     {
-        $this->datetime->addRealMillisecond();
+        $this->datetime->addUTCUnit('millisecond');
 
         return $this;
     }
 
     public function subRealMilliseconds(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealMilliseconds($value);
+        $this->datetime->subUTCUnit('millisecond', $value);
 
         return $this;
     }
 
     public function subRealMillisecond(): DateTimeInterface
     {
-        $this->datetime->subRealMillisecond();
+        $this->datetime->subUTCUnit('millisecond');
 
         return $this;
     }
 
     public function addRealSeconds(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealSeconds($value);
+        $this->datetime->addUTCUnit('second', $value);
 
         return $this;
     }
 
     public function addRealSecond(): DateTimeInterface
     {
-        $this->datetime->addRealSecond();
+        $this->datetime->addUTCUnit('second');
 
         return $this;
     }
 
     public function subRealSeconds(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealSeconds($value);
+        $this->datetime->subUTCUnit('second', $value);
 
         return $this;
     }
 
     public function subRealSecond(): DateTimeInterface
     {
-        $this->datetime->subRealSecond();
+        $this->datetime->subUTCUnit('second');
 
         return $this;
     }
 
     public function addRealMinutes(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealMinutes($value);
+        $this->datetime->addUTCUnit('minute', $value);
 
         return $this;
     }
 
     public function addRealMinute(): DateTimeInterface
     {
-        $this->datetime->addRealMinute();
+        $this->datetime->addUTCUnit('minute');
 
         return $this;
     }
 
     public function subRealMinutes(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealMinutes($value);
+        $this->datetime->subUTCUnit('minute', $value);
 
         return $this;
     }
 
     public function subRealMinute(): DateTimeInterface
     {
-        $this->datetime->subRealMinute();
+        $this->datetime->subUTCUnit('minute');
 
         return $this;
     }
 
     public function addRealHours(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealHours($value);
+        $this->datetime->addUTCUnit('hour', $value);
 
         return $this;
     }
 
     public function addRealHour(): DateTimeInterface
     {
-        $this->datetime->addRealHour();
+        $this->datetime->addUTCUnit('hour');
 
         return $this;
     }
 
     public function subRealHours(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealHours($value);
+        $this->datetime->subUTCUnit('hour', $value);
 
         return $this;
     }
 
     public function subRealHour(): DateTimeInterface
     {
-        $this->datetime->subRealHour();
+        $this->datetime->subUTCUnit('hour');
 
         return $this;
     }
 
     public function addRealDays(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealDays($value);
+        $this->datetime->addUTCUnit('day', $value);
 
         return $this;
     }
 
     public function addRealDay(): DateTimeInterface
     {
-        $this->datetime->addRealDay();
+        $this->datetime->addUTCUnit('day');
 
         return $this;
     }
 
     public function subRealDays(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealDays($value);
+        $this->datetime->subUTCUnit('day', $value);
 
         return $this;
     }
 
     public function subRealDay(): DateTimeInterface
     {
-        $this->datetime->subRealDay();
+        $this->datetime->subUTCUnit('day');
 
         return $this;
     }
 
     public function addRealWeeks(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealWeeks($value);
+        $this->datetime->addUTCUnit('week', $value);
 
         return $this;
     }
 
     public function addRealWeek(): DateTimeInterface
     {
-        $this->datetime->addRealWeek();
+        $this->datetime->addUTCUnit('week');
 
         return $this;
     }
 
     public function subRealWeeks(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealWeeks($value);
+        $this->datetime->subUTCUnit('week', $value);
 
         return $this;
     }
 
     public function subRealWeek(): DateTimeInterface
     {
-        $this->datetime->subRealWeek();
+        $this->datetime->subUTCUnit('week');
 
         return $this;
     }
 
     public function addRealMonths(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealMonths($value);
+        $this->datetime->addUTCUnit('month', $value);
 
         return $this;
     }
 
     public function addRealMonth(): DateTimeInterface
     {
-        $this->datetime->addRealMonth();
+        $this->datetime->addUTCUnit('month');
 
         return $this;
     }
 
     public function subRealMonths(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealMonths($value);
+        $this->datetime->subUTCUnit('month', $value);
 
         return $this;
     }
 
     public function subRealMonth(): DateTimeInterface
     {
-        $this->datetime->subRealMonth();
+        $this->datetime->subUTCUnit('month');
 
         return $this;
     }
 
     public function addRealQuarters(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealQuarters($value);
+        $this->datetime->addUTCUnit('quarter', $value);
 
         return $this;
     }
 
     public function addRealQuarter(): DateTimeInterface
     {
-        $this->datetime->addRealQuarter();
+        $this->datetime->addUTCUnit('quarter');
 
         return $this;
     }
 
     public function subRealQuarters(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealQuarters($value);
+        $this->datetime->subUTCUnit('quarter', $value);
 
         return $this;
     }
 
     public function subRealQuarter(): DateTimeInterface
     {
-        $this->datetime->subRealQuarter();
+        $this->datetime->subUTCUnit('quarter');
 
         return $this;
     }
 
     public function addRealYears(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealYears($value);
+        $this->datetime->addUTCUnit('year', $value);
 
         return $this;
     }
 
     public function addRealYear(): DateTimeInterface
     {
-        $this->datetime->addRealYear();
+        $this->datetime->addUTCUnit('year');
 
         return $this;
     }
 
     public function subRealYears(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealYears($value);
+        $this->datetime->subUTCUnit('year', $value);
 
         return $this;
     }
 
     public function subRealYear(): DateTimeInterface
     {
-        $this->datetime->subRealYear();
+        $this->datetime->subUTCUnit('year');
 
         return $this;
     }
 
     public function addRealDecades(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealDecades($value);
+        $this->datetime->addUTCUnit('decade', $value);
 
         return $this;
     }
 
     public function addRealDecade(): DateTimeInterface
     {
-        $this->datetime->addRealDecade();
+        $this->datetime->addUTCUnit('decade');
 
         return $this;
     }
 
     public function subRealDecades(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealDecades($value);
+        $this->datetime->subUTCUnit('decade', $value);
 
         return $this;
     }
 
     public function subRealDecade(): DateTimeInterface
     {
-        $this->datetime->subRealDecade();
+        $this->datetime->subUTCUnit('decade');
 
         return $this;
     }
 
     public function addRealCenturies(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealCenturies($value);
+        $this->datetime->addUTCUnit('century', $value);
 
         return $this;
     }
 
     public function addRealCentury(): DateTimeInterface
     {
-        $this->datetime->addRealCentury();
+        $this->datetime->addUTCUnit('century');
 
         return $this;
     }
 
     public function subRealCenturies(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealCenturies($value);
+        $this->datetime->subUTCUnit('century', $value);
 
         return $this;
     }
 
     public function subRealCentury(): DateTimeInterface
     {
-        $this->datetime->subRealCentury();
+        $this->datetime->subUTCUnit('century');
 
         return $this;
     }
 
     public function addRealMillennia(int $value = 1): DateTimeInterface
     {
-        $this->datetime->addRealMillennia($value);
+        $this->datetime->addUTCUnit('millennium', $value);
 
         return $this;
     }
 
     public function addRealMillennium(): DateTimeInterface
     {
-        $this->datetime->addRealMillennium();
+        $this->datetime->addUTCUnit('millennium');
 
         return $this;
     }
 
     public function subRealMillennia(int $value = 1): DateTimeInterface
     {
-        $this->datetime->subRealMillennia($value);
+        $this->datetime->subUTCUnit('millennium', $value);
 
         return $this;
     }
 
     public function subRealMillennium(): DateTimeInterface
     {
-        $this->datetime->subRealMillennium();
+        $this->datetime->subUTCUnit('millennium');
 
         return $this;
     }
@@ -3449,7 +3449,7 @@ trait DateTimeTrait
 
     public function setDateFromNow(): DateTimeInterface
     {
-        $this->datetime->setDateFrom(null);
+        $this->datetime->setDateFrom(Carbon::now());
 
         return $this;
     }
@@ -3463,7 +3463,7 @@ trait DateTimeTrait
 
     public function setTimeFromNow(): DateTimeInterface
     {
-        $this->datetime->setTimeFrom(null);
+        $this->datetime->setTimeFrom(Carbon::now());
 
         return $this;
     }
@@ -3477,7 +3477,7 @@ trait DateTimeTrait
 
     public function setDateTimeFromNow(): DateTimeInterface
     {
-        $this->datetime->setDateTimeFrom(null);
+        $this->datetime->setDateTimeFrom(Carbon::now());
 
         return $this;
     }

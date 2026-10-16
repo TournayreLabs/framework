@@ -17,7 +17,7 @@
         "php": ">=8.2.22",
         "aimeos/map": "^3.12",
         "doctrine/collections": "^1.6 || ^2",
-        "nesbot/carbon": "^2.72",
+        "nesbot/carbon": "^3.0",
         "psr/log": "^1.1 || ^2.0 || ^3",
         "symfony/console": "^6.4 || ^7.4 || ^8.0",
         "symfony/dependency-injection": "^6.4 || ^7.4 || ^8.0",
