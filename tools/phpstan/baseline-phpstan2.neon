@@ -1,0 +1,169 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^PHPDoc tag @phpstan\-assert for \$array has no value type specified in iterable type list\.$#'
+			identifier: missingType.iterableValue
+			count: 8
+			path: ../../src/Common/Assert/Assert.php
+
+		-
+			message: '#^PHPDoc tag @phpstan\-assert for \$value contains generic interface ArrayAccess but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 4
+			path: ../../src/Common/Assert/Assert.php
+
+		-
+			message: '#^PHPDoc tag @phpstan\-assert for \$value has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 12
+			path: ../../src/Common/Assert/Assert.php
+
+		-
+			message: '#^PHPDoc tag @phpstan\-assert for \$value has no value type specified in iterable type iterable\.$#'
+			identifier: missingType.iterableValue
+			count: 4
+			path: ../../src/Common/Assert/Assert.php
+
+		-
+			message: '#^Trait TournayreLabs\\Common\\Persistance\\DatabaseTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Common/Persistance/DatabaseTrait.php
+
+		-
+			message: '#^Trait TournayreLabs\\Common\\Traits\\ContextTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Common/Traits/ContextTrait.php
+
+		-
+			message: '#^Binary operation "\." between non\-falsy\-string and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: ../../src/Common/VO/Memory.php
+
+		-
+			message: '#^Return type \(ArrayIterator\<int\|string, mixed\>\) of method TournayreLabs\\Component\\Mailer\\Collection\\EmailAddressCollection\:\:getIterator\(\) should be covariant with return type \(Traversable\<int\|string, TournayreLabs\\Component\\Mailer\\Types\\EmailAddress\>\) of method IteratorAggregate\<int\|string,TournayreLabs\\Component\\Mailer\\Types\\EmailAddress\>\:\:getIterator\(\)$#'
+			identifier: method.childReturnType
+			count: 1
+			path: ../../src/Component/Mailer/Collection/EmailAddressCollection.php
+
+		-
+			message: '#^Return type \(ArrayIterator\<int\|string, mixed\>\) of method TournayreLabs\\Primitives\\Collection\\FileCollection\:\:getIterator\(\) should be covariant with return type \(Traversable\<int\|string, TournayreLabs\\Wrapper\\SplFileInfo\>\) of method IteratorAggregate\<int\|string,TournayreLabs\\Wrapper\\SplFileInfo\>\:\:getIterator\(\)$#'
+			identifier: method.childReturnType
+			count: 1
+			path: ../../src/Primitives/Collection/FileCollection.php
+
+		-
+			message: '#^8\.5 use FILTER_UNSAFE_RAW instead$#'
+			identifier: constant.deprecated
+			count: 1
+			path: ../../src/Primitives/String_.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\Collection\\Access is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/Collection/Access.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\Collection\\Aggregate is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/Collection/Aggregate.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\Collection\\Countable is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/Collection/Countable.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\Collection\\Create is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/Collection/Create.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\Collection\\Debug is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/Collection/Debug.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\Collection\\Misc is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/Collection/Misc.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\Collection\\Ordering is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/Collection/Ordering.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\Collection\\Shorten is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/Collection/Shorten.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\Collection\\Test is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/Collection/Test.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\Collection\\Transform is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/Collection/Transform.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\IntegerTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/IntegerTrait.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\UlidTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/UlidTrait.php
+
+		-
+			message: '#^Trait TournayreLabs\\Primitives\\Traits\\UuidTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Primitives/Traits/UuidTrait.php
+
+		-
+			message: '#^Offset 0 on non\-empty\-list&callable\(\)\: mixed in isset\(\) always exists and is not nullable\.$#'
+			identifier: isset.offset
+			count: 1
+			path: ../../src/Symfony/Subscriber/DoctrineTransactionSubscriber.php
+
+		-
+			message: '#^Parameter \#1 \$controller of method TournayreLabs\\Symfony\\Subscriber\\DoctrineTransactionSubscriber\:\:isAllowFlushController\(\) expects object, class\-string\|object given\.$#'
+			identifier: argument.type
+			count: 1
+			path: ../../src/Symfony/Subscriber/DoctrineTransactionSubscriber.php
+
+		-
+			message: '#^Trait TournayreLabs\\Traits\\DependencyInjectionTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: ../../src/Traits/DependencyInjectionTrait.php
+
+		-
+			message: '#^Method TournayreLabs\\TryCatch\\TryCatch\:\:createInstance\(\) should return TournayreLabs\\TryCatch\\TryCatch\<TReturn\> but returns TournayreLabs\\TryCatch\\TryCatch\<mixed\>\.$#'
+			identifier: return.type
+			count: 1
+			path: ../../src/TryCatch/TryCatch.php
+
+		-
+			message: '#^Method TournayreLabs\\Tests\\Unit\\PublicSignatureCompatibilityTest\:\:expectedSignatures\(\) should return array\<string, mixed\> but returns array\<mixed, mixed\>\.$#'
+			identifier: return.type
+			count: 1
+			path: ../../tests/Unit/PublicSignatureCompatibilityTest.php

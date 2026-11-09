@@ -42,6 +42,10 @@
         "archtechx/enums": "^1.1",
         "doctrine/orm": "^2.16 || ^3.0"
     },
+    "suggest": {
+        "phpstan/phpstan": "Required to use the shipped rules in TournayreLabs\\PHPStan\\Rules (PHPStan 2)",
+        "phpstan/phpstan-webmozart-assert": "Required to use TournayreLabs\\PHPStan\\Extension\\TournayreLabsAssertTypeSpecifyingExtension (2.x)"
+    },
     "autoload": {
         "psr-4": {
             "TournayreLabs\\": "src/"
@@ -51,27 +55,30 @@
         "psr-4": {
             "TournayreLabs\\Tests\\": "tests/",
             "TournayreLabs\\PHPStan\\Extension\\": "tools/phpstan/Extension/"
-        }
+        },
+        "classmap": [
+            "tests/Unit/PHPStan/Rules/Fixtures/"
+        ]
     },
     "require-dev": {
-        "atournayre/phpstan-elegant-object": "^0.2",
+        "atournayre/phpstan-elegant-object": "^1.0",
         "atournayre/rector-auto-upgrade": "^0.2",
         "carthage-software/mago": "^1.55",
         "friendsofphp/php-cs-fixer": "^3.59",
         "phparkitect/phparkitect": "^0.3.33",
         "phpstan/extension-installer": "^1.4",
-        "phpstan/phpstan": "^1.11",
-        "phpstan/phpstan-deprecation-rules": "^1.2",
-        "phpstan/phpstan-doctrine": "^1.4",
-        "phpstan/phpstan-phpunit": "^1.4",
-        "phpstan/phpstan-strict-rules": "^1.6",
-        "phpstan/phpstan-webmozart-assert": "^1.2",
+        "phpstan/phpstan": "^2",
+        "phpstan/phpstan-deprecation-rules": "^2",
+        "phpstan/phpstan-doctrine": "^2",
+        "phpstan/phpstan-phpunit": "^2",
+        "phpstan/phpstan-strict-rules": "^2",
+        "phpstan/phpstan-webmozart-assert": "^2",
         "phpunit/phpunit": "^9.5",
-        "rector/rector": "^1.1",
+        "rector/rector": "^2",
         "rector/swiss-knife": "^0.2.16",
-        "spaze/phpstan-disallowed-calls": "^3.4",
+        "spaze/phpstan-disallowed-calls": "^4",
         "tomasvotruba/lines": "^0.5.1",
-        "tomasvotruba/unused-public": "^0.3.9"
+        "tomasvotruba/unused-public": "^2"
     },
     "config": {
         "allow-plugins": {

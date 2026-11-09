@@ -1,0 +1,5 @@
+services:
+    -
+        class: TournayreLabs\PHPStan\Extension\TournayreLabsAssertTypeSpecifyingExtension
+        tags:
+            - phpstan.typeSpecifier.staticMethodTypeSpecifyingExtension
