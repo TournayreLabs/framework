@@ -25,7 +25,8 @@ validate: ## Validate composer.json
 qa: rector fix validate phpstan tests ## Run all QA tools
 
 tests: ## Run tests
-	@$(PHP) vendor/bin/phpunit
+	@$(PHP) vendor/bin/phpunit --testsuite Unit
+	@$(PHP) vendor/bin/phpunit --testsuite PHPStan
 
 phpstan: ## Run PHPStan
 	@$(PHP) vendor/bin/phpstan analyse src tests --memory-limit=4G

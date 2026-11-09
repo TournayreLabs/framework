@@ -3,7 +3,6 @@ includes:
     - tools/phpstan/disallowed-calls.neon
     - tools/phpstan/disallowed-constructs.neon
     - tools/phpstan/mixed-type-specifier.neon
-    - tools/phpstan/baseline-phpstan2.neon
 
 parameters:
     level: 9

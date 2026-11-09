@@ -12,9 +12,3 @@
   - `TournayreLabs\PHPStan\Extension\TournayreLabsAssertTypeSpecifyingExtension` (requires `phpstan/phpstan-webmozart-assert`).
 - Unit test for `NoForeachRule` (`tournayrelabs.noForeach`, unchanged).
 - `suggest`: `phpstan/phpstan`, `phpstan/phpstan-webmozart-assert`.
-
-### Changed
-
-- Dev toolchain moved to PHPStan 2 (`phpstan/phpstan` and `phpstan-*` extensions, `spaze/phpstan-disallowed-calls` 4,
-  `atournayre/phpstan-elegant-object` 1.0, `rector/rector` 2, `tomasvotruba/unused-public` 2).
-  Findings new to PHPStan 2 on existing code are frozen in `tools/phpstan/baseline-phpstan2.neon`.

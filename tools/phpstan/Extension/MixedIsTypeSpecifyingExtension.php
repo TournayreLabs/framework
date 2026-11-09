@@ -102,7 +102,7 @@ final class MixedIsTypeSpecifyingExtension implements MethodTypeSpecifyingExtens
             ? TypeSpecifierContext::createTrue()
             : TypeSpecifierContext::createFalse();
 
-        return $this->typeSpecifier->create($expr, $type, $specifyContext, $scope);
+        return $this->typeSpecifier->create($expr, $type, $specifyContext, false, $scope);
     }
 
     /**

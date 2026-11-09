@@ -43,7 +43,7 @@ make fix
 
 ## PHPStan rules
 
-The framework ships PHPStan rules that enforce its primitives (PHPStan 2, `phpstan/phpstan` is only a `suggest`).
+The framework ships PHPStan rules that enforce its primitives (tested with PHPStan 1.x, `phpstan/phpstan` is only a `suggest`).
 Register them in your `phpstan.neon`. Identifiers and messages are a public contract: baselines index on them.
 
 Every rule takes `array<string> $excludedPaths = []`: a file is skipped when its path starts with, or contains,
