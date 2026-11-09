@@ -42,6 +42,10 @@
         "archtechx/enums": "^1.1",
         "doctrine/orm": "^2.16 || ^3.0"
     },
+    "suggest": {
+        "phpstan/phpstan": "Required to use the shipped rules in TournayreLabs\\PHPStan\\Rules (^1.11)",
+        "phpstan/phpstan-webmozart-assert": "Required to use TournayreLabs\\PHPStan\\Extension\\TournayreLabsAssertTypeSpecifyingExtension (^1.2)"
+    },
     "autoload": {
         "psr-4": {
             "TournayreLabs\\": "src/"
@@ -51,7 +55,10 @@
         "psr-4": {
             "TournayreLabs\\Tests\\": "tests/",
             "TournayreLabs\\PHPStan\\Extension\\": "tools/phpstan/Extension/"
-        }
+        },
+        "classmap": [
+            "tests/Unit/PHPStan/Rules/Fixtures/"
+        ]
     },
     "require-dev": {
         "atournayre/phpstan-elegant-object": "^0.2",

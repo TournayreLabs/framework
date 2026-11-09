@@ -48,6 +48,7 @@ services:
           - '%currentWorkingDirectory%/src/Primitives/Bool_.php'
           - '%currentWorkingDirectory%/src/Component/Mailer/Configuration/MailerConfiguration.php'
           - '%currentWorkingDirectory%/src/Common/Log/AbstractLogger.php'
+          - '%currentWorkingDirectory%/tests/Unit/PHPStan/'
           - '%currentWorkingDirectory%/rector/'
           - '%currentWorkingDirectory%/tools/'
       tags:
@@ -137,7 +138,7 @@ services:
           - 'setWithCallback'
           - 'setIf'
         excludedPaths:
-          - '%currentWorkingDirectory%/src/PHPStan/Rules/NoForeachRule.php'
+          - '%currentWorkingDirectory%/src/PHPStan/'
           - '%currentWorkingDirectory%/src/Contracts/DateTime/DateTimeInterface.php'
           - '%currentWorkingDirectory%/src/Contracts/Collection/GetInterface.php'
           - '%currentWorkingDirectory%/src/Contracts/Collection/GetIteratorInterface.php'

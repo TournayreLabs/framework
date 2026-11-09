@@ -7,6 +7,10 @@ includes:
 parameters:
     level: 9
     treatPhpDocTypesAsCertain: false
+    excludePaths:
+        analyse:
+            # Fixtures analysed by the rules' own tests, they violate the rules on purpose
+            - tests/Unit/PHPStan/Rules/Fixtures/
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
         # PHPStan standard — dispatch dynamique volontaire vers Webmozart\Assert::method(...)
@@ -17,6 +21,10 @@ parameters:
         -
             message: '#(Elegant Objects|new outside of secondary constructors|instanceof.*deprecated|empty\(\) is not allowed|returns null|which violates object encapsulation)#'
             path: tools/phpstan/Extension/MixedIsTypeSpecifyingExtension.php
+        # PHPStan extension code — extends the PHPStan\Type\WebMozartAssert extension on purpose
+        -
+            identifier: phpstanApi.class
+            path: src/PHPStan/Extension/TournayreLabsAssertTypeSpecifyingExtension.php
         # numeric() check on a string-narrowed variable: is_numeric() is a runtime check,
         # not representable purely via type narrowing (numeric strings are a subset of strings)
         -

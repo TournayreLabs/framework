@@ -17,6 +17,11 @@
     <testsuites>
         <testsuite name="Unit">
             <directory>tests/Unit</directory>
+            <exclude>tests/Unit/PHPStan</exclude>
+        </testsuite>
+        <!-- Own process: PHPStan 1's testing API alters autoloaded classes (breaks String_Test when mixed) -->
+        <testsuite name="PHPStan">
+            <directory>tests/Unit/PHPStan</directory>
         </testsuite>
     </testsuites>
 

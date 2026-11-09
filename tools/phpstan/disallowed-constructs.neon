@@ -7,3 +7,35 @@ services:
               - tests/
       tags:
         - phpstan.rules.rule
+    -
+      class: TournayreLabs\PHPStan\Rules\NoEmptyArrayAssignmentRule
+      arguments:
+          excludedPaths:
+              - src/
+              - tests/
+      tags:
+        - phpstan.rules.rule
+    -
+      class: TournayreLabs\PHPStan\Rules\NoNegationOperatorRule
+      arguments:
+          excludedPaths:
+              - %currentWorkingDirectory%/src/
+              - %currentWorkingDirectory%/tests/
+      tags:
+        - phpstan.rules.rule
+    -
+      class: TournayreLabs\PHPStan\Rules\NoForbiddenLoggerInterfaceRule
+      arguments:
+          excludedPaths:
+              - src/
+              - tests/
+      tags:
+        - phpstan.rules.rule
+    -
+      class: TournayreLabs\PHPStan\Rules\NoBoolReturnOnEntityMethodRule
+      tags:
+        - phpstan.rules.rule
+    -
+      class: TournayreLabs\PHPStan\Extension\TournayreLabsAssertTypeSpecifyingExtension
+      tags:
+        - phpstan.typeSpecifier.staticMethodTypeSpecifyingExtension
