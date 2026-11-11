@@ -36,11 +36,9 @@ jobs:
 
     phpstan:
         runs-on: ubuntu-latest
-        name: PHPStan (PHP ${{ matrix.php-version }})
-        strategy:
-            fail-fast: false
-            matrix:
-                php-version: ['8.2', '8.4']
+        name: PHPStan
+        # PHP 8.2 only: PHPStan 1.x cannot parse Symfony 8.1 (PHP 8.4 property hooks), which
+        # PHP 8.4 resolves. PHP 8.4 / doctrine/collections 3 are covered by the PHPUnit matrix.
         steps:
             - name: Checkout
               uses: actions/checkout@v6
@@ -48,7 +46,7 @@ jobs:
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
               with:
-                  php-version: ${{ matrix.php-version }}
+                  php-version: '8.2'
 
             - name: Get Composer cache directory
               id: composer-cache
